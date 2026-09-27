@@ -128,7 +128,6 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.25}
 .fin .btn{background:var(--bg);color:#fff}
 .fin small{display:block;margin-top:18px;color:#102a4a;font-size:14px}
 footer{grid-column:span 12;display:flex;justify-content:space-between;color:var(--mut);font-size:14px;padding:8px 12px 88px}
-.dock{display:none}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s,border-color .35s}
 .rv.in{opacity:1;transform:none}
 .rv.in:hover{transform:translateY(-4px)}
@@ -141,9 +140,6 @@ footer{grid-column:span 12;display:flex;justify-content:space-between;color:var(
   .btn{padding:0 20px;font-size:15px}
   .hero .sub{font-size:17px}
   .fin{padding:48px 20px}
-  .dock{display:block;position:fixed;left:14px;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:55}
-  .dock .btn{width:100%;height:56px;box-shadow:0 14px 34px -8px rgba(233,180,76,.55)}
-  footer{padding-bottom:96px}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
@@ -296,7 +292,6 @@ footer{grid-column:span 12;display:flex;justify-content:space-between;color:var(
 
 <footer><span>© 2026 Кирилл</span><a href="#">Наверх ↑</a></footer>
 </main>
-<div class="dock"><a class="btn" href="https://t.me/K_Sofrin" target="_blank" rel="noopener">Написать в Telegram</a></div>
 
 <script>
 (function(){
