@@ -2,16 +2,21 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Сайт для бизнеса в Брянске за 3 дня — 15 000 ₽ с доменом · Кирилл</title>
 <meta name="description" content="Делаю сайты для бизнеса в Брянске под ключ: 15 000 ₽, домен на год входит в цену, запуск за 3 дня.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Сайт для бизнеса за 3 дня — 15 000 ₽ с доменом">
-<meta property="og:description" content="Барбершопы, салоны, автосервисы, кафе. Под ключ, домен входит в цену.">
+<meta property="og:title" content="Сайт для бизнеса в Брянске за 3 дня — 15 000 ₽ с доменом">
+<meta property="og:description" content="Барбершопы, салоны, автосервисы, кафе. Под ключ, домен на год входит в цену.">
 <meta property="og:image" content="https://karif.up.railway.app/og.png">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://karif.up.railway.app/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0B0B0F">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://karif.up.railway.app/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23E9B44C'/%3E%3Cpath d='M10 8h4v5l6-5h4l-7 6 7 10h-4.5L14 17.5V24h-4z' fill='%230B0B0F'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23E9B44C'/%3E%3Cpath d='M10 8h4v5l6-5h4l-7 6 7 10h-4.5L14 17.5V24h-4z' fill='%230B0B0F'/%3E%3C/svg%3E">
 <link rel="preload" href="fonts/inter-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 @font-face{font-family:Inter;font-weight:100 900;font-display:swap;src:url(fonts/inter-cyrillic-wght-normal.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
@@ -133,22 +138,29 @@ footer{grid-column:span 12;display:flex;justify-content:space-between;color:var(
   .btn{padding:0 20px;font-size:15px}
   .hero .sub{font-size:17px}
   .fin{padding:48px 20px}
-  .dock{display:block;position:fixed;left:14px;right:14px;bottom:14px;z-index:55}
+  .dock{display:block;position:fixed;left:14px;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:55}
   .dock .btn{width:100%;height:56px;box-shadow:0 14px 34px -8px rgba(233,180,76,.55)}
   footer{padding-bottom:96px}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","address":{"@type":"PostalAddress","addressLocality":"Брянск","addressCountry":"RU"},"areaServed":"Брянск","name":"Кирилл — сайты для бизнеса","description":"Сайты под ключ для местного бизнеса: барбершопы, салоны красоты, автосервисы, кафе. Запуск за 3 дня, домен на год в стоимости.","url":"https://karif.up.railway.app/","priceRange":"15000 RUB","sameAs":["https://t.me/K_Sofrin"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Что если макет не понравится?","acceptedAnswer":{"@type":"Answer","text":"Сначала согласуем макет, и только потом вёрстка и запуск. В стоимость входит до 10 правок макета."}},
+{"@type":"Question","name":"Почему так быстро и недорого?","acceptedAnswer":{"@type":"Answer","text":"Работаю один, без агентства и менеджеров, поэтому нет лишних наценок и долгих согласований."}},
+{"@type":"Question","name":"Домен правда входит в цену?","acceptedAnswer":{"@type":"Answer","text":"Да, домен на 1 год уже в 15 000 ₽ и оформляется на вас. Со второго года продление по тарифу регистратора."}},
+{"@type":"Question","name":"Кто пишет тексты и берёт фото?","acceptedAnswer":{"@type":"Answer","text":"Тексты пишу я по вашим ответам. Фото лучше ваши: работы, интерьер, мастера."}},
+{"@type":"Question","name":"Будет ли сайт удобен на телефоне?","acceptedAnswer":{"@type":"Answer","text":"Да, сайт проверяю на телефоне и на компьютере перед запуском."}}
+]}</script>
 </head>
 <body>
 <div class="progress" id="pr"></div>
 <main class="g">
 
-<div class="t c12 top">
-  <nav class="menu"><a href="#work">Работы</a><a href="#price">Цена</a><a href="#faq">Вопросы</a></nav>
+<header class="t c12 top">
+  <nav class="menu" aria-label="Основная навигация"><a href="#work">Работы</a><a href="#price">Цена</a><a href="#faq">Вопросы</a></nav>
   <a class="btn sm" href="https://t.me/K_Sofrin" target="_blank" rel="noopener">Заказать</a>
-</div>
+</header>
 
 <section class="t c8 hero rv">
   <div>

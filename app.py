@@ -76,10 +76,30 @@ def requires_auth(f):
     return decorated
 
 
+SITE_URL = os.environ.get("SITE_URL", "https://karif.up.railway.app")
+
+
 # ---- static site ----
 @app.route("/")
 def index():
     return send_from_directory(BASE_DIR, "index.html")
+
+
+@app.route("/robots.txt")
+def robots():
+    body = f"User-agent: *\nAllow: /\nDisallow: /admin\nSitemap: {SITE_URL}/sitemap.xml\n"
+    return Response(body, mimetype="text/plain")
+
+
+@app.route("/sitemap.xml")
+def sitemap():
+    body = (
+        '<?xml version="1.0" encoding="UTF-8"?>'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+        f"<url><loc>{SITE_URL}/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>"
+        "</urlset>"
+    )
+    return Response(body, mimetype="application/xml")
 
 
 @app.route("/<path:path>")
