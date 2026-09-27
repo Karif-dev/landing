@@ -1,3 +1,4 @@
+import html
 import os
 import sqlite3
 from datetime import datetime
@@ -39,12 +40,18 @@ def init_db():
             biz TEXT,
             city TEXT,
             name TEXT,
+            contact_method TEXT,
+            contact_value TEXT,
             source TEXT,
             ip TEXT,
             user_agent TEXT
         )
         """
     )
+    existing = {row[1] for row in conn.execute("PRAGMA table_info(leads)")}
+    for col in ("contact_method", "contact_value"):
+        if col not in existing:
+            conn.execute(f"ALTER TABLE leads ADD COLUMN {col} TEXT")
     conn.commit()
     conn.close()
 
@@ -86,23 +93,38 @@ def static_files(path):
 
 
 # ---- API ----
+CONTACT_LABELS = {
+    "telegram": "Telegram",
+    "phone": "Телефон",
+    "whatsapp": "WhatsApp",
+    "other": "Другое",
+}
+
+
 @app.route("/api/leads", methods=["POST"])
 def create_lead():
     data = request.get_json(silent=True) or {}
     biz = (data.get("biz") or "").strip()[:200]
     city = (data.get("city") or "").strip()[:200]
     name = (data.get("name") or "").strip()[:200]
+    contact_method = (data.get("contact_method") or "telegram").strip()[:20]
+    if contact_method not in CONTACT_LABELS:
+        contact_method = "other"
+    contact_value = (data.get("contact_value") or "").strip()[:200]
     source = (data.get("source") or "form").strip()[:50]
     if not biz:
         return jsonify({"ok": False, "error": "biz required"}), 400
     db = get_db()
     db.execute(
-        "INSERT INTO leads (created_at, biz, city, name, source, ip, user_agent) VALUES (?, ?, ?, ?, ?, ?, ?)",
+        "INSERT INTO leads (created_at, biz, city, name, contact_method, contact_value, source, ip, user_agent) "
+        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
         (
             datetime.utcnow().isoformat(timespec="seconds") + "Z",
             biz,
             city,
             name,
+            contact_method,
+            contact_value,
             source,
             request.headers.get("X-Forwarded-For", request.remote_addr or ""),
             request.headers.get("User-Agent", "")[:300],
@@ -147,20 +169,28 @@ def admin():
     else:
         trs = []
         for r in rows:
+            e = lambda v: html.escape(v or "")
+            method = r["contact_method"] if "contact_method" in r.keys() else None
+            value = r["contact_value"] if "contact_value" in r.keys() else None
+            method_label = CONTACT_LABELS.get(method or "", method or "—")
+            contact_html = e(value) or "—"
             trs.append(
                 "<tr><td>{id}</td><td>{dt}</td><td>{biz}</td><td>{city}</td><td>{name}</td>"
+                '<td><span class="tag">{method}</span> {contact}</td>'
                 '<td><span class="tag">{src}</span></td></tr>'.format(
                     id=r["id"],
-                    dt=r["created_at"].replace("T", " ").replace("Z", ""),
-                    biz=r["biz"] or "—",
-                    city=r["city"] or "—",
-                    name=r["name"] or "—",
-                    src=r["source"] or "form",
+                    dt=e(r["created_at"]).replace("T", " ").replace("Z", ""),
+                    biz=e(r["biz"]) or "—",
+                    city=e(r["city"]) or "—",
+                    name=e(r["name"]) or "—",
+                    method=e(method_label),
+                    contact=contact_html,
+                    src=e(r["source"]) or "form",
                 )
             )
         table = (
             "<table><thead><tr><th>#</th><th>Когда</th><th>Бизнес</th>"
-            "<th>Город</th><th>Имя</th><th>Источник</th></tr></thead>"
+            "<th>Город</th><th>Имя</th><th>Контакт</th><th>Источник</th></tr></thead>"
             "<tbody>" + "".join(trs) + "</tbody></table>"
         )
     return ADMIN_PAGE.replace("__COUNT__", str(len(rows))).replace("__TABLE__", table)

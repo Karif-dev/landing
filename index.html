@@ -82,8 +82,9 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.25}
 :focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:10px}
 #req{display:flex;flex-direction:column;gap:14px}
 #req label{display:grid;gap:6px;font-size:13px;color:var(--mut);font-weight:500}
-#req input{height:50px;border-radius:14px;border:1px solid var(--line);background:#0F0F14;color:var(--fg);padding:0 16px;font:500 16px Inter,system-ui,sans-serif;outline:0;transition:border-color .25s}
-#req input:focus{border-color:var(--lime)}
+#req input,#req select{height:50px;border-radius:14px;border:1px solid var(--line);background:#0F0F14;color:var(--fg);padding:0 16px;font:500 16px Inter,system-ui,sans-serif;outline:0;transition:border-color .25s;width:100%}
+#req input:focus,#req select:focus{border-color:var(--lime)}
+#req select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239A9AA6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
 #req .btn{margin-top:4px;width:100%}
 #req .hint{font-size:13px;margin:0;text-align:center}
 .quote{margin:0;display:grid;gap:22px;padding:40px 44px}
@@ -243,6 +244,15 @@ footer{grid-column:span 12;display:flex;justify-content:space-between;color:var(
   <label>Чем занимаетесь<input name="biz" placeholder="Например, барбершоп" required></label>
   <label>Город<input name="city" placeholder="Например, Брянск"></label>
   <label>Как к вам обращаться<input name="name" placeholder="Имя"></label>
+  <label>Как удобнее связаться
+    <select name="contact_method" id="contact_method">
+      <option value="telegram">Telegram</option>
+      <option value="phone">Телефон</option>
+      <option value="whatsapp">WhatsApp</option>
+      <option value="other">Другое</option>
+    </select>
+  </label>
+  <label id="contact_value_wrap">Контакт<input name="contact_value" id="contact_value" placeholder="@username или номер телефона" required></label>
   <button class="btn" type="submit">Оставить заявку</button>
   <p id="hint" class="hint">Я свяжусь с вами сам. Быстрее всего — <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--lime);font-weight:600">написать в Telegram</a>.</p>
 </form>
@@ -278,12 +288,15 @@ footer{grid-column:span 12;display:flex;justify-content:space-between;color:var(
   var c=document.getElementById('cnt');
   if(!rm){var co=new IntersectionObserver(function(e){if(!e[0].isIntersecting)return;co.disconnect();var t0=performance.now();(function f(t){var k=Math.min(1,(t-t0)/1200),v=Math.round(15000*(1-Math.pow(1-k,3)));c.textContent=String(v).replace(/\B(?=(\d{3})+(?!\d))/g,' ');if(k<1)requestAnimationFrame(f)})(t0)},{threshold:.5});co.observe(c)}
   var f=document.getElementById('req');
+  var cm=document.getElementById('contact_method'),cv=document.getElementById('contact_value');
+  var CP={telegram:'@username в Telegram',phone:'Например, +7 900 000-00-00',whatsapp:'Номер для WhatsApp',other:'Как с вами связаться'};
+  if(cm&&cv){cm.addEventListener('change',function(){cv.placeholder=CP[cm.value]||'Контакт'});}
   if(f){f.addEventListener('submit',function(e){
     e.preventDefault();
-    var d=new FormData(f),biz=d.get('biz')||'',city=d.get('city')||'',name=d.get('name')||'';
+    var d=new FormData(f),biz=d.get('biz')||'',city=d.get('city')||'',name=d.get('name')||'',cmv=d.get('contact_method')||'telegram',cvv=d.get('contact_value')||'';
     var hint=document.getElementById('hint'),btn=f.querySelector('.btn');
     btn.disabled=true;btn.style.opacity=.7;btn.textContent='Отправляю…';
-    fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({biz:biz,city:city,name:name,source:'form'})})
+    fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({biz:biz,city:city,name:name,contact_method:cmv,contact_value:cvv,source:'form'})})
       .then(function(r){if(!r.ok)throw 0;
         btn.textContent='Заявка отправлена ✓';
         hint.innerHTML='Спасибо! Я отвечу в течение дня. Хотите быстрее — <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--lime);font-weight:600">напишите в Telegram</a>.';
