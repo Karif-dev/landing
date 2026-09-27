@@ -12,11 +12,11 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0B0B0F">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23C6F432'/%3E%3Cpath d='M10 8h4v5l6-5h4l-7 6 7 10h-4.5L14 17.5V24h-4z' fill='%230B0B0F'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/inter-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-:root{--bg:#0B0B0F;--card:#15151B;--line:#23232C;--fg:#F4F4F6;--mut:#9A9AA6;--lime:#C6F432;--vio:#5B3DF5}
+@font-face{font-family:Inter;font-weight:100 900;font-display:swap;src:url(fonts/inter-cyrillic-wght-normal.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:Inter;font-weight:100 900;font-display:swap;src:url(fonts/inter-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{--bg:#0B0B0F;--card:#15151B;--line:#23232C;--fg:#F4F4F6;--mut:#9A9AA6;--lime:#C6F432;--vio:#1F3B73}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{background:var(--bg);color:var(--fg);font:400 17px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;padding:16px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
@@ -38,7 +38,7 @@ h1 em:after{content:"";display:inline-block;width:.06em;height:.85em;background:
 @keyframes bl{50%{opacity:0}}
 h2{font-size:clamp(26px,3.4vw,40px);line-height:1.1;letter-spacing:-.035em;font-weight:800}
 h3{font-size:22px;letter-spacing:-.02em;line-height:1.25}
-.hero{min-height:460px;display:flex;flex-direction:column;justify-content:space-between;background:radial-gradient(700px 320px at 95% 0,#2b1d6b,transparent),var(--card)}
+.hero{min-height:460px;display:flex;flex-direction:column;justify-content:space-between;background:radial-gradient(700px 320px at 95% 0,#17356b,transparent),var(--card)}
 .hero .sub{color:var(--mut);font-size:19px;margin-top:20px;max-width:440px;position:relative;z-index:2}
 .hero .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
 .lbl{font-size:13px;letter-spacing:.12em;text-transform:uppercase;opacity:.7;font-weight:600;margin-bottom:12px}
@@ -49,7 +49,7 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.25}
 .lime{background:var(--lime);color:var(--bg);border-color:transparent}.lime:hover{border-color:transparent}
 .t.lime p{color:#2c3a05}.lime .ic{background:rgba(11,11,15,.12)}
 .vio{background:var(--vio);border-color:transparent}.vio:hover{border-color:transparent}
-.t.vio p{color:#d9d1ff}.vio .ic{background:rgba(255,255,255,.16)}
+.t.vio p{color:#c5d3f0}.vio .ic{background:rgba(255,255,255,.16)}
 .flex{display:flex;flex-direction:column;justify-content:space-between}
 .ava{width:64px;height:64px;border-radius:20px;background:linear-gradient(135deg,var(--lime),#7ee787);display:grid;place-items:center;color:var(--bg);font-weight:800;font-size:28px;margin-bottom:18px}
 .shot{padding:0;min-height:360px;background:#000}
@@ -63,7 +63,10 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.25}
 .tl b{font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.75;min-width:56px}
 .pl{list-style:none;margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
 .pl li{padding:6px 12px;border-radius:99px;background:rgba(11,11,15,.12);font-size:14px;font-weight:600;color:#0B0B0F}
-.mock{position:absolute;right:-30px;bottom:-40px;width:44%;max-width:420px;transform:rotate(-4deg);transition:transform .5s}
+.mock{position:absolute;right:-20px;bottom:-30px;width:48%;max-width:470px;transform:rotate(-3deg);transition:transform .5s}
+.wimg{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:left top}
+.hph{position:absolute;right:26px;bottom:34px;width:24%;aspect-ratio:9/18.6;border:5px solid #1d1d25;border-radius:22px;overflow:hidden;box-shadow:0 20px 40px -8px rgba(0,0,0,.85)}
+.hph img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 .hero:hover .mock{transform:rotate(-2deg) translateY(-8px)}
 .win{border:1px solid #3a3a48;border-radius:16px;background:#0E0E14;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.8)}
 .wb{display:flex;align-items:center;gap:6px;padding:10px 12px;border-bottom:1px solid var(--line)}
@@ -139,7 +142,7 @@ footer{grid-column:span 12;display:flex;justify-content:space-between;color:var(
     <h1 style="position:relative;z-index:2">Сайт для вашего<em id="word">барбершопа</em>за 3 дня</h1>
     <p class="sub">Под ключ, с вашим доменом. Клиенты находят вас, видят цены и записываются.</p>
   </div>
-  <div class="mock" aria-hidden="true"><div class="win"><div class="wb"><i></i><i></i><i></i><div class="wu"><u id="typed">barbershop.ru</u></div></div><div class="wp"><div class="h1"></div><div class="h2"></div><div class="bt"></div><div class="g3"><span></span><span></span><span></span></div></div></div></div>
+  <div class="mock" aria-hidden="true"><div class="win"><div class="wb"><i></i><i></i><i></i><div class="wu">knyaz32.ru</div></div><img class="wimg" src="knyaz.webp" alt=""></div><div class="hph"><img src="knyaz-m.webp" alt=""></div></div>
   <div class="row" style="position:relative;z-index:2">
     <a class="btn" href="https://t.me/K_Sofrin" target="_blank" rel="noopener">Получить сайт →</a>
     <a class="btn d" href="#work">Смотреть работу</a>
@@ -153,8 +156,8 @@ footer{grid-column:span 12;display:flex;justify-content:space-between;color:var(
 
 <div class="t c4 vio rv flex">
   <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div class="lbl">Срок</div></div>
-  <div><div class="big">3 дня</div>
-    <ol class="tl"><li><b>День 1</b>дизайн и макет</li><li><b>День 2</b>согласование и вёрстка</li><li><b>День 3</b>домен и запуск</li></ol></div>
+  <div><div class="big">3 дня</div><p>с момента, как согласуем макет</p>
+    <ol class="tl"><li><b>День 1</b>вёрстка и наполнение</li><li><b>День 2</b>проверка на телефоне и правки</li><li><b>День 3</b>домен и запуск</li></ol></div>
 </div>
 
 <div class="t c4 rv">
@@ -208,15 +211,11 @@ footer{grid-column:span 12;display:flex;justify-content:space-between;color:var(
   </div>
 </div>
 
-<div class="t c3 stp rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.5 7.2L4 21l1.8-5.5A8 8 0 1 1 21 12z"/></svg></span><b>01</b><h3 style="margin-top:8px">Заявка</h3><p>Пишете в Telegram, рассказываете о бизнесе</p></div>
-<div class="t c3 stp rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16zM13.5 6.5l4 4"/></svg></span><b>02</b><h3 style="margin-top:8px">Макет</h3><p>Присылаю дизайн и тексты, согласуем</p></div>
-<div class="t c3 stp rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2M14 4c3.5-1 6-1 6-1s0 2.5-1 6l-6 6-5-5z"/><circle cx="15" cy="9" r="1.2"/></svg></span><b>03</b><h3 style="margin-top:8px">Запуск</h3><p>Регистрирую домен и публикую сайт</p></div>
-<div class="t c3 stp rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></span><b>04</b><h3 style="margin-top:8px">Клиенты</h3><p>Сайт работает, я на связи по правкам</p></div>
-
 <div class="t c12 faq rv" id="faq">
   <div class="lbl">Вопросы</div>
   <h2>Частые вопросы</h2>
   <details><summary>Что если макет не понравится?</summary><p>Сначала согласуем макет, и только потом вёрстка и запуск. В стоимость входит до 10 правок макета.</p></details>
+  <details><summary>Почему так быстро и недорого?</summary><p>Работаю один, без агентства и менеджеров, поэтому нет лишних наценок и долгих согласований. Вы общаетесь напрямую со мной.</p></details>
   <details><summary>Домен правда входит в цену?</summary><p>Да, регистрация домена уже в 15 000 ₽. Домен оформляется на вас. Продление в следующие годы оплачивается по тарифу регистратора, цену скажу заранее.</p></details>
   <details><summary>Кто пишет тексты и берёт фото?</summary><p>Тексты пишу я по вашим ответам. Фото лучше ваши: работы, интерьер, мастера. Если их нет, подскажу, как быстро снять.</p></details>
   <details><summary>Будет ли сайт удобен на телефоне?</summary><p>Да, большая часть клиентов заходит с телефона, поэтому сайт проверяю на телефоне и на компьютере.</p></details>
@@ -243,10 +242,6 @@ footer{grid-column:span 12;display:flex;justify-content:space-between;color:var(
   addEventListener('scroll',function(){var h=document.documentElement;pr.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
   var c=document.getElementById('cnt');
   if(!rm){var co=new IntersectionObserver(function(e){if(!e[0].isIntersecting)return;co.disconnect();var t0=performance.now();(function f(t){var k=Math.min(1,(t-t0)/1200),v=Math.round(15000*(1-Math.pow(1-k,3)));c.textContent=String(v).replace(/\B(?=(\d{3})+(?!\d))/g,' ');if(k<1)requestAnimationFrame(f)})(t0)},{threshold:.5});co.observe(c)}
-  var ty=document.getElementById('typed'),D=['barbershop.ru','salon-krasoty.ru','avtoservis.ru','vash-biznes.ru'],a=0,b=0,dd=false;
-  if(!rm&&ty){(function tk(){var q=D[a];ty.textContent=q.slice(0,b);
-    if(!dd&&b<q.length){b++;setTimeout(tk,95)}else if(!dd){dd=true;setTimeout(tk,1800)}
-    else if(b>0){b--;setTimeout(tk,45)}else{dd=false;a=(a+1)%D.length;setTimeout(tk,300)}})()}
   var w=document.getElementById('word'),L=['барбершопа','салона красоты','автосервиса','кафе','бизнеса'],i=0,j=0,del=false;
   if(!rm){(function tick(){var s=L[i];w.textContent=s.slice(0,j);
     if(!del&&j<s.length){j++;setTimeout(tick,85)}
