@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Бриф на сайт · Кирилл</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preload" href="fonts/inter-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:Inter;font-weight:100 900;font-display:swap;src:url(fonts/inter-cyrillic-wght-normal.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:Inter;font-weight:100 900;font-display:swap;src:url(fonts/inter-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{--bg:#0B0B0F;--bg2:#101014;--card:#15151B;--line:#23232C;--fg:#F4F4F6;--mut:#9A9AA6;--lime:#4FA3FF;--acc-line:rgba(79,163,255,.35)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:linear-gradient(180deg,var(--bg),var(--bg2) 45%,var(--bg));color:var(--fg);font:400 16px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;padding:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:680px;margin:0 auto}
+.top{display:flex;align-items:center;gap:10px;padding:8px 0 22px}
+.mark{width:30px;height:30px;border-radius:9px;background:var(--lime);color:#0B0B0F;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex:none}
+.top b{display:block;font-size:15px}
+.top span{display:block;color:var(--mut);font-size:12.5px}
+.intro{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:26px 24px;margin-bottom:16px}
+.intro .lbl{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);font-weight:700;margin-bottom:10px}
+.intro h1{font-size:clamp(24px,5vw,32px);line-height:1.15;letter-spacing:-.03em;font-weight:800;margin-bottom:10px}
+.intro p{color:var(--mut);font-size:15px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;margin-bottom:14px}
+.num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:7px;background:rgba(79,163,255,.14);color:var(--lime);font-weight:800;font-size:12.5px;margin-right:9px;flex:none}
+.sec-h{display:flex;align-items:center;font-size:17px;font-weight:800;letter-spacing:-.01em;margin-bottom:2px}
+.sec-sub{color:var(--mut);font-size:13px;margin:2px 0 16px 33px}
+.q{margin:16px 0 0 33px}
+.card .sec-sub+.q{margin-top:0}
+.q:first-of-type{margin-top:0}
+label.t{display:block;font-size:13.5px;font-weight:600;margin-bottom:7px}
+input[type=text],textarea{width:100%;border-radius:14px;border:1px solid var(--line);background:#0F0F14;color:var(--fg);padding:12px 14px;font:400 15px Inter,system-ui,sans-serif;outline:0;transition:border-color .25s;resize:vertical}
+textarea{min-height:70px;font-family:Inter,system-ui,sans-serif}
+input[type=text]:focus,textarea:focus{border-color:var(--lime)}
+.row2{display:flex;gap:12px}
+.row2>div{flex:1;min-width:0}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opts label{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border:1px solid var(--line);border-radius:99px;font-size:13.5px;color:var(--mut);cursor:pointer;transition:border-color .2s,color .2s,background .2s;user-select:none}
+.opts input{accent-color:var(--lime);width:15px;height:15px;flex:none}
+.opts label:has(input:checked){border-color:var(--acc-line);background:rgba(79,163,255,.08);color:var(--fg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:54px;padding:0 28px;border-radius:16px;background:var(--lime);color:var(--bg);font:700 16px/1 Inter,system-ui,sans-serif;white-space:nowrap;transition:transform .25s;cursor:pointer;border:0;width:100%}
+.btn:hover{transform:scale(1.01)}
+.btn:disabled{opacity:.6;cursor:default;transform:none}
+.hint{font-size:13px;margin-top:12px;text-align:center;color:var(--mut)}
+.hint a{color:var(--lime);font-weight:600;text-decoration:none}
+.send{background:radial-gradient(120% 140% at 100% 0%,rgba(79,163,255,.12),transparent 60%),var(--card);border:1px solid var(--acc-line);border-radius:24px;padding:24px;text-align:center}
+.send h2{font-size:20px;margin-bottom:6px}
+.send p{color:var(--mut);font-size:14px;margin-bottom:16px}
+#ok{display:none;text-align:center;padding:60px 20px}
+#ok .mark{margin:0 auto 18px;width:52px;height:52px;border-radius:16px;font-size:26px}
+#ok h1{font-size:26px;margin-bottom:10px}
+#ok p{color:var(--mut);font-size:15px;max-width:420px;margin:0 auto}
+@media(max-width:560px){.row2{flex-direction:column}.q{margin-left:0}.sec-sub{margin-left:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><div class="mark">К</div><div><b>Бриф на сайт</b><span>Кирилл · сайты для бизнеса в Брянске</span></div></div>
+
+  <div id="formwrap">
+  <div class="intro">
+    <div class="lbl">Перед стартом</div>
+    <h1>Ответьте на вопросы — и макет получится с первого раза</h1>
+    <p>Чем подробнее и честнее ответите, тем точнее будет первый вариант сайта. Отвечать можно не идеально ровно, своими словами. Займёт 5–10 минут.</p>
+  </div>
+
+  <form id="brief" autocomplete="off">
+
+    <div class="card">
+      <div class="sec-h"><span class="num">1</span>О бизнесе</div>
+      <div class="sec-sub">Базовые факты, которые пойдут в текст сайта</div>
+      <div class="q"><label class="t">Как к вам обращаться</label><input type="text" name="contact_name" placeholder="Имя"></div>
+      <div class="row2">
+        <div class="q"><label class="t">Название компании / бренда</label><input type="text" name="biz_name" required></div>
+        <div class="q"><label class="t">Город и район работы</label><input type="text" name="city" placeholder="Например, Брянск"></div>
+      </div>
+      <div class="q"><label class="t">Чем занимаетесь — в 1–2 предложениях, как объяснили бы соседу</label><textarea name="about"></textarea></div>
+      <div class="row2">
+        <div class="q"><label class="t">Сколько лет на рынке</label><input type="text" name="years"></div>
+        <div class="q"><label class="t">ИП / самозанятый / физлицо</label><input type="text" name="legal_form"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="sec-h"><span class="num">2</span>Клиенты и позиционирование</div>
+      <div class="sec-sub">Кому продаём и почему выбирают вас</div>
+      <div class="q"><label class="t">Кто ваш типичный клиент? (возраст, кто чаще, что ищет)</label><textarea name="audience"></textarea></div>
+      <div class="q"><label class="t">Какую проблему клиента вы решаете лучше других</label><textarea name="problem"></textarea></div>
+      <div class="q"><label class="t">Почему выбирают именно вас, а не конкурента по соседству</label><textarea name="why_you"></textarea></div>
+      <div class="q"><label class="t">Сайты конкурентов, которые нравятся / не нравятся (ссылки)</label><textarea name="competitors"></textarea></div>
+    </div>
+
+    <div class="card">
+      <div class="sec-h"><span class="num">3</span>Услуги и цены</div>
+      <div class="sec-sub">То, по чему клиент сравнит вас с другими</div>
+      <div class="q"><label class="t">Список услуг с ценами (или диапазонами) — можно списком, как есть</label><textarea name="services" style="min-height:100px"></textarea></div>
+      <div class="q"><label class="t">Есть спецпредложение для новых клиентов на старте?</label><input type="text" name="promo"></div>
+      <div class="q"><label class="t">Как клиент должен записаться — что удобнее всего вам</label>
+        <div class="opts">
+          <label><input type="checkbox" name="booking_method" value="Мессенджер">Написать в мессенджер</label>
+          <label><input type="checkbox" name="booking_method" value="Звонок">Позвонить</label>
+          <label><input type="checkbox" name="booking_method" value="Форма">Форма на сайте</label>
+          <label><input type="checkbox" name="booking_method" value="Онлайн-запись">Онлайн-запись со временем</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="sec-h"><span class="num">4</span>Контакты и график</div>
+      <div class="row2">
+        <div class="q"><label class="t">Телефон</label><input type="text" name="phone"></div>
+        <div class="q"><label class="t">Telegram / WhatsApp</label><input type="text" name="telegram"></div>
+      </div>
+      <div class="q"><label class="t">Адрес (если есть офлайн-точка)</label><input type="text" name="address"></div>
+      <div class="q"><label class="t">Часы работы</label><input type="text" name="hours"></div>
+      <div class="q"><label class="t">Ссылки на соцсети / Яндекс Карты / 2ГИС</label><textarea name="socials"></textarea></div>
+    </div>
+
+    <div class="card">
+      <div class="sec-h"><span class="num">5</span>Визуал и материалы</div>
+      <div class="sec-sub">Чем лучше материалы — тем живее выглядит сайт</div>
+      <div class="q"><label class="t">Есть логотип? (пришлите отдельным файлом в Telegram). Если нет — нужно ли придумать?</label><input type="text" name="logo"></div>
+      <div class="q"><label class="t">Фирменный цвет, если принципиален (необязательно)</label><input type="text" name="brand_color"></div>
+      <div class="q"><label class="t">Сколько хороших фото есть — работ, интерьера, мастеров/команды</label>
+        <div class="opts">
+          <label><input type="radio" name="photos" value="Меньше 5">Меньше 5</label>
+          <label><input type="radio" name="photos" value="5–15">5–15</label>
+          <label><input type="radio" name="photos" value="Больше 15">Больше 15</label>
+          <label><input type="radio" name="photos" value="Нет, нужна помощь">Фото нет — нужна помощь</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="sec-h"><span class="num">6</span>Доверие</div>
+      <div class="sec-sub">То, что снимает сомнения нового клиента</div>
+      <div class="q"><label class="t">Отзывы: сколько, где (Яндекс Карты, 2ГИС, Google), какой рейтинг</label><input type="text" name="reviews"></div>
+      <div class="q"><label class="t">Награды, сертификаты, участие в конкурсах — если есть</label><input type="text" name="awards"></div>
+      <div class="q"><label class="t">1–2 реальных отзыва клиентов, которые можно процитировать</label><textarea name="testimonials"></textarea></div>
+    </div>
+
+    <div class="card">
+      <div class="sec-h"><span class="num">7</span>Тексты и тон</div>
+      <div class="q"><label class="t">Пара предложений о себе от первого лица — как в разговоре с клиентом</label><textarea name="about_text"></textarea></div>
+      <div class="q"><label class="t">Тон общения на сайте</label>
+        <div class="opts">
+          <label><input type="radio" name="tone" value="Простой, по-дружески">Простой, по-дружески</label>
+          <label><input type="radio" name="tone" value="Строго и по делу">Строго и по делу</label>
+          <label><input type="radio" name="tone" value="Премиально, сдержанно">Премиально, сдержанно</label>
+        </div>
+      </div>
+      <div class="q"><label class="t">Слова или формулировки, которые точно нельзя использовать</label><input type="text" name="forbidden"></div>
+    </div>
+
+    <div class="card">
+      <div class="sec-h"><span class="num">8</span>Технические детали</div>
+      <div class="q"><label class="t">Желаемое имя домена — 1–2 варианта</label><input type="text" name="domain"></div>
+      <div class="q"><label class="t">Уже есть сайт? Ссылка</label><input type="text" name="existing_site"></div>
+      <div class="q"><label class="t">Нужна ли онлайн-запись с выбором времени, или достаточно кнопки «Написать»?</label><input type="text" name="booking_type"></div>
+      <div class="q"><label class="t">Нужна ли карта проезда на сайте?</label>
+        <div class="opts">
+          <label><input type="radio" name="map_needed" value="Да">Да</label>
+          <label><input type="radio" name="map_needed" value="Нет">Нет</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="sec-h"><span class="num">9</span>Что важно лично вам</div>
+      <div class="sec-sub">Финальный штрих — то, что формально не спросишь, но сильно влияет на результат</div>
+      <div class="q"><label class="t">Что обязательно должно быть на сайте — без вариантов</label><textarea name="must_have"></textarea></div>
+      <div class="q"><label class="t">Что точно не должно быть / что раздражает на сайтах конкурентов</label><textarea name="must_not"></textarea></div>
+      <div class="q"><label class="t">1–3 сайта (любой ниши), которые нравятся визуально — просто ссылки</label><textarea name="refs"></textarea></div>
+    </div>
+
+    <div class="send">
+      <h2>Готово?</h2>
+      <p>Отправьте — я отвечу в тот же день и пришлю первый макет.</p>
+      <button class="btn" type="submit">Отправить бриф</button>
+      <p id="hint" class="hint">Быстрее всего — <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener">написать в Telegram</a>, если появятся вопросы.</p>
+    </div>
+  </form>
+  </div>
+
+  <div id="ok">
+    <div class="mark">✓</div>
+    <h1>Спасибо!</h1>
+    <p>Бриф получил, посмотрю сегодня и пришлю первый макет. Если что-то захотите дополнить — просто напишите в <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--lime);font-weight:600">Telegram</a>.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var f=document.getElementById('brief');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=f.querySelector('.btn'),hint=document.getElementById('hint');
+    var fd=new FormData(f),data={};
+    fd.forEach(function(v,k){
+      if(data[k]!==undefined){
+        data[k]=Array.isArray(data[k])?data[k].concat(v):[data[k],v];
+      }else{data[k]=v;}
+    });
+    Object.keys(data).forEach(function(k){if(Array.isArray(data[k]))data[k]=data[k].join(', ');});
+    btn.disabled=true;btn.textContent='Отправляю…';
+    fetch('/api/brief',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+      .then(function(r){return r.ok?r.json():Promise.reject();})
+      .then(function(){
+        document.getElementById('formwrap').style.display='none';
+        document.getElementById('ok').style.display='block';
+        window.scrollTo(0,0);
+      })
+      .catch(function(){
+        btn.disabled=false;btn.textContent='Отправить бриф';
+        hint.textContent='Не получилось отправить. Попробуйте ещё раз или напишите в Telegram.';
+      });
+  });
+})();
+</script>
+</body>
+</html>
