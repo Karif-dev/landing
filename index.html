@@ -164,7 +164,7 @@ footer{grid-column:span 12;display:flex;justify-content:space-between;color:var(
 
 <div class="t c4 lime rv flex" id="price">
   <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h6a4 4 0 0 1 0 8H7M7 4v16M5 16h9"/></svg></span><div class="lbl">Цена</div></div>
-  <div><div class="big"><span id="cnt">15&nbsp;000</span>₽</div><p>под ключ, без скрытых платежей</p><ul class="pl"><li>Домен на год</li><li>20 правок</li><li>Запуск</li></ul></div>
+  <div><div class="big"><span id="cnt">15&nbsp;000</span>₽</div><p>под ключ, без скрытых платежей</p><ul class="pl"><li>Домен на год</li><li>10 правок</li><li>Запуск</li></ul></div>
 </div>
 
 <div class="t c4 vio rv flex">
@@ -236,21 +236,21 @@ footer{grid-column:span 12;display:flex;justify-content:space-between;color:var(
   <div class="lbl">Без риска</div>
   <h2>Сначала бесплатный макет главного экрана</h2>
   <p>Расскажите о бизнесе, и я пришлю макет главного экрана вашего сайта. Понравится, продолжаем и оплачиваете. Нет, вы ничего не потеряли.</p>
-  <ul class="inc" style="margin-top:20px"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Оплата только после того, как макет вам понравился</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>До 20 правок макета входит в цену</li></ul>
+  <ul class="inc" style="margin-top:20px"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Оплата только после того, как макет вам понравился</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>До 10 правок макета входит в цену</li></ul>
 </div>
 <form class="t c5 rv" id="req" autocomplete="off">
   <div class="lbl">Заявка за минуту</div>
   <label>Чем занимаетесь<input name="biz" placeholder="Например, барбершоп" required></label>
   <label>Город<input name="city" placeholder="Например, Брянск"></label>
   <label>Как к вам обращаться<input name="name" placeholder="Имя"></label>
-  <button class="btn" type="submit">Отправить в Telegram →</button>
-  <p id="hint" class="hint">Откроется Telegram, текст сообщения уже готов.</p>
+  <button class="btn" type="submit">Оставить заявку</button>
+  <p id="hint" class="hint">Я свяжусь с вами сам. Быстрее всего — <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--lime);font-weight:600">написать в Telegram</a>.</p>
 </form>
 
 <div class="t c12 faq rv" id="faq">
   <div class="lbl">Вопросы</div>
   <h2>Частые вопросы</h2>
-  <details><summary>Что если макет не понравится?</summary><p>Сначала согласуем макет, и только потом вёрстка и запуск. В стоимость входит до 20 правок макета.</p></details>
+  <details><summary>Что если макет не понравится?</summary><p>Сначала согласуем макет, и только потом вёрстка и запуск. В стоимость входит до 10 правок макета.</p></details>
   <details><summary>Почему так быстро и недорого?</summary><p>Работаю один, без агентства и менеджеров, поэтому нет лишних наценок и долгих согласований. Вы общаетесь напрямую со мной.</p></details>
   <details><summary>Домен правда входит в цену?</summary><p>Да, домен на 1 год уже в 15 000 ₽ и оформляется на вас. Со второго года продление по тарифу регистратора, цену скажу заранее.</p></details>
   <details><summary>Кто пишет тексты и берёт фото?</summary><p>Тексты пишу я по вашим ответам. Фото лучше ваши: работы, интерьер, мастера. Если их нет, подскажу, как быстро снять.</p></details>
@@ -281,13 +281,17 @@ footer{grid-column:span 12;display:flex;justify-content:space-between;color:var(
   if(f){f.addEventListener('submit',function(e){
     e.preventDefault();
     var d=new FormData(f),biz=d.get('biz')||'',city=d.get('city')||'',name=d.get('name')||'';
-    var t='Здравствуйте! Хочу сайт. Бизнес: '+biz+(city?', город: '+city:'')+(name?'. Меня зовут '+name:'')+'. Пришлите бесплатный макет главного экрана.';
     var hint=document.getElementById('hint'),btn=f.querySelector('.btn');
-    btn.disabled=true;btn.style.opacity=.7;
+    btn.disabled=true;btn.style.opacity=.7;btn.textContent='Отправляю…';
     fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({biz:biz,city:city,name:name,source:'form'})})
-      .then(function(){hint.textContent='Заявка сохранена. Открываю Telegram — если поле пустое, просто отправьте, я всё увижу.'})
-      .catch(function(){hint.textContent='Открываю Telegram — если поле пустое, просто отправьте, я всё увижу.'})
-      .finally(function(){btn.disabled=false;btn.style.opacity='';try{navigator.clipboard.writeText(t)}catch(x){}window.open('https://t.me/K_Sofrin?text='+encodeURIComponent(t),'_blank')});
+      .then(function(r){if(!r.ok)throw 0;
+        btn.textContent='Заявка отправлена ✓';
+        hint.innerHTML='Спасибо! Я отвечу в течение дня. Хотите быстрее — <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--lime);font-weight:600">напишите в Telegram</a>.';
+        f.reset();
+      })
+      .catch(function(){btn.disabled=false;btn.style.opacity='';btn.textContent='Оставить заявку';
+        hint.textContent='Не получилось отправить. Попробуйте ещё раз или напишите в Telegram.';
+      });
   })}
   var w=document.getElementById('word'),L=['барбершопа','салона красоты','автосервиса','кафе','бизнеса'],i=0,j=0,del=false;
   if(!rm){(function tick(){var s=L[i];w.textContent=s.slice(0,j);
