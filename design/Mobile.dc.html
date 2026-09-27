@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Лендинг под ключ, мобильная версия</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Unbounded:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0A0A0C;font-family:'Manrope',system-ui,sans-serif;color:#F2F0EA}
+a{color:#F2F0EA;text-decoration:none}a:hover{color:#C6FF3D}
+@keyframes orbA{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,30px) scale(1.15)}}
+@keyframes orbB{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-40px,-30px) scale(1.2)}}
+@keyframes gridMove{from{background-position:0 0}to{background-position:48px 48px}}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes sway{0%,100%{transform:rotateX(14deg) rotateY(-28deg)}50%{transform:rotateX(6deg) rotateY(24deg)}}
+@keyframes floatFront{0%,100%{transform:translateZ(130px) translateY(0)}50%{transform:translateZ(130px) translateY(-16px)}}
+@keyframes floatChip{0%,100%{transform:translateZ(80px) translateY(0)}50%{transform:translateZ(80px) translateY(14px)}}
+.orbA{animation:orbA 14s ease-in-out infinite}
+.orbB{animation:orbB 18s ease-in-out infinite}
+.grid{animation:gridMove 6s linear infinite}
+.r1{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.r2{animation:rise .9s .15s cubic-bezier(.2,.7,.2,1) both}
+.r3{animation:rise .9s .3s cubic-bezier(.2,.7,.2,1) both}
+.r4{animation:rise .9s .45s cubic-bezier(.2,.7,.2,1) both}
+.ticker{animation:ticker 24s linear infinite}
+.sway{animation:sway 9s ease-in-out infinite}
+.floatFront{animation:floatFront 4s ease-in-out infinite}
+.floatChip{animation:floatChip 5s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.orbA,.orbB,.grid,.ticker,.r1,.r2,.r3,.r4,.sway,.floatFront,.floatChip{animation:none}}
+</style>
+</helmet>
+<div id="top" style="width: 390px; height: 2130px; box-sizing: border-box; display: flex; flex-direction: column; background: #0A0A0C; color: #F2F0EA; font-family: 'Manrope', system-ui, sans-serif">
+
+<!-- NAV -->
+<div style="height: 72px; box-sizing: border-box; padding: 0 24px; display: flex; align-items: center; justify-content: space-between">
+<a href="#top" style="font-family: 'Unbounded', 'Manrope', sans-serif; font-size: 16px; font-weight: 600; line-height: 24px">Кирилл</a>
+<a href="#contacts" style="height: 44px; box-sizing: border-box; padding: 0 20px; display: flex; align-items: center; border-radius: 22px; border: 1px solid #3A3A40; font-size: 14px; font-weight: 600">Контакты</a>
+</div>
+
+<!-- HERO -->
+<div style="position: relative; height: 840px; box-sizing: border-box; padding: 24px; display: flex; flex-direction: column; overflow: hidden">
+<div class="grid" style="position: absolute; left: 0; top: 0; width: 390px; height: 840px; background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 48px 48px; -webkit-mask-image: radial-gradient(ellipse at 50% 50%, #000 20%, transparent 75%); mask-image: radial-gradient(ellipse at 50% 50%, #000 20%, transparent 75%)"></div>
+<div class="orbA" style="position: absolute; left: 120px; top: 380px; width: 300px; height: 300px; border-radius: 150px; background: radial-gradient(circle, {{accent}} 0%, transparent 70%); opacity: 0.28; filter: blur(40px)"></div>
+<div class="orbB" style="position: absolute; left: 20px; top: 520px; width: 280px; height: 280px; border-radius: 140px; background: radial-gradient(circle, #6C4DFF 0%, transparent 70%); opacity: 0.4; filter: blur(40px)"></div>
+<div style="position: relative; display: flex; flex-direction: column; align-items: flex-start">
+<div class="r1" style="font-size: 12px; font-weight: 700; line-height: 20px; letter-spacing: 0.14em; text-transform: uppercase; color: {{accent}}">Веб-разработчик</div>
+<h1 class="r2" style="margin: 20px 0 0 0; width: 342px; font-family: 'Unbounded', 'Manrope', sans-serif; font-size: 36px; font-weight: 500; line-height: 44px; letter-spacing: -0.03em">Делаю лендинги, которые продают</h1>
+<p class="r3" style="margin: 20px 0 0 0; width: 342px; font-size: 18px; line-height: 28px; color: #A9A7A0">Я Кирилл. Лендинг под ключ: от идеи и дизайна до запуска.</p>
+<div class="r4" style="margin-top: 32px; width: 342px; display: flex; flex-direction: column; gap: 12px">
+<a href="#contacts" style="height: 56px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border-radius: 28px; background: {{accent}}; color: #0A0A0C; font-size: 16px; font-weight: 700">Обсудить проект</a>
+<a href="#services" style="height: 56px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border-radius: 28px; border: 1px solid #3A3A40; font-size: 16px; font-weight: 700">Стоимость</a>
+</div>
+</div>
+
+<!-- 3D SCENE -->
+<div style="position: relative; margin-top: 24px; width: 312px; height: 312px; align-self: center">
+<div style="position: absolute; left: 0; top: 0; width: 520px; height: 520px; transform: scale(0.6); transform-origin: 0 0; perspective: 1400px">
+<div class="sway" style="position: absolute; left: 0; top: 0; width: 520px; height: 520px; transform-style: preserve-3d">
+<div style="position: absolute; left: 80px; top: 130px; width: 360px; height: 260px; box-sizing: border-box; border: 1px solid {{accent}}; border-radius: 20px; opacity: 0.55; transform: translateZ(-100px)"></div>
+<div style="position: absolute; left: 80px; top: 130px; width: 360px; height: 260px; box-sizing: border-box; display: flex; flex-direction: column; background: #131316; border: 1px solid #3A3A40; border-radius: 20px; overflow: hidden; transform: translateZ(0)">
+<div style="height: 40px; box-sizing: border-box; padding: 0 16px; display: flex; align-items: center; gap: 6px; border-bottom: 1px solid #26262B">
+<div style="width: 8px; height: 8px; border-radius: 4px; background: #F2F0EA"></div>
+<div style="width: 8px; height: 8px; border-radius: 4px; background: #F2F0EA; opacity: 0.4"></div>
+<div style="width: 8px; height: 8px; border-radius: 4px; background: #F2F0EA; opacity: 0.2"></div>
+</div>
+<div style="flex-grow: 1; box-sizing: border-box; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<div style="width: 70%; height: 14px; border-radius: 7px; background: #F2F0EA"></div>
+<div style="width: 46%; height: 14px; border-radius: 7px; background: #F2F0EA"></div>
+<div style="width: 86%; height: 8px; border-radius: 4px; background: #3A3A40; margin-top: 8px"></div>
+<div style="width: 64%; height: 8px; border-radius: 4px; background: #3A3A40"></div>
+<div style="width: 104px; height: 32px; border-radius: 16px; background: {{accent}}; margin-top: auto"></div>
+</div>
+</div>
+<div class="floatFront" style="position: absolute; left: 250px; top: 300px; width: 190px; height: 88px; box-sizing: border-box; padding: 0 20px; display: flex; flex-direction: column; justify-content: center; background: {{accent}}; color: #0A0A0C; border-radius: 16px; transform: translateZ(130px)">
+<div style="font-size: 12px; font-weight: 700; line-height: 16px">Лендинг под ключ</div>
+<div style="font-family: 'Unbounded', 'Manrope', sans-serif; font-size: 24px; font-weight: 600; line-height: 32px">15 000 ₽</div>
+</div>
+<div class="floatChip" style="position: absolute; left: 44px; top: 96px; width: 72px; height: 72px; box-sizing: border-box; border: 1px solid {{accent}}; border-radius: 36px; background: rgba(198,255,61,0.08); transform: translateZ(80px)"></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- TICKER -->
+<div style="height: 56px; box-sizing: border-box; display: flex; align-items: center; overflow: hidden; border-top: 1px solid #26262B; border-bottom: 1px solid #26262B">
+<div class="ticker" style="display: flex; align-items: center; width: max-content">
+<div style="display: flex; align-items: center; gap: 24px; padding-right: 24px; white-space: nowrap; font-family: 'Unbounded', 'Manrope', sans-serif; font-size: 14px; font-weight: 500; line-height: 20px; text-transform: uppercase; color: #A9A7A0">
+<span>Лендинг под ключ</span><div style="width: 6px; height: 6px; background: {{accent}}"></div><span>Дизайн</span><div style="width: 6px; height: 6px; background: {{accent}}"></div><span>Адаптив</span><div style="width: 6px; height: 6px; background: {{accent}}"></div><span>15 000 ₽</span><div style="width: 6px; height: 6px; background: {{accent}}"></div><span>Запуск</span><div style="width: 6px; height: 6px; background: {{accent}}"></div>
+</div>
+<div style="display: flex; align-items: center; gap: 24px; padding-right: 24px; white-space: nowrap; font-family: 'Unbounded', 'Manrope', sans-serif; font-size: 14px; font-weight: 500; line-height: 20px; text-transform: uppercase; color: #A9A7A0">
+<span>Лендинг под ключ</span><div style="width: 6px; height: 6px; background: {{accent}}"></div><span>Дизайн</span><div style="width: 6px; height: 6px; background: {{accent}}"></div><span>Адаптив</span><div style="width: 6px; height: 6px; background: {{accent}}"></div><span>15 000 ₽</span><div style="width: 6px; height: 6px; background: {{accent}}"></div><span>Запуск</span><div style="width: 6px; height: 6px; background: {{accent}}"></div>
+</div>
+</div>
+</div>
+
+<!-- OFFER -->
+<div id="services" style="height: 558px; box-sizing: border-box; padding: 48px 24px">
+<div style="height: 462px; box-sizing: border-box; padding: 24px; display: flex; flex-direction: column; background: #131316; border: 1px solid #26262B; border-radius: 24px">
+<div style="font-family: 'Unbounded', 'Manrope', sans-serif; font-size: 24px; font-weight: 500; line-height: 32px">Лендинг под ключ</div>
+<p style="margin: 8px 0 0 0; font-size: 15px; line-height: 24px; color: #A9A7A0">Одна страница, которая подводит клиента к заявке.</p>
+<div style="margin-top: 20px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 600; line-height: 24px"><div style="width: 8px; height: 8px; flex-shrink: 0; background: {{accent}}"></div>Дизайн под вас</div>
+<div style="display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 600; line-height: 24px"><div style="width: 8px; height: 8px; flex-shrink: 0; background: {{accent}}"></div>Версия для телефона</div>
+<div style="display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 600; line-height: 24px"><div style="width: 8px; height: 8px; flex-shrink: 0; background: {{accent}}"></div>Форма заявки</div>
+<div style="display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 600; line-height: 24px"><div style="width: 8px; height: 8px; flex-shrink: 0; background: {{accent}}"></div>Запуск на домене</div>
+</div>
+<div style="margin-top: 24px; font-size: 13px; font-weight: 600; line-height: 18px; color: #A9A7A0">Стоимость</div>
+<div style="margin-top: 4px; font-family: 'Unbounded', 'Manrope', sans-serif; font-size: 44px; font-weight: 500; line-height: 52px; color: {{accent}}">15 000 ₽</div>
+<a href="#contacts" style="margin-top: auto; height: 56px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border-radius: 28px; background: {{accent}}; color: #0A0A0C; font-size: 16px; font-weight: 700">Заказать</a>
+</div>
+</div>
+
+<!-- CONTACTS -->
+<div id="contacts" style="height: 532px; box-sizing: border-box; padding: 48px 24px; display: flex; flex-direction: column; border-top: 1px solid #26262B">
+<h2 style="margin: 0; height: 120px; font-family: 'Unbounded', 'Manrope', sans-serif; font-size: 32px; font-weight: 500; line-height: 40px; letter-spacing: -0.02em">Давайте сделаем ваш лендинг</h2>
+<p style="margin: 16px 0 0 0; height: 52px; font-size: 16px; line-height: 26px; color: #A9A7A0">Напишите о задаче, отвечу с оценкой сроков.</p>
+<div style="margin-top: 32px; display: flex; flex-direction: column">
+<a href="https://t.me/" style="height: 72px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #3A3A40; border-bottom: 1px solid #26262B">
+<div style="display: flex; flex-direction: column">
+<div style="font-size: 13px; font-weight: 600; line-height: 18px; color: #A9A7A0">Telegram</div>
+<div style="font-size: 18px; font-weight: 700; line-height: 26px">[@ваш_username]</div>
+</div>
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+</a>
+<a href="mailto:" style="height: 72px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #26262B">
+<div style="display: flex; flex-direction: column">
+<div style="font-size: 13px; font-weight: 600; line-height: 18px; color: #A9A7A0">Почта</div>
+<div style="font-size: 18px; font-weight: 700; line-height: 26px">[ваша@почта.ру]</div>
+</div>
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+</a>
+<a href="tel:" style="height: 72px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #26262B">
+<div style="display: flex; flex-direction: column">
+<div style="font-size: 13px; font-weight: 600; line-height: 18px; color: #A9A7A0">Телефон</div>
+<div style="font-size: 18px; font-weight: 700; line-height: 26px">[+7 000 000-00-00]</div>
+</div>
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+</a>
+</div>
+</div>
+
+<!-- FOOTER -->
+<div style="height: 72px; box-sizing: border-box; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #26262B; color: #A9A7A0">
+<div style="font-size: 14px; line-height: 20px">© 2026 Кирилл</div>
+<a href="#top" style="font-size: 14px; font-weight: 600; line-height: 20px">Наверх</a>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#C6FF3D","options":["#C6FF3D","#5EEAD4","#FF6B3D","#B79CFF"]},"$preview":{"width":390,"height":2130}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#C6FF3D' };
+  }
+}
+</script>
+</body>
+</html>

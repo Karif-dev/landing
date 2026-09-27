@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кирилл — лендинг под ключ за 15 000 ₽</title>
+<meta name="description" content="Делаю лендинги под ключ: дизайн, версия для телефона, форма заявки и запуск. 15 000 ₽.">
+<meta name="theme-color" content="#FFD60A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#111;--paper:#FFFBF0;--yellow:#FFD60A;--pink:#FF5DA2;--blue:#3B5BFF;
+  --bw:3px;--shadow:6px 6px 0 var(--ink);
+  --ease:cubic-bezier(.16,1,.3,1);
+  --pad:clamp(20px,4.5vw,64px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Rubik',system-ui,sans-serif;line-height:1.5;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:700}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:60px;padding:0 32px;border:var(--bw) solid var(--ink);background:#fff;color:var(--ink);font-weight:800;font-size:18px;text-transform:uppercase;letter-spacing:.02em;box-shadow:var(--shadow);cursor:pointer;transition:transform .2s var(--ease),box-shadow .2s var(--ease),background .2s}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
+.btn:active{transform:translate(6px,6px);box-shadow:0 0 0 var(--ink)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-pink{background:var(--pink)}
+.btn svg{width:22px;height:22px}
+
+/* ticker */
+.ticker-wrap{overflow:hidden;background:var(--ink);color:var(--yellow);border-bottom:var(--bw) solid var(--ink)}
+.ticker{display:flex;width:max-content;animation:tick 30s linear infinite}
+.ticker span{padding:12px 28px;font-size:14px;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
+.ticker.big{animation-duration:38s}
+.ticker.big span{font-family:'Rubik',sans-serif;font-weight:900;font-size:clamp(28px,4vw,52px);letter-spacing:-.01em;padding:18px 32px;line-height:1}
+.ticker.big i{display:inline-block;width:.5em;height:.5em;margin-left:64px;background:var(--pink);border-radius:50%;vertical-align:middle}
+.band{background:var(--ink);color:#fff;border-top:var(--bw) solid var(--ink);border-bottom:var(--bw) solid var(--ink);overflow:hidden}
+
+/* nav */
+.nav{background:var(--yellow);border-bottom:var(--bw) solid var(--ink)}
+.nav .wrap{height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:inline-flex;align-items:center;height:44px;padding:0 16px;background:var(--ink);color:var(--yellow);font-weight:900;font-size:22px;text-transform:uppercase;letter-spacing:-.01em}
+.nav-r{display:flex;align-items:center;gap:8px}
+.nav-link{min-height:44px;padding:0 16px;display:inline-flex;align-items:center;font-weight:700;text-transform:uppercase;font-size:14px;letter-spacing:.04em}
+.nav-link:hover{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:6px}
+.nav .btn{min-height:48px;font-size:14px;padding:0 22px;box-shadow:4px 4px 0 var(--ink)}
+
+/* hero */
+.hero{background:var(--yellow);border-bottom:var(--bw) solid var(--ink);position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr);gap:32px;align-items:center;padding-top:clamp(32px,6vw,80px);padding-bottom:clamp(40px,6vw,88px)}
+.tag{display:inline-block;padding:8px 14px;background:var(--ink);color:#fff;font-size:13px;text-transform:uppercase;letter-spacing:.08em;transform:rotate(-2deg)}
+h1{margin:24px 0 0;font-weight:900;font-size:clamp(46px,7.4vw,120px);line-height:.88;letter-spacing:-.045em;text-transform:uppercase}
+h1 .hl{display:inline-block;white-space:nowrap;background:var(--ink);color:var(--yellow);padding:0 .12em;transform:rotate(-1.5deg);margin-top:.06em}
+.lead{margin:32px 0 0;max-width:30em;font-size:clamp(18px,1.6vw,22px);font-weight:500}
+.hero-cta{margin-top:36px;display:flex;flex-wrap:wrap;gap:20px}
+
+/* cube */
+.cube-wrap{position:relative;display:grid;place-items:center;min-height:380px}
+.cube-scene{width:220px;height:220px;perspective:900px}
+.cube{position:relative;width:100%;height:100%;transform-style:preserve-3d;animation:spin 16s linear infinite}
+.cube-wrap:hover .cube{animation-play-state:paused}
+.face{position:absolute;inset:0;display:grid;place-items:center;border:var(--bw) solid var(--ink);font-weight:900;font-size:26px;text-transform:uppercase;text-align:center;line-height:1.05;padding:8px}
+.f1{background:#fff;transform:translateZ(110px)}
+.f2{background:var(--ink);color:var(--yellow);transform:rotateY(180deg) translateZ(110px)}
+.f3{background:var(--pink);transform:rotateY(90deg) translateZ(110px)}
+.f4{background:var(--blue);color:#fff;transform:rotateY(-90deg) translateZ(110px)}
+.f5{background:#fff;transform:rotateX(90deg) translateZ(110px)}
+.f6{background:var(--pink);transform:rotateX(-90deg) translateZ(110px)}
+.badge{position:absolute;right:-10px;bottom:-6px;width:150px;height:150px;border-radius:50%;background:var(--paper);border:var(--bw) solid var(--ink);display:grid;place-items:center;box-shadow:var(--shadow)}
+.badge svg{position:absolute;inset:0;width:100%;height:100%;animation:rot 18s linear infinite}
+.badge text{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;fill:var(--ink)}
+.badge b{font-size:22px;font-weight:900;letter-spacing:-.03em}
+.shadow-floor{position:absolute;bottom:34px;left:50%;width:200px;height:26px;margin-left:-100px;border-radius:50%;background:rgba(17,17,17,.22);filter:blur(6px);animation:floor 16s ease-in-out infinite}
+
+/* sections */
+section{padding:clamp(56px,9vw,120px) 0}
+.h2{margin:0;font-weight:900;font-size:clamp(40px,7vw,104px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase}
+.kicker{display:inline-block;margin-bottom:20px;padding:6px 12px;border:var(--bw) solid var(--ink);background:#fff;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+
+/* list */
+.list{margin-top:clamp(32px,5vw,64px);border-top:var(--bw) solid var(--ink)}
+.item{display:grid;grid-template-columns:120px minmax(0,1.1fr) minmax(0,1fr) 56px;gap:24px;align-items:center;padding:28px 12px;border-bottom:var(--bw) solid var(--ink);transition:background .25s,padding .35s var(--ease)}
+.item:hover{background:var(--yellow);padding-left:28px}
+.item .n{font-weight:900;font-size:clamp(44px,5vw,72px);line-height:1;letter-spacing:-.04em;-webkit-text-stroke:2px var(--ink);color:transparent;transition:color .25s}
+.item:hover .n{color:var(--ink)}
+.item h3{margin:0;font-weight:900;font-size:clamp(24px,2.8vw,40px);line-height:1;letter-spacing:-.02em;text-transform:uppercase}
+.item p{margin:0;font-size:18px;font-weight:500;max-width:26em}
+.item .ar{width:56px;height:56px;border:var(--bw) solid var(--ink);border-radius:50%;display:grid;place-items:center;background:#fff;transition:transform .4s var(--ease),background .25s}
+.item:hover .ar{transform:rotate(-45deg);background:var(--ink);color:#fff}
+.item .ar svg{width:24px;height:24px}
+
+/* price */
+.price{background:var(--pink);border-top:var(--bw) solid var(--ink);border-bottom:var(--bw) solid var(--ink)}
+.price .wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:center}
+.price .big{font-weight:900;font-size:clamp(64px,15vw,240px);line-height:.85;letter-spacing:-.06em;white-space:nowrap}
+.price .big small{font-size:.5em;letter-spacing:-.02em;margin-left:.06em}
+.price p{margin:20px 0 0;max-width:24em;font-size:20px;font-weight:600}
+.price-box{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.stamp{display:inline-block;padding:10px 16px;background:var(--ink);color:var(--pink);font-size:13px;text-transform:uppercase;letter-spacing:.08em;transform:rotate(3deg)}
+
+/* contacts */
+.contacts{background:var(--blue);color:#fff;border-bottom:var(--bw) solid var(--ink)}
+.contacts .h2{color:#fff}
+.contacts .kicker{color:var(--ink)}
+.contacts p.sub{margin:24px 0 0;font-size:20px;font-weight:500;max-width:26em}
+.rows{margin-top:clamp(32px,5vw,56px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.row{display:flex;flex-direction:column;gap:12px;min-height:150px;padding:24px;background:#fff;color:var(--ink);border:var(--bw) solid var(--ink);box-shadow:var(--shadow);transition:transform .2s var(--ease),box-shadow .2s var(--ease),background .2s}
+.row:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink);background:var(--yellow)}
+.row:active{transform:translate(6px,6px);box-shadow:0 0 0 var(--ink)}
+.row small{font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+.row .v{margin-top:auto;font-weight:900;font-size:clamp(20px,2vw,26px);line-height:1.1;letter-spacing:-.02em;overflow-wrap:anywhere}
+
+footer{background:var(--ink);color:#fff}
+footer .wrap{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:14px}
+footer a{min-height:44px;display:inline-flex;align-items:center;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+footer a:hover{color:var(--yellow)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(32px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+@keyframes tick{to{transform:translateX(-50%)}}
+@keyframes spin{from{transform:rotateX(-24deg) rotateY(0)}to{transform:rotateX(-24deg) rotateY(360deg)}}
+@keyframes rot{to{transform:rotate(360deg)}}
+@keyframes floor{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.82)}}
+
+@media (max-width:1000px){
+  .hero .wrap{grid-template-columns:1fr}
+  .cube-wrap{min-height:320px}
+  .item{grid-template-columns:64px minmax(0,1fr) 48px;gap:8px 16px}
+  .item p{grid-column:1/-1;grid-row:2}
+  .item .ar{grid-column:3;grid-row:1;width:48px;height:48px}
+  .price .wrap{grid-template-columns:1fr}
+  .rows{grid-template-columns:1fr}
+  .row{min-height:120px}
+}
+@media (max-width:600px){
+  .nav-link{display:none}
+  .nav .wrap{height:68px}
+  .logo{font-size:18px}
+  .hero-cta .btn{flex:1 1 100%}
+  .cube-scene{width:170px;height:170px}
+  .face{font-size:20px}
+  .f1{transform:translateZ(85px)}.f2{transform:rotateY(180deg) translateZ(85px)}
+  .f3{transform:rotateY(90deg) translateZ(85px)}.f4{transform:rotateY(-90deg) translateZ(85px)}
+  .f5{transform:rotateX(90deg) translateZ(85px)}.f6{transform:rotateX(-90deg) translateZ(85px)}
+  .badge{width:118px;height:118px;right:0}
+  .badge b{font-size:17px}
+  .item{padding:20px 4px}
+  .item:hover{padding-left:12px}
+  footer .wrap{flex-direction:column;align-items:flex-start;padding-top:20px;padding-bottom:20px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  .cube{transform:rotateX(-24deg) rotateY(-30deg)}
+}
+</style>
+</head>
+<body id="top">
+
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker mono">
+    <span>Свободен для заказов /</span><span>Лендинг под ключ /</span><span>15 000 ₽ /</span><span>Дизайн + вёрстка + запуск /</span><span>Свободен для заказов /</span><span>Лендинг под ключ /</span><span>15 000 ₽ /</span><span>Дизайн + вёрстка + запуск /</span>
+    <span>Свободен для заказов /</span><span>Лендинг под ключ /</span><span>15 000 ₽ /</span><span>Дизайн + вёрстка + запуск /</span><span>Свободен для заказов /</span><span>Лендинг под ключ /</span><span>15 000 ₽ /</span><span>Дизайн + вёрстка + запуск /</span>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">Кирилл</a>
+    <nav class="nav-r" aria-label="Главная навигация">
+      <a class="nav-link" href="#what">Что входит</a>
+      <a class="nav-link" href="#price">Цена</a>
+      <a class="btn btn-dark" href="#contacts">Написать</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div>
+      <span class="tag mono rv">Веб-разработчик</span>
+      <h1 class="rv d1">Лендинг <span class="hl">под ключ</span> за 15&nbsp;000&nbsp;₽</h1>
+      <p class="lead rv d2">Я Кирилл. Рисую, верстаю и запускаю одну страницу, которая приводит вам клиентов. Без агентств и лишних слов.</p>
+      <div class="hero-cta rv d3">
+        <a class="btn btn-dark" href="#contacts">Обсудить проект
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+        <a class="btn" href="#what">Что входит</a>
+      </div>
+    </div>
+
+    <div class="cube-wrap rv d2" aria-hidden="true">
+      <div class="cube-scene">
+        <div class="cube">
+          <div class="face f1">Сайт</div>
+          <div class="face f2">15 000 ₽</div>
+          <div class="face f3">Заявки</div>
+          <div class="face f4">Дизайн</div>
+          <div class="face f5">Запуск</div>
+          <div class="face f6">Адаптив</div>
+        </div>
+      </div>
+      <div class="shadow-floor"></div>
+      <div class="badge">
+        <svg viewBox="0 0 150 150"><defs><path id="c" d="M75,75 m-54,0 a54,54 0 1,1 108,0 a54,54 0 1,1 -108,0"/></defs><text><textPath href="#c">Пиши сейчас / отвечу быстро / </textPath></text></svg>
+        <b>→</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="band" aria-hidden="true">
+  <div class="ticker big">
+    <span>Дизайн<i></i></span><span>Версия для телефона<i></i></span><span>Форма заявки<i></i></span><span>Запуск на домене<i></i></span>
+    <span>Дизайн<i></i></span><span>Версия для телефона<i></i></span><span>Форма заявки<i></i></span><span>Запуск на домене<i></i></span>
+    <span>Дизайн<i></i></span><span>Версия для телефона<i></i></span><span>Форма заявки<i></i></span><span>Запуск на домене<i></i></span>
+    <span>Дизайн<i></i></span><span>Версия для телефона<i></i></span><span>Форма заявки<i></i></span><span>Запуск на домене<i></i></span>
+  </div>
+</div>
+
+<section id="what">
+  <div class="wrap">
+    <span class="kicker mono rv">Что входит</span>
+    <h2 class="h2 rv d1">Всё, чтобы<br>сайт работал</h2>
+    <div class="list">
+      <a class="item rv" href="#contacts">
+        <div class="n">01</div><h3>Дизайн под вас</h3><p>Стиль, цвета и структура под ваш бизнес, а не шаблон из интернета.</p>
+        <div class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></div>
+      </a>
+      <a class="item rv" href="#contacts">
+        <div class="n">02</div><h3>Версия для телефона</h3><p>Сайт одинаково удобен и на телефоне, и на компьютере.</p>
+        <div class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></div>
+      </a>
+      <a class="item rv" href="#contacts">
+        <div class="n">03</div><h3>Форма заявки</h3><p>Клиент оставляет контакт, а вы сразу получаете обращение.</p>
+        <div class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></div>
+      </a>
+      <a class="item rv" href="#contacts">
+        <div class="n">04</div><h3>Запуск на домене</h3><p>Публикую сайт и подключаю адрес, чтобы он открывался у всех.</p>
+        <div class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="price" id="price">
+  <div class="wrap">
+    <div>
+      <span class="stamp mono">Фиксированная цена</span>
+      <div class="big rv">15 000<small>₽</small></div>
+      <p class="rv d1">За всё, что в списке выше. Без скрытых доплат.</p>
+    </div>
+    <div class="price-box rv d2">
+      <a class="btn btn-dark" href="#contacts">Заказать</a>
+    </div>
+  </div>
+</section>
+
+<section class="contacts" id="contacts">
+  <div class="wrap">
+    <span class="kicker mono rv">Контакты</span>
+    <h2 class="h2 rv d1">Напиши<br>мне</h2>
+    <p class="sub rv d2">Расскажи о задаче в паре строк, и я отвечу с оценкой сроков.</p>
+    <!-- TODO: подставьте свои контакты и ссылки -->
+    <div class="rows">
+      <a class="row rv" href="https://t.me/"><small class="mono">Telegram</small><span class="v">[@ваш_username]</span></a>
+      <a class="row rv d1" href="mailto:"><small class="mono">Почта</small><span class="v">[ваша@почта.ру]</span></a>
+      <a class="row rv d2" href="tel:"><small class="mono">Телефон</small><span class="v">[+7 000 000-00-00]</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Кирилл</div>
+    <a href="#top">Наверх</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var items = document.querySelectorAll('.rv');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
+</body>
+</html>
