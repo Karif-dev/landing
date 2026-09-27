@@ -34,7 +34,7 @@ a{color:inherit;text-decoration:none}
 .top:hover{transform:none}
 .menu{display:flex;gap:28px;color:var(--mut);font-size:15px}.menu a:hover{color:#fff}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:52px;padding:0 26px;border-radius:16px;background:var(--lime);color:var(--bg);font:700 16px/1 Inter,system-ui,sans-serif;white-space:nowrap;transition:transform .25s,box-shadow .25s;cursor:pointer;border:0}
-.btn:hover{transform:scale(1.04);box-shadow:0 10px 30px -8px rgba(233,180,76,.6)}
+.btn:hover{transform:scale(1.04);box-shadow:0 10px 30px -8px rgba(79,163,255,.5)}
 .btn.d{background:#23232C;color:var(--fg)}.btn.d:hover{box-shadow:none}
 .btn.sm{height:44px;padding:0 22px;font-size:15px}
 h1{font-size:clamp(38px,5.2vw,74px);line-height:1.02;letter-spacing:-.045em;font-weight:800}
@@ -51,7 +51,7 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.25}
 .ic{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:rgba(255,255,255,.08);margin-bottom:18px}
 .ic svg{width:24px;height:24px}
 .big{white-space:nowrap;font-size:clamp(40px,4.6vw,68px);font-weight:800;letter-spacing:-.05em;line-height:1}
-.lime{background:var(--card);color:var(--fg);border:1px solid var(--acc-line)}.lime:hover{border-color:var(--acc-line)}
+.lime{background:radial-gradient(120% 140% at 100% 0%,rgba(79,163,255,.12),transparent 60%),var(--card);color:var(--fg);border:1px solid var(--acc-line)}.lime:hover{border-color:var(--acc-line)}
 .t.lime p{color:var(--mut)}.lime .ic{background:rgba(79,163,255,.14);color:var(--lime)}.lime .big{color:var(--lime)}
 .vio{background:var(--card);border:1px solid var(--line)}
 .t.vio p{color:var(--mut)}.vio .ic{background:rgba(255,255,255,.08)}
@@ -71,8 +71,6 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.25}
 .pl li{padding:6px 12px;border-radius:99px;border:1px solid var(--acc-line);background:rgba(79,163,255,.08);font-size:14px;font-weight:600;color:var(--lime)}
 .mock{position:absolute;right:-20px;bottom:-30px;width:48%;max-width:470px;transform:rotate(-3deg);transition:transform .5s}
 .wimg{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:left top}
-.hph{position:absolute;right:26px;bottom:34px;width:24%;aspect-ratio:9/18.6;border:5px solid #1d1d25;border-radius:22px;overflow:hidden;box-shadow:0 20px 40px -8px rgba(0,0,0,.85)}
-.hph img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 .hero:hover .mock{transform:rotate(-2deg) translateY(-8px)}
 .win{border:1px solid #3a3a48;border-radius:16px;background:#0E0E14;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.8)}
 .wb{display:flex;align-items:center;gap:6px;padding:10px 12px;border-bottom:1px solid var(--line)}
@@ -107,8 +105,8 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.25}
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
 .tags span{padding:6px 14px;border:1px solid var(--line);border-radius:99px;font-size:14px;color:var(--mut)}
 .chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
-.chips span{display:inline-flex;align-items:center;gap:10px;padding:12px 20px 12px 14px;border:1px solid var(--line);border-radius:99px;background:rgba(255,255,255,.03);font-weight:500;transition:border-color .3s,background .3s}
-.chips span:hover{border-color:var(--lime);background:rgba(233,180,76,.06)}
+.chips a{display:inline-flex;align-items:center;gap:10px;padding:12px 20px 12px 14px;border:1px solid var(--line);border-radius:99px;background:rgba(255,255,255,.03);font-weight:500;transition:border-color .3s,background .3s;cursor:pointer}
+.chips a:hover{border-color:var(--lime);background:rgba(79,163,255,.08)}
 .chips svg{width:20px;height:20px;color:var(--lime)}
 .stp b{font-size:38px;font-weight:800;color:var(--lime);letter-spacing:-.04em;line-height:1}
 .stp .ic{margin-bottom:14px}
@@ -167,7 +165,7 @@ footer{grid-column:span 12;display:flex;justify-content:space-between;color:var(
     <h1 style="position:relative;z-index:2">Сайт для вашего<em id="word">барбершопа</em>за 3 дня</h1>
     <p class="sub">Под ключ, с вашим доменом. Клиенты находят вас, видят цены и записываются.</p>
   </div>
-  <div class="mock" aria-hidden="true"><div class="win"><div class="wb"><i></i><i></i><i></i><div class="wu">knyaz32.ru</div></div><img class="wimg" src="knyaz.webp" alt=""></div><div class="hph"><img src="knyaz-m.webp" alt=""></div></div>
+  <div class="mock" aria-hidden="true"><div class="win"><div class="wb"><i></i><i></i><i></i><div class="wu">knyaz32.ru</div></div><img class="wimg" src="knyaz.webp" alt=""></div></div>
   <div class="row" style="position:relative;z-index:2">
     <a class="btn" href="#req">Оставить заявку →</a>
     <a class="btn d" href="#work">Смотреть работу</a>
@@ -239,12 +237,12 @@ footer{grid-column:span 12;display:flex;justify-content:space-between;color:var(
   <div class="lbl">Кому подойдёт</div>
   <h2>Если у вас есть клиенты, но нет сайта</h2>
   <div class="chips">
-    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg>Барбершопы</span>
-    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2 5 5 .5-3.8 3.4 1.2 5.1L12 14.5 7.6 17l1.2-5.1L5 8.5 10 8z"/></svg>Салоны красоты</span>
-    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg>Автосервисы и детейлинг</span>
-    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v2M12 3v2"/></svg>Кафе и кофейни</span>
-    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c.8-4 4-6 8-6s7.2 2 8 6"/></svg>Частные мастера</span>
-    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10l8-6 8 6v10zM9 20v-6h6v6"/></svg>Студии и клубы</span>
+    <a href="#req"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg>Барбершопы</a>
+    <a href="#req"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2 5 5 .5-3.8 3.4 1.2 5.1L12 14.5 7.6 17l1.2-5.1L5 8.5 10 8z"/></svg>Салоны красоты</a>
+    <a href="#req"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg>Автосервисы и детейлинг</a>
+    <a href="#req"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v2M12 3v2"/></svg>Кафе и кофейни</a>
+    <a href="#req"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c.8-4 4-6 8-6s7.2 2 8 6"/></svg>Частные мастера</a>
+    <a href="#req"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10l8-6 8 6v10zM9 20v-6h6v6"/></svg>Студии и клубы</a>
   </div>
 </div>
 
@@ -270,7 +268,7 @@ footer{grid-column:span 12;display:flex;justify-content:space-between;color:var(
   </label>
   <label id="contact_value_wrap">Контакт<input name="contact_value" id="contact_value" placeholder="@username или номер телефона" required></label>
   <button class="btn" type="submit">Оставить заявку</button>
-  <p id="hint" class="hint">Я свяжусь с вами сам. Быстрее всего — <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--lime);font-weight:600">написать в Telegram</a>.</p>
+  <p id="hint" class="hint">Отвечаю сам, обычно в течение дня. Быстрее всего — <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--lime);font-weight:600">написать в Telegram</a>.</p>
 </form>
 
 <div class="t c12 faq rv" id="faq">
