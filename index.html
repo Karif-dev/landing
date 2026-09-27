@@ -11,12 +11,12 @@
 <meta property="og:image" content="https://karif.up.railway.app/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0B0B0F">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23C6F432'/%3E%3Cpath d='M10 8h4v5l6-5h4l-7 6 7 10h-4.5L14 17.5V24h-4z' fill='%230B0B0F'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23E9B44C'/%3E%3Cpath d='M10 8h4v5l6-5h4l-7 6 7 10h-4.5L14 17.5V24h-4z' fill='%230B0B0F'/%3E%3C/svg%3E">
 <link rel="preload" href="fonts/inter-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 @font-face{font-family:Inter;font-weight:100 900;font-display:swap;src:url(fonts/inter-cyrillic-wght-normal.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
 @font-face{font-family:Inter;font-weight:100 900;font-display:swap;src:url(fonts/inter-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-:root{--bg:#0B0B0F;--card:#15151B;--line:#23232C;--fg:#F4F4F6;--mut:#9A9AA6;--lime:#C6F432;--vio:#1F3B73}
+:root{--bg:#0B0B0F;--card:#15151B;--line:#23232C;--fg:#F4F4F6;--mut:#9A9AA6;--lime:#E9B44C;--vio:#1F3B73}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{background:var(--bg);color:var(--fg);font:400 17px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;padding:16px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
@@ -29,7 +29,7 @@ a{color:inherit;text-decoration:none}
 .top:hover{transform:none}
 .menu{display:flex;gap:28px;color:var(--mut);font-size:15px}.menu a:hover{color:#fff}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:52px;padding:0 26px;border-radius:16px;background:var(--lime);color:var(--bg);font:700 16px/1 Inter,system-ui,sans-serif;white-space:nowrap;transition:transform .25s,box-shadow .25s;cursor:pointer;border:0}
-.btn:hover{transform:scale(1.04);box-shadow:0 10px 30px -8px rgba(198,244,50,.6)}
+.btn:hover{transform:scale(1.04);box-shadow:0 10px 30px -8px rgba(233,180,76,.6)}
 .btn.d{background:#23232C;color:var(--fg)}.btn.d:hover{box-shadow:none}
 .btn.sm{height:44px;padding:0 22px;font-size:15px}
 h1{font-size:clamp(38px,5.2vw,74px);line-height:1.02;letter-spacing:-.045em;font-weight:800}
@@ -47,11 +47,11 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.25}
 .ic svg{width:24px;height:24px}
 .big{white-space:nowrap;font-size:clamp(40px,4.6vw,68px);font-weight:800;letter-spacing:-.05em;line-height:1}
 .lime{background:var(--lime);color:var(--bg);border-color:transparent}.lime:hover{border-color:transparent}
-.t.lime p{color:#2c3a05}.lime .ic{background:rgba(11,11,15,.12)}
+.t.lime p{color:#4a3306}.lime .ic{background:rgba(11,11,15,.12)}
 .vio{background:var(--vio);border-color:transparent}.vio:hover{border-color:transparent}
 .t.vio p{color:#c5d3f0}.vio .ic{background:rgba(255,255,255,.16)}
 .flex{display:flex;flex-direction:column;justify-content:space-between}
-.ava{width:64px;height:64px;border-radius:20px;background:linear-gradient(135deg,var(--lime),#7ee787);display:grid;place-items:center;color:var(--bg);font-weight:800;font-size:28px;margin-bottom:18px}
+.ava{width:64px;height:64px;border-radius:20px;background:linear-gradient(135deg,var(--lime),#f5d48a);display:grid;place-items:center;color:var(--bg);font-weight:800;font-size:28px;margin-bottom:18px}
 .shot{padding:0;min-height:360px;background:#000}
 .shot>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left top}
 .shot .cap{position:absolute;left:16px;bottom:16px;z-index:2;background:rgba(11,11,15,.8);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:8px 14px;border-radius:12px;font-size:14px;font-weight:600}
@@ -80,6 +80,12 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.25}
 .wp .bt{height:28px;width:96px;border-radius:9px;background:var(--lime)}
 .wp .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;background:none;height:64px}.wp .g3 span{border-radius:8px;background:linear-gradient(135deg,#232338,#15151F)}
 :focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:10px}
+#req{display:flex;flex-direction:column;gap:14px}
+#req label{display:grid;gap:6px;font-size:13px;color:var(--mut);font-weight:500}
+#req input{height:50px;border-radius:14px;border:1px solid var(--line);background:#0F0F14;color:var(--fg);padding:0 16px;font:500 16px Inter,system-ui,sans-serif;outline:0;transition:border-color .25s}
+#req input:focus{border-color:var(--lime)}
+#req .btn{margin-top:4px;width:100%}
+#req .hint{font-size:13px;margin:0;text-align:center}
 .stats{display:flex;gap:28px;margin:22px 0 26px;flex-wrap:wrap}
 .stats b{display:block;font-size:34px;font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--lime)}
 .stats span{font-size:13px;color:var(--mut)}
@@ -87,7 +93,7 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.25}
 .tags span{padding:6px 14px;border:1px solid var(--line);border-radius:99px;font-size:14px;color:var(--mut)}
 .chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
 .chips span{display:inline-flex;align-items:center;gap:10px;padding:12px 20px 12px 14px;border:1px solid var(--line);border-radius:99px;background:rgba(255,255,255,.03);font-weight:500;transition:border-color .3s,background .3s}
-.chips span:hover{border-color:var(--lime);background:rgba(198,244,50,.06)}
+.chips span:hover{border-color:var(--lime);background:rgba(233,180,76,.06)}
 .chips svg{width:20px;height:20px;color:var(--lime)}
 .stp b{font-size:38px;font-weight:800;color:var(--lime);letter-spacing:-.04em;line-height:1}
 .stp .ic{margin-bottom:14px}
@@ -105,7 +111,7 @@ h3{font-size:22px;letter-spacing:-.02em;line-height:1.25}
 .fin h2{font-size:clamp(34px,5vw,64px);color:var(--bg)}
 .fin p{margin:14px auto 28px;font-size:18px}
 .fin .btn{background:var(--bg);color:#fff}
-.fin small{display:block;margin-top:18px;color:#2c3a05;font-size:14px}
+.fin small{display:block;margin-top:18px;color:#4a3306;font-size:14px}
 footer{grid-column:span 12;display:flex;justify-content:space-between;color:var(--mut);font-size:14px;padding:8px 12px 88px}
 .dock{display:none}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s,border-color .35s}
@@ -121,11 +127,12 @@ footer{grid-column:span 12;display:flex;justify-content:space-between;color:var(
   .hero .sub{font-size:17px}
   .fin{padding:48px 20px}
   .dock{display:block;position:fixed;left:14px;right:14px;bottom:14px;z-index:55}
-  .dock .btn{width:100%;height:56px;box-shadow:0 14px 34px -8px rgba(198,244,50,.55)}
+  .dock .btn{width:100%;height:56px;box-shadow:0 14px 34px -8px rgba(233,180,76,.55)}
   footer{padding-bottom:96px}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Кирилл — сайты для бизнеса","description":"Сайты под ключ для местного бизнеса: барбершопы, салоны красоты, автосервисы, кафе. Запуск за 3 дня, домен на год в стоимости.","url":"https://karif.up.railway.app/","priceRange":"15000 RUB","sameAs":["https://t.me/K_Sofrin"]}</script>
 </head>
 <body>
 <div class="progress" id="pr"></div>
@@ -151,7 +158,7 @@ footer{grid-column:span 12;display:flex;justify-content:space-between;color:var(
 
 <div class="t c4 lime rv flex" id="price">
   <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h6a4 4 0 0 1 0 8H7M7 4v16M5 16h9"/></svg></span><div class="lbl">Цена</div></div>
-  <div><div class="big"><span id="cnt">15&nbsp;000</span>₽</div><p>под ключ, без скрытых платежей</p><ul class="pl"><li>Домен</li><li>10 правок</li><li>Запуск</li></ul></div>
+  <div><div class="big"><span id="cnt">15&nbsp;000</span>₽</div><p>под ключ, без скрытых платежей</p><ul class="pl"><li>Домен на год</li><li>10 правок</li><li>Запуск</li></ul></div>
 </div>
 
 <div class="t c4 vio rv flex">
@@ -164,7 +171,7 @@ footer{grid-column:span 12;display:flex;justify-content:space-between;color:var(
   <div class="ava">К</div>
   <div class="lbl">Обо мне</div>
   <h3>Я Кирилл, делаю сайты для местного бизнеса</h3>
-  <p>Сам веду проект от заявки до запуска: дизайн, тексты, домен и публикация. Без агентств и посредников, отвечаю лично в Telegram.</p>
+  <p>Работаю лично, без агентства и менеджеров: сам говорю с вами, сам делаю и запускаю. Мой пример: knyaz32.ru. Отвечаю в Telegram в тот же день.</p>
 </div>
 
 <div class="t c4 rv">
@@ -174,16 +181,16 @@ footer{grid-column:span 12;display:flex;justify-content:space-between;color:var(
   <ul class="inc">
     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Дизайн и тексты под ваш бизнес</li>
     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Удобно на телефоне и компьютере</li>
-    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Регистрация домена</li>
+    <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Домен на 1 год в стоимости</li>
     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Публикация и настройка</li>
     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Кнопки звонка и мессенджера</li>
   </ul>
 </div>
 
 <div class="t c7 shot rv" id="work">
-  <img src="knyaz.webp" alt="Сайт барбершопа «Князь» (knyaz32.ru)">
+  <img src="knyaz.webp" alt="Сайт барбершопа «Князь» (knyaz32.ru)" width="1400" height="875" loading="lazy" decoding="async">
   <span class="cap">knyaz32.ru</span>
-  <div class="phone"><img src="knyaz-m.webp" alt="Мобильная версия сайта «Князь»"></div>
+  <div class="phone"><img src="knyaz-m.webp" alt="Мобильная версия сайта «Князь»" width="780" height="1400" loading="lazy" decoding="async"></div>
 </div>
 <div class="t c5 rv flex">
   <div>
@@ -212,12 +219,28 @@ footer{grid-column:span 12;display:flex;justify-content:space-between;color:var(
   </div>
 </div>
 
+<div class="t c7 rv" id="mockup">
+  <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3M3 9h18"/></svg></span>
+  <div class="lbl">Без риска</div>
+  <h2>Сначала бесплатный макет главного экрана</h2>
+  <p>Расскажите о бизнесе, и я пришлю макет главного экрана вашего сайта. Понравится, продолжаем и оплачиваете. Нет, вы ничего не потеряли.</p>
+  <ul class="inc" style="margin-top:20px"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Оплата только после того, как макет вам понравился</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>До 10 правок макета входит в цену</li></ul>
+</div>
+<form class="t c5 rv" id="req" autocomplete="off">
+  <div class="lbl">Заявка за минуту</div>
+  <label>Чем занимаетесь<input name="biz" placeholder="Например, барбершоп" required></label>
+  <label>Город<input name="city" placeholder="Например, Брянск"></label>
+  <label>Как к вам обращаться<input name="name" placeholder="Имя"></label>
+  <button class="btn" type="submit">Отправить в Telegram →</button>
+  <p id="hint" class="hint">Откроется Telegram, текст сообщения уже готов.</p>
+</form>
+
 <div class="t c12 faq rv" id="faq">
   <div class="lbl">Вопросы</div>
   <h2>Частые вопросы</h2>
   <details><summary>Что если макет не понравится?</summary><p>Сначала согласуем макет, и только потом вёрстка и запуск. В стоимость входит до 10 правок макета.</p></details>
   <details><summary>Почему так быстро и недорого?</summary><p>Работаю один, без агентства и менеджеров, поэтому нет лишних наценок и долгих согласований. Вы общаетесь напрямую со мной.</p></details>
-  <details><summary>Домен правда входит в цену?</summary><p>Да, регистрация домена уже в 15 000 ₽. Домен оформляется на вас. Продление в следующие годы оплачивается по тарифу регистратора, цену скажу заранее.</p></details>
+  <details><summary>Домен правда входит в цену?</summary><p>Да, домен на 1 год уже в 15 000 ₽ и оформляется на вас. Со второго года продление по тарифу регистратора, цену скажу заранее.</p></details>
   <details><summary>Кто пишет тексты и берёт фото?</summary><p>Тексты пишу я по вашим ответам. Фото лучше ваши: работы, интерьер, мастера. Если их нет, подскажу, как быстро снять.</p></details>
   <details><summary>Будет ли сайт удобен на телефоне?</summary><p>Да, большая часть клиентов заходит с телефона, поэтому сайт проверяю на телефоне и на компьютере.</p></details>
   <details><summary>Как связаться и сколько ждать ответа?</summary><p>Пишите в Telegram @K_Sofrin. Обычно отвечаю в тот же день.</p></details>
@@ -243,6 +266,11 @@ footer{grid-column:span 12;display:flex;justify-content:space-between;color:var(
   addEventListener('scroll',function(){var h=document.documentElement;pr.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
   var c=document.getElementById('cnt');
   if(!rm){var co=new IntersectionObserver(function(e){if(!e[0].isIntersecting)return;co.disconnect();var t0=performance.now();(function f(t){var k=Math.min(1,(t-t0)/1200),v=Math.round(15000*(1-Math.pow(1-k,3)));c.textContent=String(v).replace(/\B(?=(\d{3})+(?!\d))/g,' ');if(k<1)requestAnimationFrame(f)})(t0)},{threshold:.5});co.observe(c)}
+  var f=document.getElementById('req');
+  if(f){f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f),t='Здравствуйте! Хочу сайт. Бизнес: '+d.get('biz')+(d.get('city')?', город: '+d.get('city'):'')+(d.get('name')?'. Меня зовут '+d.get('name'):'')+'. Пришлите бесплатный макет главного экрана.';
+    try{navigator.clipboard.writeText(t)}catch(x){}
+    document.getElementById('hint').textContent='Текст скопирован. Если поле в Telegram пустое, просто вставьте его.';
+    window.open('https://t.me/K_Sofrin?text='+encodeURIComponent(t),'_blank')})}
   var w=document.getElementById('word'),L=['барбершопа','салона красоты','автосервиса','кафе','бизнеса'],i=0,j=0,del=false;
   if(!rm){(function tick(){var s=L[i];w.textContent=s.slice(0,j);
     if(!del&&j<s.length){j++;setTimeout(tick,85)}
