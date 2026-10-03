@@ -52,7 +52,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Atmospheric Aurora Lighting */
+/* Atmospheric Lighting */
 .aurora-glow-1 {
   position: absolute;
   top: -200px;
@@ -77,11 +77,11 @@ body {
   z-index: 0;
 }
 
-/* Subtle Geometric Pattern */
+/* Geometric Pattern */
 .bg-grid-mesh {
   position: absolute;
   inset: 0;
-  height: 1800px;
+  height: 2400px;
   background-image: 
     linear-gradient(to right, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
@@ -104,7 +104,7 @@ body {
   gap: 64px;
 }
 
-/* HERO EMBEDDED IDENTITY TAG (No header bar) */
+/* HERO EMBEDDED IDENTITY TAG (NO TOPBAR / NO MENU) */
 .hero-identity-row {
   display: flex;
   align-items: center;
@@ -246,7 +246,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* INTERACTIVE LIVE PHONE SHOWCASE (Rich visual, not plain) */
+/* INTERACTIVE PHONE SHOWCASE */
 .phone-interactive-container {
   display: flex;
   flex-direction: column;
@@ -355,7 +355,7 @@ body {
   margin-top: 6px;
 }
 
-/* SECTION 2: THE 14 990 ₽ ALL-IN-ONE CARD (Rich Glass Styling) */
+/* SECTION 2: THE 14 990 ₽ ALL-IN-ONE CARD */
 .pricing-showcase-box {
   border-radius: var(--radius-card);
   background: 
@@ -437,7 +437,6 @@ body {
   height: 15px;
 }
 
-/* Telegram bot & custom banner */
 .addons-clarity-panel {
   padding: 18px 22px;
   border-radius: 16px;
@@ -455,7 +454,191 @@ body {
   color: #FFFFFF;
 }
 
-/* SECTION 3: 3 SIMPLE WORK STEPS */
+/* SECTION 3: INTERACTIVE AI CONCEPT GENERATOR */
+.ai-generator-card {
+  border-radius: var(--radius-card);
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  padding: 38px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+.ai-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.ai-header-bar h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 800;
+  color: #FFFFFF;
+}
+.ai-header-bar p {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+.sparkle-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  color: var(--accent-cyan);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.ai-input-cluster {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.ai-input-text {
+  flex: 1;
+  min-width: 260px;
+  height: 52px;
+  border-radius: 14px;
+  border: 1px solid var(--border-glass);
+  background: var(--bg-card-elevated);
+  color: #FFFFFF;
+  padding: 0 18px;
+  font: 500 15px var(--font-body);
+  outline: 0;
+  transition: border-color 0.2s;
+}
+.ai-input-text:focus {
+  border-color: var(--accent-gold);
+}
+
+.btn-ai-generate {
+  height: 52px;
+  padding: 0 24px;
+  border-radius: 14px;
+  background: #FFFFFF;
+  color: #07080D;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 14.5px;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-ai-generate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(255, 255, 255, 0.25);
+}
+
+.ai-output-box {
+  border-radius: 18px;
+  background: var(--bg-card-elevated);
+  border: 1px solid rgba(243, 186, 71, 0.25);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: opacity 0.3s;
+}
+.ai-result-headline {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--accent-gold);
+}
+.ai-result-subhead {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.ai-result-triggers {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+.ai-trigger-badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+  border: 1px solid var(--border-glass);
+}
+.ai-result-magnet {
+  font-size: 13.5px;
+  color: var(--accent-emerald);
+  font-weight: 600;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 8px 14px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+/* SECTION 4: ROI / PAYBACK ESTIMATOR */
+.roi-calculator-card {
+  border-radius: var(--radius-card);
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  padding: 38px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 36px;
+  align-items: center;
+}
+.roi-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.roi-slider-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.roi-slider-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.roi-slider-meta b {
+  color: #FFFFFF;
+  font-size: 15px;
+}
+.roi-slider-input {
+  width: 100%;
+  accent-color: var(--accent-gold);
+  cursor: pointer;
+}
+
+.roi-stats-display {
+  padding: 28px;
+  border-radius: 20px;
+  background: var(--bg-card-elevated);
+  border: 1px solid var(--border-glass);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.roi-payback-val {
+  font-family: var(--font-heading);
+  font-size: 38px;
+  font-weight: 900;
+  color: var(--accent-gold);
+  line-height: 1;
+}
+
+/* SECTION 5: 3 SIMPLE WORK STEPS */
 .work-steps-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -494,7 +677,7 @@ body {
   line-height: 1.55;
 }
 
-/* SECTION 4: DIRECT SINGLE INTAKE STATION (#contact) */
+/* SECTION 6: DIRECT SINGLE INTAKE STATION (#contact) */
 .contact-station-shell {
   padding: 44px;
   border-radius: var(--radius-card);
@@ -613,11 +796,13 @@ body {
   .pricing-top-strip { flex-direction: column; align-items: flex-start; }
   .pricing-amount-huge, .pricing-sub-term { text-align: left; }
   .included-grid-list { grid-template-columns: 1fr; }
+  .roi-calculator-card { grid-template-columns: 1fr; }
   .work-steps-row { grid-template-columns: 1fr; }
   .contact-station-shell { grid-template-columns: 1fr; padding: 28px 20px; gap: 32px; }
   .channel-radio-group { grid-template-columns: 1fr 1fr; }
   .main-shell { gap: 48px; padding: 24px 16px 60px; }
   .pricing-showcase-box { padding: 28px 20px; }
+  .ai-generator-card { padding: 28px 20px; }
 }
 </style>
 </head>
@@ -663,7 +848,7 @@ body {
       </div>
     </div>
 
-    <!-- Live Interactive Phone Preview (Makes the site visual & tactile) -->
+    <!-- Live Interactive Phone Preview -->
     <div class="phone-interactive-container">
       <div class="niche-switcher-pills" id="nicheSwitcher">
         <button class="niche-pill-btn active" data-niche="barber" type="button">Барбершоп</button>
@@ -680,8 +865,8 @@ body {
 
         <div class="phone-screen-card" id="phonePreviewCard">
           <span class="preview-tag" id="prevTag">Сфера услуг</span>
-          <div class="preview-title" id="prevTitle">Мужские стрижки и уход премиум-уровня</div>
-          <div class="preview-desc" id="prevDesc">Онлайн-запись к мастерам в 2 клика. Адрес на карте и кнопки прямого звонка.</div>
+          <div class="preview-title" id="prevTitle">Мужские стрижки и моделирование бороды</div>
+          <div class="preview-desc" id="prevDesc">Онлайн-запись к барберам в 2 клика. Карта проезда и кнопки прямого звонка.</div>
           
           <div class="preview-features-row" id="prevBadges">
             <span class="preview-feature-badge">✓ Онлайн-запись</span>
@@ -690,7 +875,7 @@ body {
           </div>
 
           <div class="preview-btn-mock" id="prevBtn">
-            <span>Записаться онлайн →</span>
+            <span>Записаться к мастеру →</span>
           </div>
         </div>
       </div>
@@ -767,7 +952,81 @@ body {
     </div>
   </section>
 
-  <!-- SECTION 3: 3 SIMPLE STEPS -->
+  <!-- SECTION 3: INTERACTIVE AI CONCEPT GENERATOR -->
+  <section class="ai-generator-card">
+    <div class="ai-header-bar">
+      <div>
+        <div class="sparkle-badge">✨ Интерактивный генератор структуры</div>
+        <h2 style="margin-top:10px;">Примерьте продающий концепт на ваш бизнес</h2>
+        <p>Введите вашу сферу или услугу — алгоритм мгновенно предложит цепляющий оффер и лид-магнит.</p>
+      </div>
+    </div>
+
+    <div class="ai-input-cluster">
+      <input class="ai-input-text" id="aiBizQuery" placeholder="Например: Детейлинг студия, Стоматология, Кофейня или Мебель на заказ" value="Детейлинг студия">
+      <button class="btn-ai-generate" id="btnRunAiConcept" type="button">
+        <span>Сгенерировать оффер ✨</span>
+      </button>
+    </div>
+
+    <div class="ai-output-box" id="aiResultBox">
+      <div class="ai-result-headline" id="resAiHeadline">Детейлинг премиум-класса с гарантией блеска до 12 месяцев</div>
+      <div class="ai-result-subhead" id="resAiSubhead">Защитные керамические покрытия, бронеплёнка и химчистка салона без разводов. Рассчитайте стоимость по фото за 5 минут.</div>
+      <div class="ai-result-triggers" id="resAiTriggers">
+        <span class="ai-trigger-badge">✓ Домен и онлайн-оплата включены</span>
+        <span class="ai-trigger-badge">✓ Заявки прямо в Telegram</span>
+        <span class="ai-trigger-badge">✓ 100% готовность на смартфонах</span>
+      </div>
+      <div class="ai-result-magnet" id="resAiMagnet">🎁 Спецпредложение: Антидождь на передние стёкла в подарок при первой записи</div>
+      <button class="btn-gold-action" id="btnApplyAiConcept" type="button" style="height:44px; font-size:13.5px; width:fit-content; margin-top:6px;">
+        <span>Применить этот концепт в заявку →</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- SECTION 4: ROI / PAYBACK ESTIMATOR -->
+  <section class="roi-calculator-card">
+    <div class="roi-controls">
+      <div>
+        <span style="font-size:12px; font-weight:800; color:var(--accent-gold); text-transform:uppercase; letter-spacing:0.06em;">Калькулятор окупаемости</span>
+        <h2 style="font-family:var(--font-heading); font-size:24px; font-weight:800; margin-top:4px;">
+          Сайт окупается с первых клиентов
+        </h2>
+        <p style="font-size:14px; color:var(--text-muted); margin-top:4px;">
+          14 990 ₽ — это не расход, а вложение, которое быстро возвращается.
+        </p>
+      </div>
+
+      <div class="roi-slider-row">
+        <div class="roi-slider-meta">
+          <span>Средний чек с одного клиента:</span>
+          <b id="valCheck">2 500 ₽</b>
+        </div>
+        <input class="roi-slider-input" id="slideCheck" type="range" min="500" max="15000" step="500" value="2500">
+      </div>
+
+      <div class="roi-slider-row">
+        <div class="roi-slider-meta">
+          <span>Новых заявок в месяц с сайта:</span>
+          <b id="valOrders">10 клиентов</b>
+        </div>
+        <input class="roi-slider-input" id="slideOrders" type="range" min="2" max="40" step="1" value="10">
+      </div>
+    </div>
+
+    <div class="roi-stats-display">
+      <span style="font-size:12px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em;">Срок окупаемости сайта:</span>
+      <div class="roi-payback-val" id="resPaybackDays">~6 дней</div>
+      <div style="font-size:13.5px; color:var(--text-muted); line-height:1.5;">
+        Выручка в первый месяц: <b id="resMonthlyIncome" style="color:#FFFFFF;">25 000 ₽</b>. Сайт окупает себя полностью и далее работает в плюс.
+      </div>
+      <a class="btn-secondary-chat" href="#contact" style="height:44px; font-size:13.5px; margin-top:6px;">
+        <span>Заказать сайт за 14 990 ₽ →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- SECTION 5: 3 SIMPLE STEPS -->
   <section class="work-steps-row">
     <div class="work-step-card">
       <span class="step-num-pill">Шаг 01 · 15 минут</span>
@@ -788,7 +1047,7 @@ body {
     </div>
   </section>
 
-  <!-- SECTION 4: DIRECT SINGLE INTAKE STATION (#contact) -->
+  <!-- SECTION 6: DIRECT SINGLE INTAKE STATION (#contact) -->
   <section class="contact-station-shell" id="contact">
     <div class="contact-left-story">
       <h2>Обсудим сайт для вашего дела</h2>
@@ -925,7 +1184,95 @@ body {
     });
   });
 
-  // 2. Channel switcher & dynamic placeholder
+  // 2. Interactive AI Concept Generator
+  var aiInput = document.getElementById('aiBizQuery');
+  var btnRunAi = document.getElementById('btnRunAiConcept');
+  var resAiHead = document.getElementById('resAiHeadline');
+  var resAiSub = document.getElementById('resAiSubhead');
+  var resAiTriggers = document.getElementById('resAiTriggers');
+  var resAiMagnet = document.getElementById('resAiMagnet');
+  var btnApplyAi = document.getElementById('btnApplyAiConcept');
+
+  if (btnRunAi) {
+    btnRunAi.addEventListener('click', function() {
+      var val = (aiInput && aiInput.value.trim()) || 'Детейлинг';
+      btnRunAi.disabled = true;
+      btnRunAi.textContent = 'Генерирую… ✨';
+
+      fetch('/api/generate-concept', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ biz: val })
+      })
+      .then(function(r) { return r.json(); })
+      .then(function(res) {
+        btnRunAi.disabled = false;
+        btnRunAi.textContent = 'Сгенерировать оффер ✨';
+        if (res && res.data) {
+          var d = res.data;
+          if (resAiHead && d.headline) resAiHead.textContent = d.headline;
+          if (resAiSub && d.subhead) resAiSub.textContent = d.subhead;
+          if (resAiMagnet && d.leadMagnet) resAiMagnet.textContent = '🎁 ' + d.leadMagnet;
+          if (resAiTriggers && Array.isArray(d.triggers)) {
+            resAiTriggers.innerHTML = d.triggers.map(function(t) {
+              return '<span class="ai-trigger-badge">' + t + '</span>';
+            }).join('');
+          }
+        }
+      })
+      .catch(function() {
+        btnRunAi.disabled = false;
+        btnRunAi.textContent = 'Сгенерировать оффер ✨';
+      });
+    });
+  }
+
+  if (btnApplyAi) {
+    btnApplyAi.addEventListener('click', function() {
+      var contactSec = document.getElementById('contact');
+      if (contactSec) {
+        contactSec.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(function() {
+          if (formBiz && resAiHead) {
+            formBiz.value = (aiInput ? aiInput.value : 'Бизнес') + ' — ' + resAiHead.textContent.slice(0, 50);
+            formBiz.focus();
+          }
+        }, 400);
+      }
+    });
+  }
+
+  // 3. ROI & Payback Slider Calculator
+  var slideCheck = document.getElementById('slideCheck');
+  var slideOrders = document.getElementById('slideOrders');
+  var valCheck = document.getElementById('valCheck');
+  var valOrders = document.getElementById('valOrders');
+  var resPaybackDays = document.getElementById('resPaybackDays');
+  var resMonthlyIncome = document.getElementById('resMonthlyIncome');
+
+  function updateRoi() {
+    var check = parseInt(slideCheck.value, 10) || 2500;
+    var orders = parseInt(slideOrders.value, 10) || 10;
+
+    valCheck.textContent = check.toLocaleString('ru-RU') + ' ₽';
+    valOrders.textContent = orders + ' клиентов';
+
+    var monthlyTotal = check * orders;
+    resMonthlyIncome.textContent = monthlyTotal.toLocaleString('ru-RU') + ' ₽';
+
+    // 14 990 / (daily income)
+    var dailyIncome = monthlyTotal / 30;
+    var days = Math.max(1, Math.ceil(14990 / dailyIncome));
+    resPaybackDays.textContent = '~' + days + (days === 1 ? ' день' : days < 5 ? ' дня' : ' дней');
+  }
+
+  if (slideCheck && slideOrders) {
+    slideCheck.addEventListener('input', updateRoi);
+    slideOrders.addEventListener('input', updateRoi);
+    updateRoi();
+  }
+
+  // 4. Channel switcher & dynamic placeholder
   var channelPills = document.querySelectorAll('#channelGroup .channel-chip-btn');
   var contactInput = document.getElementById('formContact');
   var phs = {
@@ -947,7 +1294,7 @@ body {
     });
   });
 
-  // 3. Form Submit
+  // 5. Form Submit
   var form = document.getElementById('intakeForm');
   var btnSub = document.getElementById('btnSubmitIntake');
   var fb = document.getElementById('intakeFeedback');
@@ -972,7 +1319,7 @@ body {
           name: fd.get('name') || '',
           contact_method: fd.get('contact_method') || 'telegram',
           contact_value: fd.get('contact_value') || '',
-          source: 'clean_14990_nomenu'
+          source: 'clean_14990_enriched'
         })
       })
       .then(function(res) {

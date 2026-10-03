@@ -9,6 +9,7 @@
     "start": "node server.ts"
   },
   "dependencies": {
+    "@google/genai": "^2.27.0",
     "express": "^4.21.2"
   },
   "devDependencies": {

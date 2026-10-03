@@ -3,6 +3,7 @@ import type { Request, Response, NextFunction } from 'express';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
+import { GoogleGenAI } from '@google/genai';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -12,6 +13,15 @@ const PORT = parseInt(process.env.PORT || '3000', 10);
 const SITE_URL = process.env.SITE_URL || 'https://karif.up.railway.app';
 const ADMIN_USER = process.env.ADMIN_USER || 'kirill';
 const ADMIN_PASS = process.env.ADMIN_PASS || 'changeme123';
+
+const ai = new GoogleGenAI({
+  apiKey: process.env.GEMINI_API_KEY,
+  httpOptions: {
+    headers: {
+      'User-Agent': 'aistudio-build',
+    },
+  },
+});
 
 app.use(express.json());
 
@@ -423,6 +433,49 @@ app.get('/admin/brief/:id', checkAuth, (req: Request, res: Response) => {
     .replace('__BODY__', body);
 
   return res.send(html);
+});
+
+app.post('/api/generate-concept', async (req: Request, res: Response) => {
+  const { biz } = req.body || {};
+  const query = typeof biz === 'string' && biz.trim() ? biz.trim() : 'Барбершоп';
+
+  try {
+    if (process.env.GEMINI_API_KEY) {
+      const prompt = `Ты — топовый маркетолог и веб-разработчик. Создай продающий экспресс-концепт первого экрана для сайта ниши: "${query}".
+Верни ТОЛЬКО валидный JSON без markdown блоков, следующей структуры:
+{
+  "headline": "Мощный броский заголовок (до 7 слов)",
+  "subhead": "Убедительный подзаголовок с выгодой для клиента (1-2 предложения)",
+  "triggers": ["триггер 1 с галочкой", "триггер 2 с галочкой", "триггер 3 с галочкой"],
+  "leadMagnet": "Спецпредложение для первой заявки (например: Скидка 20% на первое посещение или Бесплатная диагностика)",
+  "cta": "Текст на кнопке (например: Записаться со скидкой 20% →)"
+}`;
+
+      const response = await ai.models.generateContent({
+        model: 'gemini-3.8-flash',
+        contents: prompt,
+      });
+
+      const text = response.text?.trim() || '';
+      const cleanJson = text.replace(/^```json\s*/i, '').replace(/```\s*$/i, '').trim();
+      const parsed = JSON.parse(cleanJson);
+      return res.json({ ok: true, data: parsed });
+    }
+  } catch (err) {
+    console.error('Gemini concept generation error:', err);
+  }
+
+  // Fallback if no key or error:
+  return res.json({
+    ok: true,
+    data: {
+      headline: `${query}: премиум-качество с гарантией результата`,
+      subhead: `Качественные услуги для требовательных клиентов. Запишитесь онлайн за 30 секунд и получите приятный бонус на первый визит.`,
+      triggers: ['✓ Домен и онлайн-оплата включены', '✓ Заявки прямо в Telegram', '✓ 100% готовность на смартфонах'],
+      leadMagnet: 'Спецпредложение: Скидка 15% на первое посещение',
+      cta: 'Записаться онлайн со скидкой →'
+    }
+  });
 });
 
 // Protect internal/source files from being served statically
