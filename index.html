@@ -3,236 +3,256 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Кирилл Софрин · Сайты под ключ за 14 990 ₽</title>
-<meta name="description" content="Разработка продающих сайтов для бизнеса под ключ за 14 990 ₽. Домен на 1 год и онлайн-оплата уже включены. Оплата после утверждения макета.">
+<title>Кирилл Софрин · Разработка сайтов для бизнеса · 14 990 ₽</title>
+<meta name="description" content="Разработка продающих сайтов и веб-решений для бизнеса. Фиксированный тариф 14 990 ₽ под ключ. Домен на год и онлайн-оплата включены. Оплата после макета.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Кирилл Софрин · Сайты под ключ за 14 990 ₽">
-<meta property="og:description" content="Разработка продающих сайтов для бизнеса под ключ за 14 990 ₽. Домен на 1 год и онлайн-оплата включены. Оплата после макета.">
+<meta property="og:title" content="Кирилл Софрин · Разработка сайтов для бизнеса · 14 990 ₽">
+<meta property="og:description" content="Создание сайтов под ключ за 14 990 ₽. Домен на год и эквайринг включены. Оплата после макета.">
 <meta property="og:image" content="https://karif.up.railway.app/og.png">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://karif.up.railway.app/">
-<meta name="theme-color" content="#07080D">
+<meta name="theme-color" content="#090B10">
 <link rel="canonical" href="https://karif.up.railway.app/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%23F3BA47'/%3E%3Cpath d='M9 7h5v7l7-7h6l-8 8 8.5 10H21L14 17v7H9z' fill='%2307080D'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232F68FE'/%3E%3Cpath d='M9 7h5v7l7-7h6l-8 8 8.5 10H21L14 17v7H9z' fill='%23FFFFFF'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Onest:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg-deep: #07080D;
-  --bg-card: #0F121B;
-  --bg-card-elevated: #161A26;
-  --border-glass: rgba(255, 255, 255, 0.08);
-  --border-gold: rgba(243, 186, 71, 0.35);
-  --text-main: #FFFFFF;
-  --text-muted: #959EAF;
-  --text-dim: #545B6B;
-  --accent-gold: #F3BA47;
-  --accent-gold-soft: rgba(243, 186, 71, 0.15);
-  --accent-emerald: #10B981;
-  --accent-cyan: #00F0FF;
-  --font-heading: 'Onest', system-ui, -apple-system, sans-serif;
-  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-  --radius-card: 24px;
-  --radius-pill: 9999px;
+  --bg-core: #090B10;
+  --bg-panel: #11141E;
+  --bg-panel-elevated: #161B28;
+  --border-hairline: rgba(255, 255, 255, 0.08);
+  --border-focus: rgba(47, 104, 254, 0.5);
+  --text-primary: #FFFFFF;
+  --text-secondary: #9099A9;
+  --text-tertiary: #525B6C;
+  --accent-electric: #2F68FE;
+  --accent-cyan: #00E5FF;
+  --accent-mint: #00E599;
+  --font-base: 'Golos Text', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-html { scroll-behavior: smooth; background: var(--bg-deep); color-scheme: dark; }
+html { scroll-behavior: smooth; background: var(--bg-core); color-scheme: dark; }
 
 body {
-  background-color: var(--bg-deep);
-  color: var(--text-main);
-  font: 400 16px/1.6 var(--font-body);
+  background-color: var(--bg-core);
+  color: var(--text-primary);
+  font: 400 16px/1.6 var(--font-base);
   overflow-x: hidden;
   position: relative;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Atmospheric Lighting */
-.aurora-glow-1 {
+/* Atmospheric Background Blueprint Grids */
+.blueprint-grid-canvas {
   position: absolute;
-  top: -200px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(900px, 100vw);
-  height: 520px;
-  background: radial-gradient(circle, rgba(243, 186, 71, 0.12) 0%, rgba(0, 240, 255, 0.03) 50%, transparent 70%);
-  filter: blur(90px);
+  inset: 0;
+  height: 2800px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 48px 48px;
   pointer-events: none;
   z-index: 0;
 }
-.aurora-glow-2 {
+.ambient-beam-top {
   position: absolute;
-  top: 900px;
-  right: -100px;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(243, 186, 71, 0.05) 0%, transparent 60%);
+  top: -160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1000px, 100vw);
+  height: 600px;
+  background: radial-gradient(circle, rgba(47, 104, 254, 0.15) 0%, rgba(0, 229, 255, 0.03) 50%, transparent 70%);
   filter: blur(100px);
   pointer-events: none;
   z-index: 0;
 }
 
-/* Geometric Pattern */
-.bg-grid-mesh {
-  position: absolute;
-  inset: 0;
-  height: 2400px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
-  background-size: 56px 56px;
-  pointer-events: none;
-  z-index: 1;
-  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-}
-
-/* Main Layout Wrapper */
-.main-shell {
+/* Architectural Layout Shell */
+.atelier-viewport {
   position: relative;
   z-index: 2;
-  max-width: 1040px;
+  max-width: 1080px;
   margin: 0 auto;
-  padding: 40px 24px 80px;
+  padding: 40px 24px 100px;
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 72px;
 }
 
-/* HERO EMBEDDED IDENTITY TAG (NO TOPBAR / NO MENU) */
-.hero-identity-row {
+/* 1. ATELIER IDENTITY HEADER (No menu, pure editorial stature) */
+.identity-masthead {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 20px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-hairline);
   flex-wrap: wrap;
 }
-
-.developer-badge {
-  display: inline-flex;
+.masthead-author {
+  display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 16px;
-  border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border-glass);
-  font-size: 13.5px;
-  font-weight: 600;
-  color: var(--text-main);
+  gap: 14px;
 }
-.dev-dot-pulse {
-  width: 8px;
-  height: 8px;
+.author-monogram-box {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-electric);
+  color: #FFFFFF;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 0 20px rgba(47, 104, 254, 0.4);
+}
+.author-titles {
+  display: flex;
+  flex-direction: column;
+}
+.author-name-row {
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.beacon-online {
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background: var(--accent-emerald);
-  box-shadow: 0 0 10px var(--accent-emerald);
+  background: var(--accent-mint);
+  box-shadow: 0 0 8px var(--accent-mint);
+}
+.author-subtitle {
+  font-size: 12.5px;
+  color: var(--text-secondary);
 }
 
-.direct-header-tg {
+.masthead-direct-action {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 18px;
-  border-radius: var(--radius-pill);
-  background: rgba(243, 186, 71, 0.1);
-  border: 1px solid rgba(243, 186, 71, 0.3);
-  color: var(--accent-gold);
+  height: 40px;
+  padding: 0 18px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-hairline);
+  color: #FFFFFF;
   font-size: 13.5px;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
   transition: all 0.2s var(--ease);
 }
-.direct-header-tg:hover {
-  background: var(--accent-gold);
-  color: #07080D;
-  transform: translateY(-1px);
+.masthead-direct-action:hover {
+  background: var(--accent-electric);
+  border-color: var(--accent-electric);
+  box-shadow: 0 0 24px rgba(47, 104, 254, 0.4);
 }
 
-/* HERO GRID: HEADLINE & INTERACTIVE PHONE PREVIEW */
-.hero-stage-grid {
+/* 2. HERO MONOLITH: TYPOGRAPHY + INTERACTIVE BLUEPRINT HUD */
+.hero-monolith-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 40px;
   align-items: center;
 }
 
-.hero-copy-block {
+.hero-editorial-left {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
+}
+.editorial-kicker-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
-.hero-title-main {
-  font-family: var(--font-heading);
-  font-size: clamp(34px, 4.6vw, 56px);
+.hero-monumental-title {
+  font-size: clamp(34px, 4.4vw, 56px);
   font-weight: 900;
   line-height: 1.08;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.035em;
   color: #FFFFFF;
   text-wrap: balance;
 }
-.hero-title-main span.gold-highlight {
-  color: var(--accent-gold);
+.hero-monumental-title span.electric-text {
+  color: var(--accent-electric);
+  background: linear-gradient(135deg, #4A7FFF, #00E5FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.hero-lead-text {
-  font-size: clamp(16.5px, 1.8vw, 19px);
-  color: var(--text-muted);
+.hero-concise-paragraph {
+  font-size: 17px;
+  color: var(--text-secondary);
   line-height: 1.6;
+  max-width: 580px;
 }
-.hero-lead-text b {
+.hero-concise-paragraph b {
   color: #FFFFFF;
-  font-weight: 600;
 }
 
-.hero-action-buttons {
+.hero-cta-stripe {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-top: 10px;
+  margin-top: 8px;
   flex-wrap: wrap;
 }
 
-.btn-gold-action {
+.btn-primary-blueprint {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   height: 54px;
   padding: 0 32px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--accent-gold), #FFA800);
-  color: #07080D;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 16px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-electric);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 15.5px;
   text-decoration: none;
   border: 0;
   cursor: pointer;
-  box-shadow: 0 12px 28px rgba(243, 186, 71, 0.3);
+  box-shadow: 0 12px 28px rgba(47, 104, 254, 0.35);
   transition: transform 0.2s var(--ease), box-shadow 0.2s;
   white-space: nowrap;
 }
-.btn-gold-action:hover {
+.btn-primary-blueprint:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 36px rgba(243, 186, 71, 0.45);
+  box-shadow: 0 16px 36px rgba(47, 104, 254, 0.5);
 }
 
-.btn-secondary-chat {
+.btn-ghost-blueprint {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   height: 54px;
   padding: 0 24px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-hairline);
   color: #FFFFFF;
   font-weight: 600;
   font-size: 15px;
@@ -240,876 +260,677 @@ body {
   transition: all 0.2s;
   white-space: nowrap;
 }
-.btn-secondary-chat:hover {
-  background: rgba(255, 255, 255, 0.09);
-  border-color: rgba(255, 255, 255, 0.25);
-  transform: translateY(-2px);
+.btn-ghost-blueprint:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* INTERACTIVE PHONE SHOWCASE */
-.phone-interactive-container {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.niche-switcher-pills {
-  display: flex;
-  gap: 6px;
-  overflow-x: auto;
-  padding-bottom: 2px;
-}
-.niche-pill-btn {
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-glass);
-  color: var(--text-muted);
-  font-size: 12.5px;
-  font-weight: 600;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: all 0.2s;
-}
-.niche-pill-btn:hover { color: #FFFFFF; }
-.niche-pill-btn.active {
-  background: #FFFFFF;
-  color: #07080D;
-  border-color: #FFFFFF;
-  font-weight: 700;
-}
-
-.phone-mockup-frame {
-  border-radius: 32px;
-  background: #0B0E17;
-  border: 2px solid rgba(255, 255, 255, 0.14);
-  padding: 18px 18px 22px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 30px rgba(243, 186, 71, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  position: relative;
-  overflow: hidden;
-}
-.phone-notch-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 11px;
-  color: var(--text-dim);
-  padding: 0 4px;
-}
-.phone-screen-card {
-  border-radius: 20px;
-  background: var(--bg-card-elevated);
-  border: 1px solid var(--border-glass);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  transition: all 0.3s var(--ease);
-}
-.preview-tag {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--accent-gold);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-.preview-title {
-  font-family: var(--font-heading);
-  font-size: 19px;
-  font-weight: 800;
-  line-height: 1.2;
-  color: #FFFFFF;
-}
-.preview-desc {
-  font-size: 13px;
-  color: var(--text-muted);
-  line-height: 1.45;
-}
-.preview-features-row {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 4px;
-}
-.preview-feature-badge {
-  font-size: 11px;
-  padding: 3px 8px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text-main);
-  border: 1px solid var(--border-glass);
-}
-.preview-btn-mock {
-  height: 40px;
-  border-radius: 10px;
-  background: var(--accent-gold);
-  color: #07080D;
-  font-weight: 800;
-  font-size: 13px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 6px;
-}
-
-/* SECTION 2: THE 14 990 ₽ ALL-IN-ONE CARD */
-.pricing-showcase-box {
-  border-radius: var(--radius-card);
-  background: 
-    radial-gradient(ellipse at 100% 0%, rgba(243, 186, 71, 0.12), transparent 60%),
-    var(--bg-card);
-  border: 1px solid var(--border-gold);
-  padding: 44px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(243, 186, 71, 0.08);
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  position: relative;
-}
-
-.pricing-top-strip {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 24px;
-  flex-wrap: wrap;
-  padding-bottom: 24px;
-  border-bottom: 1px solid var(--border-glass);
-}
-.pricing-info-h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(26px, 3.2vw, 36px);
-  font-weight: 800;
-  color: #FFFFFF;
-}
-.pricing-info-sub {
-  font-size: 15px;
-  color: var(--text-muted);
-  margin-top: 6px;
-}
-
-.pricing-amount-huge {
-  font-family: var(--font-heading);
-  font-size: clamp(42px, 5.5vw, 56px);
-  font-weight: 900;
-  color: var(--accent-gold);
-  line-height: 1;
-  text-align: right;
-  letter-spacing: -0.03em;
-}
-.pricing-sub-term {
-  font-size: 13.5px;
-  color: var(--text-muted);
-  text-align: right;
-  margin-top: 6px;
-}
-
-.included-grid-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px 28px;
-  list-style: none;
-}
-.included-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 15px;
-  color: var(--text-main);
-  line-height: 1.5;
-}
-.included-icon-wrap {
-  width: 24px;
-  height: 24px;
-  border-radius: 6px;
-  background: rgba(16, 185, 129, 0.15);
-  color: var(--accent-emerald);
-  display: grid;
-  place-items: center;
-  flex: none;
-  margin-top: 1px;
-}
-.included-icon-wrap svg {
-  width: 15px;
-  height: 15px;
-}
-
-.addons-clarity-panel {
-  padding: 18px 22px;
-  border-radius: 16px;
-  background: var(--bg-card-elevated);
-  border: 1px solid var(--border-glass);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-  font-size: 14.5px;
-  color: var(--text-muted);
-}
-.addons-clarity-panel b {
-  color: #FFFFFF;
-}
-
-/* SECTION 3: INTERACTIVE AI CONCEPT GENERATOR */
-.ai-generator-card {
-  border-radius: var(--radius-card);
-  background: var(--bg-card);
-  border: 1px solid var(--border-glass);
-  padding: 38px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-}
-.ai-header-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.ai-header-bar h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(24px, 3vw, 32px);
-  font-weight: 800;
-  color: #FFFFFF;
-}
-.ai-header-bar p {
-  font-size: 15px;
-  color: var(--text-muted);
-  margin-top: 6px;
-}
-.sparkle-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
-  background: rgba(0, 240, 255, 0.1);
-  border: 1px solid rgba(0, 240, 255, 0.25);
-  color: var(--accent-cyan);
-  font-size: 12.5px;
-  font-weight: 700;
-}
-
-.ai-input-cluster {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.ai-input-text {
-  flex: 1;
-  min-width: 260px;
-  height: 52px;
-  border-radius: 14px;
-  border: 1px solid var(--border-glass);
-  background: var(--bg-card-elevated);
-  color: #FFFFFF;
-  padding: 0 18px;
-  font: 500 15px var(--font-body);
-  outline: 0;
-  transition: border-color 0.2s;
-}
-.ai-input-text:focus {
-  border-color: var(--accent-gold);
-}
-
-.btn-ai-generate {
-  height: 52px;
-  padding: 0 24px;
-  border-radius: 14px;
-  background: #FFFFFF;
-  color: #07080D;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 14.5px;
-  border: 0;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.btn-ai-generate:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(255, 255, 255, 0.25);
-}
-
-.ai-output-box {
-  border-radius: 18px;
-  background: var(--bg-card-elevated);
-  border: 1px solid rgba(243, 186, 71, 0.25);
+/* RIGHT: INTERACTIVE VECTOR BLUEPRINT SCHEMATIC */
+.blueprint-schematic-card {
+  border-radius: var(--radius-md);
+  background: var(--bg-panel);
+  border: 1px solid var(--border-hairline);
   padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  transition: opacity 0.3s;
-}
-.ai-result-headline {
-  font-family: var(--font-heading);
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--accent-gold);
-}
-.ai-result-subhead {
-  font-size: 14.5px;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
-.ai-result-triggers {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 4px;
-}
-.ai-trigger-badge {
-  font-size: 12px;
-  padding: 4px 10px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text-main);
-  border: 1px solid var(--border-glass);
-}
-.ai-result-magnet {
-  font-size: 13.5px;
-  color: var(--accent-emerald);
-  font-weight: 600;
-  background: rgba(16, 185, 129, 0.1);
-  padding: 8px 14px;
-  border-radius: 10px;
-  width: fit-content;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
 }
 
-/* SECTION 4: ROI / PAYBACK ESTIMATOR */
-.roi-calculator-card {
-  border-radius: var(--radius-card);
-  background: var(--bg-card);
-  border: 1px solid var(--border-glass);
-  padding: 38px;
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 36px;
-  align-items: center;
-}
-.roi-controls {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.roi-slider-row {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.roi-slider-meta {
+.schematic-header {
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
-  color: var(--text-muted);
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-tertiary);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-hairline);
 }
-.roi-slider-meta b {
-  color: #FFFFFF;
-  font-size: 15px;
-}
-.roi-slider-input {
-  width: 100%;
-  accent-color: var(--accent-gold);
-  cursor: pointer;
+.schematic-live-status {
+  color: var(--accent-mint);
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.roi-stats-display {
-  padding: 28px;
-  border-radius: 20px;
-  background: var(--bg-card-elevated);
-  border: 1px solid var(--border-glass);
+/* Hand-Drawn SVG Architecture Visual */
+.svg-blueprint-frame {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  background: var(--bg-panel-elevated);
+  border: 1px solid var(--border-hairline);
+  padding: 12px;
+}
+
+.schematic-hotspots-menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.schematic-hotspot-btn {
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-hairline);
+  color: var(--text-secondary);
+  font-size: 12.5px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.schematic-hotspot-btn:hover { color: #FFFFFF; border-color: rgba(255, 255, 255, 0.2); }
+.schematic-hotspot-btn.active {
+  background: rgba(47, 104, 254, 0.15);
+  border-color: var(--accent-electric);
+  color: #FFFFFF;
+}
+
+.schematic-telemetry-text {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  min-height: 42px;
+  padding-top: 4px;
+}
+
+/* 3. THE 14 990 ₽ ARCHITECTURAL SPECIFICATION MONOLITH */
+.specification-monolith {
+  border-radius: var(--radius-lg);
+  background: 
+    linear-gradient(180deg, rgba(47, 104, 254, 0.05) 0%, transparent 40%),
+    var(--bg-panel);
+  border: 1px solid var(--border-hairline);
+  padding: 44px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-}
-.roi-payback-val {
-  font-family: var(--font-heading);
-  font-size: 38px;
-  font-weight: 900;
-  color: var(--accent-gold);
-  line-height: 1;
+  gap: 36px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+  position: relative;
 }
 
-/* SECTION 5: 3 SIMPLE WORK STEPS */
-.work-steps-row {
+.spec-head-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border-hairline);
+}
+.spec-title-wrap h2 {
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.spec-title-wrap p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-top: 6px;
+}
+
+.spec-price-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.spec-price-digits {
+  font-family: var(--font-mono);
+  font-size: clamp(42px, 5.2vw, 54px);
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1;
+}
+.spec-price-caption {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 6px;
+}
+
+/* 6 Inclusions Grid with Hand-Drawn Inline SVGs */
+.spec-inclusions-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
-.work-step-card {
-  padding: 28px;
-  border-radius: 18px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-glass);
+.spec-inclusion-node {
+  padding: 24px;
+  border-radius: var(--radius-md);
+  background: var(--bg-panel-elevated);
+  border: 1px solid var(--border-hairline);
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  transition: transform 0.2s var(--ease);
+  gap: 12px;
+  transition: transform 0.2s var(--ease), border-color 0.2s;
 }
-.work-step-card:hover {
+.spec-inclusion-node:hover {
   transform: translateY(-3px);
   border-color: rgba(255, 255, 255, 0.2);
 }
-.step-num-pill {
-  font-family: var(--font-heading);
-  font-size: 13px;
-  font-weight: 800;
-  color: var(--accent-gold);
-  text-transform: uppercase;
+
+.node-svg-glyph {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: rgba(47, 104, 254, 0.12);
+  color: var(--accent-cyan);
+  display: grid;
+  place-items: center;
 }
-.step-title-bold {
-  font-family: var(--font-heading);
+.node-svg-glyph svg {
+  width: 22px;
+  height: 22px;
+}
+
+.node-title-bold {
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+.node-desc-prose {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.addons-specification-stripe {
+  padding: 20px 24px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-hairline);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+.addons-specification-stripe b {
+  color: #FFFFFF;
+}
+
+/* 4. THREE-STAGE PRODUCTION PIPELINE (CIRCUIT ROADMAP) */
+.pipeline-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.pipeline-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pipeline-kicker {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.pipeline-heading {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.pipeline-cards-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.pipeline-stage-card {
+  padding: 28px;
+  border-radius: var(--radius-md);
+  background: var(--bg-panel);
+  border: 1px solid var(--border-hairline);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.pipeline-stage-index {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-electric);
+}
+.stage-title {
   font-size: 18px;
   font-weight: 700;
   color: #FFFFFF;
 }
-.step-desc-p {
+.stage-explanation {
   font-size: 14px;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   line-height: 1.55;
 }
 
-/* SECTION 6: DIRECT SINGLE INTAKE STATION (#contact) */
-.contact-station-shell {
-  padding: 44px;
-  border-radius: var(--radius-card);
-  background: var(--bg-card);
-  border: 1px solid var(--border-glass);
+/* 5. DIRECT DISPATCH STATION (#dispatch / Form) */
+.dispatch-terminal-section {
+  padding: 48px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-panel);
+  border: 1px solid var(--border-hairline);
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
-  gap: 44px;
+  gap: 48px;
 }
 
-.contact-left-story h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(26px, 3.2vw, 38px);
-  font-weight: 800;
-  line-height: 1.15;
+.dispatch-editorial-col h2 {
+  font-size: clamp(28px, 3.4vw, 40px);
+  font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
 }
-.contact-left-story p {
-  color: var(--text-muted);
+.dispatch-editorial-col p {
   font-size: 15.5px;
-  margin-top: 12px;
+  color: var(--text-secondary);
+  margin-top: 14px;
   line-height: 1.6;
 }
 
-.direct-tg-banner-box {
-  margin-top: 28px;
-  padding: 20px;
-  border-radius: 16px;
-  background: var(--bg-card-elevated);
-  border: 1px solid var(--border-glass);
+.direct-channel-card {
+  margin-top: 32px;
+  padding: 22px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-panel-elevated);
+  border: 1px solid var(--border-hairline);
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
-.direct-tg-banner-box b {
+.direct-channel-card b {
   font-size: 15px;
   color: #FFFFFF;
 }
-.direct-tg-banner-box a {
+.direct-channel-card a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--accent-gold);
+  color: var(--accent-cyan);
   font-weight: 700;
   text-decoration: none;
   font-size: 15px;
 }
-.direct-tg-banner-box a:hover {
+.direct-channel-card a:hover {
   text-decoration: underline;
 }
 
-.contact-form-stream {
+.dispatch-form-cluster {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
 }
-.stream-input-field {
+.field-input-box {
   height: 52px;
-  border-radius: 12px;
-  border: 1px solid var(--border-glass);
-  background: var(--bg-card-elevated);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-hairline);
+  background: var(--bg-panel-elevated);
   color: #FFFFFF;
   padding: 0 16px;
-  font: 500 15px var(--font-body);
+  font: 500 15px var(--font-base);
   outline: 0;
   transition: all 0.2s;
   width: 100%;
 }
-.stream-input-field:focus {
-  border-color: var(--accent-gold);
-  box-shadow: 0 0 0 2px rgba(243, 186, 71, 0.2);
+.field-input-box:focus {
+  border-color: var(--accent-electric);
+  box-shadow: 0 0 0 2px rgba(47, 104, 254, 0.25);
 }
 
-.channel-radio-group {
+.switch-methods-segment {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
 }
-.channel-chip-btn {
+.switch-method-button {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 42px;
-  border-radius: 10px;
-  background: var(--bg-card-elevated);
-  border: 1px solid var(--border-glass);
-  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  background: var(--bg-panel-elevated);
+  border: 1px solid var(--border-hairline);
+  color: var(--text-secondary);
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
 }
-.channel-chip-btn input { display: none; }
-.channel-chip-btn.active {
-  background: var(--accent-gold);
-  color: #07080D;
-  border-color: var(--accent-gold);
-  font-weight: 700;
+.switch-method-button input { display: none; }
+.switch-method-button.active {
+  background: var(--accent-electric);
+  color: #FFFFFF;
+  border-color: var(--accent-electric);
 }
 
-/* MINIMAL CLEAN FOOTER */
-.clean-single-footer {
+/* 6. MINIMAL ATELIER FOOTER */
+.atelier-colophon {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 0 10px;
-  border-top: 1px solid var(--border-glass);
+  padding: 28px 0 10px;
+  border-top: 1px solid var(--border-hairline);
   font-size: 13.5px;
-  color: var(--text-dim);
+  color: var(--text-tertiary);
 }
-.clean-single-footer a { color: inherit; text-decoration: none; }
-.clean-single-footer a:hover { color: #FFFFFF; }
+.atelier-colophon a { color: inherit; text-decoration: none; }
+.atelier-colophon a:hover { color: #FFFFFF; }
 
-/* RESPONSIVE OPTIMIZATIONS */
-@media (max-width: 880px) {
-  .hero-stage-grid { grid-template-columns: 1fr; }
-  .pricing-top-strip { flex-direction: column; align-items: flex-start; }
-  .pricing-amount-huge, .pricing-sub-term { text-align: left; }
-  .included-grid-list { grid-template-columns: 1fr; }
-  .roi-calculator-card { grid-template-columns: 1fr; }
-  .work-steps-row { grid-template-columns: 1fr; }
-  .contact-station-shell { grid-template-columns: 1fr; padding: 28px 20px; gap: 32px; }
-  .channel-radio-group { grid-template-columns: 1fr 1fr; }
-  .main-shell { gap: 48px; padding: 24px 16px 60px; }
-  .pricing-showcase-box { padding: 28px 20px; }
-  .ai-generator-card { padding: 28px 20px; }
+/* RESPONSIVE TUNING */
+@media (max-width: 920px) {
+  .hero-monolith-grid { grid-template-columns: 1fr; }
+  .spec-inclusions-grid { grid-template-columns: 1fr 1fr; }
+  .pipeline-cards-row { grid-template-columns: 1fr; }
+  .dispatch-terminal-section { grid-template-columns: 1fr; padding: 32px 20px; gap: 32px; }
+  .spec-head-row { flex-direction: column; }
+  .spec-price-column { align-items: flex-start; }
+}
+@media (max-width: 600px) {
+  .spec-inclusions-grid { grid-template-columns: 1fr; }
+  .switch-methods-segment { grid-template-columns: 1fr 1fr; }
+  .atelier-viewport { padding: 24px 16px 60px; gap: 48px; }
+  .specification-monolith { padding: 28px 20px; }
 }
 </style>
 </head>
 
 <body>
-<div class="aurora-glow-1"></div>
-<div class="aurora-glow-2"></div>
-<div class="bg-grid-mesh"></div>
+<div class="blueprint-grid-canvas"></div>
+<div class="ambient-beam-top"></div>
 
-<div class="main-shell">
+<div class="atelier-viewport">
 
-  <!-- EMBEDDED IDENTITY TAG (NO TOPBAR / NO MENU) -->
-  <div class="hero-identity-row">
-    <div class="developer-badge">
-      <span class="dev-dot-pulse"></span>
-      <span>Кирилл Софрин · Разработка сайтов для бизнеса</span>
+  <!-- 1. ATELIER MASTHEAD (NO MENU, PURE STATURE) -->
+  <header class="identity-masthead" role="banner">
+    <div class="masthead-author">
+      <div class="author-monogram-box">К</div>
+      <div class="author-titles">
+        <span class="author-name-row">Кирилл Софрин <span class="beacon-online" title="Свободен для новых задач"></span></span>
+        <span class="author-subtitle">Инженерная веб-разработка для бизнеса</span>
+      </div>
     </div>
 
-    <a class="direct-header-tg" href="https://t.me/K_Sofrin" target="_blank" rel="noopener">
+    <a class="masthead-direct-action" href="https://t.me/K_Sofrin" target="_blank" rel="noopener">
       <span>Написать в Telegram @K_Sofrin</span>
-      <span aria-hidden="true">→</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
     </a>
-  </div>
+  </header>
 
-  <!-- HERO: STATEMENT & LIVE PHONE PROTOTYPE -->
-  <section class="hero-stage-grid">
-    <div class="hero-copy-block">
-      <h1 class="hero-title-main">
-        Сайт для вашего дела <span class="gold-highlight">за 14 990 ₽ под ключ</span>
+  <!-- 2. HERO MONUMENT & INTERACTIVE VECTOR SCHEMATIC -->
+  <section class="hero-monolith-grid">
+    <div class="hero-editorial-left">
+      <div class="editorial-kicker-line">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <span>Срок реализации: 3–5 рабочих дней</span>
+      </div>
+
+      <h1 class="hero-monumental-title">
+        Сайт для бизнеса на чистом коде <span class="electric-text">за 14 990 ₽ под ключ</span>
       </h1>
 
-      <p class="hero-lead-text">
-        Без ежемесячной абонентской платы конструкторам. <b>Домен .ru на 1 год и онлайн-оплата уже входят в стоимость.</b> Оплата строго после того, как вы посмотрите и согласуете готовый макет первого экрана.
+      <p class="hero-concise-paragraph">
+        Никаких ежемесячных сборов за конструкторы. <b>Домен .ru на 1 год и онлайн-оплата уже входят в стоимость.</b> Оплата производится строго после того, как вы утверждаете интерактивный макет.
       </p>
 
-      <div class="hero-action-buttons">
-        <a class="btn-gold-action" href="#contact">
-          <span>Обсудить задачу →</span>
+      <div class="hero-cta-stripe">
+        <a class="btn-primary-blueprint" href="#dispatch">
+          <span>Начать разработку</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a class="btn-secondary-chat" href="https://t.me/K_Sofrin" target="_blank" rel="noopener">
-          <span>Telegram @K_Sofrin</span>
+        <a class="btn-ghost-blueprint" href="https://t.me/K_Sofrin" target="_blank" rel="noopener">
+          <span>Обсудить в Telegram</span>
         </a>
       </div>
     </div>
 
-    <!-- Live Interactive Phone Preview -->
-    <div class="phone-interactive-container">
-      <div class="niche-switcher-pills" id="nicheSwitcher">
-        <button class="niche-pill-btn active" data-niche="barber" type="button">Барбершоп</button>
-        <button class="niche-pill-btn" data-niche="auto" type="button">Автосервис</button>
-        <button class="niche-pill-btn" data-niche="cafe" type="button">Кафе / Ресторан</button>
-        <button class="niche-pill-btn" data-niche="clinic" type="button">Клиника</button>
+    <!-- Hand-Drawn SVG Architecture Schematic -->
+    <div class="blueprint-schematic-card">
+      <div class="schematic-header">
+        <span>АРХИТЕКТУРА РЕШЕНИЯ</span>
+        <span class="schematic-live-status">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+          ACTIVE SYSTEM
+        </span>
       </div>
 
-      <div class="phone-mockup-frame">
-        <div class="phone-notch-bar">
-          <span>9:41</span>
-          <span>● 100% Mobile Ready</span>
-        </div>
+      <!-- Bespoke SVG Schematic Visual -->
+      <svg class="svg-blueprint-frame" viewBox="0 0 380 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Grid Layer -->
+        <rect x="10" y="10" width="360" height="170" rx="8" stroke="rgba(255,255,255,0.08)" stroke-dasharray="4 4"/>
+        
+        <!-- Node 1: Fast Core Engine -->
+        <rect id="svgNodeEngine" x="25" y="30" width="100" height="55" rx="6" fill="#161B28" stroke="#2F68FE" stroke-width="1.5"/>
+        <text x="35" y="52" fill="#FFFFFF" font-size="11" font-weight="700" font-family="'Space Grotesk', monospace">01. ДВИЖОК</text>
+        <text x="35" y="70" fill="#9099A9" font-size="9" font-family="sans-serif">Чистый код 0.3s</text>
 
-        <div class="phone-screen-card" id="phonePreviewCard">
-          <span class="preview-tag" id="prevTag">Сфера услуг</span>
-          <div class="preview-title" id="prevTitle">Мужские стрижки и моделирование бороды</div>
-          <div class="preview-desc" id="prevDesc">Онлайн-запись к барберам в 2 клика. Карта проезда и кнопки прямого звонка.</div>
-          
-          <div class="preview-features-row" id="prevBadges">
-            <span class="preview-feature-badge">✓ Онлайн-запись</span>
-            <span class="preview-feature-badge">✓ Онлайн-оплата</span>
-            <span class="preview-feature-badge">✓ WhatsApp</span>
-          </div>
+        <!-- Node 2: Payment Gateway -->
+        <rect id="svgNodePayment" x="140" y="30" width="100" height="55" rx="6" fill="#161B28" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+        <text x="150" y="52" fill="#FFFFFF" font-size="11" font-weight="700" font-family="'Space Grotesk', monospace">02. ЭКВАЙРИНГ</text>
+        <text x="150" y="70" fill="#9099A9" font-size="9" font-family="sans-serif">Сбер / Т-Банк</text>
 
-          <div class="preview-btn-mock" id="prevBtn">
-            <span>Записаться к мастеру →</span>
-          </div>
-        </div>
+        <!-- Node 3: Domain & Security -->
+        <rect id="svgNodeDomain" x="255" y="30" width="100" height="55" rx="6" fill="#161B28" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+        <text x="265" y="52" fill="#FFFFFF" font-size="11" font-weight="700" font-family="'Space Grotesk', monospace">03. ДОМЕН .RU</text>
+        <text x="265" y="70" fill="#9099A9" font-size="9" font-family="sans-serif">1 год + SSL</text>
+
+        <!-- Connection Bus Lines -->
+        <path d="M75 85v35h115v-35" stroke="#2F68FE" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <path d="M190 120h115V85" stroke="#00E5FF" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+        <!-- Master Node: Telegram & Leads -->
+        <rect id="svgNodeLeads" x="90" y="125" width="200" height="42" rx="6" fill="#161B28" stroke="#00E599" stroke-width="1.5"/>
+        <circle cx="112" cy="146" r="6" fill="#00E599"/>
+        <text x="126" y="150" fill="#FFFFFF" font-size="11.5" font-weight="700" font-family="'Space Grotesk', monospace">МАРШРУТИЗАЦИЯ В TELEGRAM</text>
+      </svg>
+
+      <div class="schematic-hotspots-menu">
+        <button class="schematic-hotspot-btn active" data-spec="engine" type="button">
+          <span>01. Чистый код</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        <button class="schematic-hotspot-btn" data-spec="payment" type="button">
+          <span>02. Онлайн-оплата</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        <button class="schematic-hotspot-btn" data-spec="domain" type="button">
+          <span>03. Домен и SSL</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        <button class="schematic-hotspot-btn" data-spec="leads" type="button">
+          <span>04. Бот и заявки</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+
+      <div class="schematic-telemetry-text" id="telemetryDetail">
+        Сайт собирается на ультра-быстром чистом коде без конструкторов Tilda/Wix. Скорость загрузки 0.3 секунды, 0 ₽ ежемесячной абонентской платы.
       </div>
     </div>
   </section>
 
-  <!-- SECTION 2: THE 14 990 ₽ ALL-IN-ONE CARD -->
-  <section class="pricing-showcase-box">
-    <div class="pricing-top-strip">
-      <div>
-        <h2 class="pricing-info-h2">Всё включено в 14 990 ₽</h2>
-        <p class="pricing-info-sub">Для сферы услуг: барбершопы, автосервисы, кафе, мастера, эксперты, клиники.</p>
+  <!-- 3. THE 14 990 ₽ ARCHITECTURAL SPECIFICATION MONOLITH -->
+  <section class="specification-monolith">
+    <div class="spec-head-row">
+      <div class="spec-title-wrap">
+        <h2>Спецификация тарифа «Под ключ»</h2>
+        <p>Полный комплекс для сферы услуг: автосервисы, салоны, клиники, кафе, производства и мастера.</p>
       </div>
 
-      <div>
-        <div class="pricing-amount-huge">14 990 ₽</div>
-        <div class="pricing-sub-term">Фиксированная разовая цена · 3–5 дней</div>
+      <div class="spec-price-column">
+        <div class="spec-price-digits">14 990 ₽</div>
+        <div class="spec-price-caption">Разовая фиксированная стоимость</div>
       </div>
     </div>
 
-    <ul class="included-grid-list">
-      <li class="included-item">
-        <div class="included-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+    <!-- 6 Inclusions with Hand-Drawn Inline SVGs (Zero Emojis!) -->
+    <div class="spec-inclusions-grid">
+      <!-- 01 Domain -->
+      <div class="spec-inclusion-node">
+        <div class="node-svg-glyph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         </div>
-        <span><b>Домен .ru на 1 год включён</b> (официально регистрируется на ваши данные)</span>
-      </li>
-
-      <li class="included-item">
-        <div class="included-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-        </div>
-        <span><b>Приём онлайн-оплаты входит в стоимость</b> (Т-Банк, Сбер, ЮKassa)</span>
-      </li>
-
-      <li class="included-item">
-        <div class="included-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-        </div>
-        <span><b>Продающие тексты и структура</b> под ваши услуги, прайс и преимущества</span>
-      </li>
-
-      <li class="included-item">
-        <div class="included-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-        </div>
-        <span><b>100% мобильная адаптация</b> — сайт мгновенно открывается со смартфонов</span>
-      </li>
-
-      <li class="included-item">
-        <div class="included-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-        </div>
-        <span><b>Кнопки WhatsApp, Telegram и быстрый звонок</b> для связи в 1 клик</span>
-      </li>
-
-      <li class="included-item">
-        <div class="included-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-        </div>
-        <span><b>Оплата после утверждения первого экрана</b> — вы ничем не рискуете</span>
-      </li>
-    </ul>
-
-    <!-- Note on Telegram bots & custom features -->
-    <div class="addons-clarity-panel">
-      <div>
-        <b>Нужен Telegram-бот для заказов или многостраничный корпоративный сайт?</b>
-        <div>Настройка ботов и сложных сервисов обсуждается отдельно под вашу задачу.</div>
+        <h3 class="node-title-bold">Домен .ru на 1 год включён</h3>
+        <p class="node-desc-prose">Официальная регистрация строго на ваши паспортные данные или организацию. Вы единственный владелец.</p>
       </div>
-      <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--accent-gold); font-weight:700; text-decoration:none; white-space:nowrap;">
-        Обсудить в Telegram →
+
+      <!-- 02 Payment -->
+      <div class="spec-inclusion-node">
+        <div class="node-svg-glyph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/></svg>
+        </div>
+        <h3 class="node-title-bold">Приём онлайн-оплаты</h3>
+        <p class="node-desc-prose">Подключение эквайринга Т-Банк, Сбер или ЮKassa. Деньги поступают сразу на ваш расчётный счёт.</p>
+      </div>
+
+      <!-- 03 Mobile First -->
+      <div class="spec-inclusion-node">
+        <div class="node-svg-glyph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <h3 class="node-title-bold">100% мобильный фокус</h3>
+        <p class="node-desc-prose">Интерфейс спроектирован под большой палец смартфона. Мгновенная скорость открытия в любых мобильных сетях.</p>
+      </div>
+
+      <!-- 04 Copy & Structure -->
+      <div class="spec-inclusion-node">
+        <div class="node-svg-glyph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h3 class="node-title-bold">Продающие тексты и офферы</h3>
+        <p class="node-desc-prose">Разработка структуры, написание текстов, оформление прайс-листа и блока преимуществ под ключ.</p>
+      </div>
+
+      <!-- 05 Messengers -->
+      <div class="spec-inclusion-node">
+        <div class="node-svg-glyph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </div>
+        <h3 class="node-title-bold">Кнопки связи в 1 клик</h3>
+        <p class="node-desc-prose">Прямой диалог в WhatsApp, Telegram и быстрый вызов без необходимости копировать номер телефона.</p>
+      </div>
+
+      <!-- 06 Guarantee -->
+      <div class="spec-inclusion-node">
+        <div class="node-svg-glyph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3 class="node-title-bold">Оплата после утверждения</h3>
+        <p class="node-desc-prose">Вы оцениваете готовый прототип первого экрана перед внесением оплаты. Полное отсутствие рисков.</p>
+      </div>
+    </div>
+
+    <!-- Telegram bots disclaimer stripe -->
+    <div class="addons-specification-stripe">
+      <div>
+        <b>Нужен Telegram-бот для заказов или многостраничный корпоративный каталог?</b>
+        <div>Настройка ботов и сложных баз данных рассчитывается индивидуально под техническое задание.</div>
+      </div>
+      <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--accent-cyan); font-weight:700; text-decoration:none; white-space:nowrap;">
+        Обсудить задачу →
       </a>
     </div>
   </section>
 
-  <!-- SECTION 3: INTERACTIVE AI CONCEPT GENERATOR -->
-  <section class="ai-generator-card">
-    <div class="ai-header-bar">
-      <div>
-        <div class="sparkle-badge">✨ Интерактивный генератор структуры</div>
-        <h2 style="margin-top:10px;">Примерьте продающий концепт на ваш бизнес</h2>
-        <p>Введите вашу сферу или услугу — алгоритм мгновенно предложит цепляющий оффер и лид-магнит.</p>
-      </div>
+  <!-- 4. PRODUCTION PIPELINE (HOW IT WORKS) -->
+  <section class="pipeline-section">
+    <div class="pipeline-title-group">
+      <span class="pipeline-kicker">Процесс создания</span>
+      <h2 class="pipeline-heading">Три прозрачных этапа</h2>
     </div>
 
-    <div class="ai-input-cluster">
-      <input class="ai-input-text" id="aiBizQuery" placeholder="Например: Детейлинг студия, Стоматология, Кофейня или Мебель на заказ" value="Детейлинг студия">
-      <button class="btn-ai-generate" id="btnRunAiConcept" type="button">
-        <span>Сгенерировать оффер ✨</span>
-      </button>
-    </div>
-
-    <div class="ai-output-box" id="aiResultBox">
-      <div class="ai-result-headline" id="resAiHeadline">Детейлинг премиум-класса с гарантией блеска до 12 месяцев</div>
-      <div class="ai-result-subhead" id="resAiSubhead">Защитные керамические покрытия, бронеплёнка и химчистка салона без разводов. Рассчитайте стоимость по фото за 5 минут.</div>
-      <div class="ai-result-triggers" id="resAiTriggers">
-        <span class="ai-trigger-badge">✓ Домен и онлайн-оплата включены</span>
-        <span class="ai-trigger-badge">✓ Заявки прямо в Telegram</span>
-        <span class="ai-trigger-badge">✓ 100% готовность на смартфонах</span>
+    <div class="pipeline-cards-row">
+      <div class="pipeline-stage-card">
+        <span class="pipeline-stage-index">ЭТАП 01 · 15 МИНУТ</span>
+        <h3 class="stage-title">Обсуждение в Telegram</h3>
+        <p class="stage-explanation">В переписке или голосовым обсуждаем вашу сферу, ключевые услуги и преимущества. Я предлагаю продающую структуру.</p>
       </div>
-      <div class="ai-result-magnet" id="resAiMagnet">🎁 Спецпредложение: Антидождь на передние стёкла в подарок при первой записи</div>
-      <button class="btn-gold-action" id="btnApplyAiConcept" type="button" style="height:44px; font-size:13.5px; width:fit-content; margin-top:6px;">
-        <span>Применить этот концепт в заявку →</span>
-      </button>
+
+      <div class="pipeline-stage-card">
+        <span class="pipeline-stage-index">ЭТАП 02 · 1–2 ДНЯ</span>
+        <h3 class="stage-title">Бесплатный макет</h3>
+        <p class="stage-explanation">Разрабатываю прототип первого экрана с вашим текстом. Вы открываете его на тестовом домене и утверждаете до оплаты.</p>
+      </div>
+
+      <div class="pipeline-stage-card">
+        <span class="pipeline-stage-index">ЭТАП 03 · ФИНИШ</span>
+        <h3 class="stage-title">Запуск и домен</h3>
+        <p class="stage-explanation">Регистрирую домен .ru на ваше имя, подключаю приём платежей, защитный сертификат SSL и передаю готовый сайт.</p>
+      </div>
     </div>
   </section>
 
-  <!-- SECTION 4: ROI / PAYBACK ESTIMATOR -->
-  <section class="roi-calculator-card">
-    <div class="roi-controls">
-      <div>
-        <span style="font-size:12px; font-weight:800; color:var(--accent-gold); text-transform:uppercase; letter-spacing:0.06em;">Калькулятор окупаемости</span>
-        <h2 style="font-family:var(--font-heading); font-size:24px; font-weight:800; margin-top:4px;">
-          Сайт окупается с первых клиентов
-        </h2>
-        <p style="font-size:14px; color:var(--text-muted); margin-top:4px;">
-          14 990 ₽ — это не расход, а вложение, которое быстро возвращается.
-        </p>
-      </div>
+  <!-- 5. DIRECT DISPATCH TERMINAL (#dispatch) -->
+  <section class="dispatch-terminal-section" id="dispatch">
+    <div class="dispatch-editorial-col">
+      <h2>Запустить разработку сайта</h2>
+      <p>Оставьте 3 параметра вашего проекта. Я свяжусь с вами в течение 30 минут с вариантами структуры и отвечу на все вопросы.</p>
 
-      <div class="roi-slider-row">
-        <div class="roi-slider-meta">
-          <span>Средний чек с одного клиента:</span>
-          <b id="valCheck">2 500 ₽</b>
-        </div>
-        <input class="roi-slider-input" id="slideCheck" type="range" min="500" max="15000" step="500" value="2500">
-      </div>
-
-      <div class="roi-slider-row">
-        <div class="roi-slider-meta">
-          <span>Новых заявок в месяц с сайта:</span>
-          <b id="valOrders">10 клиентов</b>
-        </div>
-        <input class="roi-slider-input" id="slideOrders" type="range" min="2" max="40" step="1" value="10">
-      </div>
-    </div>
-
-    <div class="roi-stats-display">
-      <span style="font-size:12px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em;">Срок окупаемости сайта:</span>
-      <div class="roi-payback-val" id="resPaybackDays">~6 дней</div>
-      <div style="font-size:13.5px; color:var(--text-muted); line-height:1.5;">
-        Выручка в первый месяц: <b id="resMonthlyIncome" style="color:#FFFFFF;">25 000 ₽</b>. Сайт окупает себя полностью и далее работает в плюс.
-      </div>
-      <a class="btn-secondary-chat" href="#contact" style="height:44px; font-size:13.5px; margin-top:6px;">
-        <span>Заказать сайт за 14 990 ₽ →</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- SECTION 5: 3 SIMPLE STEPS -->
-  <section class="work-steps-row">
-    <div class="work-step-card">
-      <span class="step-num-pill">Шаг 01 · 15 минут</span>
-      <h3 class="step-title-bold">Обсуждение в Telegram</h3>
-      <p class="step-desc-p">Вы рассказываете о своём бизнесе. Я предлагаю продающую структуру и офферы.</p>
-    </div>
-
-    <div class="work-step-card">
-      <span class="step-num-pill">Шаг 02 · 1–2 дня</span>
-      <h3 class="step-title-bold">Бесплатный макет</h3>
-      <p class="step-desc-p">Собираю первый экран с вашим текстом. Вы смотрите результат до внесения оплаты.</p>
-    </div>
-
-    <div class="work-step-card">
-      <span class="step-num-pill">Шаг 03 · Финиш</span>
-      <h3 class="step-title-bold">Домен и запуск</h3>
-      <p class="step-desc-p">Регистрирую домен, настраиваю приём оплат и отдаю вам готовый работающий сайт.</p>
-    </div>
-  </section>
-
-  <!-- SECTION 6: DIRECT SINGLE INTAKE STATION (#contact) -->
-  <section class="contact-station-shell" id="contact">
-    <div class="contact-left-story">
-      <h2>Обсудим сайт для вашего дела</h2>
-      <p>Заполните 3 строчки. Я лично свяжусь с вами в течение 30 минут с вариантами структуры и отвечу на все вопросы.</p>
-
-      <div class="direct-tg-banner-box">
-        <b>Хотите ответ прямо сейчас?</b>
-        <span>Без заполнения форм — напишите напрямую мне в Telegram:</span>
+      <div class="direct-channel-card">
+        <b>Предпочитаете написать напрямую?</b>
+        <span>Без заполнения форм — напишите в личные сообщения Telegram:</span>
         <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener">
-          <span>Написать Кириллу: @K_Sofrin</span>
-          <span aria-hidden="true">→</span>
+          <span>Кирилл Софрин: @K_Sofrin</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
         </a>
       </div>
     </div>
 
-    <form class="contact-form-stream" id="intakeForm" autocomplete="off">
+    <form class="dispatch-form-cluster" id="dispatchForm" autocomplete="off">
       <div>
-        <label style="font-size:13px; font-weight:600; color:var(--text-muted); display:block; margin-bottom:6px;">Сфера бизнеса</label>
-        <input class="stream-input-field" id="formBiz" name="biz" placeholder="Например: автосервис, барбершоп, кафе или клиника" required value="Барбершоп">
+        <label style="font-size:13px; font-weight:600; color:var(--text-secondary); display:block; margin-bottom:6px;">Сфера деятельности или задача</label>
+        <input class="field-input-box" id="inpFieldBiz" name="biz" placeholder="Например: автосервис, барбершоп, кафе или клиника" required value="Барбершоп">
       </div>
 
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
         <div>
-          <label style="font-size:13px; font-weight:600; color:var(--text-muted); display:block; margin-bottom:6px;">Город</label>
-          <input class="stream-input-field" id="formCity" name="city" placeholder="Брянск" value="Брянск">
+          <label style="font-size:13px; font-weight:600; color:var(--text-secondary); display:block; margin-bottom:6px;">Город</label>
+          <input class="field-input-box" id="inpFieldCity" name="city" placeholder="Брянск" value="Брянск">
         </div>
         <div>
-          <label style="font-size:13px; font-weight:600; color:var(--text-muted); display:block; margin-bottom:6px;">Ваше имя</label>
-          <input class="stream-input-field" id="formName" name="name" placeholder="Как к вам обращаться">
+          <label style="font-size:13px; font-weight:600; color:var(--text-secondary); display:block; margin-bottom:6px;">Ваше имя</label>
+          <input class="field-input-box" id="inpFieldName" name="name" placeholder="Как к вам обращаться">
         </div>
       </div>
 
       <div>
-        <label style="font-size:13px; font-weight:600; color:var(--text-muted); display:block; margin-bottom:6px;">Где удобнее связаться</label>
-        <div class="channel-radio-group" id="channelGroup">
-          <label class="channel-chip-btn active"><input type="radio" name="contact_method" value="telegram" checked><span>Telegram</span></label>
-          <label class="channel-chip-btn"><input type="radio" name="contact_method" value="whatsapp"><span>WhatsApp</span></label>
-          <label class="channel-chip-btn"><input type="radio" name="contact_method" value="phone"><span>Телефон</span></label>
-          <label class="channel-chip-btn"><input type="radio" name="contact_method" value="other"><span>Другое</span></label>
+        <label style="font-size:13px; font-weight:600; color:var(--text-secondary); display:block; margin-bottom:6px;">Канал связи</label>
+        <div class="switch-methods-segment" id="methodSegments">
+          <label class="switch-method-button active"><input type="radio" name="contact_method" value="telegram" checked><span>Telegram</span></label>
+          <label class="switch-method-button"><input type="radio" name="contact_method" value="whatsapp"><span>WhatsApp</span></label>
+          <label class="switch-method-button"><input type="radio" name="contact_method" value="phone"><span>Телефон</span></label>
+          <label class="switch-method-button"><input type="radio" name="contact_method" value="other"><span>Другое</span></label>
         </div>
       </div>
 
       <div>
-        <label style="font-size:13px; font-weight:600; color:var(--text-muted); display:block; margin-bottom:6px;">Контакт для связи</label>
-        <input class="stream-input-field" id="formContact" name="contact_value" placeholder="@username в Telegram" required>
+        <label style="font-size:13px; font-weight:600; color:var(--text-secondary); display:block; margin-bottom:6px;">Контакт для связи</label>
+        <input class="field-input-box" id="inpFieldContact" name="contact_value" placeholder="@username в Telegram" required>
       </div>
 
-      <button class="btn-gold-action" id="btnSubmitIntake" type="submit" style="width:100%; margin-top:4px;">
-        <span>Отправить заявку →</span>
+      <button class="btn-primary-blueprint" id="btnSubmitDispatch" type="submit" style="width:100%; margin-top:6px;">
+        <span>Отправить заявку на разработку</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </button>
 
-      <p id="intakeFeedback" style="font-size:13px; text-align:center; color:var(--text-muted); min-height:18px;">
+      <p id="dispatchFeedback" style="font-size:13px; text-align:center; color:var(--text-secondary); min-height:18px;">
         Отвечу лично в течение 30 минут.
       </p>
     </form>
   </section>
 
-  <!-- MINIMAL FOOTER -->
-  <footer class="clean-single-footer">
+  <!-- 6. MINIMAL ATELIER COLOPHON -->
+  <footer class="atelier-colophon">
     <div>© 2026 Кирилл Софрин · Разработка сайтов для бизнеса</div>
     <div style="display:flex; gap:20px;">
-      <a href="/brief">Полный бриф</a>
+      <a href="/brief">Технический бриф</a>
       <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener">Telegram @K_Sofrin</a>
     </div>
   </footer>
@@ -1118,163 +939,61 @@ body {
 
 <script>
 (function() {
-  // 1. Interactive Niche Simulator in Phone Mockup
-  var nicheData = {
-    barber: {
-      tag: 'Барбершоп',
-      title: 'Мужские стрижки и моделирование бороды',
-      desc: 'Онлайн-запись к барберам в 2 клика. Карта проезда и кнопки прямого звонка.',
-      badges: ['✓ Онлайн-запись', '✓ Онлайн-оплата', '✓ WhatsApp'],
-      btn: 'Записаться к мастеру →',
-      bizValue: 'Барбершоп'
+  // 1. Interactive SVG Architecture Hotspots
+  var hotspots = document.querySelectorAll('.schematic-hotspot-btn');
+  var telemetryText = document.getElementById('telemetryDetail');
+
+  var specs = {
+    engine: {
+      text: 'Сайт собирается на ультра-быстром чистом коде без конструкторов Tilda/Wix. Скорость загрузки 0.3 секунды, 0 ₽ ежемесячной абонентской платы.',
+      activeId: 'svgNodeEngine'
     },
-    auto: {
-      tag: 'Автосервис & Детейлинг',
-      title: 'Кузовной ремонт, покраска и полировка авто',
-      desc: 'Калькулятор стоимости ремонта по фото. Быстрый вызов эвакуатора и запись.',
-      badges: ['✓ Расчёт по фото', '✓ Гарантия 1 год', '✓ Telegram'],
-      btn: 'Рассчитать ремонт →',
-      bizValue: 'Автосервис'
+    payment: {
+      text: 'Интеграция официального платёжного шлюза (Т-Банк, Сбер или ЮKassa). Клиент оплачивает услуги картой или СБП, средства идут прямо на ваш расчётный счёт.',
+      activeId: 'svgNodePayment'
     },
-    cafe: {
-      tag: 'Кафе & Ресторан',
-      title: 'Авторская кухня и доставка за 40 минут',
-      desc: 'Удобное электронное меню с фотографиями блюд и онлайн-оплатой заказа.',
-      badges: ['✓ Меню блюд', '✓ Приём оплат', '✓ Бронь стола'],
-      btn: 'Забронировать столик →',
-      bizValue: 'Кафе / Ресторан'
+    domain: {
+      text: 'Регистрация домена .ru на 12 месяцев строго на ваши данные через официального аккредитованного регистратора + автоматический SSL-сертификат безопасности.',
+      activeId: 'svgNodeDomain'
     },
-    clinic: {
-      tag: 'Стоматология & Клиника',
-      title: 'Бережная медицина и диагностика без очередей',
-      desc: 'Выбор врача, расписание приёма и запись на первичную консультацию.',
-      badges: ['✓ Выбор врача', '✓ Прайс услуг', '✓ Отзывы'],
-      btn: 'Записаться на приём →',
-      bizValue: 'Клиника'
+    leads: {
+      text: 'Каждая заявка с сайта моментально направляется в ваш Telegram с полными данными клиента, исключая потерю обращений.',
+      activeId: 'svgNodeLeads'
     }
   };
 
-  var nicheButtons = document.querySelectorAll('#nicheSwitcher .niche-pill-btn');
-  var prevTag = document.getElementById('prevTag');
-  var prevTitle = document.getElementById('prevTitle');
-  var prevDesc = document.getElementById('prevDesc');
-  var prevBadges = document.getElementById('prevBadges');
-  var prevBtn = document.getElementById('prevBtn');
-  var formBiz = document.getElementById('formBiz');
+  var svgNodes = ['svgNodeEngine', 'svgNodePayment', 'svgNodeDomain', 'svgNodeLeads'];
 
-  nicheButtons.forEach(function(btn) {
+  hotspots.forEach(function(btn) {
     btn.addEventListener('click', function() {
-      nicheButtons.forEach(function(b) { b.classList.remove('active'); });
+      hotspots.forEach(function(b) { b.classList.remove('active'); });
       btn.classList.add('active');
-      var key = btn.getAttribute('data-niche');
-      var item = nicheData[key];
-      if (!item) return;
+      var key = btn.getAttribute('data-spec');
+      var cfg = specs[key];
+      if (!cfg) return;
 
-      if (prevTag) prevTag.textContent = item.tag;
-      if (prevTitle) prevTitle.textContent = item.title;
-      if (prevDesc) prevDesc.textContent = item.desc;
-      if (prevBtn) prevBtn.textContent = item.btn;
-      if (formBiz) formBiz.value = item.bizValue;
+      if (telemetryText) telemetryText.textContent = cfg.text;
 
-      if (prevBadges) {
-        prevBadges.innerHTML = item.badges.map(function(b) {
-          return '<span class="preview-feature-badge">' + b + '</span>';
-        }).join('');
-      }
+      svgNodes.forEach(function(nodeId) {
+        var el = document.getElementById(nodeId);
+        if (el) {
+          if (nodeId === cfg.activeId) {
+            el.setAttribute('stroke', '#2F68FE');
+            el.setAttribute('stroke-width', '2.5');
+            el.setAttribute('fill', '#1F2538');
+          } else {
+            el.setAttribute('stroke', 'rgba(255,255,255,0.15)');
+            el.setAttribute('stroke-width', '1.5');
+            el.setAttribute('fill', '#161B28');
+          }
+        }
+      });
     });
   });
 
-  // 2. Interactive AI Concept Generator
-  var aiInput = document.getElementById('aiBizQuery');
-  var btnRunAi = document.getElementById('btnRunAiConcept');
-  var resAiHead = document.getElementById('resAiHeadline');
-  var resAiSub = document.getElementById('resAiSubhead');
-  var resAiTriggers = document.getElementById('resAiTriggers');
-  var resAiMagnet = document.getElementById('resAiMagnet');
-  var btnApplyAi = document.getElementById('btnApplyAiConcept');
-
-  if (btnRunAi) {
-    btnRunAi.addEventListener('click', function() {
-      var val = (aiInput && aiInput.value.trim()) || 'Детейлинг';
-      btnRunAi.disabled = true;
-      btnRunAi.textContent = 'Генерирую… ✨';
-
-      fetch('/api/generate-concept', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ biz: val })
-      })
-      .then(function(r) { return r.json(); })
-      .then(function(res) {
-        btnRunAi.disabled = false;
-        btnRunAi.textContent = 'Сгенерировать оффер ✨';
-        if (res && res.data) {
-          var d = res.data;
-          if (resAiHead && d.headline) resAiHead.textContent = d.headline;
-          if (resAiSub && d.subhead) resAiSub.textContent = d.subhead;
-          if (resAiMagnet && d.leadMagnet) resAiMagnet.textContent = '🎁 ' + d.leadMagnet;
-          if (resAiTriggers && Array.isArray(d.triggers)) {
-            resAiTriggers.innerHTML = d.triggers.map(function(t) {
-              return '<span class="ai-trigger-badge">' + t + '</span>';
-            }).join('');
-          }
-        }
-      })
-      .catch(function() {
-        btnRunAi.disabled = false;
-        btnRunAi.textContent = 'Сгенерировать оффер ✨';
-      });
-    });
-  }
-
-  if (btnApplyAi) {
-    btnApplyAi.addEventListener('click', function() {
-      var contactSec = document.getElementById('contact');
-      if (contactSec) {
-        contactSec.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(function() {
-          if (formBiz && resAiHead) {
-            formBiz.value = (aiInput ? aiInput.value : 'Бизнес') + ' — ' + resAiHead.textContent.slice(0, 50);
-            formBiz.focus();
-          }
-        }, 400);
-      }
-    });
-  }
-
-  // 3. ROI & Payback Slider Calculator
-  var slideCheck = document.getElementById('slideCheck');
-  var slideOrders = document.getElementById('slideOrders');
-  var valCheck = document.getElementById('valCheck');
-  var valOrders = document.getElementById('valOrders');
-  var resPaybackDays = document.getElementById('resPaybackDays');
-  var resMonthlyIncome = document.getElementById('resMonthlyIncome');
-
-  function updateRoi() {
-    var check = parseInt(slideCheck.value, 10) || 2500;
-    var orders = parseInt(slideOrders.value, 10) || 10;
-
-    valCheck.textContent = check.toLocaleString('ru-RU') + ' ₽';
-    valOrders.textContent = orders + ' клиентов';
-
-    var monthlyTotal = check * orders;
-    resMonthlyIncome.textContent = monthlyTotal.toLocaleString('ru-RU') + ' ₽';
-
-    // 14 990 / (daily income)
-    var dailyIncome = monthlyTotal / 30;
-    var days = Math.max(1, Math.ceil(14990 / dailyIncome));
-    resPaybackDays.textContent = '~' + days + (days === 1 ? ' день' : days < 5 ? ' дня' : ' дней');
-  }
-
-  if (slideCheck && slideOrders) {
-    slideCheck.addEventListener('input', updateRoi);
-    slideOrders.addEventListener('input', updateRoi);
-    updateRoi();
-  }
-
-  // 4. Channel switcher & dynamic placeholder
-  var channelPills = document.querySelectorAll('#channelGroup .channel-chip-btn');
-  var contactInput = document.getElementById('formContact');
+  // 2. Channel Segment Switcher
+  var segButtons = document.querySelectorAll('#methodSegments .switch-method-button');
+  var contactInp = document.getElementById('inpFieldContact');
   var phs = {
     telegram: '@username в Telegram',
     whatsapp: 'Номер для WhatsApp (+7...)',
@@ -1282,22 +1001,22 @@ body {
     other: 'Электронная почта'
   };
 
-  channelPills.forEach(function(pill) {
-    pill.addEventListener('click', function() {
-      channelPills.forEach(function(p) { p.classList.remove('active'); });
-      pill.classList.add('active');
-      var r = pill.querySelector('input');
+  segButtons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      segButtons.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var r = btn.querySelector('input');
       if (r) {
         r.checked = true;
-        if (contactInput) contactInput.placeholder = phs[r.value] || 'Контакт для связи';
+        if (contactInp) contactInp.placeholder = phs[r.value] || 'Контакт для связи';
       }
     });
   });
 
-  // 5. Form Submit
-  var form = document.getElementById('intakeForm');
-  var btnSub = document.getElementById('btnSubmitIntake');
-  var fb = document.getElementById('intakeFeedback');
+  // 3. Dispatch Form Submission
+  var form = document.getElementById('dispatchForm');
+  var btnSub = document.getElementById('btnSubmitDispatch');
+  var fb = document.getElementById('dispatchFeedback');
 
   if (form) {
     form.addEventListener('submit', function(e) {
@@ -1319,7 +1038,7 @@ body {
           name: fd.get('name') || '',
           contact_method: fd.get('contact_method') || 'telegram',
           contact_value: fd.get('contact_value') || '',
-          source: 'clean_14990_enriched'
+          source: 'blueprint_monolith_14990'
         })
       })
       .then(function(res) {
@@ -1328,12 +1047,12 @@ body {
       })
       .then(function() {
         if (btnSub) {
-          btnSub.textContent = 'Заявка принята ✓';
-          btnSub.style.background = '#10B981';
-          btnSub.style.color = '#FFFFFF';
+          btnSub.textContent = 'Заявка принята';
+          btnSub.style.background = '#00E599';
+          btnSub.style.color = '#090B10';
         }
         if (fb) {
-          fb.innerHTML = 'Заявка принята! Я напишу вам в течение 30 минут. <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--accent-gold);font-weight:700;">Написать в Telegram →</a>';
+          fb.innerHTML = 'Заявка получена! Я свяжусь с вами в течение 30 минут. <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--accent-cyan);font-weight:700;">Написать в Telegram →</a>';
         }
         form.reset();
       })
@@ -1341,7 +1060,7 @@ body {
         if (btnSub) {
           btnSub.disabled = false;
           btnSub.style.opacity = '1';
-          btnSub.textContent = 'Отправить заявку →';
+          btnSub.textContent = 'Отправить заявку на разработку';
         }
         if (fb) {
           fb.textContent = 'Ошибка отправки. Пожалуйста, напишите напрямую в Telegram @K_Sofrin.';
