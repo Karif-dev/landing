@@ -1044,6 +1044,41 @@ body {
     font-size: 20px;
   }
 }
+/* LIGHTWEIGHT SCROLL-REVEAL SYSTEM FOR CASES AND PROCESS */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-reveal-zoom {
+  opacity: 0;
+  transform: scale(0.96) translateY(20px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.scroll-reveal-zoom.revealed {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.stagger-1 { transition-delay: 0.08s; }
+.stagger-2 { transition-delay: 0.16s; }
+.stagger-3 { transition-delay: 0.24s; }
+.stagger-4 { transition-delay: 0.32s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal, .scroll-reveal-zoom {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
 </style>
 </head>
 
@@ -1232,14 +1267,14 @@ body {
   </section>
 
   <!-- SECTION 3: CASE STUDY SPOTLIGHT -->
-  <section class="section-wrapper" id="showcase">
+  <section class="section-wrapper scroll-reveal" id="showcase">
     <div class="case-spotlight-box">
-      <div class="case-media-frame">
+      <div class="case-media-frame scroll-reveal-zoom">
         <span class="case-tag-badge">Реальный запуск · Брянск</span>
         <img src="knyaz.webp" alt="Барбершоп Князь" width="800" height="500">
       </div>
 
-      <div>
+      <div class="scroll-reveal stagger-1">
         <div class="section-tagline">Флагманский кейс</div>
         <h2 style="font-family: var(--font-heading); font-size: 32px; font-weight: 800; line-height: 1.15;">
           Барбершоп «Князь»
@@ -1249,25 +1284,25 @@ body {
         </p>
 
         <div class="case-metrics-cluster">
-          <div class="case-metric-box">
+          <div class="case-metric-box scroll-reveal stagger-1">
             <b>5.0 ★</b>
             <span>Рейтинг на Яндекс Картах</span>
           </div>
-          <div class="case-metric-box">
+          <div class="case-metric-box scroll-reveal stagger-2">
             <b>47</b>
             <span>Живых отзывов</span>
           </div>
-          <div class="case-metric-box">
+          <div class="case-metric-box scroll-reveal stagger-3">
             <b>0.8с</b>
             <span>Скорость загрузки</span>
           </div>
         </div>
 
-        <blockquote style="font-style: italic; color: var(--text-main); font-size: 15px; border-left: 3px solid var(--accent-primary); padding-left: 16px; margin: 16px 0;">
+        <blockquote class="scroll-reveal stagger-2" style="font-style: italic; color: var(--text-main); font-size: 15px; border-left: 3px solid var(--accent-primary); padding-left: 16px; margin: 16px 0;">
           «Сайт окупился в первую же неделю. Клиентам удобно смотреть стрижки и цены прямо с телефона, а нам не нужно переписываться по полдня.»
         </blockquote>
 
-        <a class="btn-ghost" href="https://knyaz32.ru/" target="_blank" rel="noopener" style="margin-top: 8px;">
+        <a class="btn-ghost scroll-reveal stagger-3" href="https://knyaz32.ru/" target="_blank" rel="noopener" style="margin-top: 8px;">
           <span>Перейти на живой сайт knyaz32.ru ↗</span>
         </a>
       </div>
@@ -1275,13 +1310,13 @@ body {
   </section>
 
   <!-- SECTION 4: 3-DAY PROTOCOL TIMELINE -->
-  <section class="section-wrapper" id="protocol">
+  <section class="section-wrapper scroll-reveal" id="protocol">
     <div class="section-tagline">Понятный регламент</div>
     <h2 class="section-heading-big">3 дня до первых клиентов</h2>
     <p class="section-subtext">Вы точно знаете, что происходит на каждом этапе разработки.</p>
 
     <div class="protocol-grid">
-      <div class="protocol-card">
+      <div class="protocol-card scroll-reveal stagger-1">
         <div>
           <div class="protocol-day-marker">День 01 · Старт</div>
           <h3 class="protocol-title">Бриф и концепт</h3>
@@ -1291,7 +1326,7 @@ body {
         </div>
       </div>
 
-      <div class="protocol-card">
+      <div class="protocol-card scroll-reveal stagger-2">
         <div>
           <div class="protocol-day-marker">День 02 · Сборка</div>
           <h3 class="protocol-title">Чистый код</h3>
@@ -1301,7 +1336,7 @@ body {
         </div>
       </div>
 
-      <div class="protocol-card">
+      <div class="protocol-card scroll-reveal stagger-3">
         <div>
           <div class="protocol-day-marker">День 03 · Финиш</div>
           <h3 class="protocol-title">Домен и релиз</h3>
@@ -1720,6 +1755,30 @@ body {
       }
       checkDock();
     }, { passive: true });
+  }
+
+  // 7. Lightweight Scroll-Reveal via IntersectionObserver for Process & Cases
+  var revealTargets = document.querySelectorAll('.scroll-reveal, .scroll-reveal-zoom');
+  if ('IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: '0px 0px -50px 0px',
+      threshold: 0.12
+    });
+
+    revealTargets.forEach(function(el) {
+      revealObserver.observe(el);
+    });
+  } else {
+    revealTargets.forEach(function(el) {
+      el.classList.add('revealed');
+    });
   }
 })();
 </script>
