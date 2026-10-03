@@ -3,1062 +3,1335 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>SOFRIN · Creative Technologist & Digital Production Studio</title>
-<meta name="description" content="Индивидуальное проектирование и разработка цифровых продуктов, интерактивных флагманов и бренд-платформ. Бескомпромиссная эстетика и скорость.">
+<title>Кирилл Софрин · Разработка сайтов и веб-решений для бизнеса</title>
+<meta name="description" content="Создаю быстрые и продающие сайты для бизнеса под ключ. От лендингов с онлайн-записью до индивидуальных сервисов. Понятные цены, оплата после макета, домен в комплекте.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="SOFRIN · Creative Technologist & Digital Production Studio">
-<meta property="og:description" content="Проектирование и разработка цифровых флагманов, интерактивных сайтов и дизайн-систем.">
+<meta property="og:title" content="Кирилл Софрин · Разработка сайтов для бизнеса">
+<meta property="og:description" content="Сайты под ключ без ежемесячных платежей за конструкторы. Домен на 1 год включён.">
 <meta property="og:image" content="https://karif.up.railway.app/og.png">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://karif.up.railway.app/">
-<meta name="theme-color" content="#060709">
+<meta name="theme-color" content="#08090D">
 <link rel="canonical" href="https://karif.up.railway.app/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%23FFFFFF'/%3E%3Cpath d='M8 7h6v7l7-7h7l-9 9 9.5 11H22l-8-9.5V27H8z' fill='%23060709'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%23F3BA47'/%3E%3Cpath d='M9 7h5v7l7-7h6l-8 8 8.5 10H21L14 17v7H9z' fill='%2308090D'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Unbounded:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg-primary: #060709;
-  --bg-secondary: #0B0D12;
-  --bg-surface: #10131B;
-  --bg-card: rgba(16, 19, 27, 0.7);
-  --bg-glass: rgba(255, 255, 255, 0.03);
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-focus: rgba(255, 255, 255, 0.25);
-  --text-primary: #F8F9FA;
-  --text-secondary: #9BA1B0;
-  --text-tertiary: #5D6374;
-  --accent-gold: #E5C384;
-  --accent-cyan: #00F2FE;
-  --accent-gradient: linear-gradient(135deg, #FFFFFF 0%, #D8DCE6 50%, #9098A9 100%);
-  --font-display: 'Unbounded', system-ui, sans-serif;
-  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --bg-main: #08090D;
+  --bg-surface: #10121A;
+  --bg-surface-elevated: #161924;
+  --bg-pill: rgba(255, 255, 255, 0.04);
+  --bg-pill-hover: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.09);
+  --border-active: rgba(243, 186, 71, 0.5);
+  --text-pure: #FFFFFF;
+  --text-muted: #9BA3B5;
+  --text-dim: #60687A;
+  --accent-gold: #F3BA47;
+  --accent-gold-glow: rgba(243, 186, 71, 0.25);
+  --accent-cyan: #00F0FF;
+  --accent-emerald: #10B981;
+  --font-heading: 'Manrope', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-  --ease-fluid: cubic-bezier(0.16, 1, 0.3, 1);
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --radius-full: 9999px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-html { scroll-behavior: smooth; background-color: var(--bg-primary); color-scheme: dark; }
+html { scroll-behavior: smooth; background: var(--bg-main); color-scheme: dark; }
 
 body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: var(--bg-main);
+  color: var(--text-pure);
   font: 400 16px/1.65 var(--font-body);
   overflow-x: hidden;
   position: relative;
-  letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
 }
 
-/* INTERACTIVE GENERATIVE CANVAS */
-#canvasStage {
+/* Subtle Interactive Canvas Grid */
+#ambientCanvas {
   position: fixed;
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Ambient Specular Light Fields */
-.ambient-field-1 {
-  position: fixed;
-  top: -20vw;
-  right: -10vw;
-  width: 60vw;
-  height: 60vw;
-  background: radial-gradient(circle, rgba(229, 195, 132, 0.08) 0%, transparent 70%);
-  filter: blur(100px);
-  pointer-events: none;
-  z-index: 0;
-}
-.ambient-field-2 {
-  position: fixed;
-  bottom: -20vw;
-  left: -10vw;
-  width: 65vw;
-  height: 65vw;
-  background: radial-gradient(circle, rgba(0, 242, 254, 0.06) 0%, transparent 70%);
-  filter: blur(120px);
   pointer-events: none;
   z-index: 0;
 }
 
-/* Fine Noise Grid Texture */
-.texture-grid {
+.ambient-aurora-top {
+  position: fixed;
+  top: -240px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(243, 186, 71, 0.12) 0%, rgba(0, 240, 255, 0.04) 50%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Grid guide texture */
+.grid-lines-bg {
   position: fixed;
   inset: 0;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-  background-size: 72px 72px;
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
   pointer-events: none;
   z-index: 1;
 }
 
-/* MAIN WRAPPER */
-.layout-wrapper {
+/* Page Frame */
+.page-shell {
   position: relative;
   z-index: 2;
-  max-width: 1360px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 0 32px 80px;
+  padding: 0 24px 80px;
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 72px;
 }
 
-/* NAVIGATION HEADER */
-.site-nav {
+/* TOP HEADER */
+.main-header {
+  position: sticky;
+  top: 16px;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 0;
-  border-bottom: 1px solid var(--border-subtle);
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  background: rgba(16, 18, 26, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  margin-top: 14px;
 }
 
-.brand-monogram {
+.header-brand {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   text-decoration: none;
   color: inherit;
 }
-.monogram-mark {
-  width: 44px;
-  height: 44px;
+.brand-badge-k {
+  width: 38px;
+  height: 38px;
   border-radius: 12px;
-  background: #FFFFFF;
-  color: #060709;
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 19px;
+  background: linear-gradient(135deg, var(--accent-gold), #FF9800);
+  color: #08090D;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 17px;
   display: grid;
   place-items: center;
-  transition: transform 0.3s var(--ease-fluid);
+  box-shadow: 0 0 16px var(--accent-gold-glow);
 }
-.brand-monogram:hover .monogram-mark {
-  transform: rotate(-6deg) scale(1.05);
-}
-.monogram-text {
+.brand-info {
   display: flex;
   flex-direction: column;
 }
-.monogram-title {
-  font-family: var(--font-display);
+.brand-name {
+  font-family: var(--font-heading);
   font-size: 15px;
-  font-weight: 800;
-  letter-spacing: 0.05em;
+  font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
-.status-beacon {
+.status-dot-active {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #10B981;
-  box-shadow: 0 0 12px #10B981;
+  background: var(--accent-emerald);
+  box-shadow: 0 0 8px var(--accent-emerald);
 }
-.monogram-subtitle {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--text-tertiary);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.brand-role {
+  font-size: 12px;
+  color: var(--text-muted);
 }
 
-.nav-links-menu {
+.header-nav {
   display: flex;
   align-items: center;
-  gap: 36px;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text-secondary);
+  gap: 28px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
 }
-.nav-links-menu a {
+.header-nav a {
   text-decoration: none;
   color: inherit;
   transition: color 0.2s;
+  padding: 4px 0;
   position: relative;
-  padding: 6px 0;
 }
-.nav-links-menu a:hover {
-  color: #FFFFFF;
+.header-nav a:hover {
+  color: var(--text-pure);
 }
-.nav-links-menu a::after {
+.header-nav a:after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0;
-  height: 1px;
-  background: #FFFFFF;
-  transition: width 0.3s var(--ease-fluid);
+  height: 2px;
+  background: var(--accent-gold);
+  transition: width 0.25s var(--ease);
 }
-.nav-links-menu a:hover::after {
-  width: 100%;
-}
+.header-nav a:hover:after { width: 100%; }
 
-.nav-action-cluster {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-.btn-nav-commission {
+.btn-header-cta {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  height: 44px;
-  padding: 0 24px;
-  border-radius: 99px;
-  background: #FFFFFF;
-  color: #060709;
-  font-family: var(--font-display);
-  font-size: 12.5px;
+  gap: 8px;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: var(--radius-full);
+  background: var(--accent-gold);
+  color: #08090D;
+  font-family: var(--font-heading);
+  font-size: 13.5px;
   font-weight: 800;
-  letter-spacing: 0.02em;
   text-decoration: none;
-  transition: transform 0.25s var(--ease-fluid), box-shadow 0.25s;
+  transition: all 0.2s;
+  box-shadow: 0 0 16px var(--accent-gold-glow);
 }
-.btn-nav-commission:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.25);
-}
-
-/* SECTION 1: MONUMENTAL MANIFESTO HERO */
-.hero-stage {
-  padding: 60px 0 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+.btn-header-cta:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 0 24px rgba(243, 186, 71, 0.5);
 }
 
-.hero-meta-kicker {
+/* BUTTONS */
+.btn-primary-action {
   display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  color: var(--accent-gold);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-.hero-meta-kicker::before {
-  content: '01 //';
-  color: var(--text-tertiary);
-}
-
-.hero-manifesto-title {
-  font-family: var(--font-display);
-  font-size: clamp(38px, 6.2vw, 88px);
-  font-weight: 900;
-  line-height: 0.98;
-  letter-spacing: -0.05em;
-  color: #FFFFFF;
-  text-wrap: balance;
-  max-width: 1200px;
-}
-.hero-manifesto-title span.editorial-italic {
-  font-style: italic;
-  font-weight: 400;
-  color: var(--accent-gold);
-  font-family: var(--font-body);
-  letter-spacing: -0.03em;
-}
-
-.hero-lower-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 60px;
-  align-items: flex-end;
-  padding-top: 24px;
-}
-.hero-editorial-lead {
-  font-size: clamp(18px, 1.8vw, 24px);
-  line-height: 1.5;
-  color: var(--text-secondary);
-  font-weight: 300;
-  max-width: 680px;
-}
-.hero-editorial-lead b {
-  color: #FFFFFF;
-  font-weight: 600;
-}
-
-.hero-metrics-strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  border-top: 1px solid var(--border-subtle);
-  padding-top: 24px;
-}
-.metric-capsule {
-  display: flex;
-  flex-direction: column;
-}
-.metric-capsule-num {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 3.2vw, 42px);
-  font-weight: 900;
-  line-height: 1;
-  color: #FFFFFF;
-}
-.metric-capsule-lbl {
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  color: var(--text-tertiary);
-  margin-top: 6px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-/* SECTION 2: EXHIBITION OF WORKS (SELECTED DIGITAL ARTIFACTS) */
-.exhibition-section {
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
-}
-.section-headline-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding-bottom: 24px;
-  border-bottom: 1px solid var(--border-subtle);
-}
-.section-headline-title {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 3.8vw, 52px);
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  line-height: 1.05;
-}
-.section-index-tag {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--text-tertiary);
-}
-
-.artifacts-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 36px;
-}
-.artifact-card {
-  border-radius: 28px;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.4s var(--ease-fluid), border-color 0.4s, box-shadow 0.4s;
-  cursor: pointer;
-  position: relative;
-}
-.artifact-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
-}
-.artifact-stage-visual {
-  height: 380px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
   align-items: center;
   justify-content: center;
-  background: #090B10;
+  gap: 10px;
+  height: 56px;
+  padding: 0 32px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--accent-gold), #FF9800);
+  color: #08090D;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 16px;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(243, 186, 71, 0.35);
+  transition: transform 0.2s var(--ease), box-shadow 0.2s;
+  white-space: nowrap;
+}
+.btn-primary-action:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(243, 186, 71, 0.5);
 }
 
-/* Visual Mockups created with Pure Geometric CSS Art */
-.visual-bg-1 {
-  background: radial-gradient(circle at 70% 30%, rgba(229, 195, 132, 0.25), transparent 60%), #0A0D15;
+.btn-secondary-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 56px;
+  padding: 0 28px;
+  border-radius: var(--radius-md);
+  background: var(--bg-pill);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-pure);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
 }
-.visual-bg-2 {
-  background: radial-gradient(circle at 30% 70%, rgba(0, 242, 254, 0.22), transparent 60%), #080A12;
-}
-.visual-bg-3 {
-  background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.25), transparent 65%), #0C0A15;
-}
-.visual-bg-4 {
-  background: radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.2), transparent 60%), #080E0D;
+.btn-secondary-action:hover {
+  background: var(--bg-pill-hover);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
 }
 
-.artifact-canvas-art {
-  width: 75%;
-  height: 70%;
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(14, 17, 26, 0.85);
+/* SECTION 1: HERO CANVAS */
+.hero-wrapper {
+  padding-top: 24px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-text-side {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(243, 186, 71, 0.1);
+  border: 1px solid rgba(243, 186, 71, 0.25);
+  color: var(--accent-gold);
+  font-size: 13px;
+  font-weight: 700;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.hero-main-h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(34px, 4.4vw, 56px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  text-wrap: balance;
+}
+.hero-main-h1 span.highlight-gold {
+  color: var(--accent-gold);
+}
+
+.hero-sub-p {
+  color: var(--text-muted);
+  font-size: 18px;
+  line-height: 1.6;
+  margin-top: 20px;
+  max-width: 560px;
+}
+
+.hero-buttons-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.hero-key-features {
+  display: flex;
+  gap: 24px;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+}
+.feature-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.feature-badge-item svg {
+  color: var(--accent-emerald);
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+/* HERO RIGHT: LIVE SITE SIMULATOR CARD */
+.hero-live-card {
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 32px;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
-  padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.4s var(--ease-fluid);
 }
-.artifact-card:hover .artifact-canvas-art {
-  transform: scale(1.04) rotate(-1deg);
-}
-
-.artifact-info-box {
-  padding: 32px;
+.live-card-top {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  background: var(--bg-card);
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-subtle);
 }
-.artifact-category-pill {
+.live-badge-status {
+  font-size: 12px;
   font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent-gold);
-}
-.artifact-title {
-  font-family: var(--font-display);
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: #FFFFFF;
-}
-.artifact-summary {
-  font-size: 15px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-.artifact-tags-row {
-  display: flex;
-  gap: 10px;
-  margin-top: 8px;
-  flex-wrap: wrap;
-}
-.tag-badge {
-  font-family: var(--font-mono);
-  font-size: 11px;
+  color: var(--accent-emerald);
+  background: rgba(16, 185, 129, 0.1);
   padding: 4px 10px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-secondary);
+  border-radius: var(--radius-full);
 }
 
-/* SECTION 3: ENGINEERING PHILOSOPHY & DISCIPLINES */
-.disciplines-section {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 64px;
-  align-items: flex-start;
-}
-.disciplines-sticky-col {
-  position: sticky;
-  top: 120px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.disciplines-sticky-col h2 {
-  font-family: var(--font-display);
-  font-size: clamp(32px, 4vw, 54px);
-  font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: -0.04em;
-}
-.disciplines-sticky-col p {
-  font-size: 17px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  max-width: 460px;
-}
-
-.disciplines-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.discipline-item-card {
-  padding: 36px;
-  border-radius: 24px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  transition: all 0.3s var(--ease-fluid);
+.live-card-body {
+  margin: 24px 0;
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
-.discipline-item-card:hover {
-  border-color: rgba(255, 255, 255, 0.25);
-  transform: translateX(8px);
-  background: var(--bg-surface);
+.live-card-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  font-size: 14px;
 }
-.discipline-num {
-  font-family: var(--font-mono);
-  font-size: 13px;
+.live-card-stat-row b {
   color: var(--accent-gold);
-  font-weight: 700;
+  font-family: var(--font-heading);
 }
-.discipline-heading {
-  font-family: var(--font-display);
+
+/* SECTION 2: SERVICES & PACKAGES (Clear, Transparent, Understandable) */
+.section-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.section-head-center {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+.section-tag-kicker {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+.section-title-big {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.4vw, 42px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+.section-desc-sub {
+  color: var(--text-muted);
+  font-size: 17px;
+  margin-top: 10px;
+}
+
+.services-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-package-card {
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s var(--ease), border-color 0.3s;
+  position: relative;
+}
+.service-package-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+.service-package-card.featured-card {
+  border-color: var(--accent-gold);
+  background: radial-gradient(circle at 100% 0%, rgba(243, 186, 71, 0.08), transparent 70%), var(--bg-surface);
+  box-shadow: 0 20px 50px rgba(243, 186, 71, 0.15);
+}
+.featured-badge-top {
+  position: absolute;
+  top: -12px;
+  left: 36px;
+  background: var(--accent-gold);
+  color: #08090D;
+  font-family: var(--font-heading);
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.service-card-header {
+  margin-bottom: 20px;
+}
+.service-name {
+  font-family: var(--font-heading);
   font-size: 22px;
   font-weight: 800;
   color: #FFFFFF;
 }
-.discipline-body {
-  font-size: 15px;
-  color: var(--text-secondary);
-  line-height: 1.65;
+.service-target {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin-top: 6px;
+  line-height: 1.5;
 }
 
-/* SECTION 4: REAL-TIME INTERACTIVE AUDIO-VISUAL LAB */
-.interactive-lab-card {
+.service-price-block {
+  margin: 16px 0 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.service-price-amount {
+  font-family: var(--font-heading);
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--accent-gold);
+  line-height: 1;
+}
+.service-price-term {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.service-features-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.service-feature-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14.5px;
+  color: var(--text-pure);
+}
+.service-feature-row svg {
+  color: var(--accent-emerald);
+  width: 18px;
+  height: 18px;
+  flex: none;
+  margin-top: 2px;
+}
+
+/* SECTION 3: INTERACTIVE PROJECT ESTIMATOR (Калькулятор проекта) */
+.estimator-box {
   padding: 48px;
-  border-radius: 32px;
+  border-radius: var(--radius-lg);
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 40px;
+}
+
+.estimator-options-col {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.estimator-step-label {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+
+.selector-chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.estimator-chip-btn {
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.estimator-chip-btn:hover {
+  background: var(--bg-pill-hover);
+  color: #FFFFFF;
+}
+.estimator-chip-btn.active {
+  background: var(--accent-gold);
+  color: #08090D;
+  border-color: var(--accent-gold);
+  font-weight: 700;
+}
+
+.options-toggle-grid {
+  display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 12px;
+}
+.estimator-checkbox-label {
+  display: flex;
   align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 0.2s;
 }
-.lab-interface-controls {
+.estimator-checkbox-label:hover { border-color: rgba(255, 255, 255, 0.2); }
+.estimator-checkbox-label input {
+  accent-color: var(--accent-gold);
+  width: 17px;
+  height: 17px;
+}
+
+/* Estimator Live Output Card */
+.estimator-summary-panel {
+  padding: 36px;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  justify-content: space-between;
 }
-.lab-slider-row {
+.estimator-cost-num {
+  font-family: var(--font-heading);
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--accent-gold);
+  line-height: 1;
+  margin: 10px 0 6px;
+}
+.estimator-meta-items {
+  list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
+  margin: 20px 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 16px 0;
 }
-.lab-slider-meta {
+.estimator-meta-row {
   display: flex;
   justify-content: space-between;
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  color: var(--text-secondary);
+  font-size: 14px;
+  color: var(--text-muted);
 }
-.lab-slider-input {
-  width: 100%;
-  accent-color: #FFFFFF;
-  cursor: pointer;
-}
+.estimator-meta-row b { color: #FFFFFF; }
 
-.lab-preview-viewport {
-  height: 380px;
-  border-radius: 24px;
-  background: #030406;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-  overflow: hidden;
+/* SECTION 4: WHY WORK DIRECTLY (ADVANTAGES) */
+.advantages-grid-4 {
   display: grid;
-  place-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
-#labCanvasView {
-  width: 100%;
-  height: 100%;
-}
-.lab-status-badge {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--accent-gold);
-  background: rgba(0, 0, 0, 0.6);
-  padding: 4px 12px;
-  border-radius: 99px;
+.advantage-card {
+  padding: 32px;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.advantage-num {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--accent-gold);
+  font-weight: 700;
+}
+.advantage-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+.advantage-text {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
 
-/* SECTION 5: COMMISSION & INQUIRY PROTOCOL */
-.commission-station {
-  padding: 64px;
-  border-radius: 36px;
+/* SECTION 5: TRANSPARENT ROADMAP (HOW IT WORKS) */
+.roadmap-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.roadmap-card {
+  padding: 36px;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.roadmap-step-badge {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.roadmap-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+.roadmap-desc {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* SECTION 6: FAST-TRACK CONTACT FORM (#contact) */
+.contact-form-panel {
+  padding: 56px;
+  border-radius: var(--radius-lg);
   background: 
-    radial-gradient(ellipse at 100% 0%, rgba(229, 195, 132, 0.12), transparent 60%),
-    radial-gradient(ellipse at 0% 100%, rgba(0, 242, 254, 0.08), transparent 60%),
+    radial-gradient(ellipse at 100% 0%, rgba(243, 186, 71, 0.08), transparent 60%),
     var(--bg-surface);
   border: 1px solid var(--border-subtle);
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  gap: 64px;
+  gap: 48px;
 }
 
-.commission-manifesto {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.contact-info-col h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.4vw, 42px);
+  font-weight: 800;
+  line-height: 1.15;
 }
-.commission-manifesto h2 {
-  font-family: var(--font-display);
-  font-size: clamp(32px, 4.2vw, 56px);
-  font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: -0.04em;
-  color: #FFFFFF;
-}
-.commission-manifesto p {
-  color: var(--text-secondary);
-  font-size: 17px;
+.contact-info-col p {
+  color: var(--text-muted);
+  font-size: 16px;
+  margin-top: 14px;
   line-height: 1.6;
-  margin-top: 16px;
-  max-width: 500px;
 }
-.direct-channels-row {
+.contact-perks-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 32px;
-  font-family: var(--font-mono);
-  font-size: 13.5px;
+  gap: 14px;
+  margin-top: 28px;
+  font-size: 14.5px;
+  color: var(--text-pure);
 }
-.direct-link-item {
+.contact-perk-row {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--text-primary);
-  text-decoration: none;
-  transition: color 0.2s;
 }
-.direct-link-item:hover { color: var(--accent-gold); }
+.contact-perk-row svg {
+  color: var(--accent-emerald);
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
 
-/* ACTUAL COMMISSION INQUIRY FORM */
-.commission-form-core {
+.form-body-elements {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
 }
-.form-field-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.form-field-label {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-tertiary);
-}
-.form-core-input {
-  height: 56px;
-  border-radius: 14px;
+.input-control-box {
+  height: 54px;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--border-subtle);
-  background: rgba(6, 7, 9, 0.7);
+  background: var(--bg-surface-elevated);
   color: #FFFFFF;
-  padding: 0 20px;
+  padding: 0 18px;
   font: 500 15px var(--font-body);
   outline: 0;
-  transition: all 0.25s;
+  transition: all 0.2s;
   width: 100%;
 }
-.form-core-input:focus {
-  border-color: #FFFFFF;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+.input-control-box:focus {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 3px var(--accent-gold-glow);
 }
 
-.type-segmented-matrix {
+.contact-methods-picker {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 8px;
 }
-.type-seg-chip {
+.contact-method-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 44px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface-elevated);
   border: 1px solid var(--border-subtle);
-  color: var(--text-secondary);
-  font-family: var(--font-mono);
-  font-size: 12px;
-  display: grid;
-  place-items: center;
+  color: var(--text-muted);
+  font-size: 13.5px;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
 }
-.type-seg-chip input { display: none; }
-.type-seg-chip.active {
-  background: #FFFFFF;
-  color: #060709;
-  border-color: #FFFFFF;
+.contact-method-pill input { display: none; }
+.contact-method-pill.active {
+  background: var(--accent-gold);
+  color: #08090D;
+  border-color: var(--accent-gold);
   font-weight: 700;
 }
 
-.btn-commission-send {
-  height: 60px;
-  border-radius: 16px;
-  background: #FFFFFF;
-  color: #060709;
-  font-family: var(--font-display);
-  font-size: 14px;
-  font-weight: 900;
-  letter-spacing: 0.02em;
-  border: 0;
-  cursor: pointer;
-  box-shadow: 0 16px 40px rgba(255, 255, 255, 0.15);
-  transition: transform 0.25s var(--ease-fluid), box-shadow 0.25s;
-  margin-top: 8px;
+/* SECTION 7: FAQ */
+.faq-list-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
-.btn-commission-send:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 20px 50px rgba(255, 255, 255, 0.3);
+.faq-item-card {
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.faq-item-card[open] { border-color: var(--accent-gold); }
+.faq-item-card summary {
+  list-style: none;
+  padding: 22px 28px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  color: #FFFFFF;
+}
+.faq-item-card summary::-webkit-details-marker { display: none; }
+.faq-toggle-icon {
+  font-size: 22px;
+  color: var(--accent-gold);
+  transition: transform 0.2s;
+}
+.faq-item-card[open] .faq-toggle-icon { transform: rotate(45deg); }
+.faq-item-body {
+  padding: 0 28px 24px;
+  color: var(--text-muted);
+  font-size: 15.5px;
+  line-height: 1.6;
 }
 
 /* FOOTER */
-.curated-footer {
+.site-footer-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 0 10px;
+  padding: 32px 0 10px;
   border-top: 1px solid var(--border-subtle);
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--text-tertiary);
+  font-size: 14px;
+  color: var(--text-dim);
 }
-.curated-footer a { color: inherit; text-decoration: none; }
-.curated-footer a:hover { color: #FFFFFF; }
+.site-footer-row a { color: inherit; text-decoration: none; }
+.site-footer-row a:hover { color: #FFFFFF; }
 
-/* RESPONSIVE MEDIA QUERIES */
-@media (max-width: 960px) {
-  .nav-links-menu { display: none; }
-  .hero-lower-grid { grid-template-columns: 1fr; gap: 32px; }
-  .artifacts-grid { grid-template-columns: 1fr; }
-  .disciplines-section { grid-template-columns: 1fr; }
-  .disciplines-sticky-col { position: static; }
-  .interactive-lab-card { grid-template-columns: 1fr; padding: 28px 20px; }
-  .commission-station { grid-template-columns: 1fr; padding: 36px 24px; gap: 40px; }
-  .type-segmented-matrix { grid-template-columns: 1fr; }
-  .layout-wrapper { gap: 64px; padding: 0 20px 60px; }
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 900px) {
+  .header-nav { display: none; }
+  .hero-wrapper { grid-template-columns: 1fr; }
+  .services-grid-3 { grid-template-columns: 1fr; }
+  .estimator-box { grid-template-columns: 1fr; padding: 32px 20px; }
+  .options-toggle-grid { grid-template-columns: 1fr; }
+  .advantages-grid-4 { grid-template-columns: 1fr 1fr; }
+  .roadmap-strip { grid-template-columns: 1fr; }
+  .contact-form-panel { grid-template-columns: 1fr; padding: 32px 20px; }
+  .contact-methods-picker { grid-template-columns: 1fr 1fr; }
+  .page-shell { gap: 48px; padding: 0 16px 60px; }
+}
+@media (max-width: 600px) {
+  .advantages-grid-4 { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 
 <body>
-<canvas id="canvasStage"></canvas>
-<div class="texture-grid"></div>
-<div class="ambient-field-1"></div>
-<div class="ambient-field-2"></div>
+<canvas id="ambientCanvas"></canvas>
+<div class="grid-lines-bg"></div>
+<div class="ambient-aurora-top"></div>
 
-<div class="layout-wrapper">
+<div class="page-shell">
 
-  <!-- NAVIGATION HEADER -->
-  <header class="site-nav" role="banner">
-    <a class="brand-monogram" href="#">
-      <div class="monogram-mark">S</div>
-      <div class="monogram-text">
-        <span class="monogram-title">SOFRIN <span class="status-beacon" title="Доступен для новых проектов"></span></span>
-        <span class="monogram-subtitle">Creative Technologist</span>
+  <!-- TOP HEADER -->
+  <header class="main-header" role="banner">
+    <a class="header-brand" href="#">
+      <div class="brand-badge-k">K</div>
+      <div class="brand-info">
+        <span class="brand-name">Кирилл Софрин <span class="status-dot-active" title="Свободен для заказов"></span></span>
+        <span class="brand-role">Веб-разработка под ключ</span>
       </div>
     </a>
 
-    <nav class="nav-links-menu" aria-label="Разделы">
-      <a href="#works">Избранные проекты</a>
-      <a href="#disciplines">Дисциплины</a>
-      <a href="#lab">Интерактивный стенд</a>
-      <a href="#commission">Сотрудничество</a>
+    <nav class="header-nav" aria-label="Разделы сайта">
+      <a href="#packages">Услуги и цены</a>
+      <a href="#estimator">Калькулятор</a>
+      <a href="#advantages">Преимущества</a>
+      <a href="#roadmap">Этапы работы</a>
+      <a href="#faq">FAQ</a>
     </nav>
 
-    <div class="nav-action-cluster">
-      <a class="btn-nav-commission" href="#commission">
-        <span>Обсудить проект</span>
-        <span aria-hidden="true">→</span>
-      </a>
-    </div>
+    <a class="btn-header-cta" href="#contact">
+      <span>Заказать сайт</span>
+      <span aria-hidden="true">→</span>
+    </a>
   </header>
 
-  <!-- SECTION 1: MANIFESTO HERO -->
-  <section class="hero-stage">
-    <div class="hero-meta-kicker">
-      <span>Studio Portfolio &amp; Digital Engineering</span>
-    </div>
+  <!-- SECTION 1: HERO CANVAS -->
+  <section class="hero-wrapper">
+    <div class="hero-text-side">
+      <div class="hero-eyebrow">
+        <span>● Открыт приём проектов на эту неделю</span>
+      </div>
 
-    <h1 class="hero-manifesto-title">
-      Проектирую и создаю <span class="editorial-italic">цифровые флагманы</span>, которые захватывают внимание
-    </h1>
+      <h1 class="hero-main-h1">
+        Делаю сайты, которые <span class="highlight-gold">приносят реальных клиентов</span> вашему бизнесу
+      </h1>
 
-    <div class="hero-lower-grid">
-      <p class="hero-editorial-lead">
-        Никаких конвейерных шаблонов и однотипных блоков. Индивидуальный дизайн, авторская типографика и реактивный чистый код, превращающий посетителей в лояльных клиентов.
+      <p class="hero-sub-p">
+        От продающих одностраничников с онлайн-записью до индивидуальных веб-сервисов. Вы получаете готовый быстрый сайт под ключ с вашим доменом, удобным мобильным интерфейсом и приёмом заявок.
       </p>
 
-      <div class="hero-metrics-strip">
-        <div class="metric-capsule">
-          <span class="metric-capsule-num">0.3s</span>
-          <span class="metric-capsule-lbl">First Paint</span>
-        </div>
-        <div class="metric-capsule">
-          <span class="metric-capsule-num">100</span>
-          <span class="metric-capsule-lbl">Lighthouse</span>
-        </div>
-        <div class="metric-capsule">
-          <span class="metric-capsule-num">60</span>
-          <span class="metric-capsule-lbl">FPS Motion</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 2: EXHIBITION OF WORKS -->
-  <section class="exhibition-section" id="works">
-    <div class="section-headline-bar">
-      <div>
-        <div class="hero-meta-kicker">02 // Selected Works</div>
-        <h2 class="section-headline-title">Цифровые артефакты</h2>
-      </div>
-      <span class="section-index-tag">[ 04 Индивидуальных концепта ]</span>
-    </div>
-
-    <div class="artifacts-grid">
-      <!-- Project 1 -->
-      <article class="artifact-card" onclick="document.getElementById('commission').scrollIntoView({behavior:'smooth'})">
-        <div class="artifact-stage-visual visual-bg-1">
-          <div class="artifact-canvas-art">
-            <div style="font-family:var(--font-mono); font-size:11px; color:var(--accent-gold);">PROJECT // 01</div>
-            <div style="font-family:var(--font-display); font-size:22px; font-weight:800; color:#fff;">AETHER RESIDENCE</div>
-            <div style="font-family:var(--font-mono); font-size:12px; color:var(--text-secondary);">SPATIAL ARCHITECTURE &amp; INTERACTIVE CATALOG</div>
-          </div>
-        </div>
-        <div class="artifact-info-box">
-          <span class="artifact-category-pill">Real Estate &amp; Architecture</span>
-          <h3 class="artifact-title">Aether Luxury Residences</h3>
-          <p class="artifact-summary">
-            Интерактивная презентация элитных объектов недвижимости с плавной кинематографичной анимацией и фильтрацией апартаментов.
-          </p>
-          <div class="artifact-tags-row">
-            <span class="tag-badge">WebGL Shaders</span>
-            <span class="tag-badge">Editorial Typography</span>
-            <span class="tag-badge">Fast SSR</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 2 -->
-      <article class="artifact-card" onclick="document.getElementById('commission').scrollIntoView({behavior:'smooth'})">
-        <div class="artifact-stage-visual visual-bg-2">
-          <div class="artifact-canvas-art">
-            <div style="font-family:var(--font-mono); font-size:11px; color:var(--accent-cyan);">PROJECT // 02</div>
-            <div style="font-family:var(--font-display); font-size:22px; font-weight:800; color:#fff;">KINETIC FINTECH</div>
-            <div style="font-family:var(--font-mono); font-size:12px; color:var(--text-secondary);">REAL-TIME LIQUIDITY &amp; WEALTH MANAGEMENT</div>
-          </div>
-        </div>
-        <div class="artifact-info-box">
-          <span class="artifact-category-pill">Fintech &amp; High-Frequency</span>
-          <h3 class="artifact-title">Kinetic Capital Platform</h3>
-          <p class="artifact-summary">
-            Торговый и аналитический терминал с нулевой задержкой отрисовки графиков и премиальной дизайн-системой.
-          </p>
-          <div class="artifact-tags-row">
-            <span class="tag-badge">Micro-Interactions</span>
-            <span class="tag-badge">Dark Cyber Interface</span>
-            <span class="tag-badge">Sub-second Latency</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 3 -->
-      <article class="artifact-card" onclick="document.getElementById('commission').scrollIntoView({behavior:'smooth'})">
-        <div class="artifact-stage-visual visual-bg-3">
-          <div class="artifact-canvas-art">
-            <div style="font-family:var(--font-mono); font-size:11px; color:#A78BFA;">PROJECT // 03</div>
-            <div style="font-family:var(--font-display); font-size:22px; font-weight:800; color:#fff;">MONOLITH ATELIER</div>
-            <div style="font-family:var(--font-mono); font-size:12px; color:var(--text-secondary);">BESPOKE BESPOKE TAILORING &amp; E-COMMERCE</div>
-          </div>
-        </div>
-        <div class="artifact-info-box">
-          <span class="artifact-category-pill">Haute Horlogerie &amp; Luxury</span>
-          <h3 class="artifact-title">Monolith Bespoke Timepieces</h3>
-          <p class="artifact-summary">
-            Флагманский интернет-магазин с 3D-конфигуратором часов и бесшовным процессом персонального оформления.
-          </p>
-          <div class="artifact-tags-row">
-            <span class="tag-badge">3D Configurator</span>
-            <span class="tag-badge">High Conversion</span>
-            <span class="tag-badge">Custom Audio SFX</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 4 -->
-      <article class="artifact-card" onclick="document.getElementById('commission').scrollIntoView({behavior:'smooth'})">
-        <div class="artifact-stage-visual visual-bg-4">
-          <div class="artifact-canvas-art">
-            <div style="font-family:var(--font-mono); font-size:11px; color:#34D399;">PROJECT // 04</div>
-            <div style="font-family:var(--font-display); font-size:22px; font-weight:800; color:#fff;">QUANTUM HEALTH</div>
-            <div style="font-family:var(--font-mono); font-size:12px; color:var(--text-secondary);">PREVENTIVE CLINIC &amp; INSTANT BOOKING</div>
-          </div>
-        </div>
-        <div class="artifact-info-box">
-          <span class="artifact-category-pill">Medical &amp; High-Tech Health</span>
-          <h3 class="artifact-title">Quantum Longevity Institute</h3>
-          <p class="artifact-summary">
-            Сайт частной медицинской клиники с онлайн-записью к специалистам за 30 секунд и интерактивной диагностической картой.
-          </p>
-          <div class="artifact-tags-row">
-            <span class="tag-badge">Instant Booking</span>
-            <span class="tag-badge">HIPAA/Security</span>
-            <span class="tag-badge">Mobile 1st</span>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- SECTION 3: DISCIPLINES & PRINCIPLES -->
-  <section class="disciplines-section" id="disciplines">
-    <div class="disciplines-sticky-col">
-      <div class="hero-meta-kicker">03 // Disciplines</div>
-      <h2>Бескомпромиссный инженерный подход</h2>
-      <p>
-        Каждый проект проектируется как индивидуальный продукт: от архитектуры данных и типографической сетки до микросекундной оптимизации кода.
-      </p>
-    </div>
-
-    <div class="disciplines-list">
-      <div class="discipline-item-card">
-        <span class="discipline-num">01 / BRAND &amp; ART DIRECTION</span>
-        <h3 class="discipline-heading">Идентичность и арт-дирекшн</h3>
-        <p class="discipline-body">
-          Разработка визуального языка, который выделяет бренд среди одинаковых шаблонов конкурентов. Шрифтовая иерархия, цветовая драматургия и визуальный ритм.
-        </p>
-      </div>
-
-      <div class="discipline-item-card">
-        <span class="discipline-num">02 / INTERACTION ARCHITECTURE</span>
-        <h3 class="discipline-heading">Архитектура взаимодействий</h3>
-        <p class="discipline-body">
-          Проектирование пользовательских сценариев, где каждое касание даёт естественный отклик. Мгновенные переходы, тактильные микроанимации и высокая конверсия.
-        </p>
-      </div>
-
-      <div class="discipline-item-card">
-        <span class="discipline-num">03 / PERFORMANCE ENGINEERING</span>
-        <h3 class="discipline-heading">Инженерная оптимизация</h3>
-        <p class="discipline-body">
-          Отказ от перегруженных CMS и тормозящих конструкторов. Чистый семантический код, сжатие ассетов и гарантированные 100 баллов в тестах Google PageSpeed.
-        </p>
-      </div>
-
-      <div class="discipline-item-card">
-        <span class="discipline-num">04 / CONVERSION CONCIERGE</span>
-        <h3 class="discipline-heading">Сквозная интеграция и мессенджеры</h3>
-        <p class="discipline-body">
-          Прямое подключение Telegram-ботов, CRM, онлайн-оплаты и картографических сервисов, чтобы ни один клиент не терялся в процессе оформления заявки.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 4: INTERACTIVE LAB (LIVE SHADER/PHYSICS SIMULATOR) -->
-  <section class="interactive-lab-card" id="lab">
-    <div class="lab-interface-controls">
-      <div>
-        <div class="hero-meta-kicker">04 // Interactive Experiment</div>
-        <h2 style="font-family:var(--font-display); font-size:32px; font-weight:800; line-height:1.15; margin-top:8px;">
-          Лаборатория взаимодействий
-        </h2>
-        <p style="color:var(--text-secondary); font-size:15px; margin-top:8px;">
-          Управляйте физикой силового поля в реальном времени. Этот же движок обеспечивает плавность взаимодействия на проектах.
-        </p>
-      </div>
-
-      <div class="lab-slider-row">
-        <div class="lab-slider-meta">
-          <span>ТУРБУЛЕНТНОСТЬ ПОЛЯ</span>
-          <b id="turbVal">1.2x</b>
-        </div>
-        <input class="lab-slider-input" id="sliderTurb" type="range" min="2" max="30" value="12">
-      </div>
-
-      <div class="lab-slider-row">
-        <div class="lab-slider-meta">
-          <span>СКОРОСТЬ РЕАКЦИИ</span>
-          <b id="speedVal">60 FPS</b>
-        </div>
-        <input class="lab-slider-input" id="sliderSpeed" type="range" min="1" max="5" value="3">
-      </div>
-
-      <div style="font-family:var(--font-mono); font-size:12px; color:var(--text-tertiary);">
-        Двигайте курсор внутри вьюпорта для создания гравитационных волн.
-      </div>
-    </div>
-
-    <div class="lab-preview-viewport">
-      <span class="lab-status-badge">● LIVE RENDER PIPELINE</span>
-      <canvas id="labCanvasView"></canvas>
-    </div>
-  </section>
-
-  <!-- SECTION 5: COMMISSION & INQUIRY -->
-  <section class="commission-station" id="commission">
-    <div class="commission-manifesto">
-      <div>
-        <div class="hero-meta-kicker">05 // Start Collaboration</div>
-        <h2>Создадим проект, о котором будут говорить</h2>
-        <p>
-          Расскажите о вашей идее или задаче. Я лично свяжусь с вами в течение 30 минут с вариантами реализации и архитектурным планом.
-        </p>
-      </div>
-
-      <div class="direct-channels-row">
-        <a class="direct-link-item" href="https://t.me/K_Sofrin" target="_blank" rel="noopener">
-          <span>✈ Прямой чат в Telegram: <b>@K_Sofrin</b></span>
+      <div class="hero-buttons-row">
+        <a class="btn-primary-action" href="#contact">
+          <span>Обсудить ваш проект</span>
+          <span aria-hidden="true">→</span>
         </a>
-        <div style="color:var(--text-tertiary);">Брянск, Москва &amp; Worldwide сотрудничество</div>
+        <a class="btn-secondary-action" href="#estimator">
+          <span>Рассчитать стоимость</span>
+          <span aria-hidden="true">↓</span>
+        </a>
+      </div>
+
+      <div class="hero-key-features">
+        <div class="feature-badge-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+          <span>Оплата после макета</span>
+        </div>
+        <div class="feature-badge-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+          <span>Домен .ru на 1 год включён</span>
+        </div>
+        <div class="feature-badge-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+          <span>Без ежемесячной дани</span>
+        </div>
       </div>
     </div>
 
-    <!-- COMMISSION FORM -->
-    <form class="commission-form-core" id="commissionForm" autocomplete="off">
-      <div class="form-field-group">
-        <label class="form-field-label">Тип проекта</label>
-        <div class="type-segmented-matrix" id="typeGroup">
-          <label class="type-seg-chip active"><input type="radio" name="project_type" value="Флагманский сайт" checked><span>Флагман</span></label>
-          <label class="type-seg-chip"><input type="radio" name="project_type" value="3D / Интерактив"><span>Интерактив</span></label>
-          <label class="type-seg-chip"><input type="radio" name="project_type" value="Сервис / Платформа"><span>Платформа</span></label>
+    <!-- Right: Live Specimen Card -->
+    <div class="hero-live-card">
+      <div class="live-card-top">
+        <span style="font-weight:700; font-size:14px; color:#fff;">Стандарты каждого проекта</span>
+        <span class="live-badge-status">● 100% готовность</span>
+      </div>
+
+      <div class="live-card-body">
+        <div class="live-card-stat-row">
+          <span>Скорость загрузки:</span>
+          <b>0.3–0.5 сек (Мгновенно)</b>
+        </div>
+        <div class="live-card-stat-row">
+          <span>Адаптация под смартфоны:</span>
+          <b>100% мобильный фокус</b>
+        </div>
+        <div class="live-card-stat-row">
+          <span>Срок реализации лендинга:</span>
+          <b>3–5 рабочих дней</b>
+        </div>
+        <div class="live-card-stat-row">
+          <span>Связь с разработчиком:</span>
+          <b>Напрямую в Telegram</b>
         </div>
       </div>
 
-      <div class="form-field-group">
-        <label class="form-field-label">О проекте / Сфера бизнеса</label>
-        <input class="form-core-input" id="inquiryBiz" name="biz" placeholder="Например: Архитектурное бюро, клиника или премиум-ритейл" required value="Премиальный ритейл">
-      </div>
+      <a class="btn-primary-action" href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="width:100%; height:48px; font-size:14px;">
+        <span>Написать в Telegram @K_Sofrin ↗</span>
+      </a>
+    </div>
+  </section>
 
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
-        <div class="form-field-group">
-          <label class="form-field-label">Город / Страна</label>
-          <input class="form-core-input" id="inquiryCity" name="city" placeholder="Брянск / Москва" value="Брянск">
+  <!-- SECTION 2: SERVICES & PACKAGES -->
+  <section class="section-shell" id="packages">
+    <div class="section-head-center">
+      <div class="section-tag-kicker">Прозрачные тарифы</div>
+      <h2 class="section-title-big">Понятные решения под ваши задачи</h2>
+      <p class="section-desc-sub">Вы точно знаете, за что платите. Никаких скрытых платежей за подписку на конструкторы.</p>
+    </div>
+
+    <div class="services-grid-3">
+      <!-- Package 1: Quick Landing -->
+      <div class="service-package-card featured-card">
+        <span class="featured-badge-top">Самый популярный</span>
+        <div>
+          <div class="service-card-header">
+            <h3 class="service-name">Быстрый старт</h3>
+            <p class="service-target">Для барбершопов, автосервисов, салонов красоты, частных мастеров, экспертов и кафе.</p>
+          </div>
+
+          <div class="service-price-block">
+            <div class="service-price-amount">14 990 ₽</div>
+            <div class="service-price-term">Фиксированная разовая цена под ключ · Срок: 3–5 дней</div>
+          </div>
+
+          <ul class="service-features-list">
+            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Домен .ru на 1 год включён в стоимость</span></li>
+            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Продающая структура и тексты под ваш бизнес</span></li>
+            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Кнопки WhatsApp, Telegram и звонка в 1 тап</span></li>
+            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Интеграция Яндекс Карт и онлайн-записи</span></li>
+            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Оплата только после утверждения первого экрана</span></li>
+          </ul>
         </div>
-        <div class="form-field-group">
-          <label class="form-field-label">Ваше имя</label>
-          <input class="form-core-input" id="inquiryName" name="name" placeholder="Как к вам обращаться">
+
+        <a class="btn-primary-action" href="#contact" style="width:100%;">
+          <span>Заказать этот тариф →</span>
+        </a>
+      </div>
+
+      <!-- Package 2: Corporate Site -->
+      <div class="service-package-card">
+        <div>
+          <div class="service-card-header">
+            <h3 class="service-name">Корпоративный сайт</h3>
+            <p class="service-target">Для строительных компаний, производств, юристов, медицинских клиник и B2B услуг.</p>
+          </div>
+
+          <div class="service-price-block">
+            <div class="service-price-amount">от 29 990 ₽</div>
+            <div class="service-price-term">Многостраничный проект · Срок: 7–14 дней</div>
+          </div>
+
+          <ul class="service-features-list">
+            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Разделы: Услуги, О компании, Кейсы, Контакты</span></li>
+            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Калькулятор стоимости услуг для клиентов</span></li>
+            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>SEO-подготовка для поисковиков (Яндекс, Google)</span></li>
+            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>SSL-сертификат безопасности и корпоративная почта</span></li>
+            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Поэтапная оплата по договору</span></li>
+          </ul>
+        </div>
+
+        <a class="btn-secondary-action" href="#contact" style="width:100%;">
+          <span>Обсудить проект →</span>
+        </a>
+      </div>
+
+      <!-- Package 3: Custom Web Solutions -->
+      <div class="service-package-card">
+        <div>
+          <div class="service-card-header">
+            <h3 class="service-name">Индивидуальные веб-решения</h3>
+            <p class="service-target">Для интернет-магазинов, каталогов с фильтрами, личных кабинетов и Telegram-ботов.</p>
+          </div>
+
+          <div class="service-price-block">
+            <div class="service-price-amount">Индивидуально</div>
+            <div class="service-price-term">Кастомный бэкенд и базы данных · Срок: по ТЗ</div>
+          </div>
+
+          <ul class="service-features-list">
+            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Подключение онлайн-оплаты (Сбер, Т-Банк, ЮKassa)</span></li>
+            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Telegram-бот для мгновенных уведомлений о заказах</span></li>
+            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Интеграция с вашей CRM-системой (AmoCRM, Bitrix)</span></li>
+            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Административная панель для управления товарами</span></li>
+            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Техническая поддержка после запуска</span></li>
+          </ul>
+        </div>
+
+        <a class="btn-secondary-action" href="#contact" style="width:100%;">
+          <span>Запросить расчёт →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: INTERACTIVE PROJECT ESTIMATOR -->
+  <section class="section-shell" id="estimator">
+    <div class="section-head-center">
+      <div class="section-tag-kicker">Интерактивный калькулятор</div>
+      <h2 class="section-title-big">Соберите конфигурацию вашего сайта</h2>
+      <p class="section-desc-sub">Отметьте нужные функции — калькулятор покажет точную ориентировочную стоимость.</p>
+    </div>
+
+    <div class="estimator-box">
+      <div class="estimator-options-col">
+        <div>
+          <div class="estimator-step-label">1. Тип проекта</div>
+          <div class="selector-chips-row" id="projectTypeChips">
+            <button class="estimator-chip-btn active" data-base="14990" data-days="3-5 дней" data-name="Продающий лендинг" type="button">Лендинг (14 990 ₽)</button>
+            <button class="estimator-chip-btn" data-base="29990" data-days="7-12 дней" data-name="Корпоративный сайт" type="button">Многостраничный (29 990 ₽)</button>
+            <button class="estimator-chip-btn" data-base="44990" data-days="14-20 дней" data-name="Интернет-магазин / Каталог" type="button">Магазин / Каталог (44 990 ₽)</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="estimator-step-label">2. Дополнительные опции</div>
+          <div class="options-toggle-grid">
+            <label class="estimator-checkbox-label">
+              <input type="checkbox" id="optBooking" checked>
+              <span>Онлайн-запись / Бронь</span>
+            </label>
+            <label class="estimator-checkbox-label">
+              <input type="checkbox" id="optTgBot">
+              <span>Уведомления в Telegram (+3 000 ₽)</span>
+            </label>
+            <label class="estimator-checkbox-label">
+              <input type="checkbox" id="optPayment">
+              <span>Приём онлайн-оплаты (+5 000 ₽)</span>
+            </label>
+            <label class="estimator-checkbox-label">
+              <input type="checkbox" id="optDomain" checked disabled>
+              <span>Домен .ru на 1 год (0 ₽ подарок)</span>
+            </label>
+          </div>
         </div>
       </div>
 
-      <div class="form-field-group">
-        <label class="form-field-label">Контакт для связи (Telegram / Телефон)</label>
-        <input class="form-core-input" id="inquiryContact" name="contact_value" placeholder="@username в Telegram или номер телефона" required>
+      <!-- Estimator Output Panel -->
+      <div class="estimator-summary-panel">
+        <div>
+          <span style="font-family:var(--font-mono); font-size:12px; color:var(--accent-gold); text-transform:uppercase;">ИТОГОВЫЙ РАСЧЁТ</span>
+          <div class="estimator-cost-num" id="calcPriceDisplay">14 990 ₽</div>
+          <div style="font-size:13.5px; color:var(--text-muted);">Без скрытых платежей и ежемесячных абонентских плат</div>
+
+          <ul class="estimator-meta-items">
+            <li class="estimator-meta-row"><span>Формат:</span><b id="calcTypeDisplay">Продающий лендинг</b></li>
+            <li class="estimator-meta-row"><span>Срок запуска:</span><b id="calcDaysDisplay">3–5 дней</b></li>
+            <li class="estimator-meta-row"><span>Оплата:</span><b>После утверждения макета</b></li>
+            <li class="estimator-meta-row"><span>Домен:</span><b>Включён в стоимость</b></li>
+          </ul>
+        </div>
+
+        <button class="btn-primary-action" id="btnApplyCalculation" type="button" style="width:100%;">
+          Зафиксировать эту стоимость →
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: ADVANTAGES (WHY WORK WITH ME) -->
+  <section class="section-shell" id="advantages">
+    <div class="section-head-center">
+      <div class="section-tag-kicker">Почему со мной выгодно</div>
+      <h2 class="section-title-big">Прямое сотрудничество без лишних звеньев</h2>
+      <p class="section-desc-sub">В отличие от агентств, вы не переплачиваете за офис, секретарей и аккаунт-менеджеров.</p>
+    </div>
+
+    <div class="advantages-grid-4">
+      <div class="advantage-card">
+        <span class="advantage-num">01 / БЕЗ РИСКА</span>
+        <h3 class="advantage-title">Оплата после согласования</h3>
+        <p class="advantage-text">Я создаю прототип и первый экран до того, как вы платите. Если результат вам не подходит — вы ничего не должны.</p>
       </div>
 
-      <button class="btn-commission-send" id="btnSubmitCommission" type="submit">
-        <span>Отправить заявку на сотрудничество →</span>
+      <div class="advantage-card">
+        <span class="advantage-num">02 / ЭКОНОМИЯ</span>
+        <h3 class="advantage-title">0 ₽ в месяц за конструкторы</h3>
+        <p class="advantage-text">Конструкторы требуют 1 000 – 2 500 ₽ каждый месяц. Мой сайт на чистом коде принадлежит вам навсегда без подписок.</p>
+      </div>
+
+      <div class="advantage-card">
+        <span class="advantage-num">03 / СКОРОСТЬ</span>
+        <h3 class="advantage-title">Запуск за 3–5 дней</h3>
+        <p class="advantage-text">Агентства согласовывают бриф неделями. Я работаю по чёткому спринту: от первого сообщения до готового сайта проходит менее недели.</p>
+      </div>
+
+      <div class="advantage-card">
+        <span class="advantage-num">04 / ПРЯМОЙ КОНТАКТ</span>
+        <h3 class="advantage-title">Связь лично в Telegram</h3>
+        <p class="advantage-text">Никаких длинных писем и бесконечных созвонов. Любые правки и вопросы решаются за 5 минут в мессенджере.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: ROADMAP -->
+  <section class="section-shell" id="roadmap">
+    <div class="section-head-center">
+      <div class="section-tag-kicker">Простой процесс</div>
+      <h2 class="section-title-big">Как строится работа</h2>
+      <p class="section-desc-sub">Всего 3 понятных шага без бюрократии.</p>
+    </div>
+
+    <div class="roadmap-strip">
+      <div class="roadmap-card">
+        <div>
+          <span class="roadmap-step-badge">Шаг 01 · 15 минут</span>
+          <h3 class="roadmap-title">Обсуждение задачи</h3>
+          <p class="roadmap-desc">Вы рассказываете о своём бизнесе в переписке или голосовым сообщением. Я предлагаю структуру, офферы и варианты решения.</p>
+        </div>
+      </div>
+
+      <div class="roadmap-card">
+        <div>
+          <span class="roadmap-step-badge">Шаг 02 · 1–2 дня</span>
+          <h3 class="roadmap-title">Макет первого экрана</h3>
+          <p class="roadmap-desc">Создаю концепт главного экрана с вашим текстом и ценами. Вы смотрите его вживую на тестовой ссылке и вносите пожелания.</p>
+        </div>
+      </div>
+
+      <div class="roadmap-card">
+        <div>
+          <span class="roadmap-step-badge">Шаг 03 · Релиз</span>
+          <h3 class="roadmap-title">Домен и запуск</h3>
+          <p class="roadmap-desc">Регистрирую доменное имя .ru на ваше имя, подключаю сертификат безопасности https://, настраиваю приём заявок и отдаю вам готовый сайт.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: FAST-TRACK CONTACT FORM (#contact) -->
+  <section class="contact-form-panel" id="contact">
+    <div class="contact-info-col">
+      <div class="section-tag-kicker">Оставить заявку</div>
+      <h2>Обсудим сайт для вашего бизнеса</h2>
+      <p>Заполните 3 строчки. Я свяжусь с вами в мессенджере в течение 30 минут с вариантами структуры и точной сметой.</p>
+
+      <div class="contact-perks-list">
+        <div class="contact-perk-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+          <span>Без спама — пишу строго по делу в выбранный мессенджер</span>
+        </div>
+        <div class="contact-perk-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+          <span>Оплата только после утверждения первого экрана</span>
+        </div>
+        <div class="contact-perk-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+          <span>Прямой чат в Telegram: <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--accent-gold); font-weight:700;">@K_Sofrin</a></span>
+        </div>
+      </div>
+
+      <div style="margin-top:24px; font-size:14px; color:var(--text-muted);">
+        Хотите подробно описать задачу? Заполните наш <a href="/brief" style="color:var(--accent-gold); text-decoration:underline;">полный бриф →</a>
+      </div>
+    </div>
+
+    <!-- The actual Form -->
+    <form class="form-body-elements" id="leadCaptureForm" autocomplete="off">
+      <div>
+        <label style="font-size:13px; font-weight:700; color:var(--text-muted); display:block; margin-bottom:6px;">Сфера бизнеса или задача</label>
+        <input class="input-control-box" id="leadBiz" name="biz" placeholder="Например: барбершоп, автосервис, кафе, клиника" required value="Барбершоп">
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div>
+          <label style="font-size:13px; font-weight:700; color:var(--text-muted); display:block; margin-bottom:6px;">Город</label>
+          <input class="input-control-box" id="leadCity" name="city" placeholder="Брянск" value="Брянск">
+        </div>
+        <div>
+          <label style="font-size:13px; font-weight:700; color:var(--text-muted); display:block; margin-bottom:6px;">Ваше имя</label>
+          <input class="input-control-box" id="leadName" name="name" placeholder="Как к вам обращаться">
+        </div>
+      </div>
+
+      <div>
+        <label style="font-size:13px; font-weight:700; color:var(--text-muted); display:block; margin-bottom:6px;">Где удобнее получить ответ</label>
+        <div class="contact-methods-picker" id="contactMethodsGroup">
+          <label class="contact-method-pill active"><input type="radio" name="contact_method" value="telegram" checked><span>Telegram</span></label>
+          <label class="contact-method-pill"><input type="radio" name="contact_method" value="whatsapp"><span>WhatsApp</span></label>
+          <label class="contact-method-pill"><input type="radio" name="contact_method" value="phone"><span>Телефон</span></label>
+          <label class="contact-method-pill"><input type="radio" name="contact_method" value="other"><span>Другое</span></label>
+        </div>
+      </div>
+
+      <div>
+        <label style="font-size:13px; font-weight:700; color:var(--text-muted); display:block; margin-bottom:6px;">Контакт для связи</label>
+        <input class="input-control-box" id="leadContact" name="contact_value" placeholder="@username в Telegram" required>
+      </div>
+
+      <button class="btn-primary-action" id="btnSubmitLead" type="submit" style="width:100%; margin-top:6px;">
+        <span>Отправить заявку на сайт →</span>
       </button>
 
-      <p id="commissionFeedback" style="font-family:var(--font-mono); font-size:13px; text-align:center; color:var(--text-secondary); min-height:20px;">
-        Конфиденциально. Отвечаю напрямую в Telegram.
+      <p id="leadStatusFeedback" style="font-size:13.5px; text-align:center; color:var(--text-muted); min-height:20px;">
+        Отвечу лично в течение 30 минут.
       </p>
     </form>
   </section>
 
-  <!-- CURATED FOOTER -->
-  <footer class="curated-footer">
-    <div>© 2026 SOFRIN · CREATIVE TECHNOLOGIST</div>
-    <div style="display:flex; gap:28px;">
+  <!-- SECTION 7: FAQ -->
+  <section class="section-shell" id="faq">
+    <div class="section-head-center">
+      <div class="section-tag-kicker">Частые вопросы</div>
+      <h2 class="section-title-big">Ответы простыми словами</h2>
+    </div>
+
+    <div class="faq-list-items">
+      <details class="faq-item-card">
+        <summary>
+          <span>Что если мне не понравится предложенный дизайн?</span>
+          <span class="faq-toggle-icon">+</span>
+        </summary>
+        <div class="faq-item-body">
+          Вы ничем не рискуете. Я делаю концепт первого экрана до того, как вы вносите какую-либо оплату. В стоимость уже включены бесплатные правки — мы дорабатываем проект до тех пор, пока вы не останетесь полностью довольны.
+        </div>
+      </details>
+
+      <details class="faq-item-card">
+        <summary>
+          <span>Домен действительно регистрируется на меня?</span>
+          <span class="faq-toggle-icon">+</span>
+        </summary>
+        <div class="faq-item-body">
+          Да, доменное имя .ru регистрируется строго на ваши паспортные данные или организацию через официального аккредитованного регистратора. Вы являетесь его единственным и законным владельцем. Первый год обслуживания уже входит в стоимость.
+        </div>
+      </details>
+
+      <details class="faq-item-card">
+        <summary>
+          <span>Нужно ли будет платить за сайт каждый месяц?</span>
+          <span class="faq-toggle-icon">+</span>
+        </summary>
+        <div class="faq-item-body">
+          Нет! Это сайт на чистом коде, а не на платном конструкторе. Вам не нужно платить абонентскую плату Tilda или Wix (1 000 – 2 500 ₽ каждый месяц). Разовая оплата — и сайт работает постоянно.
+        </div>
+      </details>
+
+      <details class="faq-item-card">
+        <summary>
+          <span>Кто готовит тексты для сайта?</span>
+          <span class="faq-toggle-icon">+</span>
+        </summary>
+        <div class="faq-item-body">
+          Тексты пишу я сам на основе ваших ответов и анализа конкурентов. Вам достаточно просто рассказать своими словами об услугах, преимуществах и ценах.
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer-row">
+    <div>© 2026 Кирилл Софрин · Разработка сайтов для бизнеса</div>
+    <div style="display:flex; gap:24px;">
       <a href="/brief">Полный бриф</a>
       <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener">Telegram @K_Sofrin</a>
-      <a href="#works">Наверх ↑</a>
+      <a href="#contact">Заказать ↑</a>
     </div>
   </footer>
 
@@ -1066,192 +1339,179 @@ body {
 
 <script>
 (function() {
-  // 1. Background Ambient Generative Mesh
-  var bgCanvas = document.getElementById('canvasStage');
-  if (bgCanvas) {
-    var bgCtx = bgCanvas.getContext('2d');
-    var w = bgCanvas.width = window.innerWidth;
-    var h = bgCanvas.height = window.innerHeight;
-    var mouse = { x: w * 0.5, y: h * 0.3 };
+  // 1. Ambient Background Canvas Particles
+  var canvas = document.getElementById('ambientCanvas');
+  if (canvas) {
+    var ctx = canvas.getContext('2d');
+    var w = canvas.width = window.innerWidth;
+    var h = canvas.height = window.innerHeight;
+    var mouse = { x: w / 2, y: h / 2, active: false };
 
-    var nodes = [];
-    var count = Math.min(50, Math.floor((w * h) / 24000));
+    var particles = [];
+    var count = Math.min(45, Math.floor((w * h) / 26000));
     for (var i = 0; i < count; i++) {
-      nodes.push({
+      particles.push({
         x: Math.random() * w,
         y: Math.random() * h,
         vx: (Math.random() - 0.5) * 0.4,
         vy: (Math.random() - 0.5) * 0.4,
-        radius: Math.random() * 2 + 1
+        radius: Math.random() * 1.5 + 0.8
       });
     }
 
     window.addEventListener('resize', function() {
-      w = bgCanvas.width = window.innerWidth;
-      h = bgCanvas.height = window.innerHeight;
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
     });
 
     window.addEventListener('mousemove', function(e) {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
+      mouse.active = true;
     });
 
-    function drawBg() {
-      bgCtx.clearRect(0, 0, w, h);
+    function drawAmbient() {
+      ctx.clearRect(0, 0, w, h);
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
 
-      for (var i = 0; i < nodes.length; i++) {
-        var n = nodes[i];
-        n.x += n.vx;
-        n.y += n.vy;
+        if (p.x < 0) p.x = w;
+        if (p.x > w) p.x = 0;
+        if (p.y < 0) p.y = h;
+        if (p.y > h) p.y = 0;
 
-        if (n.x < 0) n.x = w;
-        if (n.x > w) n.x = 0;
-        if (n.y < 0) n.y = h;
-        if (n.y > h) n.y = 0;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(243, 186, 71, 0.25)';
+        ctx.fill();
 
-        bgCtx.beginPath();
-        bgCtx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
-        bgCtx.fillStyle = 'rgba(255, 255, 255, 0.25)';
-        bgCtx.fill();
-
-        for (var j = i + 1; j < nodes.length; j++) {
-          var n2 = nodes[j];
-          var dx = n.x - n2.x;
-          var dy = n.y - n2.y;
+        for (var j = i + 1; j < particles.length; j++) {
+          var p2 = particles[j];
+          var dx = p.x - p2.x;
+          var dy = p.y - p2.y;
           var dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 140) {
-            bgCtx.beginPath();
-            bgCtx.moveTo(n.x, n.y);
-            bgCtx.lineTo(n2.x, n2.y);
-            bgCtx.strokeStyle = 'rgba(255, 255, 255, ' + (0.07 * (1 - dist / 140)) + ')';
-            bgCtx.lineWidth = 0.7;
-            bgCtx.stroke();
+          if (dist < 130) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = 'rgba(243, 186, 71, ' + (0.08 * (1 - dist / 130)) + ')';
+            ctx.lineWidth = 0.6;
+            ctx.stroke();
           }
         }
       }
-      requestAnimationFrame(drawBg);
+      requestAnimationFrame(drawAmbient);
     }
-    drawBg();
+    drawAmbient();
   }
 
-  // 2. Interactive Lab Physics Viewport
-  var labCanvas = document.getElementById('labCanvasView');
-  var sliderTurb = document.getElementById('sliderTurb');
-  var sliderSpeed = document.getElementById('sliderSpeed');
-  var turbVal = document.getElementById('turbVal');
+  // 2. Interactive Estimator Engine
+  var chipButtons = document.querySelectorAll('#projectTypeChips .estimator-chip-btn');
+  var optTgBot = document.getElementById('optTgBot');
+  var optPayment = document.getElementById('optPayment');
+  var calcPrice = document.getElementById('calcPriceDisplay');
+  var calcType = document.getElementById('calcTypeDisplay');
+  var calcDays = document.getElementById('calcDaysDisplay');
+  var btnApplyCalc = document.getElementById('btnApplyCalculation');
+  var leadBiz = document.getElementById('leadBiz');
 
-  if (labCanvas) {
-    var lCtx = labCanvas.getContext('2d');
-    var lw = labCanvas.width = labCanvas.offsetWidth || 500;
-    var lh = labCanvas.height = labCanvas.offsetHeight || 380;
-    var labMouse = { x: lw / 2, y: lh / 2, active: false };
-    var time = 0;
+  var currentBase = 14990;
+  var currentType = 'Продающий лендинг';
+  var currentDays = '3–5 дней';
 
-    labCanvas.addEventListener('mousemove', function(e) {
-      var r = labCanvas.getBoundingClientRect();
-      labMouse.x = e.clientX - r.left;
-      labMouse.y = e.clientY - r.top;
-      labMouse.active = true;
-    });
+  function recalculatePrice() {
+    var total = currentBase;
+    if (optTgBot && optTgBot.checked) total += 3000;
+    if (optPayment && optPayment.checked) total += 5000;
 
-    labCanvas.addEventListener('mouseleave', function() {
-      labMouse.active = false;
-    });
-
-    if (sliderTurb && turbVal) {
-      sliderTurb.addEventListener('input', function() {
-        turbVal.textContent = (sliderTurb.value / 10).toFixed(1) + 'x';
-      });
+    if (calcPrice) {
+      calcPrice.textContent = total.toLocaleString('ru-RU') + ' ₽';
     }
-
-    function renderLab() {
-      lw = labCanvas.width = labCanvas.offsetWidth;
-      lh = labCanvas.height = labCanvas.offsetHeight;
-      lCtx.clearRect(0, 0, lw, lh);
-
-      var turb = sliderTurb ? (sliderTurb.value / 10) : 1.2;
-      var speed = sliderSpeed ? (sliderSpeed.value * 0.015) : 0.045;
-      time += speed;
-
-      var rows = 12;
-      var cols = 18;
-      var stepX = lw / cols;
-      var stepY = lh / rows;
-
-      for (var y = 0; y < rows; y++) {
-        for (var x = 0; x < cols; x++) {
-          var px = x * stepX + stepX / 2;
-          var py = y * stepY + stepY / 2;
-
-          var wave = Math.sin(x * 0.5 + time) * Math.cos(y * 0.5 + time) * 15 * turb;
-          var angle = wave * 0.1;
-
-          if (labMouse.active) {
-            var mdx = px - labMouse.x;
-            var mdy = py - labMouse.y;
-            var mdist = Math.sqrt(mdx * mdx + mdy * mdy);
-            if (mdist < 140) {
-              angle += (1 - mdist / 140) * Math.PI * 0.5;
-            }
-          }
-
-          lCtx.save();
-          lCtx.translate(px, py);
-          lCtx.rotate(angle);
-          lCtx.beginPath();
-          lCtx.moveTo(-6, 0);
-          lCtx.lineTo(6, 0);
-          lCtx.strokeStyle = 'rgba(229, 195, 132, ' + (0.3 + Math.sin(time + x) * 0.2) + ')';
-          lCtx.lineWidth = 1.5;
-          lCtx.stroke();
-          lCtx.restore();
-        }
-      }
-      requestAnimationFrame(renderLab);
-    }
-    renderLab();
+    if (calcType) calcType.textContent = currentType;
+    if (calcDays) calcDays.textContent = currentDays;
   }
 
-  // 3. Project Type Selector Chips
-  var chips = document.querySelectorAll('#typeGroup .type-seg-chip');
-  chips.forEach(function(chip) {
-    chip.addEventListener('click', function() {
-      chips.forEach(function(c) { c.classList.remove('active'); });
-      chip.classList.add('active');
-      var r = chip.querySelector('input');
-      if (r) r.checked = true;
+  chipButtons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      chipButtons.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      currentBase = parseInt(btn.getAttribute('data-base'), 10) || 14990;
+      currentType = btn.getAttribute('data-name') || 'Лендинг';
+      currentDays = btn.getAttribute('data-days') || '3–5 дней';
+      recalculatePrice();
     });
   });
 
-  // 4. Commission Form Submission
-  var cForm = document.getElementById('commissionForm');
-  var btnSend = document.getElementById('btnSubmitCommission');
-  var fb = document.getElementById('commissionFeedback');
+  if (optTgBot) optTgBot.addEventListener('change', recalculatePrice);
+  if (optPayment) optPayment.addEventListener('change', recalculatePrice);
 
-  if (cForm) {
-    cForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var fd = new FormData(cForm);
-
-      if (btnSend) {
-        btnSend.disabled = true;
-        btnSend.style.opacity = '0.7';
-        btnSend.textContent = 'Отправка заявки…';
+  if (btnApplyCalc) {
+    btnApplyCalc.addEventListener('click', function() {
+      var contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(function() {
+          if (leadBiz) {
+            leadBiz.value = currentType + ' (ориентир: ' + (calcPrice ? calcPrice.textContent : '14 990 ₽') + ')';
+            leadBiz.focus();
+          }
+        }, 400);
       }
+    });
+  }
 
-      var projectType = fd.get('project_type') || 'Флагман';
-      var biz = fd.get('biz') || '';
+  // 3. Contact Methods Radios & Dynamic Placeholders
+  var methodPills = document.querySelectorAll('#contactMethodsGroup .contact-method-pill');
+  var contactInput = document.getElementById('leadContact');
+  var placeholders = {
+    telegram: '@username в Telegram',
+    whatsapp: 'Номер для WhatsApp (+7...)',
+    phone: 'Номер телефона (+7...)',
+    other: 'Электронная почта'
+  };
+
+  methodPills.forEach(function(pill) {
+    pill.addEventListener('click', function() {
+      methodPills.forEach(function(p) { p.classList.remove('active'); });
+      pill.classList.add('active');
+      var r = pill.querySelector('input');
+      if (r) {
+        r.checked = true;
+        if (contactInput) {
+          contactInput.placeholder = placeholders[r.value] || 'Контакт для связи';
+        }
+      }
+    });
+  });
+
+  // 4. Lead Form Submission
+  var leadForm = document.getElementById('leadCaptureForm');
+  var btnSubmit = document.getElementById('btnSubmitLead');
+  var statusMsg = document.getElementById('leadStatusFeedback');
+
+  if (leadForm) {
+    leadForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var fd = new FormData(leadForm);
+
+      if (btnSubmit) {
+        btnSubmit.disabled = true;
+        btnSubmit.style.opacity = '0.7';
+        btnSubmit.textContent = 'Отправка заявки…';
+      }
 
       fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          biz: '[' + projectType + '] ' + biz,
+          biz: fd.get('biz') || '',
           city: fd.get('city') || '',
           name: fd.get('name') || '',
-          contact_method: 'telegram',
+          contact_method: fd.get('contact_method') || 'telegram',
           contact_value: fd.get('contact_value') || '',
-          source: 'curated_studio'
+          source: 'clean_direct_site'
         })
       })
       .then(function(res) {
@@ -1259,24 +1519,24 @@ body {
         return res.json();
       })
       .then(function() {
-        if (btnSend) {
-          btnSend.textContent = 'Заявка отправлена ✓';
-          btnSend.style.background = '#10B981';
-          btnSend.style.color = '#FFFFFF';
+        if (btnSubmit) {
+          btnSubmit.textContent = 'Заявка успешно принята ✓';
+          btnSubmit.style.background = '#10B981';
+          btnSubmit.style.color = '#FFFFFF';
         }
-        if (fb) {
-          fb.innerHTML = 'Спасибо! Я свяжусь с вами в Telegram в течение 30 минут. <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:#FFFFFF;text-decoration:underline;">Написать лично →</a>';
+        if (statusMsg) {
+          statusMsg.innerHTML = 'Спасибо! Я свяжусь с вами в течение 30 минут. <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--accent-gold); font-weight:700;">Написать напрямую в Telegram →</a>';
         }
-        cForm.reset();
+        leadForm.reset();
       })
       .catch(function() {
-        if (btnSend) {
-          btnSend.disabled = false;
-          btnSend.style.opacity = '1';
-          btnSend.textContent = 'Отправить заявку на сотрудничество →';
+        if (btnSubmit) {
+          btnSubmit.disabled = false;
+          btnSubmit.style.opacity = '1';
+          btnSubmit.textContent = 'Отправить заявку на сайт →';
         }
-        if (fb) {
-          fb.textContent = 'Ошибка отправки. Пожалуйста, напишите напрямую в Telegram @K_Sofrin.';
+        if (statusMsg) {
+          statusMsg.textContent = 'Ошибка отправки. Пожалуйста, напишите напрямую в Telegram @K_Sofrin.';
         }
       });
     });
