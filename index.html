@@ -3,62 +3,53 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Кирилл Софрин · Разработка сайтов и веб-решений для бизнеса</title>
-<meta name="description" content="Создаю быстрые и продающие сайты для бизнеса под ключ. От лендингов с онлайн-записью до индивидуальных сервисов. Понятные цены, оплата после макета, домен в комплекте.">
+<title>Кирилл Софрин · Сайты и веб-решения для бизнеса</title>
+<meta name="description" content="Разработка продающих сайтов, лендингов и веб-сервисов под ключ. Домен включён, оплата после согласования макета.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Кирилл Софрин · Разработка сайтов для бизнеса">
-<meta property="og:description" content="Сайты под ключ без ежемесячных платежей за конструкторы. Домен на 1 год включён.">
+<meta property="og:title" content="Кирилл Софрин · Сайты и веб-решения для бизнеса">
+<meta property="og:description" content="Разработка продающих сайтов, лендингов и веб-сервисов под ключ. Домен включён, оплата после согласования макета.">
 <meta property="og:image" content="https://karif.up.railway.app/og.png">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://karif.up.railway.app/">
-<meta name="theme-color" content="#08090D">
+<meta name="theme-color" content="#07080B">
 <link rel="canonical" href="https://karif.up.railway.app/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%23F3BA47'/%3E%3Cpath d='M9 7h5v7l7-7h6l-8 8 8.5 10H21L14 17v7H9z' fill='%2308090D'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%23FFFFFF'/%3E%3Cpath d='M9 7h5v7l7-7h6l-8 8 8.5 10H21L14 17v7H9z' fill='%2307080B'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg-main: #08090D;
-  --bg-surface: #10121A;
-  --bg-surface-elevated: #161924;
-  --bg-pill: rgba(255, 255, 255, 0.04);
-  --bg-pill-hover: rgba(255, 255, 255, 0.08);
-  --border-subtle: rgba(255, 255, 255, 0.09);
-  --border-active: rgba(243, 186, 71, 0.5);
-  --text-pure: #FFFFFF;
-  --text-muted: #9BA3B5;
-  --text-dim: #60687A;
-  --accent-gold: #F3BA47;
-  --accent-gold-glow: rgba(243, 186, 71, 0.25);
-  --accent-cyan: #00F0FF;
+  --bg-deep: #07080B;
+  --bg-surface: #0E1017;
+  --bg-surface-soft: #141722;
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-focus: rgba(255, 255, 255, 0.25);
+  --text-main: #FFFFFF;
+  --text-muted: #8E95A5;
+  --text-dim: #545B6B;
+  --accent-glow: #F3BA47;
   --accent-emerald: #10B981;
-  --font-heading: 'Manrope', system-ui, -apple-system, sans-serif;
-  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-  --radius-sm: 12px;
-  --radius-md: 20px;
-  --radius-lg: 32px;
-  --radius-full: 9999px;
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-html { scroll-behavior: smooth; background: var(--bg-main); color-scheme: dark; }
+html { scroll-behavior: smooth; background: var(--bg-deep); color-scheme: dark; }
 
 body {
-  background-color: var(--bg-main);
-  color: var(--text-pure);
-  font: 400 16px/1.65 var(--font-body);
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  font: 400 16px/1.65 var(--font-sans);
   overflow-x: hidden;
   position: relative;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Subtle Interactive Canvas Grid */
-#ambientCanvas {
+/* Subtle Cursor Glow Canvas */
+#fluidCanvas {
   position: fixed;
   inset: 0;
   width: 100%;
@@ -67,1271 +58,818 @@ body {
   z-index: 0;
 }
 
-.ambient-aurora-top {
+.ambient-light-field {
   position: fixed;
-  top: -240px;
+  top: -200px;
   left: 50%;
   transform: translateX(-50%);
-  width: 900px;
+  width: 1000px;
   height: 600px;
-  background: radial-gradient(circle, rgba(243, 186, 71, 0.12) 0%, rgba(0, 240, 255, 0.04) 50%, transparent 70%);
-  filter: blur(80px);
+  background: radial-gradient(circle, rgba(243, 186, 71, 0.09) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 70%);
+  filter: blur(100px);
   pointer-events: none;
   z-index: 0;
 }
 
-/* Grid guide texture */
-.grid-lines-bg {
-  position: fixed;
-  inset: 0;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 60px 60px;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Page Frame */
-.page-shell {
+/* Main Container */
+.site-frame {
   position: relative;
   z-index: 2;
-  max-width: 1240px;
+  max-width: 1080px;
   margin: 0 auto;
-  padding: 0 24px 80px;
+  padding: 0 24px 100px;
   display: flex;
   flex-direction: column;
-  gap: 72px;
+  gap: 80px;
 }
 
-/* TOP HEADER */
-.main-header {
-  position: sticky;
-  top: 16px;
-  z-index: 100;
+/* MINIMAL CLEAN TOP BAR (No menu links, just identity & direct chat) */
+.minimal-topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 24px;
-  border-radius: var(--radius-full);
-  background: rgba(16, 18, 26, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border-subtle);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
-  margin-top: 14px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border-glass);
 }
-
-.header-brand {
+.identity-tag {
   display: flex;
   align-items: center;
   gap: 12px;
   text-decoration: none;
   color: inherit;
 }
-.brand-badge-k {
-  width: 38px;
-  height: 38px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--accent-gold), #FF9800);
-  color: #08090D;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 17px;
+.identity-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #FFFFFF;
+  color: #07080B;
   display: grid;
   place-items: center;
-  box-shadow: 0 0 16px var(--accent-gold-glow);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 17px;
 }
-.brand-info {
+.identity-names {
   display: flex;
   flex-direction: column;
 }
-.brand-name {
-  font-family: var(--font-heading);
+.name-text {
+  font-family: var(--font-display);
+  font-weight: 800;
   font-size: 15px;
-  font-weight: 700;
+  letter-spacing: 0.02em;
   display: flex;
   align-items: center;
   gap: 8px;
 }
-.status-dot-active {
+.live-beacon {
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background: var(--accent-emerald);
-  box-shadow: 0 0 8px var(--accent-emerald);
+  box-shadow: 0 0 10px var(--accent-emerald);
 }
-.brand-role {
+.role-text {
   font-size: 12px;
   color: var(--text-muted);
 }
 
-.header-nav {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-muted);
-}
-.header-nav a {
-  text-decoration: none;
-  color: inherit;
-  transition: color 0.2s;
-  padding: 4px 0;
-  position: relative;
-}
-.header-nav a:hover {
-  color: var(--text-pure);
-}
-.header-nav a:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--accent-gold);
-  transition: width 0.25s var(--ease);
-}
-.header-nav a:hover:after { width: 100%; }
-
-.btn-header-cta {
+.direct-tg-button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  height: 40px;
+  height: 42px;
   padding: 0 20px;
-  border-radius: var(--radius-full);
-  background: var(--accent-gold);
-  color: #08090D;
-  font-family: var(--font-heading);
-  font-size: 13.5px;
-  font-weight: 800;
-  text-decoration: none;
-  transition: all 0.2s;
-  box-shadow: 0 0 16px var(--accent-gold-glow);
-}
-.btn-header-cta:hover {
-  transform: translateY(-1px) scale(1.02);
-  box-shadow: 0 0 24px rgba(243, 186, 71, 0.5);
-}
-
-/* BUTTONS */
-.btn-primary-action {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  height: 56px;
-  padding: 0 32px;
-  border-radius: var(--radius-md);
-  background: linear-gradient(135deg, var(--accent-gold), #FF9800);
-  color: #08090D;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 16px;
-  text-decoration: none;
-  border: 0;
-  cursor: pointer;
-  box-shadow: 0 12px 30px rgba(243, 186, 71, 0.35);
-  transition: transform 0.2s var(--ease), box-shadow 0.2s;
-  white-space: nowrap;
-}
-.btn-primary-action:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 16px 40px rgba(243, 186, 71, 0.5);
-}
-
-.btn-secondary-action {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  height: 56px;
-  padding: 0 28px;
-  border-radius: var(--radius-md);
-  background: var(--bg-pill);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-pure);
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  color: #FFFFFF;
+  font-size: 14px;
   font-weight: 600;
-  font-size: 15px;
   text-decoration: none;
-  cursor: pointer;
-  transition: all 0.2s;
-  white-space: nowrap;
+  transition: all 0.25s var(--ease);
 }
-.btn-secondary-action:hover {
-  background: var(--bg-pill-hover);
-  border-color: rgba(255, 255, 255, 0.25);
+.direct-tg-button:hover {
+  background: #FFFFFF;
+  color: #07080B;
   transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
 }
 
-/* SECTION 1: HERO CANVAS */
-.hero-wrapper {
-  padding-top: 24px;
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.hero-text-side {
+/* HERO SECTION: DIRECT & IMPACTFUL */
+.hero-editorial {
+  padding-top: 32px;
   display: flex;
   flex-direction: column;
+  gap: 28px;
 }
-
-.hero-eyebrow {
+.hero-kicker-strip {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 6px 14px;
-  border-radius: var(--radius-full);
-  background: rgba(243, 186, 71, 0.1);
-  border: 1px solid rgba(243, 186, 71, 0.25);
-  color: var(--accent-gold);
+  color: var(--accent-glow);
   font-size: 13px;
   font-weight: 700;
-  width: fit-content;
-  margin-bottom: 20px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
-.hero-main-h1 {
-  font-family: var(--font-heading);
-  font-size: clamp(34px, 4.4vw, 56px);
+.hero-statement {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5.5vw, 68px);
   font-weight: 800;
-  line-height: 1.12;
+  line-height: 1.08;
   letter-spacing: -0.03em;
   color: #FFFFFF;
   text-wrap: balance;
 }
-.hero-main-h1 span.highlight-gold {
-  color: var(--accent-gold);
+.hero-statement span.accent-tint {
+  color: var(--accent-glow);
 }
 
-.hero-sub-p {
+.hero-description {
+  font-size: clamp(17px, 2vw, 21px);
   color: var(--text-muted);
-  font-size: 18px;
   line-height: 1.6;
-  margin-top: 20px;
-  max-width: 560px;
+  max-width: 720px;
+  font-weight: 300;
 }
-
-.hero-buttons-row {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: 32px;
-  flex-wrap: wrap;
-}
-
-.hero-key-features {
-  display: flex;
-  gap: 24px;
-  margin-top: 36px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border-subtle);
-  flex-wrap: wrap;
-}
-.feature-badge-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13.5px;
+.hero-description b {
+  color: #FFFFFF;
   font-weight: 600;
-  color: var(--text-muted);
-}
-.feature-badge-item svg {
-  color: var(--accent-emerald);
-  width: 18px;
-  height: 18px;
-  flex: none;
 }
 
-/* HERO RIGHT: LIVE SITE SIMULATOR CARD */
-.hero-live-card {
-  border-radius: var(--radius-lg);
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  padding: 32px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+.hero-action-buttons {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.live-card-top {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--border-subtle);
-}
-.live-badge-status {
-  font-size: 12px;
-  font-family: var(--font-mono);
-  color: var(--accent-emerald);
-  background: rgba(16, 185, 129, 0.1);
-  padding: 4px 10px;
-  border-radius: var(--radius-full);
+  gap: 16px;
+  margin-top: 12px;
+  flex-wrap: wrap;
 }
 
-.live-card-body {
-  margin: 24px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.live-card-stat-row {
-  display: flex;
-  justify-content: space-between;
+.btn-primary-glow {
+  display: inline-flex;
   align-items: center;
-  padding: 12px 16px;
-  border-radius: var(--radius-sm);
-  background: var(--bg-surface-elevated);
-  border: 1px solid var(--border-subtle);
-  font-size: 14px;
+  justify-content: center;
+  gap: 10px;
+  height: 56px;
+  padding: 0 34px;
+  border-radius: 16px;
+  background: #FFFFFF;
+  color: #07080B;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 15px;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  box-shadow: 0 16px 36px rgba(255, 255, 255, 0.15);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s;
 }
-.live-card-stat-row b {
-  color: var(--accent-gold);
-  font-family: var(--font-heading);
+.btn-primary-glow:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 20px 48px rgba(255, 255, 255, 0.25);
 }
 
-/* SECTION 2: SERVICES & PACKAGES (Clear, Transparent, Understandable) */
-.section-shell {
+.btn-ghost-clean {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 56px;
+  padding: 0 28px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-glass);
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-ghost-clean:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* SECTION 2: 3 CLEAR WORK TIERS */
+.tiers-section {
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
-
-.section-head-center {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto;
+.section-meta-head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
-.section-tag-kicker {
-  font-family: var(--font-mono);
+.section-kicker {
   font-size: 12.5px;
   font-weight: 700;
-  color: var(--accent-gold);
+  color: var(--accent-glow);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-bottom: 8px;
 }
-.section-title-big {
-  font-family: var(--font-heading);
-  font-size: clamp(28px, 3.4vw, 42px);
+.section-heading-clean {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.5vw, 40px);
   font-weight: 800;
   letter-spacing: -0.02em;
-  line-height: 1.15;
-}
-.section-desc-sub {
-  color: var(--text-muted);
-  font-size: 17px;
-  margin-top: 10px;
+  color: #FFFFFF;
 }
 
-.services-grid-3 {
+.tiers-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
-.service-package-card {
-  border-radius: var(--radius-lg);
+.tier-card {
+  border-radius: 24px;
   background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  padding: 36px;
+  border: 1px solid var(--border-glass);
+  padding: 36px 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.3s var(--ease), border-color 0.3s;
   position: relative;
 }
-.service-package-card:hover {
+.tier-card:hover {
   transform: translateY(-6px);
   border-color: rgba(255, 255, 255, 0.25);
 }
-.service-package-card.featured-card {
-  border-color: var(--accent-gold);
+.tier-card.featured-tier {
+  border-color: rgba(243, 186, 71, 0.5);
   background: radial-gradient(circle at 100% 0%, rgba(243, 186, 71, 0.08), transparent 70%), var(--bg-surface);
-  box-shadow: 0 20px 50px rgba(243, 186, 71, 0.15);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
 }
-.featured-badge-top {
+.featured-tag-pill {
   position: absolute;
   top: -12px;
-  left: 36px;
-  background: var(--accent-gold);
-  color: #08090D;
-  font-family: var(--font-heading);
-  font-size: 11.5px;
+  left: 30px;
+  background: var(--accent-glow);
+  color: #07080B;
+  font-size: 11px;
   font-weight: 800;
   padding: 4px 12px;
-  border-radius: var(--radius-full);
+  border-radius: 99px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
 }
 
-.service-card-header {
-  margin-bottom: 20px;
-}
-.service-name {
-  font-family: var(--font-heading);
+.tier-title {
+  font-family: var(--font-display);
   font-size: 22px;
   font-weight: 800;
   color: #FFFFFF;
 }
-.service-target {
+.tier-target {
   font-size: 13.5px;
   color: var(--text-muted);
   margin-top: 6px;
   line-height: 1.5;
 }
 
-.service-price-block {
-  margin: 16px 0 24px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--border-subtle);
+.tier-price-box {
+  margin: 20px 0;
+  padding: 16px 0;
+  border-top: 1px solid var(--border-glass);
+  border-bottom: 1px solid var(--border-glass);
 }
-.service-price-amount {
-  font-family: var(--font-heading);
-  font-size: 38px;
+.tier-price-val {
+  font-family: var(--font-display);
+  font-size: 34px;
   font-weight: 800;
-  color: var(--accent-gold);
+  color: #FFFFFF;
   line-height: 1;
 }
-.service-price-term {
+.tier-time-val {
   font-size: 13px;
-  color: var(--text-muted);
+  color: var(--accent-glow);
   margin-top: 6px;
+  font-weight: 600;
 }
 
-.service-features-list {
+.tier-bullets {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
-.service-feature-row {
+.tier-bullet-item {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 14.5px;
-  color: var(--text-pure);
+  font-size: 14px;
+  color: var(--text-main);
+  line-height: 1.5;
 }
-.service-feature-row svg {
+.tier-bullet-item svg {
   color: var(--accent-emerald);
-  width: 18px;
-  height: 18px;
+  width: 17px;
+  height: 17px;
   flex: none;
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
-/* SECTION 3: INTERACTIVE PROJECT ESTIMATOR (Калькулятор проекта) */
-.estimator-box {
-  padding: 48px;
-  border-radius: var(--radius-lg);
+.btn-tier-pick {
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-tier-pick:hover, .tier-card.featured-tier .btn-tier-pick {
+  background: #FFFFFF;
+  color: #07080B;
+  border-color: #FFFFFF;
+}
+
+/* SECTION 3: TACTILE PROJECT ESTIMATOR (Interactive & Fun) */
+.estimator-panel {
+  padding: 44px;
+  border-radius: 28px;
   background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-glass);
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;
   gap: 40px;
+  align-items: center;
 }
 
-.estimator-options-col {
+.estimator-controls {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 24px;
 }
-.estimator-step-label {
-  font-family: var(--font-heading);
-  font-size: 15px;
+.ctrl-group-label {
+  font-size: 14px;
   font-weight: 700;
   color: #FFFFFF;
   margin-bottom: 10px;
 }
 
-.selector-chips-row {
+.chips-row {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
-.estimator-chip-btn {
+.chip-toggle-btn {
   padding: 10px 18px;
-  border-radius: var(--radius-sm);
-  background: var(--bg-surface-elevated);
-  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  background: var(--bg-surface-soft);
+  border: 1px solid var(--border-glass);
   color: var(--text-muted);
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
 }
-.estimator-chip-btn:hover {
-  background: var(--bg-pill-hover);
-  color: #FFFFFF;
-}
-.estimator-chip-btn.active {
-  background: var(--accent-gold);
-  color: #08090D;
-  border-color: var(--accent-gold);
+.chip-toggle-btn:hover { color: #FFFFFF; }
+.chip-toggle-btn.active {
+  background: #FFFFFF;
+  color: #07080B;
+  border-color: #FFFFFF;
   font-weight: 700;
 }
 
-.options-toggle-grid {
+.check-options-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
-.estimator-checkbox-label {
+.checkbox-card-item {
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 14px 16px;
-  border-radius: var(--radius-sm);
-  background: var(--bg-surface-elevated);
-  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  background: var(--bg-surface-soft);
+  border: 1px solid var(--border-glass);
   cursor: pointer;
   user-select: none;
+  font-size: 14px;
   transition: border-color 0.2s;
 }
-.estimator-checkbox-label:hover { border-color: rgba(255, 255, 255, 0.2); }
-.estimator-checkbox-label input {
-  accent-color: var(--accent-gold);
-  width: 17px;
-  height: 17px;
-}
+.checkbox-card-item:hover { border-color: rgba(255, 255, 255, 0.2); }
+.checkbox-card-item input { accent-color: var(--accent-glow); width: 17px; height: 17px; }
 
-/* Estimator Live Output Card */
-.estimator-summary-panel {
+.estimator-result-card {
   padding: 36px;
-  border-radius: var(--radius-md);
-  background: var(--bg-surface-elevated);
-  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  background: var(--bg-surface-soft);
+  border: 1px solid var(--border-glass);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.estimator-cost-num {
-  font-family: var(--font-heading);
+.result-price-big {
+  font-family: var(--font-display);
   font-size: 44px;
   font-weight: 800;
-  color: var(--accent-gold);
+  color: var(--accent-glow);
   line-height: 1;
   margin: 10px 0 6px;
 }
-.estimator-meta-items {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin: 20px 0;
-  border-top: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
-  padding: 16px 0;
-}
-.estimator-meta-row {
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-  color: var(--text-muted);
-}
-.estimator-meta-row b { color: #FFFFFF; }
 
-/* SECTION 4: WHY WORK DIRECTLY (ADVANTAGES) */
-.advantages-grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-.advantage-card {
-  padding: 32px;
-  border-radius: var(--radius-md);
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.advantage-num {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--accent-gold);
-  font-weight: 700;
-}
-.advantage-title {
-  font-family: var(--font-heading);
-  font-size: 18px;
-  font-weight: 700;
-  color: #FFFFFF;
-}
-.advantage-text {
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-
-/* SECTION 5: TRANSPARENT ROADMAP (HOW IT WORKS) */
-.roadmap-strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.roadmap-card {
-  padding: 36px;
-  border-radius: var(--radius-md);
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.roadmap-step-badge {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--accent-gold);
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-.roadmap-title {
-  font-family: var(--font-heading);
-  font-size: 20px;
-  font-weight: 700;
-  color: #FFFFFF;
-  margin-bottom: 10px;
-}
-.roadmap-desc {
-  font-size: 14.5px;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-
-/* SECTION 6: FAST-TRACK CONTACT FORM (#contact) */
-.contact-form-panel {
+/* SECTION 4: DIRECT CONTACT / BOOKING (#order) */
+.booking-station {
   padding: 56px;
-  border-radius: var(--radius-lg);
+  border-radius: 32px;
   background: 
     radial-gradient(ellipse at 100% 0%, rgba(243, 186, 71, 0.08), transparent 60%),
     var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-glass);
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  gap: 48px;
+  gap: 56px;
 }
 
-.contact-info-col h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(28px, 3.4vw, 42px);
+.booking-info h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.6vw, 44px);
   font-weight: 800;
-  line-height: 1.15;
+  line-height: 1.12;
 }
-.contact-info-col p {
+.booking-info p {
   color: var(--text-muted);
   font-size: 16px;
   margin-top: 14px;
   line-height: 1.6;
 }
-.contact-perks-list {
+
+.direct-tg-callout {
+  margin-top: 32px;
+  padding: 24px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-glass);
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin-top: 28px;
-  font-size: 14.5px;
-  color: var(--text-pure);
+  gap: 12px;
 }
-.contact-perk-row {
-  display: flex;
+.direct-tg-callout b {
+  font-size: 15px;
+  color: #FFFFFF;
+}
+.direct-tg-callout a {
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  color: var(--accent-glow);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 15px;
 }
-.contact-perk-row svg {
-  color: var(--accent-emerald);
-  width: 18px;
-  height: 18px;
-  flex: none;
-}
+.direct-tg-callout a:hover { text-decoration: underline; }
 
-.form-body-elements {
+.booking-form {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
-.input-control-box {
+.form-input-box {
   height: 54px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border-subtle);
-  background: var(--bg-surface-elevated);
+  border-radius: 14px;
+  border: 1px solid var(--border-glass);
+  background: var(--bg-surface-soft);
   color: #FFFFFF;
   padding: 0 18px;
-  font: 500 15px var(--font-body);
+  font: 500 15px var(--font-sans);
   outline: 0;
   transition: all 0.2s;
   width: 100%;
 }
-.input-control-box:focus {
-  border-color: var(--accent-gold);
-  box-shadow: 0 0 0 3px var(--accent-gold-glow);
+.form-input-box:focus {
+  border-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
 }
 
-.contact-methods-picker {
+.channel-selector {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
 }
-.contact-method-pill {
+.channel-pill-item {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 44px;
-  border-radius: var(--radius-sm);
-  background: var(--bg-surface-elevated);
-  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  background: var(--bg-surface-soft);
+  border: 1px solid var(--border-glass);
   color: var(--text-muted);
   font-size: 13.5px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
 }
-.contact-method-pill input { display: none; }
-.contact-method-pill.active {
-  background: var(--accent-gold);
-  color: #08090D;
-  border-color: var(--accent-gold);
+.channel-pill-item input { display: none; }
+.channel-pill-item.active {
+  background: #FFFFFF;
+  color: #07080B;
+  border-color: #FFFFFF;
   font-weight: 700;
 }
 
-/* SECTION 7: FAQ */
-.faq-list-items {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.faq-item-card {
-  border-radius: var(--radius-md);
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  overflow: hidden;
-  transition: border-color 0.2s;
-}
-.faq-item-card[open] { border-color: var(--accent-gold); }
-.faq-item-card summary {
-  list-style: none;
-  padding: 22px 28px;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 17px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  color: #FFFFFF;
-}
-.faq-item-card summary::-webkit-details-marker { display: none; }
-.faq-toggle-icon {
-  font-size: 22px;
-  color: var(--accent-gold);
-  transition: transform 0.2s;
-}
-.faq-item-card[open] .faq-toggle-icon { transform: rotate(45deg); }
-.faq-item-body {
-  padding: 0 28px 24px;
-  color: var(--text-muted);
-  font-size: 15.5px;
-  line-height: 1.6;
-}
-
-/* FOOTER */
-.site-footer-row {
+/* MINIMAL FOOTER */
+.clean-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 32px 0 10px;
-  border-top: 1px solid var(--border-subtle);
+  border-top: 1px solid var(--border-glass);
   font-size: 14px;
   color: var(--text-dim);
 }
-.site-footer-row a { color: inherit; text-decoration: none; }
-.site-footer-row a:hover { color: #FFFFFF; }
+.clean-footer a { color: inherit; text-decoration: none; }
+.clean-footer a:hover { color: #FFFFFF; }
 
-/* RESPONSIVE BREAKPOINTS */
+/* RESPONSIVE */
 @media (max-width: 900px) {
-  .header-nav { display: none; }
-  .hero-wrapper { grid-template-columns: 1fr; }
-  .services-grid-3 { grid-template-columns: 1fr; }
-  .estimator-box { grid-template-columns: 1fr; padding: 32px 20px; }
-  .options-toggle-grid { grid-template-columns: 1fr; }
-  .advantages-grid-4 { grid-template-columns: 1fr 1fr; }
-  .roadmap-strip { grid-template-columns: 1fr; }
-  .contact-form-panel { grid-template-columns: 1fr; padding: 32px 20px; }
-  .contact-methods-picker { grid-template-columns: 1fr 1fr; }
-  .page-shell { gap: 48px; padding: 0 16px 60px; }
-}
-@media (max-width: 600px) {
-  .advantages-grid-4 { grid-template-columns: 1fr; }
+  .tiers-grid { grid-template-columns: 1fr; }
+  .estimator-panel { grid-template-columns: 1fr; padding: 32px 20px; }
+  .check-options-grid { grid-template-columns: 1fr; }
+  .booking-station { grid-template-columns: 1fr; padding: 32px 20px; gap: 36px; }
+  .channel-selector { grid-template-columns: 1fr 1fr; }
+  .site-frame { gap: 60px; padding: 0 18px 60px; }
 }
 </style>
 </head>
 
 <body>
-<canvas id="ambientCanvas"></canvas>
-<div class="grid-lines-bg"></div>
-<div class="ambient-aurora-top"></div>
+<canvas id="fluidCanvas"></canvas>
+<div class="ambient-light-field"></div>
 
-<div class="page-shell">
+<div class="site-frame">
 
-  <!-- TOP HEADER -->
-  <header class="main-header" role="banner">
-    <a class="header-brand" href="#">
-      <div class="brand-badge-k">K</div>
-      <div class="brand-info">
-        <span class="brand-name">Кирилл Софрин <span class="status-dot-active" title="Свободен для заказов"></span></span>
-        <span class="brand-role">Веб-разработка под ключ</span>
+  <!-- MINIMAL TOP BAR (No menu links, clean & confident) -->
+  <header class="minimal-topbar" role="banner">
+    <a class="identity-tag" href="#">
+      <div class="identity-logo">K</div>
+      <div class="identity-names">
+        <span class="name-text">Кирилл Софрин <span class="live-beacon" title="Принимаю проекты"></span></span>
+        <span class="role-text">Веб-разработчик</span>
       </div>
     </a>
 
-    <nav class="header-nav" aria-label="Разделы сайта">
-      <a href="#packages">Услуги и цены</a>
-      <a href="#estimator">Калькулятор</a>
-      <a href="#advantages">Преимущества</a>
-      <a href="#roadmap">Этапы работы</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-
-    <a class="btn-header-cta" href="#contact">
-      <span>Заказать сайт</span>
+    <a class="direct-tg-button" href="https://t.me/K_Sofrin" target="_blank" rel="noopener">
+      <span>Написать в Telegram</span>
       <span aria-hidden="true">→</span>
     </a>
   </header>
 
-  <!-- SECTION 1: HERO CANVAS -->
-  <section class="hero-wrapper">
-    <div class="hero-text-side">
-      <div class="hero-eyebrow">
-        <span>● Открыт приём проектов на эту неделю</span>
-      </div>
-
-      <h1 class="hero-main-h1">
-        Делаю сайты, которые <span class="highlight-gold">приносят реальных клиентов</span> вашему бизнесу
-      </h1>
-
-      <p class="hero-sub-p">
-        От продающих одностраничников с онлайн-записью до индивидуальных веб-сервисов. Вы получаете готовый быстрый сайт под ключ с вашим доменом, удобным мобильным интерфейсом и приёмом заявок.
-      </p>
-
-      <div class="hero-buttons-row">
-        <a class="btn-primary-action" href="#contact">
-          <span>Обсудить ваш проект</span>
-          <span aria-hidden="true">→</span>
-        </a>
-        <a class="btn-secondary-action" href="#estimator">
-          <span>Рассчитать стоимость</span>
-          <span aria-hidden="true">↓</span>
-        </a>
-      </div>
-
-      <div class="hero-key-features">
-        <div class="feature-badge-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-          <span>Оплата после макета</span>
-        </div>
-        <div class="feature-badge-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-          <span>Домен .ru на 1 год включён</span>
-        </div>
-        <div class="feature-badge-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-          <span>Без ежемесячной дани</span>
-        </div>
-      </div>
+  <!-- HERO: DIRECT, IMPACTFUL & AIRY -->
+  <section class="hero-editorial">
+    <div class="hero-kicker-strip">
+      <span>● Запуск сайта за 3–5 дней под ключ</span>
     </div>
 
-    <!-- Right: Live Specimen Card -->
-    <div class="hero-live-card">
-      <div class="live-card-top">
-        <span style="font-weight:700; font-size:14px; color:#fff;">Стандарты каждого проекта</span>
-        <span class="live-badge-status">● 100% готовность</span>
-      </div>
+    <h1 class="hero-statement">
+      Делаю сайты, которые <span class="accent-tint">приводят клиентов</span> вашему бизнесу
+    </h1>
 
-      <div class="live-card-body">
-        <div class="live-card-stat-row">
-          <span>Скорость загрузки:</span>
-          <b>0.3–0.5 сек (Мгновенно)</b>
-        </div>
-        <div class="live-card-stat-row">
-          <span>Адаптация под смартфоны:</span>
-          <b>100% мобильный фокус</b>
-        </div>
-        <div class="live-card-stat-row">
-          <span>Срок реализации лендинга:</span>
-          <b>3–5 рабочих дней</b>
-        </div>
-        <div class="live-card-stat-row">
-          <span>Связь с разработчиком:</span>
-          <b>Напрямую в Telegram</b>
-        </div>
-      </div>
+    <p class="hero-description">
+      От продающих одностраничников с онлайн-записью до индивидуальных онлайн-сервисов. Вы получаете <b>готовый рабочий сайт с вашим доменом</b>, моментальной скоростью на смартфонах и заявками прямо в Telegram. Оплата — строго после утверждения первого экрана.
+    </p>
 
-      <a class="btn-primary-action" href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="width:100%; height:48px; font-size:14px;">
-        <span>Написать в Telegram @K_Sofrin ↗</span>
+    <div class="hero-action-buttons">
+      <a class="btn-primary-glow" href="#booking">
+        <span>Обсудить задачу</span>
+        <span aria-hidden="true">→</span>
+      </a>
+      <a class="btn-ghost-clean" href="#estimator">
+        <span>Рассчитать стоимость</span>
+        <span aria-hidden="true">↓</span>
       </a>
     </div>
   </section>
 
-  <!-- SECTION 2: SERVICES & PACKAGES -->
-  <section class="section-shell" id="packages">
-    <div class="section-head-center">
-      <div class="section-tag-kicker">Прозрачные тарифы</div>
-      <h2 class="section-title-big">Понятные решения под ваши задачи</h2>
-      <p class="section-desc-sub">Вы точно знаете, за что платите. Никаких скрытых платежей за подписку на конструкторы.</p>
+  <!-- SECTION 2: 3 CLEAR WORK TIERS -->
+  <section class="tiers-section">
+    <div class="section-meta-head">
+      <span class="section-kicker">Форматы работы</span>
+      <h2 class="section-heading-clean">Что мы можем сделать</h2>
     </div>
 
-    <div class="services-grid-3">
-      <!-- Package 1: Quick Landing -->
-      <div class="service-package-card featured-card">
-        <span class="featured-badge-top">Самый популярный</span>
+    <div class="tiers-grid">
+      <!-- Tier 1: Fast Landing -->
+      <div class="tier-card featured-tier">
+        <span class="featured-tag-pill">Популярный выбор</span>
         <div>
-          <div class="service-card-header">
-            <h3 class="service-name">Быстрый старт</h3>
-            <p class="service-target">Для барбершопов, автосервисов, салонов красоты, частных мастеров, экспертов и кафе.</p>
+          <h3 class="tier-title">Быстрый лендинг</h3>
+          <p class="tier-target">Идеально для барбершопов, автосервисов, кафе, мастеров и услуг.</p>
+
+          <div class="tier-price-box">
+            <div class="tier-price-val">14 990 ₽</div>
+            <div class="tier-time-val">Готовность: 3–5 дней</div>
           </div>
 
-          <div class="service-price-block">
-            <div class="service-price-amount">14 990 ₽</div>
-            <div class="service-price-term">Фиксированная разовая цена под ключ · Срок: 3–5 дней</div>
-          </div>
-
-          <ul class="service-features-list">
-            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Домен .ru на 1 год включён в стоимость</span></li>
-            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Продающая структура и тексты под ваш бизнес</span></li>
-            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Кнопки WhatsApp, Telegram и звонка в 1 тап</span></li>
-            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Интеграция Яндекс Карт и онлайн-записи</span></li>
-            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Оплата только после утверждения первого экрана</span></li>
+          <ul class="tier-bullets">
+            <li class="tier-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Домен .ru на 1 год включён в стоимость</span></li>
+            <li class="tier-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Продающий текст под ваш бизнес</span></li>
+            <li class="tier-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Кнопки WhatsApp, Telegram и быстрый звонок</span></li>
+            <li class="tier-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Онлайн-запись и Яндекс Карты</span></li>
+            <li class="tier-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Оплата после утверждения первого экрана</span></li>
           </ul>
         </div>
 
-        <a class="btn-primary-action" href="#contact" style="width:100%;">
-          <span>Заказать этот тариф →</span>
-        </a>
+        <a class="btn-tier-pick" href="#booking">Выбрать этот формат →</a>
       </div>
 
-      <!-- Package 2: Corporate Site -->
-      <div class="service-package-card">
+      <!-- Tier 2: Corporate Site -->
+      <div class="tier-card">
         <div>
-          <div class="service-card-header">
-            <h3 class="service-name">Корпоративный сайт</h3>
-            <p class="service-target">Для строительных компаний, производств, юристов, медицинских клиник и B2B услуг.</p>
+          <h3 class="tier-title">Корпоративный сайт</h3>
+          <p class="tier-target">Для компаний, производств, юристов, клиник и B2B.</p>
+
+          <div class="tier-price-box">
+            <div class="tier-price-val">от 29 990 ₽</div>
+            <div class="tier-time-val">Готовность: 7–14 дней</div>
           </div>
 
-          <div class="service-price-block">
-            <div class="service-price-amount">от 29 990 ₽</div>
-            <div class="service-price-term">Многостраничный проект · Срок: 7–14 дней</div>
-          </div>
-
-          <ul class="service-features-list">
-            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Разделы: Услуги, О компании, Кейсы, Контакты</span></li>
-            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Калькулятор стоимости услуг для клиентов</span></li>
-            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>SEO-подготовка для поисковиков (Яндекс, Google)</span></li>
-            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>SSL-сертификат безопасности и корпоративная почта</span></li>
-            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Поэтапная оплата по договору</span></li>
+          <ul class="tier-bullets">
+            <li class="tier-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Многостраничная структура и каталог услуг</span></li>
+            <li class="tier-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Интерактивный калькулятор для клиентов</span></li>
+            <li class="tier-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>SEO-подготовка для Яндекса и Google</span></li>
+            <li class="tier-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Корпоративная почта и SSL-защита</span></li>
+            <li class="tier-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Поэтапная оплата по договору</span></li>
           </ul>
         </div>
 
-        <a class="btn-secondary-action" href="#contact" style="width:100%;">
-          <span>Обсудить проект →</span>
-        </a>
+        <a class="btn-tier-pick" href="#booking">Обсудить проект →</a>
       </div>
 
-      <!-- Package 3: Custom Web Solutions -->
-      <div class="service-package-card">
+      <!-- Tier 3: Web Services -->
+      <div class="tier-card">
         <div>
-          <div class="service-card-header">
-            <h3 class="service-name">Индивидуальные веб-решения</h3>
-            <p class="service-target">Для интернет-магазинов, каталогов с фильтрами, личных кабинетов и Telegram-ботов.</p>
+          <h3 class="tier-title">Веб-сервисы и боты</h3>
+          <p class="tier-target">Для каталогов, онлайн-магазинов, бронирования и интеграций.</p>
+
+          <div class="tier-price-box">
+            <div class="tier-price-val">Индивидуально</div>
+            <div class="tier-time-val">По вашему техзаданию</div>
           </div>
 
-          <div class="service-price-block">
-            <div class="service-price-amount">Индивидуально</div>
-            <div class="service-price-term">Кастомный бэкенд и базы данных · Срок: по ТЗ</div>
-          </div>
-
-          <ul class="service-features-list">
-            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Подключение онлайн-оплаты (Сбер, Т-Банк, ЮKassa)</span></li>
-            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Telegram-бот для мгновенных уведомлений о заказах</span></li>
-            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Интеграция с вашей CRM-системой (AmoCRM, Bitrix)</span></li>
-            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Административная панель для управления товарами</span></li>
-            <li class="service-feature-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Техническая поддержка после запуска</span></li>
+          <ul class="tier-bullets">
+            <li class="tier-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Приём онлайн-оплаты (Т-Банк, Сбер, ЮKassa)</span></li>
+            <li class="tier-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Telegram-боты для мгновенных уведомлений</span></li>
+            <li class="tier-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Интеграция с вашей CRM (AmoCRM, Bitrix)</span></li>
+            <li class="tier-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Удобная панель управления данными</span></li>
+            <li class="tier-bullet-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Поддержка и развитие после запуска</span></li>
           </ul>
         </div>
 
-        <a class="btn-secondary-action" href="#contact" style="width:100%;">
-          <span>Запросить расчёт →</span>
-        </a>
+        <a class="btn-tier-pick" href="#booking">Запросить расчёт →</a>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 3: INTERACTIVE PROJECT ESTIMATOR -->
-  <section class="section-shell" id="estimator">
-    <div class="section-head-center">
-      <div class="section-tag-kicker">Интерактивный калькулятор</div>
-      <h2 class="section-title-big">Соберите конфигурацию вашего сайта</h2>
-      <p class="section-desc-sub">Отметьте нужные функции — калькулятор покажет точную ориентировочную стоимость.</p>
-    </div>
-
-    <div class="estimator-box">
-      <div class="estimator-options-col">
-        <div>
-          <div class="estimator-step-label">1. Тип проекта</div>
-          <div class="selector-chips-row" id="projectTypeChips">
-            <button class="estimator-chip-btn active" data-base="14990" data-days="3-5 дней" data-name="Продающий лендинг" type="button">Лендинг (14 990 ₽)</button>
-            <button class="estimator-chip-btn" data-base="29990" data-days="7-12 дней" data-name="Корпоративный сайт" type="button">Многостраничный (29 990 ₽)</button>
-            <button class="estimator-chip-btn" data-base="44990" data-days="14-20 дней" data-name="Интернет-магазин / Каталог" type="button">Магазин / Каталог (44 990 ₽)</button>
-          </div>
-        </div>
-
-        <div>
-          <div class="estimator-step-label">2. Дополнительные опции</div>
-          <div class="options-toggle-grid">
-            <label class="estimator-checkbox-label">
-              <input type="checkbox" id="optBooking" checked>
-              <span>Онлайн-запись / Бронь</span>
-            </label>
-            <label class="estimator-checkbox-label">
-              <input type="checkbox" id="optTgBot">
-              <span>Уведомления в Telegram (+3 000 ₽)</span>
-            </label>
-            <label class="estimator-checkbox-label">
-              <input type="checkbox" id="optPayment">
-              <span>Приём онлайн-оплаты (+5 000 ₽)</span>
-            </label>
-            <label class="estimator-checkbox-label">
-              <input type="checkbox" id="optDomain" checked disabled>
-              <span>Домен .ru на 1 год (0 ₽ подарок)</span>
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <!-- Estimator Output Panel -->
-      <div class="estimator-summary-panel">
-        <div>
-          <span style="font-family:var(--font-mono); font-size:12px; color:var(--accent-gold); text-transform:uppercase;">ИТОГОВЫЙ РАСЧЁТ</span>
-          <div class="estimator-cost-num" id="calcPriceDisplay">14 990 ₽</div>
-          <div style="font-size:13.5px; color:var(--text-muted);">Без скрытых платежей и ежемесячных абонентских плат</div>
-
-          <ul class="estimator-meta-items">
-            <li class="estimator-meta-row"><span>Формат:</span><b id="calcTypeDisplay">Продающий лендинг</b></li>
-            <li class="estimator-meta-row"><span>Срок запуска:</span><b id="calcDaysDisplay">3–5 дней</b></li>
-            <li class="estimator-meta-row"><span>Оплата:</span><b>После утверждения макета</b></li>
-            <li class="estimator-meta-row"><span>Домен:</span><b>Включён в стоимость</b></li>
-          </ul>
-        </div>
-
-        <button class="btn-primary-action" id="btnApplyCalculation" type="button" style="width:100%;">
-          Зафиксировать эту стоимость →
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 4: ADVANTAGES (WHY WORK WITH ME) -->
-  <section class="section-shell" id="advantages">
-    <div class="section-head-center">
-      <div class="section-tag-kicker">Почему со мной выгодно</div>
-      <h2 class="section-title-big">Прямое сотрудничество без лишних звеньев</h2>
-      <p class="section-desc-sub">В отличие от агентств, вы не переплачиваете за офис, секретарей и аккаунт-менеджеров.</p>
-    </div>
-
-    <div class="advantages-grid-4">
-      <div class="advantage-card">
-        <span class="advantage-num">01 / БЕЗ РИСКА</span>
-        <h3 class="advantage-title">Оплата после согласования</h3>
-        <p class="advantage-text">Я создаю прототип и первый экран до того, как вы платите. Если результат вам не подходит — вы ничего не должны.</p>
-      </div>
-
-      <div class="advantage-card">
-        <span class="advantage-num">02 / ЭКОНОМИЯ</span>
-        <h3 class="advantage-title">0 ₽ в месяц за конструкторы</h3>
-        <p class="advantage-text">Конструкторы требуют 1 000 – 2 500 ₽ каждый месяц. Мой сайт на чистом коде принадлежит вам навсегда без подписок.</p>
-      </div>
-
-      <div class="advantage-card">
-        <span class="advantage-num">03 / СКОРОСТЬ</span>
-        <h3 class="advantage-title">Запуск за 3–5 дней</h3>
-        <p class="advantage-text">Агентства согласовывают бриф неделями. Я работаю по чёткому спринту: от первого сообщения до готового сайта проходит менее недели.</p>
-      </div>
-
-      <div class="advantage-card">
-        <span class="advantage-num">04 / ПРЯМОЙ КОНТАКТ</span>
-        <h3 class="advantage-title">Связь лично в Telegram</h3>
-        <p class="advantage-text">Никаких длинных писем и бесконечных созвонов. Любые правки и вопросы решаются за 5 минут в мессенджере.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 5: ROADMAP -->
-  <section class="section-shell" id="roadmap">
-    <div class="section-head-center">
-      <div class="section-tag-kicker">Простой процесс</div>
-      <h2 class="section-title-big">Как строится работа</h2>
-      <p class="section-desc-sub">Всего 3 понятных шага без бюрократии.</p>
-    </div>
-
-    <div class="roadmap-strip">
-      <div class="roadmap-card">
-        <div>
-          <span class="roadmap-step-badge">Шаг 01 · 15 минут</span>
-          <h3 class="roadmap-title">Обсуждение задачи</h3>
-          <p class="roadmap-desc">Вы рассказываете о своём бизнесе в переписке или голосовым сообщением. Я предлагаю структуру, офферы и варианты решения.</p>
-        </div>
-      </div>
-
-      <div class="roadmap-card">
-        <div>
-          <span class="roadmap-step-badge">Шаг 02 · 1–2 дня</span>
-          <h3 class="roadmap-title">Макет первого экрана</h3>
-          <p class="roadmap-desc">Создаю концепт главного экрана с вашим текстом и ценами. Вы смотрите его вживую на тестовой ссылке и вносите пожелания.</p>
-        </div>
-      </div>
-
-      <div class="roadmap-card">
-        <div>
-          <span class="roadmap-step-badge">Шаг 03 · Релиз</span>
-          <h3 class="roadmap-title">Домен и запуск</h3>
-          <p class="roadmap-desc">Регистрирую доменное имя .ru на ваше имя, подключаю сертификат безопасности https://, настраиваю приём заявок и отдаю вам готовый сайт.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 6: FAST-TRACK CONTACT FORM (#contact) -->
-  <section class="contact-form-panel" id="contact">
-    <div class="contact-info-col">
-      <div class="section-tag-kicker">Оставить заявку</div>
-      <h2>Обсудим сайт для вашего бизнеса</h2>
-      <p>Заполните 3 строчки. Я свяжусь с вами в мессенджере в течение 30 минут с вариантами структуры и точной сметой.</p>
-
-      <div class="contact-perks-list">
-        <div class="contact-perk-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-          <span>Без спама — пишу строго по делу в выбранный мессенджер</span>
-        </div>
-        <div class="contact-perk-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-          <span>Оплата только после утверждения первого экрана</span>
-        </div>
-        <div class="contact-perk-row">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-          <span>Прямой чат в Telegram: <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--accent-gold); font-weight:700;">@K_Sofrin</a></span>
-        </div>
-      </div>
-
-      <div style="margin-top:24px; font-size:14px; color:var(--text-muted);">
-        Хотите подробно описать задачу? Заполните наш <a href="/brief" style="color:var(--accent-gold); text-decoration:underline;">полный бриф →</a>
-      </div>
-    </div>
-
-    <!-- The actual Form -->
-    <form class="form-body-elements" id="leadCaptureForm" autocomplete="off">
+  <!-- SECTION 3: TACTILE PROJECT ESTIMATOR -->
+  <section class="estimator-panel" id="estimator">
+    <div class="estimator-controls">
       <div>
-        <label style="font-size:13px; font-weight:700; color:var(--text-muted); display:block; margin-bottom:6px;">Сфера бизнеса или задача</label>
-        <input class="input-control-box" id="leadBiz" name="biz" placeholder="Например: барбершоп, автосервис, кафе, клиника" required value="Барбершоп">
+        <span class="section-kicker">Интерактивный калькулятор</span>
+        <h2 style="font-family:var(--font-display); font-size:26px; font-weight:800; color:#fff; margin-top:4px;">
+          Рассчитайте стоимость вашего сайта
+        </h2>
+      </div>
+
+      <div>
+        <div class="ctrl-group-label">Тип сайта</div>
+        <div class="chips-row" id="typeSelectorChips">
+          <button class="chip-toggle-btn active" data-base="14990" data-name="Лендинг" data-time="3–5 дней" type="button">Лендинг (14 990 ₽)</button>
+          <button class="chip-toggle-btn" data-base="29990" data-name="Многостраничный" data-time="7–12 дней" type="button">Многостраничный (29 990 ₽)</button>
+          <button class="chip-toggle-btn" data-base="44990" data-name="Каталог / Магазин" data-time="14–20 дней" type="button">Каталог / Магазин (44 990 ₽)</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="ctrl-group-label">Нужные опции</div>
+        <div class="check-options-grid">
+          <label class="checkbox-card-item">
+            <input type="checkbox" id="checkBooking" checked>
+            <span>Онлайн-запись клиентов</span>
+          </label>
+          <label class="checkbox-card-item">
+            <input type="checkbox" id="checkTgBot">
+            <span>Уведомления в Telegram (+3 000 ₽)</span>
+          </label>
+          <label class="checkbox-card-item">
+            <input type="checkbox" id="checkPayment">
+            <span>Приём оплат онлайн (+5 000 ₽)</span>
+          </label>
+          <label class="checkbox-card-item">
+            <input type="checkbox" id="checkDomain" checked disabled>
+            <span>Домен .ru на 1 год (0 ₽ подарок)</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Estimator Output Card -->
+    <div class="estimator-result-card">
+      <div>
+        <span style="font-size:12px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em;">Ориентир стоимости:</span>
+        <div class="result-price-big" id="resultPrice">14 990 ₽</div>
+        <div style="font-size:13.5px; color:var(--text-muted); line-height:1.5;">
+          Без абонентской платы за конструкторы. Разовая честная цена под ключ.
+        </div>
+
+        <div style="margin:20px 0; padding:14px 0; border-top:1px solid var(--border-glass); border-bottom:1px solid var(--border-glass); display:flex; flex-direction:column; gap:8px; font-size:13.5px;">
+          <div style="display:flex; justify-content:space-between;"><span>Формат:</span><b id="resultFormat" style="color:#fff;">Лендинг</b></div>
+          <div style="display:flex; justify-content:space-between;"><span>Срок запуска:</span><b id="resultTime" style="color:#fff;">3–5 дней</b></div>
+          <div style="display:flex; justify-content:space-between;"><span>Оплата:</span><b style="color:var(--accent-glow);">После макета</b></div>
+        </div>
+      </div>
+
+      <button class="btn-primary-glow" id="btnApplyEstimator" type="button" style="width:100%; height:50px; font-size:14px;">
+        Зафиксировать расчёт в заявке →
+      </button>
+    </div>
+  </section>
+
+  <!-- SECTION 4: DIRECT BOOKING / CONTACT (#booking) -->
+  <section class="booking-station" id="booking">
+    <div class="booking-info">
+      <span class="section-kicker">Быстрый старт</span>
+      <h2>Обсудим сайт для вашего дела</h2>
+      <p>
+        Напишите пару слов о вашем бизнесе. Я лично отвечу вам в мессенджере в течение 30 минут с вариантами структуры и точной оценкой.
+      </p>
+
+      <div class="direct-tg-callout">
+        <b>Хотите ответ прямо сейчас?</b>
+        <span>Без заполнения форм — напишите напрямую мне в Telegram:</span>
+        <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener">
+          <span>Написать Кириллу: @K_Sofrin</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Form -->
+    <form class="booking-form" id="bookingForm" autocomplete="off">
+      <div>
+        <label style="font-size:13px; font-weight:700; color:var(--text-muted); display:block; margin-bottom:6px;">Сфера бизнеса</label>
+        <input class="form-input-box" id="inpBiz" name="biz" placeholder="Например: барбершоп, автосервис, кафе или клиника" required value="Барбершоп">
       </div>
 
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
         <div>
           <label style="font-size:13px; font-weight:700; color:var(--text-muted); display:block; margin-bottom:6px;">Город</label>
-          <input class="input-control-box" id="leadCity" name="city" placeholder="Брянск" value="Брянск">
+          <input class="form-input-box" id="inpCity" name="city" placeholder="Брянск" value="Брянск">
         </div>
         <div>
           <label style="font-size:13px; font-weight:700; color:var(--text-muted); display:block; margin-bottom:6px;">Ваше имя</label>
-          <input class="input-control-box" id="leadName" name="name" placeholder="Как к вам обращаться">
+          <input class="form-input-box" id="inpName" name="name" placeholder="Как к вам обращаться">
         </div>
       </div>
 
       <div>
-        <label style="font-size:13px; font-weight:700; color:var(--text-muted); display:block; margin-bottom:6px;">Где удобнее получить ответ</label>
-        <div class="contact-methods-picker" id="contactMethodsGroup">
-          <label class="contact-method-pill active"><input type="radio" name="contact_method" value="telegram" checked><span>Telegram</span></label>
-          <label class="contact-method-pill"><input type="radio" name="contact_method" value="whatsapp"><span>WhatsApp</span></label>
-          <label class="contact-method-pill"><input type="radio" name="contact_method" value="phone"><span>Телефон</span></label>
-          <label class="contact-method-pill"><input type="radio" name="contact_method" value="other"><span>Другое</span></label>
+        <label style="font-size:13px; font-weight:700; color:var(--text-muted); display:block; margin-bottom:6px;">Где удобнее связаться</label>
+        <div class="channel-selector" id="channelPicker">
+          <label class="channel-pill-item active"><input type="radio" name="contact_method" value="telegram" checked><span>Telegram</span></label>
+          <label class="channel-pill-item"><input type="radio" name="contact_method" value="whatsapp"><span>WhatsApp</span></label>
+          <label class="channel-pill-item"><input type="radio" name="contact_method" value="phone"><span>Телефон</span></label>
+          <label class="channel-pill-item"><input type="radio" name="contact_method" value="other"><span>Другое</span></label>
         </div>
       </div>
 
       <div>
         <label style="font-size:13px; font-weight:700; color:var(--text-muted); display:block; margin-bottom:6px;">Контакт для связи</label>
-        <input class="input-control-box" id="leadContact" name="contact_value" placeholder="@username в Telegram" required>
+        <input class="form-input-box" id="inpContact" name="contact_value" placeholder="@username в Telegram" required>
       </div>
 
-      <button class="btn-primary-action" id="btnSubmitLead" type="submit" style="width:100%; margin-top:6px;">
-        <span>Отправить заявку на сайт →</span>
+      <button class="btn-primary-glow" id="btnSubmitBooking" type="submit" style="width:100%; margin-top:4px;">
+        <span>Отправить заявку →</span>
       </button>
 
-      <p id="leadStatusFeedback" style="font-size:13.5px; text-align:center; color:var(--text-muted); min-height:20px;">
+      <p id="bookingStatus" style="font-size:13.5px; text-align:center; color:var(--text-muted); min-height:20px;">
         Отвечу лично в течение 30 минут.
       </p>
     </form>
   </section>
 
-  <!-- SECTION 7: FAQ -->
-  <section class="section-shell" id="faq">
-    <div class="section-head-center">
-      <div class="section-tag-kicker">Частые вопросы</div>
-      <h2 class="section-title-big">Ответы простыми словами</h2>
-    </div>
-
-    <div class="faq-list-items">
-      <details class="faq-item-card">
-        <summary>
-          <span>Что если мне не понравится предложенный дизайн?</span>
-          <span class="faq-toggle-icon">+</span>
-        </summary>
-        <div class="faq-item-body">
-          Вы ничем не рискуете. Я делаю концепт первого экрана до того, как вы вносите какую-либо оплату. В стоимость уже включены бесплатные правки — мы дорабатываем проект до тех пор, пока вы не останетесь полностью довольны.
-        </div>
-      </details>
-
-      <details class="faq-item-card">
-        <summary>
-          <span>Домен действительно регистрируется на меня?</span>
-          <span class="faq-toggle-icon">+</span>
-        </summary>
-        <div class="faq-item-body">
-          Да, доменное имя .ru регистрируется строго на ваши паспортные данные или организацию через официального аккредитованного регистратора. Вы являетесь его единственным и законным владельцем. Первый год обслуживания уже входит в стоимость.
-        </div>
-      </details>
-
-      <details class="faq-item-card">
-        <summary>
-          <span>Нужно ли будет платить за сайт каждый месяц?</span>
-          <span class="faq-toggle-icon">+</span>
-        </summary>
-        <div class="faq-item-body">
-          Нет! Это сайт на чистом коде, а не на платном конструкторе. Вам не нужно платить абонентскую плату Tilda или Wix (1 000 – 2 500 ₽ каждый месяц). Разовая оплата — и сайт работает постоянно.
-        </div>
-      </details>
-
-      <details class="faq-item-card">
-        <summary>
-          <span>Кто готовит тексты для сайта?</span>
-          <span class="faq-toggle-icon">+</span>
-        </summary>
-        <div class="faq-item-body">
-          Тексты пишу я сам на основе ваших ответов и анализа конкурентов. Вам достаточно просто рассказать своими словами об услугах, преимуществах и ценах.
-        </div>
-      </details>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="site-footer-row">
+  <!-- MINIMAL CLEAN FOOTER -->
+  <footer class="clean-footer">
     <div>© 2026 Кирилл Софрин · Разработка сайтов для бизнеса</div>
-    <div style="display:flex; gap:24px;">
+    <div style="display:flex; gap:20px;">
       <a href="/brief">Полный бриф</a>
       <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener">Telegram @K_Sofrin</a>
-      <a href="#contact">Заказать ↑</a>
+      <a href="#">Наверх ↑</a>
     </div>
   </footer>
 
@@ -1339,25 +877,14 @@ body {
 
 <script>
 (function() {
-  // 1. Ambient Background Canvas Particles
-  var canvas = document.getElementById('ambientCanvas');
+  // 1. Fluid Ambient Cursor Canvas (Gentle, elegant ambient light follower)
+  var canvas = document.getElementById('fluidCanvas');
   if (canvas) {
     var ctx = canvas.getContext('2d');
     var w = canvas.width = window.innerWidth;
     var h = canvas.height = window.innerHeight;
-    var mouse = { x: w / 2, y: h / 2, active: false };
-
-    var particles = [];
-    var count = Math.min(45, Math.floor((w * h) / 26000));
-    for (var i = 0; i < count; i++) {
-      particles.push({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        radius: Math.random() * 1.5 + 0.8
-      });
-    }
+    var targetX = w / 2, targetY = h * 0.3;
+    var curX = targetX, curY = targetY;
 
     window.addEventListener('resize', function() {
       w = canvas.width = window.innerWidth;
@@ -1365,141 +892,119 @@ body {
     });
 
     window.addEventListener('mousemove', function(e) {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-      mouse.active = true;
+      targetX = e.clientX;
+      targetY = e.clientY;
     });
 
-    function drawAmbient() {
+    function drawAmbientCursor() {
+      curX += (targetX - curX) * 0.05;
+      curY += (targetY - curY) * 0.05;
+
       ctx.clearRect(0, 0, w, h);
-      for (var i = 0; i < particles.length; i++) {
-        var p = particles[i];
-        p.x += p.vx;
-        p.y += p.vy;
+      var grad = ctx.createRadialGradient(curX, curY, 0, curX, curY, 400);
+      grad.addColorStop(0, 'rgba(243, 186, 71, 0.045)');
+      grad.addColorStop(0.5, 'rgba(255, 255, 255, 0.015)');
+      grad.addColorStop(1, 'transparent');
 
-        if (p.x < 0) p.x = w;
-        if (p.x > w) p.x = 0;
-        if (p.y < 0) p.y = h;
-        if (p.y > h) p.y = 0;
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, w, h);
 
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(243, 186, 71, 0.25)';
-        ctx.fill();
-
-        for (var j = i + 1; j < particles.length; j++) {
-          var p2 = particles[j];
-          var dx = p.x - p2.x;
-          var dy = p.y - p2.y;
-          var dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 130) {
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = 'rgba(243, 186, 71, ' + (0.08 * (1 - dist / 130)) + ')';
-            ctx.lineWidth = 0.6;
-            ctx.stroke();
-          }
-        }
-      }
-      requestAnimationFrame(drawAmbient);
+      requestAnimationFrame(drawAmbientCursor);
     }
-    drawAmbient();
+    drawAmbientCursor();
   }
 
-  // 2. Interactive Estimator Engine
-  var chipButtons = document.querySelectorAll('#projectTypeChips .estimator-chip-btn');
-  var optTgBot = document.getElementById('optTgBot');
-  var optPayment = document.getElementById('optPayment');
-  var calcPrice = document.getElementById('calcPriceDisplay');
-  var calcType = document.getElementById('calcTypeDisplay');
-  var calcDays = document.getElementById('calcDaysDisplay');
-  var btnApplyCalc = document.getElementById('btnApplyCalculation');
-  var leadBiz = document.getElementById('leadBiz');
+  // 2. Interactive Estimator Logic
+  var typeButtons = document.querySelectorAll('#typeSelectorChips .chip-toggle-btn');
+  var checkTg = document.getElementById('checkTgBot');
+  var checkPay = document.getElementById('checkPayment');
+  var resPrice = document.getElementById('resultPrice');
+  var resFormat = document.getElementById('resultFormat');
+  var resTime = document.getElementById('resultTime');
+  var btnApply = document.getElementById('btnApplyEstimator');
+  var inpBiz = document.getElementById('inpBiz');
 
-  var currentBase = 14990;
-  var currentType = 'Продающий лендинг';
-  var currentDays = '3–5 дней';
+  var basePrice = 14990;
+  var baseFormat = 'Лендинг';
+  var baseTime = '3–5 дней';
 
-  function recalculatePrice() {
-    var total = currentBase;
-    if (optTgBot && optTgBot.checked) total += 3000;
-    if (optPayment && optPayment.checked) total += 5000;
+  function updateEstimator() {
+    var sum = basePrice;
+    if (checkTg && checkTg.checked) sum += 3000;
+    if (checkPay && checkPay.checked) sum += 5000;
 
-    if (calcPrice) {
-      calcPrice.textContent = total.toLocaleString('ru-RU') + ' ₽';
-    }
-    if (calcType) calcType.textContent = currentType;
-    if (calcDays) calcDays.textContent = currentDays;
+    if (resPrice) resPrice.textContent = sum.toLocaleString('ru-RU') + ' ₽';
+    if (resFormat) resFormat.textContent = baseFormat;
+    if (resTime) resTime.textContent = baseTime;
   }
 
-  chipButtons.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      chipButtons.forEach(function(b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      currentBase = parseInt(btn.getAttribute('data-base'), 10) || 14990;
-      currentType = btn.getAttribute('data-name') || 'Лендинг';
-      currentDays = btn.getAttribute('data-days') || '3–5 дней';
-      recalculatePrice();
+  typeButtons.forEach(function(b) {
+    b.addEventListener('click', function() {
+      typeButtons.forEach(function(btn) { btn.classList.remove('active'); });
+      b.classList.add('active');
+      basePrice = parseInt(b.getAttribute('data-base'), 10) || 14990;
+      baseFormat = b.getAttribute('data-name') || 'Лендинг';
+      baseTime = b.getAttribute('data-time') || '3–5 дней';
+      updateEstimator();
     });
   });
 
-  if (optTgBot) optTgBot.addEventListener('change', recalculatePrice);
-  if (optPayment) optPayment.addEventListener('change', recalculatePrice);
+  if (checkTg) checkTg.addEventListener('change', updateEstimator);
+  if (checkPay) checkPay.addEventListener('change', updateEstimator);
 
-  if (btnApplyCalc) {
-    btnApplyCalc.addEventListener('click', function() {
-      var contactSection = document.getElementById('contact');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
+  if (btnApply) {
+    btnApply.addEventListener('click', function() {
+      var bookSec = document.getElementById('booking');
+      if (bookSec) {
+        bookSec.scrollIntoView({ behavior: 'smooth' });
         setTimeout(function() {
-          if (leadBiz) {
-            leadBiz.value = currentType + ' (ориентир: ' + (calcPrice ? calcPrice.textContent : '14 990 ₽') + ')';
-            leadBiz.focus();
+          if (inpBiz) {
+            inpBiz.value = baseFormat + ' (расчёт: ' + (resPrice ? resPrice.textContent : '14 990 ₽') + ')';
+            inpBiz.focus();
           }
         }, 400);
       }
     });
   }
 
-  // 3. Contact Methods Radios & Dynamic Placeholders
-  var methodPills = document.querySelectorAll('#contactMethodsGroup .contact-method-pill');
-  var contactInput = document.getElementById('leadContact');
-  var placeholders = {
+  // 3. Contact Method Radios & Placeholders
+  var pills = document.querySelectorAll('#channelPicker .channel-pill-item');
+  var contactInp = document.getElementById('inpContact');
+  var phs = {
     telegram: '@username в Telegram',
     whatsapp: 'Номер для WhatsApp (+7...)',
     phone: 'Номер телефона (+7...)',
     other: 'Электронная почта'
   };
 
-  methodPills.forEach(function(pill) {
-    pill.addEventListener('click', function() {
-      methodPills.forEach(function(p) { p.classList.remove('active'); });
-      pill.classList.add('active');
-      var r = pill.querySelector('input');
+  pills.forEach(function(p) {
+    p.addEventListener('click', function() {
+      pills.forEach(function(btn) { btn.classList.remove('active'); });
+      p.classList.add('active');
+      var r = p.querySelector('input');
       if (r) {
         r.checked = true;
-        if (contactInput) {
-          contactInput.placeholder = placeholders[r.value] || 'Контакт для связи';
+        if (contactInp) {
+          contactInp.placeholder = phs[r.value] || 'Контакт для связи';
         }
       }
     });
   });
 
-  // 4. Lead Form Submission
-  var leadForm = document.getElementById('leadCaptureForm');
-  var btnSubmit = document.getElementById('btnSubmitLead');
-  var statusMsg = document.getElementById('leadStatusFeedback');
+  // 4. Booking Form Submit
+  var form = document.getElementById('bookingForm');
+  var btnSub = document.getElementById('btnSubmitBooking');
+  var statusText = document.getElementById('bookingStatus');
 
-  if (leadForm) {
-    leadForm.addEventListener('submit', function(e) {
+  if (form) {
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
-      var fd = new FormData(leadForm);
+      var fd = new FormData(form);
 
-      if (btnSubmit) {
-        btnSubmit.disabled = true;
-        btnSubmit.style.opacity = '0.7';
-        btnSubmit.textContent = 'Отправка заявки…';
+      if (btnSub) {
+        btnSub.disabled = true;
+        btnSub.style.opacity = '0.7';
+        btnSub.textContent = 'Отправка заявки…';
       }
 
       fetch('/api/leads', {
@@ -1511,7 +1016,7 @@ body {
           name: fd.get('name') || '',
           contact_method: fd.get('contact_method') || 'telegram',
           contact_value: fd.get('contact_value') || '',
-          source: 'clean_direct_site'
+          source: 'clean_editorial'
         })
       })
       .then(function(res) {
@@ -1519,24 +1024,24 @@ body {
         return res.json();
       })
       .then(function() {
-        if (btnSubmit) {
-          btnSubmit.textContent = 'Заявка успешно принята ✓';
-          btnSubmit.style.background = '#10B981';
-          btnSubmit.style.color = '#FFFFFF';
+        if (btnSub) {
+          btnSub.textContent = 'Заявка принята ✓';
+          btnSub.style.background = '#10B981';
+          btnSub.style.color = '#FFFFFF';
         }
-        if (statusMsg) {
-          statusMsg.innerHTML = 'Спасибо! Я свяжусь с вами в течение 30 минут. <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--accent-gold); font-weight:700;">Написать напрямую в Telegram →</a>';
+        if (statusText) {
+          statusText.innerHTML = 'Заявка получена! Я напишу вам в течение 30 минут. <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--accent-glow);font-weight:700;">Написать лично в Telegram →</a>';
         }
-        leadForm.reset();
+        form.reset();
       })
       .catch(function() {
-        if (btnSubmit) {
-          btnSubmit.disabled = false;
-          btnSubmit.style.opacity = '1';
-          btnSubmit.textContent = 'Отправить заявку на сайт →';
+        if (btnSub) {
+          btnSub.disabled = false;
+          btnSub.style.opacity = '1';
+          btnSub.textContent = 'Отправить заявку →';
         }
-        if (statusMsg) {
-          statusMsg.textContent = 'Ошибка отправки. Пожалуйста, напишите напрямую в Telegram @K_Sofrin.';
+        if (statusText) {
+          statusText.textContent = 'Ошибка отправки. Пожалуйста, напишите напрямую в Telegram @K_Sofrin.';
         }
       });
     });
