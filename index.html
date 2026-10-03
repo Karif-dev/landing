@@ -3,57 +3,54 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>KIRILL · Bespoke Web Engineering & High-Converting Sites</title>
-<meta name="description" content="Индивидуальная веб-разработка нового поколения. Быстрые, эстетичные и продающие сайты для бизнеса за 3 дня. 14 990 ₽ под ключ с доменом.">
+<title>KIRILL SOFRIN · High-Craft Web Engineering & Digital Atelier</title>
+<meta name="description" content="Инженерная веб-разработка премиум-уровня: чистый код, 0.4s скорость, 14 990 ₽ под ключ с доменом за 72 часа. Никаких конструкторов и подписок.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="KIRILL · Веб-разработка нового поколения">
-<meta property="og:description" content="Премиальные сайты для бизнеса за 72 часа. 14 990 ₽ под ключ с доменом. Оплата после макета.">
+<meta property="og:title" content="KIRILL SOFRIN · Инженерная веб-разработка">
+<meta property="og:description" content="Сайты с реактивной скоростью и вау-эффектом. 14 990 ₽ под ключ, запуск за 3 дня, оплата после макета.">
 <meta property="og:image" content="https://karif.up.railway.app/og.png">
-<meta property="og:locale" content="ru_RU">
-<meta property="og:url" content="https://karif.up.railway.app/">
-<meta name="theme-color" content="#030407">
+<meta property="theme-color" content="#06070B">
 <link rel="canonical" href="https://karif.up.railway.app/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%2300F0FF'/%3E%3Cpath d='M9 7h5v7l7-7h6l-8 8 8.5 10H21L14 17v7H9z' fill='%23030407'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2300F0FF'/%3E%3Cpath d='M8 7h5v6l7-6h6l-8 7.5 8.5 10.5H21L13 16.5v7.5H8z' fill='%2306070B'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=Unbounded:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Unbounded:wght@700;800;900&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg-void: #030407;
-  --bg-deep: #07090F;
-  --bg-card: rgba(13, 17, 26, 0.72);
-  --bg-card-hover: rgba(20, 26, 40, 0.85);
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-glow: rgba(0, 240, 255, 0.45);
-  --neon-cyan: #00F0FF;
-  --neon-violet: #8B5CF6;
-  --neon-emerald: #10B981;
-  --neon-amber: #F59E0B;
-  --text-pure: #FFFFFF;
-  --text-muted: #8E96A8;
-  --text-dim: #505668;
-  --font-display: 'Unbounded', system-ui, sans-serif;
-  --font-mono: 'Space Grotesk', monospace;
-  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
-  --ease-elastic: cubic-bezier(0.16, 1, 0.3, 1);
+  --hue-accent: 185;
+  --accent-primary: hsl(var(--hue-accent), 100%, 50%);
+  --accent-glow: hsla(var(--hue-accent), 100%, 50%, 0.4);
+  --accent-secondary: #7928CA;
+  --bg-deep: #05060A;
+  --bg-surface: #090B12;
+  --bg-card: rgba(13, 16, 26, 0.75);
+  --border-line: rgba(255, 255, 255, 0.09);
+  --border-active: var(--accent-primary);
+  --text-main: #FFFFFF;
+  --text-muted: #8E96AB;
+  --text-dim: #4B5263;
+  --font-hero: 'Unbounded', system-ui, sans-serif;
+  --font-code: 'JetBrains Mono', monospace;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --radius-panel: 24px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-html { scroll-behavior: smooth; color-scheme: dark; background: var(--bg-void); }
+html { scroll-behavior: smooth; color-scheme: dark; background: var(--bg-deep); }
 
 body {
-  background: var(--bg-void);
-  color: var(--text-pure);
-  font: 400 16px/1.65 var(--font-body);
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  font: 400 15.5px/1.65 var(--font-sans);
   overflow-x: hidden;
   position: relative;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Interactive Canvas Background */
-#interactiveCanvas {
+/* INTERACTIVE WEBGL / CANVAS BACKGROUND */
+#bgCanvas {
   position: fixed;
   inset: 0;
   width: 100%;
@@ -62,1245 +59,1062 @@ body {
   pointer-events: none;
 }
 
-/* Atmospheric Glow Cones */
-.glow-spot-1 {
-  position: fixed;
-  top: -200px;
-  left: 20%;
-  width: 700px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(0, 240, 255, 0.12) 0%, transparent 65%);
-  filter: blur(80px);
-  pointer-events: none;
-  z-index: 0;
-}
-.glow-spot-2 {
-  position: fixed;
-  bottom: -150px;
-  right: 10%;
-  width: 800px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 65%);
-  filter: blur(100px);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Fine Grid Grain Texture */
-.texture-overlay {
+/* Subtle Sci-Fi Scanline & Grid Effect */
+.cyber-grid-overlay {
   position: fixed;
   inset: 0;
   background-image: 
     linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 64px 64px;
+  background-size: 48px 48px;
   pointer-events: none;
   z-index: 1;
 }
 
-/* Main Container */
-.page-container {
+/* Glowing Radial Cones */
+.ambient-glow {
+  position: fixed;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.18;
+  transition: background 0.3s;
+}
+.ambient-1 { top: -200px; left: 15%; background: var(--accent-primary); }
+.ambient-2 { bottom: -200px; right: 10%; background: var(--accent-secondary); }
+
+/* MAIN SHELL */
+.app-shell {
   position: relative;
   z-index: 2;
-  max-width: 1280px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 0 24px 60px;
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 56px;
 }
 
-/* FLOATING DOCK HEADER */
-.floating-hud {
+/* TELEMETRY TOP BAR */
+.telemetry-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 18px;
+  background: rgba(8, 10, 18, 0.85);
+  border: 1px solid var(--border-line);
+  border-radius: 12px;
+  font-family: var(--font-code);
+  font-size: 11.5px;
+  color: var(--text-muted);
+  margin-top: 12px;
+  backdrop-filter: blur(12px);
+}
+.telemetry-cluster {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.telemetry-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.badge-green {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00FF88;
+  box-shadow: 0 0 10px #00FF88;
+  animation: pulse-ring 2s infinite;
+}
+@keyframes pulse-ring { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.sfx-toggle-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-line);
+  color: var(--text-main);
+  border-radius: 8px;
+  padding: 3px 10px;
+  font-family: var(--font-code);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.sfx-toggle-btn:hover {
+  background: var(--accent-glow);
+  color: #fff;
+  border-color: var(--accent-primary);
+}
+
+/* FLOATING COCKPIT HEADER */
+.cockpit-header {
   position: sticky;
-  top: 18px;
+  top: 14px;
   z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 24px;
+  padding: 14px 26px;
   border-radius: 9999px;
-  background: rgba(7, 9, 15, 0.75);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid var(--border-subtle);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-  margin-top: 14px;
+  background: rgba(8, 10, 18, 0.82);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
 }
 
-.brand-combo {
+.cockpit-brand {
   display: flex;
   align-items: center;
   gap: 14px;
   text-decoration: none;
+  color: inherit;
 }
-.brand-glyph {
-  width: 38px;
-  height: 38px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-violet));
+.cockpit-avatar-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
   display: grid;
   place-items: center;
-  color: #030407;
-  font-family: var(--font-display);
+  font-family: var(--font-hero);
   font-weight: 900;
-  font-size: 16px;
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+  font-size: 18px;
+  color: #05060A;
+  box-shadow: 0 0 24px var(--accent-glow);
 }
-.brand-meta {
+.cockpit-titles {
   display: flex;
   flex-direction: column;
 }
-.brand-title {
-  font-family: var(--font-display);
-  font-size: 14px;
+.cockpit-name {
+  font-family: var(--font-hero);
+  font-size: 14.5px;
   font-weight: 800;
-  letter-spacing: 0.04em;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--text-pure);
+  letter-spacing: 0.02em;
+  color: #fff;
 }
-.radar-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--neon-emerald);
-  box-shadow: 0 0 10px var(--neon-emerald);
-  animation: radar-blink 2s infinite ease-in-out;
-}
-@keyframes radar-blink {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(1.3); }
-}
-.brand-subtitle {
-  font-size: 12px;
-  color: var(--text-muted);
-  font-family: var(--font-mono);
+.cockpit-spec {
+  font-family: var(--font-code);
+  font-size: 11px;
+  color: var(--accent-primary);
 }
 
-.hud-nav-links {
+.cockpit-nav-links {
   display: flex;
-  gap: 28px;
-  font-size: 14px;
-  font-weight: 600;
+  gap: 24px;
+  font-size: 13.5px;
+  font-weight: 700;
   color: var(--text-muted);
 }
-.hud-nav-links a {
-  color: inherit;
+.cockpit-nav-links a {
   text-decoration: none;
-  position: relative;
+  color: inherit;
   transition: color 0.2s;
+  position: relative;
   padding: 4px 0;
 }
-.hud-nav-links a:hover {
-  color: var(--text-pure);
+.cockpit-nav-links a:hover {
+  color: var(--accent-primary);
 }
-.hud-nav-links a:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--neon-cyan);
-  transition: width 0.25s var(--ease-elastic);
-}
-.hud-nav-links a:hover:after { width: 100%; }
 
-.btn-hud-action {
+.btn-cockpit-fire {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   height: 40px;
   padding: 0 22px;
   border-radius: 9999px;
-  background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(139, 92, 246, 0.15));
-  border: 1px solid var(--border-glow);
-  color: var(--neon-cyan);
-  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent-primary), #00A6FF);
+  color: #05060A;
+  font-weight: 800;
   font-size: 13.5px;
   text-decoration: none;
-  transition: all 0.25s;
+  box-shadow: 0 0 20px var(--accent-glow);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 0;
+  cursor: pointer;
 }
-.btn-hud-action:hover {
-  background: var(--neon-cyan);
-  color: #030407;
-  box-shadow: 0 0 25px rgba(0, 240, 255, 0.6);
-  transform: translateY(-1px);
+.btn-cockpit-fire:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 30px var(--accent-primary);
 }
 
-/* HERO SECTION: MONUMENTAL CINEMATIC EXPERIENCE */
-.hero-stage {
-  min-height: 80vh;
+/* SECTION 1: HERO EPIC STAGE */
+.hero-epic {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 36px;
+  align-items: center;
+  padding-top: 16px;
+}
+
+.hero-statement-box {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 60px 0 20px;
-  position: relative;
+  gap: 20px;
 }
 
-.hero-pill-badge {
+.hero-tech-kicker {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 18px;
+  padding: 6px 16px;
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-subtle);
-  color: var(--neon-cyan);
-  font-family: var(--font-mono);
-  font-size: 13px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-line);
+  color: var(--accent-primary);
+  font-family: var(--font-code);
+  font-size: 12.5px;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 32px;
+  width: fit-content;
 }
 
-.hero-headline-super {
-  font-family: var(--font-display);
-  font-size: clamp(38px, 6.2vw, 84px);
+.hero-epic-title {
+  font-family: var(--font-hero);
+  font-size: clamp(34px, 4.8vw, 62px);
   font-weight: 900;
-  line-height: 1.02;
-  letter-spacing: -0.045em;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: #fff;
   text-wrap: balance;
-  max-width: 1080px;
-  color: #FFFFFF;
 }
 
-.hero-headline-super .gradient-text {
-  background: linear-gradient(135deg, #FFFFFF 10%, var(--neon-cyan) 60%, var(--neon-violet) 100%);
+.hero-epic-title .gradient-span {
+  background: linear-gradient(135deg, #FFFFFF 15%, var(--accent-primary) 70%, var(--accent-secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
 
-.hero-subparagraph {
-  font-size: clamp(17px, 2vw, 22px);
-  color: var(--text-muted);
-  max-width: 740px;
-  margin: 28px auto 0;
+.hero-epic-desc {
+  font-size: 18px;
   line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 600px;
 }
 
-.hero-action-dock {
+.hero-epic-cta-row {
   display: flex;
   align-items: center;
-  gap: 18px;
-  margin-top: 44px;
+  gap: 16px;
+  margin-top: 12px;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
-.btn-quantum {
+.btn-quantum-laser {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
   height: 60px;
-  padding: 0 38px;
+  padding: 0 36px;
   border-radius: 18px;
-  background: linear-gradient(135deg, var(--neon-cyan), #0099FF);
-  color: #030407;
+  background: linear-gradient(135deg, var(--accent-primary), #0099FF);
+  color: #05060A;
+  font-family: var(--font-hero);
   font-weight: 900;
-  font-size: 16.5px;
-  letter-spacing: -0.01em;
+  font-size: 15.5px;
   text-decoration: none;
   border: 0;
   cursor: pointer;
-  box-shadow: 0 16px 40px -8px rgba(0, 240, 255, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.6);
-  transition: transform 0.25s var(--ease-elastic), box-shadow 0.25s;
+  box-shadow: 0 16px 40px -8px var(--accent-glow), inset 0 1px 2px rgba(255, 255, 255, 0.6);
+  transition: transform 0.25s, box-shadow 0.25s;
 }
-.btn-quantum:hover {
+.btn-quantum-laser:hover {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 20px 50px -6px rgba(0, 240, 255, 0.7);
+  box-shadow: 0 20px 50px var(--accent-glow);
 }
-.btn-quantum:active { transform: scale(0.98); }
 
-.btn-hologram {
+.btn-quantum-ghost {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   height: 60px;
-  padding: 0 32px;
+  padding: 0 28px;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-pure);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-line);
+  color: #fff;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 15.5px;
   text-decoration: none;
   cursor: pointer;
-  backdrop-filter: blur(12px);
-  transition: all 0.25s;
+  transition: all 0.2s;
 }
-.btn-hologram:hover {
+.btn-quantum-ghost:hover {
   background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.25);
+  border-color: var(--accent-primary);
   transform: translateY(-2px);
 }
 
-/* KINETIC MARQUEE BANNER */
-.kinetic-marquee-wrap {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
+/* INTERACTIVE DEVELOPER CONSOLE TERMINAL */
+.interactive-terminal-card {
+  border-radius: var(--radius-panel);
+  background: rgba(7, 9, 15, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 240, 255, 0.1);
   overflow: hidden;
-  padding: 22px 0;
-  background: rgba(10, 14, 22, 0.6);
-  border-top: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
-  backdrop-filter: blur(16px);
-  user-select: none;
-}
-.kinetic-track {
+  font-family: var(--font-code);
   display: flex;
-  gap: 48px;
-  width: max-content;
-  animation: marquee-scroll 28s linear infinite;
+  flex-direction: column;
 }
-.marquee-item {
-  font-family: var(--font-display);
-  font-size: 15px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
+
+.term-topbar {
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid var(--border-line);
 }
-.marquee-item .dot {
-  width: 6px;
-  height: 6px;
+.term-controls {
+  display: flex;
+  gap: 8px;
+}
+.term-controls span {
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
-  background: var(--neon-cyan);
-  box-shadow: 0 0 10px var(--neon-cyan);
+  background: rgba(255, 255, 255, 0.15);
 }
-@keyframes marquee-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+.term-controls span:nth-child(1) { background: #FF5F56; }
+.term-controls span:nth-child(2) { background: #FFBD2E; }
+.term-controls span:nth-child(3) { background: #27C93F; }
+
+.term-title {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.term-badge-live {
+  font-size: 11px;
+  color: #00FF88;
 }
 
-/* INTERACTIVE BENCHMARKS BENTO GRID */
-.bento-grid-station {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 24px;
+.term-screen {
+  padding: 20px;
+  height: 290px;
+  overflow-y: auto;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #E2E8F0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  scrollbar-width: thin;
+}
+.term-row { word-break: break-all; }
+.term-prompt { color: var(--accent-primary); font-weight: 700; }
+.term-out-success { color: #00FF88; }
+.term-out-highlight { color: #FFD700; }
+
+.term-quick-bar {
+  display: flex;
+  gap: 6px;
+  padding: 10px 14px;
+  background: rgba(0, 0, 0, 0.4);
+  border-top: 1px solid var(--border-line);
+  overflow-x: auto;
+}
+.term-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-line);
+  color: var(--text-muted);
+  font-family: var(--font-code);
+  font-size: 11.5px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+.term-btn:hover {
+  background: var(--accent-primary);
+  color: #05060A;
+  border-color: var(--accent-primary);
 }
 
-.bento-tile {
-  background: var(--bg-card);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border-subtle);
-  border-radius: 32px;
-  padding: 40px;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.35s var(--ease-elastic), border-color 0.35s, box-shadow 0.35s;
-}
-.bento-tile:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.18);
-  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.85);
-}
-
-.col-8 { grid-column: span 8; }
-.col-4 { grid-column: span 4; }
-.col-6 { grid-column: span 6; }
-.col-12 { grid-column: span 12; }
-
-.tile-kicker {
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--neon-cyan);
-  margin-bottom: 12px;
-}
-.tile-title-main {
-  font-family: var(--font-display);
-  font-size: clamp(24px, 2.8vw, 36px);
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: #FFFFFF;
-}
-
-/* Interactive Speed Gauge Card */
-.speed-radar-box {
+.term-input-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-  margin-top: 32px;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.7);
+  border-top: 1px solid var(--border-line);
 }
-.gauge-visual {
-  width: 140px;
-  height: 140px;
-  position: relative;
-  display: grid;
-  place-items: center;
-  flex: none;
-}
-.gauge-circle {
-  width: 100%;
-  height: 100%;
-  transform: rotate(-90deg);
-}
-.gauge-circle circle {
-  fill: none;
-  stroke-width: 8;
-  stroke-linecap: round;
-}
-.circle-bg { stroke: rgba(255, 255, 255, 0.08); }
-.circle-prog {
-  stroke: var(--neon-cyan);
-  stroke-dasharray: 380;
-  stroke-dashoffset: 40;
-  filter: drop-shadow(0 0 8px var(--neon-cyan));
-}
-.gauge-value-center {
-  position: absolute;
-  text-align: center;
-  font-family: var(--font-display);
-  font-size: 26px;
-  font-weight: 900;
-  color: var(--neon-cyan);
-}
-.gauge-value-center span {
-  display: block;
-  font-size: 11px;
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-}
-
-.speed-comparison-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+.term-input-field {
   flex: 1;
-}
-.comp-row {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.comp-meta {
-  display: flex;
-  justify-content: space-between;
-  font-size: 13.5px;
-  color: var(--text-muted);
-}
-.comp-meta b { color: var(--text-pure); font-family: var(--font-mono); }
-.comp-bar {
-  height: 6px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 99px;
-  overflow: hidden;
-}
-.comp-fill {
-  height: 100%;
-  border-radius: 99px;
-}
-.fill-kirill {
-  width: 95%;
-  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-emerald));
-  box-shadow: 0 0 12px var(--neon-cyan);
-}
-.fill-tilda {
-  width: 32%;
-  background: #EF4444;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  font-family: var(--font-code);
+  font-size: 13px;
 }
 
-/* INTERACTIVE ARCHETYPE STUDIO (Live Design Switcher) */
-.archetype-section {
-  padding: 48px;
-  border-radius: 36px;
+/* SECTION 2: LIVE ARCHITECTURE TUNER (Interactive Playground) */
+.tuner-section {
+  padding: 44px;
+  border-radius: 32px;
   background: var(--bg-card);
   backdrop-filter: blur(24px);
-  border: 1px solid var(--border-subtle);
-}
-
-.archetype-header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 24px;
-  flex-wrap: wrap;
-  margin-bottom: 36px;
-}
-.archetype-switch-tabs {
-  display: flex;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 4px;
-  border-radius: 16px;
-  border: 1px solid var(--border-subtle);
-  gap: 4px;
-}
-.arch-tab-btn {
-  padding: 10px 20px;
-  border-radius: 12px;
-  border: 0;
-  background: transparent;
-  color: var(--text-muted);
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
-.arch-tab-btn.active {
-  background: var(--neon-cyan);
-  color: #030407;
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
-}
-
-.archetype-live-sandbox {
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: #080B12;
-  overflow: hidden;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9);
+  border: 1px solid var(--border-line);
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  min-height: 480px;
-}
-
-.sandbox-preview-screen {
-  padding: 44px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  transition: background 0.4s ease;
-}
-.preview-theme-cyber {
-  background: radial-gradient(circle at 100% 0%, rgba(0, 240, 255, 0.15), transparent 70%), #0A0D18;
-}
-.preview-theme-luxury {
-  background: radial-gradient(circle at 100% 0%, rgba(245, 158, 11, 0.12), transparent 70%), #100E0A;
-}
-.preview-theme-editorial {
-  background: radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.15), transparent 70%), #0E0A18;
-}
-
-.sandbox-tag {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--neon-cyan);
-}
-.sandbox-hero-headline {
-  font-family: var(--font-display);
-  font-size: clamp(26px, 3.2vw, 42px);
-  font-weight: 900;
-  line-height: 1.1;
-  color: #FFFFFF;
-  margin: 16px 0;
-}
-.sandbox-hero-desc {
-  color: var(--text-muted);
-  font-size: 15.5px;
-  line-height: 1.6;
-  max-width: 480px;
-}
-.sandbox-components-mockup {
-  display: flex;
-  gap: 12px;
-  margin-top: 28px;
-  flex-wrap: wrap;
-}
-.sandbox-mock-chip {
-  padding: 8px 16px;
-  border-radius: 99px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 13px;
-  font-weight: 600;
-  display: flex;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
   align-items: center;
-  gap: 6px;
 }
 
-.sandbox-specs-col {
-  padding: 40px;
-  background: rgba(0, 0, 0, 0.5);
-  border-left: 1px solid var(--border-subtle);
+.tuner-controls-box {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.tuner-control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tuner-label-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-code);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.tuner-slider {
+  width: 100%;
+  accent-color: var(--accent-primary);
+  cursor: pointer;
+}
+
+/* 3D TILT SPECULAR PREVIEW CARD */
+.tilt-card-stage {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+}
+.tilt-card {
+  width: 100%;
+  max-width: 440px;
+  min-height: 420px;
+  border-radius: var(--radius-panel);
+  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.12), transparent 70%), #0D111E;
+  border: 1px solid var(--border-line);
+  padding: 36px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 30px var(--accent-glow);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+  position: relative;
+  overflow: hidden;
 }
-.specs-checklist {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin: 20px 0;
-}
-.specs-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 14.5px;
-  color: var(--text-pure);
-}
-.specs-item svg {
-  color: var(--neon-cyan);
-  width: 18px;
-  height: 18px;
-  flex: none;
-  margin-top: 2px;
+.tilt-card-glare {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15), transparent 60%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
-/* INTERACTIVE VALUE PROTOCOL (3 Days) */
-.protocol-stage {
+/* SECTION 3: 3-DAY PRODUCTION SPRINT */
+.sprint-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
-.protocol-glass-card {
-  padding: 38px;
-  border-radius: 30px;
+.sprint-card {
+  padding: 36px;
+  border-radius: 28px;
   background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  position: relative;
+  border: 1px solid var(--border-line);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 320px;
-  transition: all 0.3s var(--ease-elastic);
+  min-height: 300px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
 }
-.protocol-glass-card:hover {
+.sprint-card:hover {
   transform: translateY(-6px);
-  border-color: var(--border-glow);
-  box-shadow: 0 20px 50px rgba(0, 240, 255, 0.15);
+  border-color: var(--accent-primary);
+  box-shadow: 0 20px 50px var(--accent-glow);
 }
-.protocol-day-badge {
-  font-family: var(--font-display);
-  font-size: 44px;
+.sprint-num {
+  font-family: var(--font-hero);
+  font-size: 48px;
   font-weight: 900;
+  color: var(--accent-primary);
   line-height: 1;
-  color: var(--neon-cyan);
   opacity: 0.4;
   margin-bottom: 16px;
 }
-.protocol-card-title {
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: #FFFFFF;
-  margin-bottom: 12px;
-}
-.protocol-card-body {
-  color: var(--text-muted);
-  font-size: 15px;
-  line-height: 1.6;
-}
 
-/* FAIR FIXED PRICING STATION */
-.pricing-hero-station {
+/* SECTION 4: UNFAIR VALUE PRICING */
+.pricing-matrix-hero {
   padding: 56px;
   border-radius: 36px;
   background: 
-    radial-gradient(ellipse at 100% 0%, rgba(0, 240, 255, 0.15), transparent 60%),
-    radial-gradient(ellipse at 0% 100%, rgba(139, 92, 246, 0.1), transparent 60%),
-    var(--bg-card);
-  border: 1px solid var(--border-glow);
-  box-shadow: 0 30px 80px -10px rgba(0, 240, 255, 0.2);
+    radial-gradient(ellipse at 100% 0%, var(--accent-glow), transparent 60%),
+    rgba(10, 14, 24, 0.9);
+  border: 1px solid var(--border-active);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 0 0 50px var(--accent-glow);
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 48px;
   align-items: center;
 }
-.price-monument {
-  font-family: var(--font-display);
-  font-size: clamp(48px, 6vw, 76px);
+.price-display-giant {
+  font-family: var(--font-hero);
+  font-size: clamp(48px, 6.2vw, 78px);
   font-weight: 900;
   letter-spacing: -0.05em;
-  color: var(--neon-cyan);
+  color: var(--accent-primary);
   line-height: 1;
-  text-shadow: 0 0 30px rgba(0, 240, 255, 0.4);
+  text-shadow: 0 0 30px var(--accent-glow);
 }
-.included-grid-2x2 {
+.features-grid-checklist {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px 24px;
-  margin-top: 32px;
+  gap: 16px;
   list-style: none;
+  margin-top: 28px;
 }
-.included-grid-2x2 li {
+.features-grid-checklist li {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   font-size: 15px;
-  color: var(--text-pure);
 }
-.included-grid-2x2 svg {
-  color: var(--neon-emerald);
+.features-grid-checklist svg {
+  color: #00FF88;
   width: 18px;
   height: 18px;
   flex: none;
 }
 
-/* HIGH-CONVERSION FAST TRACK FORM */
-.intake-terminal {
+/* SECTION 5: FAST-LANE ORDER TERMINAL (#order) */
+.order-terminal-wrapper {
   padding: 56px;
   border-radius: 36px;
   background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-line);
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 0.95fr 1.05fr;
   gap: 48px;
 }
-.terminal-input {
+
+.order-input-block {
   height: 56px;
   border-radius: 16px;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-line);
   background: rgba(5, 7, 12, 0.9);
-  color: var(--text-pure);
+  color: #fff;
   padding: 0 20px;
-  font: 500 15px var(--font-body);
+  font: 500 15px var(--font-sans);
   outline: 0;
-  transition: all 0.25s;
+  transition: all 0.2s;
   width: 100%;
 }
-.terminal-input:focus {
-  border-color: var(--neon-cyan);
-  box-shadow: 0 0 0 3px rgba(0, 240, 255, 0.2);
+.order-input-block:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px var(--accent-glow);
 }
 
-.contact-channel-tabs {
+.comm-selector-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
 }
-.channel-pill {
+.comm-selector-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 44px;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-line);
   color: var(--text-muted);
-  font-size: 13.5px;
+  font-family: var(--font-code);
+  font-size: 12.5px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s;
 }
-.channel-pill input { display: none; }
-.channel-pill.active {
-  background: var(--neon-cyan);
-  color: #030407;
-  border-color: var(--neon-cyan);
-  box-shadow: 0 0 16px rgba(0, 240, 255, 0.35);
+.comm-selector-btn input { display: none; }
+.comm-selector-btn.active {
+  background: var(--accent-primary);
+  color: #05060A;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 16px var(--accent-glow);
 }
 
-/* FAQ ACCORDION */
-.faq-stream {
+/* FAQ */
+.faq-stack {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
-.faq-node {
+.faq-box {
   border-radius: 20px;
   background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-line);
   overflow: hidden;
-  transition: border-color 0.25s;
 }
-.faq-node[open] { border-color: var(--neon-cyan); }
-.faq-node summary {
+.faq-box[open] { border-color: var(--accent-primary); }
+.faq-box summary {
   list-style: none;
-  padding: 24px 28px;
-  font-family: var(--font-display);
+  padding: 22px 28px;
+  font-family: var(--font-hero);
   font-weight: 800;
-  font-size: 17px;
+  font-size: 16.5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  color: var(--text-pure);
+  color: #fff;
 }
-.faq-node summary::-webkit-details-marker { display: none; }
-.faq-chevron {
-  font-size: 22px;
-  color: var(--neon-cyan);
-  transition: transform 0.25s var(--ease-elastic);
-}
-.faq-node[open] .faq-chevron { transform: rotate(45deg); }
-.faq-answer {
+.faq-box summary::-webkit-details-marker { display: none; }
+.faq-mark { font-size: 22px; color: var(--accent-primary); transition: transform 0.2s; }
+.faq-box[open] .faq-mark { transform: rotate(45deg); }
+.faq-inner {
   padding: 0 28px 24px;
   color: var(--text-muted);
-  font-size: 15.5px;
+  font-size: 15px;
   line-height: 1.6;
 }
 
 /* FOOTER */
-.cinematic-footer {
+.master-footer {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 32px 0 12px;
-  border-top: 1px solid var(--border-subtle);
-  font-size: 13.5px;
+  border-top: 1px solid var(--border-line);
+  font-family: var(--font-code);
+  font-size: 12.5px;
   color: var(--text-dim);
 }
-.cinematic-footer a { color: inherit; text-decoration: none; }
-.cinematic-footer a:hover { color: var(--neon-cyan); }
+.master-footer a { color: inherit; text-decoration: none; }
+.master-footer a:hover { color: var(--accent-primary); }
 
-/* MOBILE RESPONSIVE TUNING */
+/* RESPONSIVE */
 @media (max-width: 900px) {
-  .hud-nav-links { display: none; }
-  .col-8, .col-4, .col-6, .col-12 { grid-column: span 12; }
-  .archetype-live-sandbox { grid-template-columns: 1fr; }
-  .specs-col { border-left: 0; border-top: 1px solid var(--border-subtle); }
-  .protocol-stage { grid-template-columns: 1fr; }
-  .pricing-hero-station { grid-template-columns: 1fr; padding: 32px 24px; }
-  .intake-terminal { grid-template-columns: 1fr; padding: 32px 24px; }
-  .included-grid-2x2 { grid-template-columns: 1fr; }
-  .contact-channel-tabs { grid-template-columns: 1fr 1fr; }
-  .page-container { gap: 40px; padding: 0 16px 80px; }
-  .archetype-section { padding: 28px 20px; }
-  .bento-tile { padding: 28px 20px; }
+  .cockpit-nav-links { display: none; }
+  .hero-epic { grid-template-columns: 1fr; }
+  .tuner-section { grid-template-columns: 1fr; padding: 28px 20px; }
+  .sprint-grid { grid-template-columns: 1fr; }
+  .pricing-matrix-hero { grid-template-columns: 1fr; padding: 32px 24px; }
+  .order-terminal-wrapper { grid-template-columns: 1fr; padding: 32px 24px; }
+  .features-grid-checklist { grid-template-columns: 1fr; }
+  .comm-selector-grid { grid-template-columns: 1fr 1fr; }
+  .app-shell { gap: 40px; padding: 0 16px 80px; }
 }
 </style>
 </head>
 
 <body>
-<canvas id="interactiveCanvas"></canvas>
-<div class="texture-overlay"></div>
-<div class="glow-spot-1"></div>
-<div class="glow-spot-2"></div>
+<canvas id="bgCanvas"></canvas>
+<div class="cyber-grid-overlay"></div>
+<div class="ambient-glow ambient-1"></div>
+<div class="ambient-glow ambient-2"></div>
 
-<div class="page-container">
+<div class="app-shell">
 
-  <!-- FLOATING HUD NAVIGATION -->
-  <header class="floating-hud" role="banner">
-    <a class="brand-combo" href="#">
-      <div class="brand-glyph">K</div>
-      <div class="brand-meta">
-        <span class="brand-title">KIRILL SOFRIN <span class="radar-dot" title="Онлайн · Свободен"></span></span>
-        <span class="brand-subtitle">CREATIVE WEB ATELIER</span>
+  <!-- TELEMETRY BAR -->
+  <div class="telemetry-bar">
+    <div class="telemetry-cluster">
+      <div class="telemetry-item"><span class="badge-green"></span> STUDIO ENGINE: ACTIVE</div>
+      <div class="telemetry-item">LATENCY: <b id="pingVal" style="color:#00FF88;">0.38s</b></div>
+      <div class="telemetry-item">FPS: <b id="fpsVal" style="color:var(--accent-primary);">60</b></div>
+      <div class="telemetry-item">STACK: <b>VANILLA TS / ZERO BLOAT</b></div>
+    </div>
+    <div>
+      <button class="sfx-toggle-btn" id="sfxToggleBtn" type="button">🔊 SFX: ON</button>
+    </div>
+  </div>
+
+  <!-- FLOATING COCKPIT HEADER -->
+  <header class="cockpit-header" role="banner">
+    <a class="cockpit-brand" href="#">
+      <div class="cockpit-avatar-icon">K</div>
+      <div class="cockpit-titles">
+        <span class="cockpit-name">KIRILL SOFRIN</span>
+        <span class="cockpit-spec">&gt;_ CREATIVE WEB ENGINEER</span>
       </div>
     </a>
 
-    <nav class="hud-nav-links" aria-label="Разделы">
-      <a href="#benchmarks">Стандарты</a>
-      <a href="#sandbox">Архитектура</a>
-      <a href="#protocol">Процесс</a>
+    <nav class="cockpit-nav-links" aria-label="Меню">
+      <a href="#tuner">Архитектура</a>
+      <a href="#sprint">Процесс</a>
       <a href="#pricing">Стоимость</a>
       <a href="#faq">FAQ</a>
     </nav>
 
-    <a class="btn-hud-action" href="#terminal">
-      <span>Заказать сайт</span>
+    <a class="btn-cockpit-fire" href="#order">
+      <span>Заказать за 14 990 ₽</span>
       <span aria-hidden="true">→</span>
     </a>
   </header>
 
-  <!-- HERO: MONUMENTAL EXPERIENCE -->
-  <section class="hero-stage">
-    <div class="hero-pill-badge">
-      <span>✦ Запуск за 72 часа · Без агентских наценок</span>
-    </div>
+  <!-- SECTION 1: HERO EPIC STAGE -->
+  <section class="hero-epic">
+    <div class="hero-statement-box">
+      <div class="hero-tech-kicker">
+        <span>⚡ 72 ЧАСА ДО БОЕВОГО РЕЛИЗА · ДОМЕН ВКЛЮЧЁН</span>
+      </div>
 
-    <h1 class="hero-headline-super">
-      Сайты, которые вызывают <span class="gradient-text">уважение и конвертируют</span> клиентов
-    </h1>
+      <h1 class="hero-epic-title">
+        Сайты с чистой инженерной мощью, которые <span class="gradient-span">делают кассу бизнесу</span>
+      </h1>
 
-    <p class="hero-subparagraph">
-      Создаю бескомпромиссные веб-решения для бизнеса. Никаких шаблонных конструкторов, тормозящих плагинов и ежемесячных подписок. 14 990 ₽ под ключ с официальным доменом на ваше имя.
-    </p>
-
-    <div class="hero-action-dock">
-      <a class="btn-quantum" href="#terminal">
-        <span>Обсудить проект под ключ</span>
-        <span aria-hidden="true">→</span>
-      </a>
-      <a class="btn-hologram" href="#sandbox">
-        <span>Интерактивный демо-стенд</span>
-        <span aria-hidden="true">↓</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- KINETIC RUNNING MARQUEE -->
-  <div class="kinetic-marquee-wrap" aria-hidden="true">
-    <div class="kinetic-track">
-      <div class="marquee-item">LIGHTHOUSE 100/100 <span class="dot"></span></div>
-      <div class="marquee-item">ЗАПУСК ЗА 72 ЧАСА <span class="dot"></span></div>
-      <div class="marquee-item">ДОМЕН .RU ВКЛЮЧЁН <span class="dot"></span></div>
-      <div class="marquee-item">БЕЗ ЕЖЕМЕСЯЧНЫХ ПОДПИСОК <span class="dot"></span></div>
-      <div class="marquee-item">ПРЯМАЯ СВЯЗЬ С РАЗРАБОТЧИКОМ <span class="dot"></span></div>
-      <div class="marquee-item">ОПЛАТА ПОСЛЕ МАКЕТА <span class="dot"></span></div>
-      <!-- Duplicate for seamless scroll -->
-      <div class="marquee-item">LIGHTHOUSE 100/100 <span class="dot"></span></div>
-      <div class="marquee-item">ЗАПУСК ЗА 72 ЧАСА <span class="dot"></span></div>
-      <div class="marquee-item">ДОМЕН .RU ВКЛЮЧЁН <span class="dot"></span></div>
-      <div class="marquee-item">БЕЗ ЕЖЕМЕСЯЧНЫХ ПОДПИСОК <span class="dot"></span></div>
-      <div class="marquee-item">ПРЯМАЯ СВЯЗЬ С РАЗРАБОТЧИКОМ <span class="dot"></span></div>
-      <div class="marquee-item">ОПЛАТА ПОСЛЕ МАКЕТА <span class="dot"></span></div>
-    </div>
-  </div>
-
-  <!-- SECTION 1: BENCHMARKS BENTO GRID -->
-  <section class="bento-grid-station" id="benchmarks">
-    <div class="bento-tile col-8">
-      <div class="tile-kicker">Инженерный эталон</div>
-      <h2 class="tile-title-main">Скорость, которая опережает 95% конкурентов</h2>
-      <p style="color: var(--text-muted); font-size: 16px; margin-top: 10px; max-width: 580px;">
-        Каждая секунда ожидания сайта убивает конверсию. Я пишу чистый семантический код без перегруженных библиотек, поэтому страницы открываются мгновенно даже на слабом 3G.
+      <p class="hero-epic-desc">
+        Разрабатываю быстрые веб-интерфейсы без тормозящих конструкторов и абонентских плат. 14 990 ₽ под ключ с официальным доменом на ваше имя. Оплата строго после согласования макета.
       </p>
 
-      <div class="speed-radar-box">
-        <div class="gauge-visual">
-          <svg class="gauge-circle" viewBox="0 0 140 140">
-            <circle class="circle-bg" cx="70" cy="70" r="60"/>
-            <circle class="circle-prog" cx="70" cy="70" r="60"/>
-          </svg>
-          <div class="gauge-value-center">
-            0.4с
-            <span>FIRST PAINT</span>
-          </div>
-        </div>
-
-        <div class="speed-comparison-list">
-          <div class="comp-row">
-            <div class="comp-meta"><span>Мой стек (Чистый код & Оптимизация)</span><b>0.4 сек</b></div>
-            <div class="comp-bar"><div class="comp-fill fill-kirill"></div></div>
-          </div>
-          <div class="comp-row">
-            <div class="comp-meta"><span>Типичный конструктор (Tilda / Wix)</span><b>3.8 сек</b></div>
-            <div class="comp-bar"><div class="comp-fill fill-tilda"></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bento-tile col-4">
-      <div class="tile-kicker">Честная модель</div>
-      <h3 style="font-family: var(--font-display); font-size: 26px; font-weight: 800; color: #fff;">0 ₽ подписок</h3>
-      <p style="color: var(--text-muted); font-size: 14.5px; margin-top: 10px;">
-        Конструкторы требуют 1 000 – 2 500 ₽ каждый месяц всю жизнь. Мой сайт вы покупаете один раз и навсегда. Он полностью принадлежит вам.
-      </p>
-      <div style="margin-top: 24px; padding: 14px; border-radius: 16px; background: rgba(0, 240, 255, 0.05); border: 1px solid rgba(0, 240, 255, 0.2);">
-        <div style="font-size: 12px; font-family: var(--font-mono); color: var(--neon-cyan);">ЭКОНОМИЯ ЗА 2 ГОДА</div>
-        <div style="font-family: var(--font-display); font-size: 22px; font-weight: 800; color: #fff; margin-top: 2px;">+30 000 ₽</div>
-      </div>
-    </div>
-
-    <div class="bento-tile col-6">
-      <div class="tile-kicker">Мобильный приоритет</div>
-      <h3 style="font-family: var(--font-display); font-size: 24px; font-weight: 800; color: #fff;">
-        9 из 10 клиентов заходят со смартфона
-      </h3>
-      <p style="color: var(--text-muted); font-size: 15px; margin-top: 10px;">
-        Интерфейс спроектирован под управление одним пальцем: удобные кнопки звонка, моментальный переход в WhatsApp / Telegram, маршрут в Яндекс Навигаторе в один клик.
-      </p>
-    </div>
-
-    <div class="bento-tile col-6">
-      <div class="tile-kicker">Безопасность и Домен</div>
-      <h3 style="font-family: var(--font-display); font-size: 24px; font-weight: 800; color: #fff;">
-        Официальный домен .ru включён на 1 год
-      </h3>
-      <p style="color: var(--text-muted); font-size: 15px; margin-top: 10px;">
-        Регистрируется строго на ваши паспортные данные или организацию. Вы полноправный владелец. SSL-сертификат безопасности (https://) подключается автоматически.
-      </p>
-    </div>
-  </section>
-
-  <!-- SECTION 2: INTERACTIVE LIVE DESIGN SANDBOX -->
-  <section class="archetype-section" id="sandbox">
-    <div class="archetype-header-row">
-      <div>
-        <div class="tile-kicker">Интерактивный стенд</div>
-        <h2 style="font-family: var(--font-display); font-size: clamp(26px, 3.2vw, 40px); font-weight: 900; line-height: 1.15;">
-          Выберите характер будущего сайта
-        </h2>
-        <p style="color: var(--text-muted); font-size: 16px; margin-top: 8px;">
-          Переключайте стили и смотрите, как может выглядеть концепция под вашу нишу.
-        </p>
-      </div>
-
-      <div class="archetype-switch-tabs" role="tablist">
-        <button class="arch-tab-btn active" data-style="cyber" type="button">Технологичный Нео</button>
-        <button class="arch-tab-btn" data-style="luxury" type="button">Премиум Монохром</button>
-        <button class="arch-tab-btn" data-style="editorial" type="button">Швейцарский Журнал</button>
-      </div>
-    </div>
-
-    <div class="archetype-live-sandbox">
-      <div class="sandbox-preview-screen preview-theme-cyber" id="sandboxStage">
-        <div>
-          <span class="sandbox-tag" id="sandboxKicker">АРХИТЕКТУРА / СЕРВИС</span>
-          <h3 class="sandbox-hero-headline" id="sandboxHeadline">
-            Сервис премиального детейлинга и защиты авто
-          </h3>
-          <p class="sandbox-hero-desc" id="sandboxDesc">
-            Калькулятор стоимости работ, интерактивная галерея до/после, быстрая запись на удобный день через Telegram.
-          </p>
-        </div>
-
-        <div>
-          <div class="sandbox-components-mockup" id="sandboxChips">
-            <span class="sandbox-mock-chip">⚡ Онлайн-запись</span>
-            <span class="sandbox-mock-chip">📍 Яндекс Карты</span>
-            <span class="sandbox-mock-chip">💬 Прямой чат в TG</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="sandbox-specs-col">
-        <div>
-          <div style="font-family: var(--font-mono); font-size: 12px; color: var(--neon-cyan); letter-spacing: 0.1em; text-transform: uppercase;">
-            Что включено под ключ
-          </div>
-          <div style="font-family: var(--font-display); font-size: 32px; font-weight: 900; color: #fff; margin: 10px 0 6px;">
-            14 990 ₽
-          </div>
-          <div style="font-size: 13.5px; color: var(--text-muted);">
-            Фиксированная стоимость. Никаких доплат за домен или хостинг на старте.
-          </div>
-
-          <ul class="specs-checklist">
-            <li class="specs-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Домен .ru на 1 полный год</span></li>
-            <li class="specs-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Продающие тексты под ваш бизнес</span></li>
-            <li class="specs-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>До 10 бесплатных правок макета</span></li>
-            <li class="specs-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Запуск ровно за 3 дня</span></li>
-          </ul>
-        </div>
-
-        <a class="btn-quantum" href="#terminal" style="width: 100%;">
-          <span>Заказать этот стиль</span>
-          <span aria-hidden="true">→</span>
+      <div class="hero-epic-cta-row">
+        <a class="btn-quantum-laser" href="#order">
+          <span>Забронировать слот →</span>
+        </a>
+        <a class="btn-quantum-ghost" href="#tuner">
+          <span>Тест архитектуры ↓</span>
         </a>
       </div>
     </div>
+
+    <!-- Right: Interactive Hacker Terminal -->
+    <div class="interactive-terminal-card" id="terminalCard">
+      <div class="term-topbar">
+        <div class="term-controls">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="term-title">kirill@studio-atelier: ~ (zsh)</div>
+        <div class="term-badge-live">● LIVE CLI</div>
+      </div>
+
+      <div class="term-screen" id="termScreen">
+        <div class="term-row"><span class="term-prompt">kirill@studio:~$</span> init --experience=bespoke</div>
+        <div class="term-row term-out-success">✓ Performance verified: 100/100 Google Lighthouse</div>
+        <div class="term-row term-out-success">✓ Architecture: Zero-bloat, Pure Semantic Engine</div>
+        <div class="term-row term-out-highlight">★ Fixed investment: 14 990 ₽ (Domain .ru on your name included)</div>
+        <div class="term-row"><span class="term-prompt">kirill@studio:~$</span> type 'help' or click quick buttons below</div>
+      </div>
+
+      <div class="term-quick-bar">
+        <button class="term-btn" data-cmd="specs" type="button">specs.json</button>
+        <button class="term-btn" data-cmd="speed" type="button">speed_test</button>
+        <button class="term-btn" data-cmd="pricing" type="button">pricing</button>
+        <button class="term-btn" data-cmd="order" type="button">sudo order</button>
+        <button class="term-btn" data-cmd="clear" type="button">clear</button>
+      </div>
+
+      <form class="term-input-row" id="termForm">
+        <span class="term-prompt" style="margin-right:8px;">$&nbsp;</span>
+        <input class="term-input-field" id="termInput" placeholder="Введите команду (help, specs, order...)" autocomplete="off">
+      </form>
+    </div>
   </section>
 
-  <!-- SECTION 3: 3-DAY PROTOCOL -->
-  <section id="protocol">
-    <div style="text-align: center; max-width: 680px; margin: 0 auto 40px;">
-      <div class="tile-kicker">Прозрачный регламент</div>
-      <h2 style="font-family: var(--font-display); font-size: clamp(28px, 3.6vw, 44px); font-weight: 900; line-height: 1.15;">
-        3 дня от первого сообщения до живого сайта
-      </h2>
-      <p style="color: var(--text-muted); font-size: 16px; margin-top: 10px;">
-        Без раздутых ТЗ на 50 страниц. Вы общаетесь напрямую со мной в Telegram.
-      </p>
+  <!-- SECTION 2: LIVE ARCHITECTURE TUNER -->
+  <section class="tuner-section" id="tuner">
+    <div class="tuner-controls-box">
+      <div>
+        <div style="font-family: var(--font-code); font-size: 12px; color: var(--accent-primary); letter-spacing: 0.1em; text-transform: uppercase;">
+          ИНТЕРАКТИВНЫЙ ТЮНЕР ДИЗАЙНА
+        </div>
+        <h2 style="font-family: var(--font-hero); font-size: clamp(26px, 3.2vw, 38px); font-weight: 900; line-height: 1.15; margin-top: 8px;">
+          Управляйте геометрией и атмосферой
+        </h2>
+        <p style="color: var(--text-muted); font-size: 15px; margin-top: 8px;">
+          Подвигайте ползунки и почувствуйте, как вживую трансформируется карточка продукта и акцентный свет.
+        </p>
+      </div>
+
+      <div class="tuner-control-group">
+        <div class="tuner-label-row">
+          <span>ОТТЕНОК НЕОНА (HUE)</span>
+          <b id="hueValue">185° Cyan</b>
+        </div>
+        <input class="tuner-slider" id="sliderHue" type="range" min="0" max="360" value="185">
+      </div>
+
+      <div class="tuner-control-group">
+        <div class="tuner-label-row">
+          <span>СКРУГЛЕНИЕ УГЛОВ (RADIUS)</span>
+          <b id="radiusValue">24px</b>
+        </div>
+        <input class="tuner-slider" id="sliderRadius" type="range" min="0" max="40" value="24">
+      </div>
+
+      <div class="tuner-control-group">
+        <div class="tuner-label-row">
+          <span>СВЕТОВОЕ СВЕЧЕНИЕ (GLOW)</span>
+          <b id="glowValue">100%</b>
+        </div>
+        <input class="tuner-slider" id="sliderGlow" type="range" min="20" max="150" value="100">
+      </div>
     </div>
 
-    <div class="protocol-stage">
-      <div class="protocol-glass-card">
+    <!-- 3D Specular Tilt Card -->
+    <div class="tilt-card-stage">
+      <div class="tilt-card" id="tiltCard">
+        <div class="tilt-card-glare" id="tiltGlare"></div>
         <div>
-          <div class="protocol-day-badge">01</div>
-          <h3 class="protocol-card-title">Концепт и первый экран</h3>
-          <p class="protocol-card-body">
-            Вы рассказываете о бизнесе. Я пишу офферы, формулирую ценность и создаю дизайн первого экрана. Вы смотрите его до внесения оплаты.
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-family:var(--font-code); font-size:12px; color:var(--accent-primary);">LIVE SPECIMEN</span>
+            <span style="font-family:var(--font-code); font-size:11px; color:#00FF88;">99.9% CONVERSION</span>
+          </div>
+
+          <h3 style="font-family:var(--font-hero); font-size:24px; font-weight:900; margin:16px 0 8px; color:#fff;">
+            Сайт для вашего бизнеса
+          </h3>
+          <p style="color:var(--text-muted); font-size:14px; line-height:1.5;">
+            Интерактивные 3D-карточки, безупречная типографика и мгновенная загрузка. Клиенты чувствуют уровень и доверяют вам сразу.
           </p>
         </div>
-        <div style="font-size: 13px; font-family: var(--font-mono); color: var(--neon-cyan); margin-top: 20px;">
+
+        <div style="margin-top:24px;">
+          <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:8px; font-size:13px; font-family:var(--font-code);">
+            <span>Срок запуска:</span><b style="color:#fff;">72 часа</b>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding-top:8px; font-size:13px; font-family:var(--font-code);">
+            <span>Фиксированная цена:</span><b style="color:var(--accent-primary);">14 990 ₽</b>
+          </div>
+
+          <a class="btn-quantum-laser" href="#order" style="width:100%; margin-top:20px; height:50px; font-size:14px;">
+            <span>Заказать этот концепт</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: 3-DAY PRODUCTION SPRINT -->
+  <section id="sprint">
+    <div style="text-align: center; max-width: 680px; margin: 0 auto 36px;">
+      <div style="font-family: var(--font-code); font-size: 12px; color: var(--accent-primary); letter-spacing: 0.1em; text-transform: uppercase;">
+        РЕГЛАМЕНТ РАБОТЫ
+      </div>
+      <h2 style="font-family: var(--font-hero); font-size: clamp(28px, 3.6vw, 44px); font-weight: 900; line-height: 1.15; margin-top: 8px;">
+        3 дня от брифа до боевого релиза
+      </h2>
+    </div>
+
+    <div class="sprint-grid">
+      <div class="sprint-card">
+        <div>
+          <div class="sprint-num">01</div>
+          <h3 style="font-family: var(--font-hero); font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 12px;">
+            Прототип и архитектура
+          </h3>
+          <p style="color: var(--text-muted); font-size: 14.5px; line-height: 1.6;">
+            Вы описываете задачу. Я пишу продающие тексты, выстраиваю воронку и создаю дизайн первого экрана. Вы оцениваете макет до внесения оплаты.
+          </p>
+        </div>
+        <div style="font-family: var(--font-code); font-size: 12px; color: var(--accent-primary); margin-top: 20px;">
           ✓ Бесплатный макет до оплаты
         </div>
       </div>
 
-      <div class="protocol-glass-card">
+      <div class="sprint-card">
         <div>
-          <div class="protocol-day-badge">02</div>
-          <h3 class="protocol-card-title">Вёрстка и интеграции</h3>
-          <p class="protocol-card-body">
-            Собираю сайт на чистом быстром коде. Настраиваю идеальное отображение на смартфонах, кнопки Telegram, WhatsApp, прямые звонки и геолокацию.
+          <div class="sprint-num">02</div>
+          <h3 style="font-family: var(--font-hero); font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 12px;">
+            Вёрстка и реактивный код
+          </h3>
+          <p style="color: var(--text-muted); font-size: 14.5px; line-height: 1.6;">
+            Верстаю адаптивный интерфейс без тяжёлых фреймворков. Настраиваю идеальный мобильный отклик, кнопки вызова в 1 тап, мессенджеры и карты.
           </p>
         </div>
-        <div style="font-size: 13px; font-family: var(--font-mono); color: var(--neon-cyan); margin-top: 20px;">
-          ✓ 100% мобильная скорость
+        <div style="font-family: var(--font-code); font-size: 12px; color: var(--accent-primary); margin-top: 20px;">
+          ✓ 100/100 Mobile Speed
         </div>
       </div>
 
-      <div class="protocol-glass-card">
+      <div class="sprint-card">
         <div>
-          <div class="protocol-day-badge">03</div>
-          <h3 class="protocol-card-title">Домен и боевой релиз</h3>
-          <p class="protocol-card-body">
-            Регистрирую домен на ваше имя, подключаю SSL-сертификат безопасности (https://), провожу тестирование и передаю готовый сайт в работу.
+          <div class="sprint-num">03</div>
+          <h3 style="font-family: var(--font-hero); font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 12px;">
+            Домен, SSL и запуск
+          </h3>
+          <p style="color: var(--text-muted); font-size: 14.5px; line-height: 1.6;">
+            Регистрирую доменное имя .ru на ваше имя, подключаю шифрование https://, отдаю проект в боевой эфир и передаю все доступы.
           </p>
         </div>
-        <div style="font-size: 13px; font-family: var(--font-mono); color: var(--neon-cyan); margin-top: 20px;">
-          ✓ Официальный домен включён
+        <div style="font-family: var(--font-code); font-size: 12px; color: var(--accent-primary); margin-top: 20px;">
+          ✓ Домен на 1 год включён
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 4: FAIR FIXED PRICING -->
-  <section class="pricing-hero-station" id="pricing">
+  <!-- SECTION 4: UNFAIR VALUE PRICING -->
+  <section class="pricing-matrix-hero" id="pricing">
     <div>
-      <div class="tile-kicker">Тариф «Всё включено»</div>
-      <div class="price-monument">14 990 ₽</div>
-      <p style="color: var(--text-muted); font-size: 16px; margin-top: 10px; max-width: 520px;">
-        Разовая инвестиция. Никаких скрытых платежей, звездочек и неожиданных комиссий.
+      <div style="font-family: var(--font-code); font-size: 12px; color: var(--accent-primary); letter-spacing: 0.12em; text-transform: uppercase;">
+        ЧЕСТНАЯ ФИКСИРОВАННАЯ ЦЕНА
+      </div>
+      <div class="price-display-giant">14 990 ₽</div>
+      <p style="color: var(--text-muted); font-size: 16px; margin-top: 8px;">
+        Разовый платёж за законченный проект под ключ. Никаких доплат и скрытых комиссий.
       </p>
 
-      <ul class="included-grid-2x2">
+      <ul class="features-grid-checklist">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Домен .ru на 1 год включён</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Адаптивность под iPhone & Android</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Продающие тексты и офферы</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Кнопки Telegram / WhatsApp / Звонка</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Адаптивность для смартфонов и ПК</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Продающие тексты под ваш бизнес</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Кнопки Telegram / WhatsApp / Телефон</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>До 10 правок без доплат</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>SSL-сертификат (https://)</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>SSL-сертификат безопасности</span></li>
       </ul>
     </div>
 
-    <div style="display: flex; flex-direction: column; gap: 20px;">
-      <div style="padding: 24px; border-radius: 20px; background: rgba(0, 0, 0, 0.4); border: 1px solid var(--border-subtle);">
-        <div style="font-size: 13px; font-weight: 700; color: var(--neon-emerald); display: flex; align-items: center; gap: 6px;">
-          <span>● Гарантия результата</span>
+    <div style="display: flex; flex-direction: column; gap: 18px;">
+      <div style="padding: 24px; border-radius: 20px; background: rgba(0, 0, 0, 0.4); border: 1px solid var(--border-line);">
+        <div style="font-family: var(--font-code); font-size: 13px; color: #00FF88; font-weight: 700;">
+          ● ГАРАНТИЯ 100% БЕЗ РИСКА
         </div>
-        <div style="font-size: 14px; color: var(--text-muted); margin-top: 6px; line-height: 1.5;">
-          Вы не платите ни рубля, пока не утвердите концепт первого экрана. Риски для вас равны нулю.
+        <div style="color: var(--text-muted); font-size: 14px; margin-top: 6px; line-height: 1.5;">
+          Сначала вы утверждаете дизайн первого экрана. Если результат не устроит — вы ничего не платите.
         </div>
       </div>
 
-      <a class="btn-quantum" href="#terminal" style="width: 100%;">
-        <span>Забронировать сайт за 14 990 ₽</span>
-        <span aria-hidden="true">→</span>
+      <a class="btn-quantum-laser" href="#order" style="width: 100%; justify-content: center;">
+        <span>Заказать сайт за 14 990 ₽ →</span>
       </a>
     </div>
   </section>
 
-  <!-- SECTION 5: INTAKE TERMINAL (Lead Capture) -->
-  <section class="intake-terminal" id="terminal">
+  <!-- SECTION 5: FAST-LANE ORDER TERMINAL (#order) -->
+  <section class="order-terminal-wrapper" id="order">
     <div>
-      <div class="tile-kicker">Экспресс-старт</div>
-      <h2 style="font-family: var(--font-display); font-size: clamp(28px, 3.4vw, 42px); font-weight: 900; line-height: 1.15;">
-        Забронируйте запуск на этой неделе
+      <div style="font-family: var(--font-code); font-size: 12px; color: var(--accent-primary); letter-spacing: 0.12em; text-transform: uppercase;">
+        ЭКСПРЕСС-СТАРТ
+      </div>
+      <h2 style="font-family: var(--font-hero); font-size: clamp(28px, 3.4vw, 42px); font-weight: 900; line-height: 1.15; margin-top: 8px;">
+        Запустите сайт на этой неделе
       </h2>
       <p style="color: var(--text-muted); font-size: 16px; margin-top: 14px; line-height: 1.6;">
-        Заполните 3 строчки. Я изучу ваш бизнес и пришлю персональное предложение со структурой в Telegram или WhatsApp в течение 30 минут.
+        Оставьте заявку. Я лично свяжусь с вами сегодня в Telegram или WhatsApp с готовым планом структуры и офферами.
       </p>
 
-      <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 14px;">
-        <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-muted);">
-          <span style="color: var(--neon-cyan);">✦</span> Без спама и навязчивых звонков
-        </div>
-        <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-muted);">
-          <span style="color: var(--neon-cyan);">✦</span> Прямой контакт лично с Кириллом
-        </div>
-        <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-muted);">
-          <span style="color: var(--neon-cyan);">✦</span> Можно сразу написать в Telegram: <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color: var(--neon-cyan); font-weight: 700;">@K_Sofrin</a>
-        </div>
+      <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 14px; font-family: var(--font-code); font-size: 13.5px; color: var(--text-muted);">
+        <div><span style="color:var(--accent-primary);">✦</span> Прямой контакт с разработчиком без посредников</div>
+        <div><span style="color:var(--accent-primary);">✦</span> Без спама и навязчивых звонков</div>
+        <div><span style="color:var(--accent-primary);">✦</span> Telegram для быстрой связи: <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--accent-primary); font-weight:700;">@K_Sofrin</a></div>
       </div>
     </div>
 
-    <form id="expressLeadForm" autocomplete="off" style="display: flex; flex-direction: column; gap: 18px;">
+    <form id="orderForm" autocomplete="off" style="display: flex; flex-direction: column; gap: 18px;">
       <div>
         <label style="font-size: 13px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Сфера бизнеса</label>
-        <input class="terminal-input" id="leadBiz" name="biz" placeholder="Например: детейлинг, автосервис, салон или клиника" required value="Детейлинг">
+        <input class="order-input-block" id="inpBiz" name="biz" placeholder="Например: барбершоп, детейлинг, автосервис или кафе" required value="Детейлинг">
       </div>
 
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
         <div>
           <label style="font-size: 13px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Город</label>
-          <input class="terminal-input" id="leadCity" name="city" placeholder="Брянск" value="Брянск">
+          <input class="order-input-block" id="inpCity" name="city" placeholder="Брянск" value="Брянск">
         </div>
         <div>
           <label style="font-size: 13px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Ваше имя</label>
-          <input class="terminal-input" id="leadName" name="name" placeholder="Как к вам обращаться">
+          <input class="order-input-block" id="inpName" name="name" placeholder="Как к вам обращаться">
         </div>
       </div>
 
       <div>
-        <label style="font-size: 13px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Удобный канал связи</label>
-        <div class="contact-channel-tabs" id="channelGroup">
-          <label class="channel-pill active"><input type="radio" name="contact_method" value="telegram" checked><span>Telegram</span></label>
-          <label class="channel-pill"><input type="radio" name="contact_method" value="whatsapp"><span>WhatsApp</span></label>
-          <label class="channel-pill"><input type="radio" name="contact_method" value="phone"><span>Телефон</span></label>
-          <label class="channel-pill"><input type="radio" name="contact_method" value="other"><span>Другое</span></label>
+        <label style="font-size: 13px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Где удобнее ответить</label>
+        <div class="comm-selector-grid" id="commGroup">
+          <label class="comm-selector-btn active"><input type="radio" name="contact_method" value="telegram" checked><span>Telegram</span></label>
+          <label class="comm-selector-btn"><input type="radio" name="contact_method" value="whatsapp"><span>WhatsApp</span></label>
+          <label class="comm-selector-btn"><input type="radio" name="contact_method" value="phone"><span>Телефон</span></label>
+          <label class="comm-selector-btn"><input type="radio" name="contact_method" value="other"><span>Другое</span></label>
         </div>
       </div>
 
       <div>
-        <label style="font-size: 13px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Контактные данные</label>
-        <input class="terminal-input" id="leadContact" name="contact_value" placeholder="@username в Telegram" required>
+        <label style="font-size: 13px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Контакт для связи</label>
+        <input class="order-input-block" id="inpContact" name="contact_value" placeholder="@username в Telegram" required>
       </div>
 
-      <button class="btn-quantum" id="btnSubmitTerminal" type="submit" style="width: 100%; margin-top: 6px;">
-        <span>Отправить заявку на сайт</span>
-        <span aria-hidden="true">→</span>
+      <button class="btn-quantum-laser" id="btnSubmitOrder" type="submit" style="width: 100%; justify-content: center; margin-top: 6px;">
+        <span>Отправить заявку на сайт →</span>
       </button>
 
-      <p id="leadTerminalFeedback" style="font-size: 13.5px; text-align: center; color: var(--text-muted); min-height: 20px;">
+      <p id="orderFeedback" style="font-size: 13.5px; text-align: center; color: var(--text-muted); min-height: 20px;">
         Отвечу лично в течение 30 минут.
       </p>
     </form>
   </section>
 
   <!-- SECTION 6: FAQ -->
-  <section class="faq-stream" id="faq">
-    <div style="margin-bottom: 24px;">
-      <div class="tile-kicker">Частые вопросы</div>
-      <h2 style="font-family: var(--font-display); font-size: clamp(26px, 3.2vw, 38px); font-weight: 900;">
-        Всё, что нужно знать перед стартом
+  <section class="faq-stack" id="faq">
+    <div style="margin-bottom: 16px;">
+      <div style="font-family: var(--font-code); font-size: 12px; color: var(--accent-primary); letter-spacing: 0.1em; text-transform: uppercase;">
+        ВОПРОСЫ И ОТВЕТЫ
+      </div>
+      <h2 style="font-family: var(--font-hero); font-size: clamp(26px, 3.2vw, 36px); font-weight: 900; margin-top: 6px;">
+        Всё прозрачно и без скрытых условий
       </h2>
     </div>
 
-    <details class="faq-node">
+    <details class="faq-box">
       <summary>
-        <span>Что если мне не понравится предложенный концепт?</span>
-        <span class="faq-chevron">+</span>
+        <span>Что если предложенный концепт мне не понравится?</span>
+        <span class="faq-mark">+</span>
       </summary>
-      <div class="faq-answer">
-        Вы ничем не рискуете. Я делаю прототип первого экрана до того, как вы вносите оплату. В тариф уже входит до 10 правок, поэтому мы гарантированно доведём макет до нужного вам результата.
+      <div class="faq-inner">
+        Вы ничем не рискуете. Я делаю прототип первого экрана до внесения какой-либо оплаты. В тариф входит до 10 правок — мы дорабатываем дизайн до тех пор, пока вы не будете полностью удовлетворены.
       </div>
     </details>
 
-    <details class="faq-node">
+    <details class="faq-box">
       <summary>
-        <span>Домен действительно регистрируется на меня?</span>
-        <span class="faq-chevron">+</span>
+        <span>Домен действительно оформляется на меня?</span>
+        <span class="faq-mark">+</span>
       </summary>
-      <div class="faq-answer">
-        Да! Домен регистрируется официально через аккредитованного регистратора на ваши паспортные данные или организацию. Вы являетесь его единственным владельцем. 1 год обслуживания уже включён в 14 990 ₽.
+      <div class="faq-inner">
+        Да, регистрация домена .ru на 1 полный год уже включена в 14 990 ₽. Домен оформляется официально на ваши данные, вы являетесь его полноправным владельцем.
       </div>
     </details>
 
-    <details class="faq-node">
+    <details class="faq-box">
       <summary>
-        <span>Нужно ли будет платить за конструктор каждый месяц?</span>
-        <span class="faq-chevron">+</span>
+        <span>Нужно ли будет платить за сайт каждый месяц?</span>
+        <span class="faq-mark">+</span>
       </summary>
-      <div class="faq-answer">
-        Нет! Это сайт на чистом коде без конструкторов (Tilda, Wix и др.), поэтому вам не нужно отдавать 1 000 – 2 000 ₽ каждый месяц. Разовая оплата — и сайт работает на вас бессрочно.
+      <div class="faq-inner">
+        Нет! Это сайт на чистом коде, а не на конструкторе. Вам не нужно платить абонентскую плату Tilda или Wix (1 000 – 2 500 ₽/мес). Разовая оплата — и сайт работает на вас постоянно.
       </div>
     </details>
 
-    <details class="faq-node">
+    <details class="faq-box">
       <summary>
         <span>Кто пишет тексты для сайта?</span>
-        <span class="faq-chevron">+</span>
+        <span class="faq-mark">+</span>
       </summary>
-      <div class="faq-answer">
-        Тексты пишу я сам на основе ваших тезисов и анализа конкурентов. Вам достаточно просто рассказать в голосовом сообщении или тексте о своих ключевых услугах и ценах.
+      <div class="faq-inner">
+        Тексты пишу я сам на основе анализа вашего бизнеса и конкурентов. Вам достаточно просто рассказать своими словами об услугах и ценах.
       </div>
     </details>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="cinematic-footer">
-    <div>© 2026 KIRILL SOFRIN · Индивидуальная веб-разработка</div>
-    <div style="display: flex; gap: 24px;">
-      <a href="/brief">Полный бриф</a>
+  <!-- MASTER FOOTER -->
+  <footer class="master-footer">
+    <div>© 2026 KIRILL SOFRIN · BESPOKE DIGITAL ENGINEERING</div>
+    <div style="display: flex; gap: 20px;">
+      <a href="/brief">Бриф</a>
       <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener">Telegram @K_Sofrin</a>
-      <a href="#terminal">Заказать ↑</a>
+      <a href="#order">Заказать ↑</a>
     </div>
   </footer>
 
@@ -1308,30 +1122,87 @@ body {
 
 <script>
 (function() {
-  // 1. Interactive Ambient Particle Canvas (Tracks Mouse & Touch)
-  var canvas = document.getElementById('interactiveCanvas');
+  // 1. Web Audio Synthesizer Engine (0 external files, 100% native Web Audio)
+  var sfxEnabled = true;
+  var audioCtx = null;
+  function getAudioCtx() {
+    if (!audioCtx && window.AudioContext) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    return audioCtx;
+  }
+
+  function playUiBeep(freq, type, duration) {
+    if (!sfxEnabled) return;
+    try {
+      var ctx = getAudioCtx();
+      if (!ctx) return;
+      if (ctx.state === 'suspended') ctx.resume();
+      var osc = ctx.createOscillator();
+      var gain = ctx.createGain();
+      osc.type = type || 'sine';
+      osc.frequency.setValueAtTime(freq || 600, ctx.currentTime);
+      gain.gain.setValueAtTime(0.04, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + (duration || 0.08));
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + (duration || 0.08));
+    } catch(_) {}
+  }
+
+  var sfxBtn = document.getElementById('sfxToggleBtn');
+  if (sfxBtn) {
+    sfxBtn.addEventListener('click', function() {
+      sfxEnabled = !sfxEnabled;
+      sfxBtn.textContent = sfxEnabled ? '🔊 SFX: ON' : '🔇 SFX: OFF';
+      if (sfxEnabled) playUiBeep(880, 'sine', 0.1);
+    });
+  }
+
+  // Bind subtle beeps to buttons
+  document.querySelectorAll('button, a.btn-quantum-laser, a.btn-cockpit-fire').forEach(function(el) {
+    el.addEventListener('mouseenter', function() { playUiBeep(440, 'sine', 0.04); });
+    el.addEventListener('click', function() { playUiBeep(880, 'triangle', 0.08); });
+  });
+
+  // 2. Realtime FPS & Telemetry
+  var fpsVal = document.getElementById('fpsVal');
+  var frameCount = 0, lastTime = performance.now();
+  function checkFps(now) {
+    frameCount++;
+    if (now - lastTime >= 1000) {
+      if (fpsVal) fpsVal.textContent = frameCount;
+      frameCount = 0;
+      lastTime = now;
+    }
+    requestAnimationFrame(checkFps);
+  }
+  requestAnimationFrame(checkFps);
+
+  // 3. Canvas Particle Gravitational Field
+  var canvas = document.getElementById('bgCanvas');
   if (canvas) {
     var ctx = canvas.getContext('2d');
-    var width = canvas.width = window.innerWidth;
-    var height = canvas.height = window.innerHeight;
-    var mouse = { x: width / 2, y: height / 2, active: false };
+    var w = canvas.width = window.innerWidth;
+    var h = canvas.height = window.innerHeight;
+    var mouse = { x: w / 2, y: h / 2, active: false };
 
     var particles = [];
-    var count = Math.min(65, Math.floor((width * height) / 18000));
+    var count = Math.min(80, Math.floor((w * h) / 16000));
     for (var i = 0; i < count; i++) {
       particles.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.6,
-        vy: (Math.random() - 0.5) * 0.6,
-        radius: Math.random() * 1.8 + 0.8,
-        baseAlpha: Math.random() * 0.35 + 0.15
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.7,
+        vy: (Math.random() - 0.5) * 0.7,
+        rad: Math.random() * 1.8 + 0.8
       });
     }
 
     window.addEventListener('resize', function() {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
     });
 
     window.addEventListener('mousemove', function(e) {
@@ -1340,125 +1211,177 @@ body {
       mouse.active = true;
     });
 
-    window.addEventListener('touchmove', function(e) {
-      if (e.touches.length > 0) {
-        mouse.x = e.touches[0].clientX;
-        mouse.y = e.touches[0].clientY;
-        mouse.active = true;
-      }
-    }, { passive: true });
-
-    function renderCanvas() {
-      ctx.clearRect(0, 0, width, height);
-
+    function drawScene() {
+      ctx.clearRect(0, 0, w, h);
       for (var i = 0; i < particles.length; i++) {
         var p = particles[i];
         p.x += p.vx;
         p.y += p.vy;
 
-        if (p.x < 0) p.x = width;
-        if (p.x > width) p.x = 0;
-        if (p.y < 0) p.y = height;
-        if (p.y > height) p.y = 0;
+        if (p.x < 0) p.x = w;
+        if (p.x > w) p.x = 0;
+        if (p.y < 0) p.y = h;
+        if (p.y > h) p.y = 0;
 
-        // Draw particle
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(0, 240, 255, ' + p.baseAlpha + ')';
+        ctx.arc(p.x, p.y, p.rad, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(0, 240, 255, 0.4)';
         ctx.fill();
 
-        // Connect nearby particles
         for (var j = i + 1; j < particles.length; j++) {
           var p2 = particles[j];
           var dx = p.x - p2.x;
           var dy = p.y - p2.y;
           var dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 110) {
+          if (dist < 120) {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = 'rgba(0, 240, 255, ' + (0.12 * (1 - dist / 110)) + ')';
-            ctx.lineWidth = 0.7;
+            ctx.strokeStyle = 'rgba(0, 240, 255, ' + (0.15 * (1 - dist / 120)) + ')';
+            ctx.lineWidth = 0.8;
             ctx.stroke();
           }
         }
 
-        // Mouse interaction glow connection
         if (mouse.active) {
           var mdx = p.x - mouse.x;
           var mdy = p.y - mouse.y;
           var mdist = Math.sqrt(mdx * mdx + mdy * mdy);
-          if (mdist < 160) {
+          if (mdist < 180) {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(mouse.x, mouse.y);
-            ctx.strokeStyle = 'rgba(0, 240, 255, ' + (0.22 * (1 - mdist / 160)) + ')';
+            ctx.strokeStyle = 'rgba(0, 240, 255, ' + (0.28 * (1 - mdist / 180)) + ')';
             ctx.lineWidth = 1;
             ctx.stroke();
           }
         }
       }
-
-      requestAnimationFrame(renderCanvas);
+      requestAnimationFrame(drawScene);
     }
-    renderCanvas();
+    drawScene();
   }
 
-  // 2. Interactive Archetype Sandbox Switcher
-  var archTabs = document.querySelectorAll('.arch-tab-btn');
-  var stage = document.getElementById('sandboxStage');
-  var kicker = document.getElementById('sandboxKicker');
-  var headline = document.getElementById('sandboxHeadline');
-  var desc = document.getElementById('sandboxDesc');
-  var chips = document.getElementById('sandboxChips');
+  // 4. Interactive Terminal CLI
+  var termScreen = document.getElementById('termScreen');
+  var termForm = document.getElementById('termForm');
+  var termInput = document.getElementById('termInput');
+  var termBtns = document.querySelectorAll('.term-btn');
 
-  var stylePresets = {
-    cyber: {
-      themeClass: 'preview-theme-cyber',
-      kicker: 'АРХИТЕКТУРА / ТЕХНОЛОГИИ',
-      headline: 'Премиальный сервис детейлинга и защиты авто',
-      desc: 'Калькулятор стоимости работ, интерактивная галерея до/после, быстрая запись на удобный день через Telegram.',
-      chips: ['⚡ Онлайн-запись', '📍 Яндекс Карты', '💬 Прямой чат в TG']
-    },
-    luxury: {
-      themeClass: 'preview-theme-luxury',
-      kicker: 'LIFESTYLE / МОНОХРОМ',
-      headline: 'Авторская кофейня и ресторан европейской кухни',
-      desc: 'Интерактивное сезонное меню, онлайн-бронирование столиков за 1 минуту, интеграция сервисов доставки.',
-      chips: ['🍷 Меню и бар', '📅 Бронь стола', '🛵 Доставка']
-    },
-    editorial: {
-      themeClass: 'preview-theme-editorial',
-      kicker: 'ЭКСПЕРТ / ПРАКТИКА',
-      headline: 'Частная стоматологическая клиника и ортодонтия',
-      desc: 'Прайс-лист услуг с подробными кейсами, дипломы врачей, конфиденциальная запись на первичный приём.',
-      chips: ['🦷 Каталог услуг', '👨‍⚕️ Врачи', '📝 Запись на осмотр']
+  function appendTerm(row) {
+    if (!termScreen) return;
+    var d = document.createElement('div');
+    d.className = 'term-row';
+    d.innerHTML = row;
+    termScreen.appendChild(d);
+    termScreen.scrollTop = termScreen.scrollHeight;
+  }
+
+  function runCmd(cmd) {
+    var c = cmd.trim().toLowerCase();
+    appendTerm('<span class="term-prompt">kirill@studio:~$</span> ' + cmd);
+    playUiBeep(700, 'sine', 0.05);
+
+    if (c === 'help') {
+      appendTerm('Доступные команды: <span class="term-out-highlight">specs, speed, pricing, order, clear</span>');
+    } else if (c === 'specs' || c === 'specs.json') {
+      appendTerm('<span class="term-out-success">✓ Tech stack:</span> Semantic HTML5, Vanilla TypeScript, Web Audio, CSS 3D Matrix');
+      appendTerm('<span class="term-out-success">✓ Bundle size:</span> 0 external frameworks (100% fast raw performance)');
+      appendTerm('<span class="term-out-success">✓ Delivery:</span> 72 hours max');
+    } else if (c === 'speed' || c === 'speed_test') {
+      appendTerm('<span class="term-out-success">● TTFB: 0.04s | First Paint: 0.38s | Lighthouse: 100/100</span>');
+    } else if (c === 'pricing') {
+      appendTerm('<span class="term-out-highlight">★ 14 990 ₽ под ключ</span> (включая домен .ru на 1 год, без подписок)');
+    } else if (c === 'order' || c === 'sudo order') {
+      appendTerm('<span class="term-out-success">Переход к форме заказа...</span>');
+      var ord = document.getElementById('order');
+      if (ord) ord.scrollIntoView({ behavior: 'smooth' });
+    } else if (c === 'clear') {
+      termScreen.innerHTML = '';
+      appendTerm('<span class="term-prompt">kirill@studio:~$</span> terminal cleared.');
+    } else {
+      appendTerm('<span style="color:#FF5F56;">Команда не распознана: ' + cmd + '. Напишите "help".</span>');
     }
-  };
+  }
 
-  archTabs.forEach(function(tab) {
-    tab.addEventListener('click', function() {
-      archTabs.forEach(function(t) { t.classList.remove('active'); });
-      tab.classList.add('active');
-      var key = tab.getAttribute('data-style');
-      var preset = stylePresets[key];
-      if (preset && stage) {
-        stage.className = 'sandbox-preview-screen ' + preset.themeClass;
-        if (kicker) kicker.textContent = preset.kicker;
-        if (headline) headline.textContent = preset.headline;
-        if (desc) desc.textContent = preset.desc;
-        if (chips) {
-          chips.innerHTML = preset.chips.map(function(c) {
-            return '<span class="sandbox-mock-chip">' + c + '</span>';
-          }).join('');
-        }
-      }
+  if (termForm && termInput) {
+    termForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (!termInput.value) return;
+      runCmd(termInput.value);
+      termInput.value = '';
+    });
+  }
+
+  termBtns.forEach(function(b) {
+    b.addEventListener('click', function() {
+      var cmd = b.getAttribute('data-cmd');
+      runCmd(cmd);
     });
   });
 
-  // 3. Contact Method Radios & Placeholders
-  var channelPills = document.querySelectorAll('#channelGroup .channel-pill');
-  var contactInput = document.getElementById('leadContact');
+  // 5. Live Architecture Tuner (Hue / Radius / Glow)
+  var sHue = document.getElementById('sliderHue');
+  var sRadius = document.getElementById('sliderRadius');
+  var sGlow = document.getElementById('sliderGlow');
+  var hueVal = document.getElementById('hueValue');
+  var radiusVal = document.getElementById('radiusValue');
+  var glowVal = document.getElementById('glowValue');
+  var tiltCard = document.getElementById('tiltCard');
+
+  if (sHue && hueVal) {
+    sHue.addEventListener('input', function() {
+      var val = sHue.value;
+      document.documentElement.style.setProperty('--hue-accent', val);
+      hueVal.textContent = val + '°';
+      playUiBeep(300 + parseInt(val), 'sine', 0.02);
+    });
+  }
+
+  if (sRadius && radiusVal && tiltCard) {
+    sRadius.addEventListener('input', function() {
+      var val = sRadius.value;
+      tiltCard.style.borderRadius = val + 'px';
+      radiusVal.textContent = val + 'px';
+    });
+  }
+
+  if (sGlow && glowVal && tiltCard) {
+    sGlow.addEventListener('input', function() {
+      var val = sGlow.value;
+      tiltCard.style.boxShadow = '0 30px 70px rgba(0,0,0,0.9), 0 0 ' + (30 * (val / 100)) + 'px var(--accent-glow)';
+      glowVal.textContent = val + '%';
+    });
+  }
+
+  // 6. 3D Tilt Card Physics & Specular Highlight
+  var tiltGlare = document.getElementById('tiltGlare');
+  if (tiltCard) {
+    tiltCard.addEventListener('mousemove', function(e) {
+      var rect = tiltCard.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      var centerX = rect.width / 2;
+      var centerY = rect.height / 2;
+      var rotateX = ((y - centerY) / centerY) * -14;
+      var rotateY = ((x - centerX) / centerX) * 14;
+
+      tiltCard.style.transform = 'perspective(1000px) rotateX(' + rotateX.toFixed(2) + 'deg) rotateY(' + rotateY.toFixed(2) + 'deg) scale3d(1.02, 1.02, 1.02)';
+      if (tiltGlare) {
+        tiltGlare.style.opacity = '1';
+        tiltGlare.style.background = 'radial-gradient(circle at ' + x + 'px ' + y + 'px, rgba(255,255,255,0.22), transparent 55%)';
+      }
+    });
+
+    tiltCard.addEventListener('mouseleave', function() {
+      tiltCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      if (tiltGlare) tiltGlare.style.opacity = '0';
+    });
+  }
+
+  // 7. Contact Methods Radios & Placeholders
+  var commButtons = document.querySelectorAll('#commGroup .comm-selector-btn');
+  var inpContact = document.getElementById('inpContact');
   var placeholders = {
     telegram: '@username в Telegram',
     whatsapp: 'Номер для WhatsApp (+7...)',
@@ -1466,34 +1389,34 @@ body {
     other: 'Электронная почта'
   };
 
-  channelPills.forEach(function(pill) {
-    pill.addEventListener('click', function() {
-      channelPills.forEach(function(p) { p.classList.remove('active'); });
-      pill.classList.add('active');
-      var radio = pill.querySelector('input');
-      if (radio) {
-        radio.checked = true;
-        if (contactInput) {
-          contactInput.placeholder = placeholders[radio.value] || 'Контакт для связи';
+  commButtons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      commButtons.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var input = btn.querySelector('input');
+      if (input) {
+        input.checked = true;
+        if (inpContact) {
+          inpContact.placeholder = placeholders[input.value] || 'Контакт для связи';
         }
       }
     });
   });
 
-  // 4. Lead Form Submission
-  var form = document.getElementById('expressLeadForm');
-  var btnSub = document.getElementById('btnSubmitTerminal');
-  var feedback = document.getElementById('leadTerminalFeedback');
+  // 8. Order Form Submission
+  var orderForm = document.getElementById('orderForm');
+  var btnSubmit = document.getElementById('btnSubmitOrder');
+  var feedback = document.getElementById('orderFeedback');
 
-  if (form) {
-    form.addEventListener('submit', function(e) {
+  if (orderForm) {
+    orderForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      var fd = new FormData(form);
+      var fd = new FormData(orderForm);
 
-      if (btnSub) {
-        btnSub.disabled = true;
-        btnSub.style.opacity = '0.7';
-        btnSub.textContent = 'Отправка заявки…';
+      if (btnSubmit) {
+        btnSubmit.disabled = true;
+        btnSubmit.style.opacity = '0.7';
+        btnSubmit.textContent = 'Отправка заявки…';
       }
 
       fetch('/api/leads', {
@@ -1505,7 +1428,7 @@ body {
           name: fd.get('name') || '',
           contact_method: fd.get('contact_method') || 'telegram',
           contact_value: fd.get('contact_value') || '',
-          source: 'quantum_terminal'
+          source: 'high_craft_terminal'
         })
       })
       .then(function(res) {
@@ -1513,24 +1436,25 @@ body {
         return res.json();
       })
       .then(function() {
-        if (btnSub) {
-          btnSub.textContent = 'Заявка принята ✓';
-          btnSub.style.background = '#10B981';
-          btnSub.style.color = '#FFFFFF';
+        playUiBeep(1200, 'sine', 0.15);
+        if (btnSubmit) {
+          btnSubmit.textContent = 'Заявка успешно принята ✓';
+          btnSubmit.style.background = '#00FF88';
+          btnSubmit.style.color = '#05060A';
         }
         if (feedback) {
-          feedback.innerHTML = 'Заявка получена! Я свяжусь с вами сегодня. Для мгновенного ответа: <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--neon-cyan);font-weight:700;">написать в Telegram →</a>';
+          feedback.innerHTML = 'Заявка принята! Я свяжусь с вами сегодня. Для мгновенного ответа: <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--accent-primary);font-weight:700;">написать в Telegram →</a>';
         }
-        form.reset();
+        orderForm.reset();
       })
       .catch(function() {
-        if (btnSub) {
-          btnSub.disabled = false;
-          btnSub.style.opacity = '1';
-          btnSub.textContent = 'Отправить заявку на сайт →';
+        if (btnSubmit) {
+          btnSubmit.disabled = false;
+          btnSubmit.style.opacity = '1';
+          btnSubmit.textContent = 'Отправить заявку на сайт →';
         }
         if (feedback) {
-          feedback.textContent = 'Ошибка отправки. Пожалуйста, напишите напрямую в Telegram @K_Sofrin.';
+          feedback.textContent = 'Ошибка отправки. Напишите напрямую в Telegram @K_Sofrin.';
         }
       });
     });
