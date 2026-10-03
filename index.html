@@ -1,1700 +1,1511 @@
 <!doctype html>
-<html lang="ru" data-theme="dark">
+<html lang="ru">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Кирилл — веб-разработка для бизнеса под ключ за 3 дня · 14 990 ₽</title>
-<meta name="description" content="Разрабатываю быстрые продающие сайты для бизнеса: барбершопы, салоны, автосервисы, кафе. Запуск за 3 дня, 14 990 ₽ под ключ, домен на год включён.">
+<title>KIRILL · Bespoke Web Engineering & High-Converting Sites</title>
+<meta name="description" content="Индивидуальная веб-разработка нового поколения. Быстрые, эстетичные и продающие сайты для бизнеса за 3 дня. 14 990 ₽ под ключ с доменом.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Сайты для бизнеса за 3 дня — 14 990 ₽ с доменом">
-<meta property="og:description" content="Быстрые сайты с онлайн-записью, адаптацией под смартфоны и доменным именем на 1 год.">
+<meta property="og:title" content="KIRILL · Веб-разработка нового поколения">
+<meta property="og:description" content="Премиальные сайты для бизнеса за 72 часа. 14 990 ₽ под ключ с доменом. Оплата после макета.">
 <meta property="og:image" content="https://karif.up.railway.app/og.png">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://karif.up.railway.app/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#090A0F">
+<meta name="theme-color" content="#030407">
 <link rel="canonical" href="https://karif.up.railway.app/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FF5500'/%3E%3Cpath d='M9 7h5v7l7-7h6l-8 8 8.5 10H21L14 17v7H9z' fill='%23FFFFFF'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%2300F0FF'/%3E%3Cpath d='M9 7h5v7l7-7h6l-8 8 8.5 10H21L14 17v7H9z' fill='%23030407'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Unbounded:wght@500;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-<link rel="preload" href="fonts/inter-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=Unbounded:wght@600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-/* CSS VARIABLES & DUAL THEME ENGINE (Dark / Light) */
 :root {
-  --font-heading: 'Unbounded', system-ui, -apple-system, sans-serif;
-  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --bg-void: #030407;
+  --bg-deep: #07090F;
+  --bg-card: rgba(13, 17, 26, 0.72);
+  --bg-card-hover: rgba(20, 26, 40, 0.85);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(0, 240, 255, 0.45);
+  --neon-cyan: #00F0FF;
+  --neon-violet: #8B5CF6;
+  --neon-emerald: #10B981;
+  --neon-amber: #F59E0B;
+  --text-pure: #FFFFFF;
+  --text-muted: #8E96A8;
+  --text-dim: #505668;
+  --font-display: 'Unbounded', system-ui, sans-serif;
   --font-mono: 'Space Grotesk', monospace;
-  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
-  --radius-xs: 8px;
-  --radius-sm: 14px;
-  --radius-md: 20px;
-  --radius-lg: 32px;
-  --radius-full: 9999px;
-}
-
-/* DARK THEME (Ultra-modern Deep Graphite & Vibrant Sunset Orange / Electric Amber) */
-html[data-theme="dark"] {
-  --bg-page: #08090C;
-  --bg-surface: #101218;
-  --bg-card: rgba(18, 21, 28, 0.85);
-  --bg-card-hover: rgba(26, 30, 40, 0.95);
-  --bg-pill: rgba(255, 255, 255, 0.05);
-  --bg-pill-hover: rgba(255, 255, 255, 0.1);
-  --border-line: rgba(255, 255, 255, 0.08);
-  --border-glow: rgba(255, 85, 0, 0.35);
-  --text-main: #F4F4F6;
-  --text-muted: #8E929E;
-  --text-dim: #5A5E6B;
-  --accent-primary: #FF5500;
-  --accent-gradient: linear-gradient(135deg, #FF5500 0%, #FF8800 100%);
-  --accent-cyan: #00E5FF;
-  --accent-emerald: #00E676;
-  --shadow-card: 0 16px 40px -10px rgba(0, 0, 0, 0.65);
-  --shadow-cta: 0 14px 36px -6px rgba(255, 85, 0, 0.5);
-  --nav-backdrop: rgba(8, 9, 12, 0.82);
-  --grid-line: rgba(255, 255, 255, 0.03);
-}
-
-/* LIGHT THEME (Editorial Swiss Studio: Pure Paper, Warm Graphite, Punchy Vermilion) */
-html[data-theme="light"] {
-  --bg-page: #F5F5F7;
-  --bg-surface: #FFFFFF;
-  --bg-card: rgba(255, 255, 255, 0.9);
-  --bg-card-hover: #FFFFFF;
-  --bg-pill: rgba(0, 0, 0, 0.04);
-  --bg-pill-hover: rgba(0, 0, 0, 0.08);
-  --border-line: rgba(0, 0, 0, 0.08);
-  --border-glow: rgba(255, 85, 0, 0.4);
-  --text-main: #111215;
-  --text-muted: #5C606C;
-  --text-dim: #8E929E;
-  --accent-primary: #FF4400;
-  --accent-gradient: linear-gradient(135deg, #FF4400 0%, #FF7700 100%);
-  --accent-cyan: #0091FF;
-  --accent-emerald: #00A854;
-  --shadow-card: 0 16px 36px -10px rgba(0, 0, 0, 0.07);
-  --shadow-cta: 0 14px 34px -6px rgba(255, 68, 0, 0.35);
-  --nav-backdrop: rgba(245, 245, 247, 0.85);
-  --grid-line: rgba(0, 0, 0, 0.03);
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --ease-elastic: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; color-scheme: dark; background: var(--bg-void); }
 
 body {
-  background-color: var(--bg-page);
-  color: var(--text-main);
-  font: 400 16px/1.6 var(--font-body);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  background: var(--bg-void);
+  color: var(--text-pure);
+  font: 400 16px/1.65 var(--font-body);
   overflow-x: hidden;
-  padding-bottom: 40px;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Background Subtle Studio Grid */
-.bg-grid-overlay {
+/* Interactive Canvas Background */
+#interactiveCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Atmospheric Glow Cones */
+.glow-spot-1 {
+  position: fixed;
+  top: -200px;
+  left: 20%;
+  width: 700px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.12) 0%, transparent 65%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+.glow-spot-2 {
+  position: fixed;
+  bottom: -150px;
+  right: 10%;
+  width: 800px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 65%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Fine Grid Grain Texture */
+.texture-overlay {
   position: fixed;
   inset: 0;
   background-image: 
-    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-  background-size: 52px 52px;
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 64px 64px;
   pointer-events: none;
-  z-index: 0;
-}
-
-/* Ambient Radial Glows */
-.ambient-glow-top {
-  position: fixed;
-  top: -150px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 900px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(255, 85, 0, 0.12) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Layout Framework */
-.site-wrapper {
-  position: relative;
   z-index: 1;
-  max-width: 1240px;
+}
+
+/* Main Container */
+.page-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px 60px;
   display: flex;
   flex-direction: column;
-  gap: 36px;
+  gap: 64px;
 }
 
-/* Top Sticky HUD Nav */
-.hud-nav {
+/* FLOATING DOCK HEADER */
+.floating-hud {
   position: sticky;
-  top: 16px;
+  top: 18px;
   z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 18px;
-  border-radius: var(--radius-full);
-  background: var(--nav-backdrop);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border-line);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  padding: 12px 24px;
+  border-radius: 9999px;
+  background: rgba(7, 9, 15, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
   margin-top: 14px;
 }
 
-.hud-brand {
+.brand-combo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   text-decoration: none;
-  color: inherit;
 }
-.brand-mark {
+.brand-glyph {
   width: 38px;
   height: 38px;
   border-radius: 12px;
-  background: var(--accent-gradient);
-  color: #FFFFFF;
-  font-family: var(--font-heading);
-  font-weight: 900;
-  font-size: 17px;
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-violet));
   display: grid;
   place-items: center;
-  box-shadow: 0 4px 14px rgba(255, 85, 0, 0.35);
+  color: #030407;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 16px;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
 }
-.brand-titles {
+.brand-meta {
   display: flex;
   flex-direction: column;
 }
-.brand-name {
+.brand-title {
+  font-family: var(--font-display);
+  font-size: 14px;
   font-weight: 800;
-  font-size: 15px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.04em;
   display: flex;
   align-items: center;
   gap: 8px;
+  color: var(--text-pure);
 }
-.live-pulse {
+.radar-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--accent-emerald);
-  box-shadow: 0 0 10px var(--accent-emerald);
-  animation: pulse-ring 2s infinite ease-in-out;
+  background: var(--neon-emerald);
+  box-shadow: 0 0 10px var(--neon-emerald);
+  animation: radar-blink 2s infinite ease-in-out;
 }
-@keyframes pulse-ring {
+@keyframes radar-blink {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.3); }
+  50% { opacity: 0.4; transform: scale(1.3); }
 }
-.brand-role {
+.brand-subtitle {
   font-size: 12px;
   color: var(--text-muted);
+  font-family: var(--font-mono);
 }
 
-.hud-menu {
+.hud-nav-links {
   display: flex;
-  align-items: center;
-  gap: 22px;
+  gap: 28px;
   font-size: 14px;
   font-weight: 600;
   color: var(--text-muted);
 }
-.hud-menu a {
-  text-decoration: none;
+.hud-nav-links a {
   color: inherit;
-  transition: color 0.2s;
+  text-decoration: none;
   position: relative;
+  transition: color 0.2s;
   padding: 4px 0;
 }
-.hud-menu a:hover {
-  color: var(--text-main);
+.hud-nav-links a:hover {
+  color: var(--text-pure);
 }
-.hud-menu a:after {
-  content: '';
+.hud-nav-links a:after {
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--accent-primary);
-  transition: width 0.25s var(--ease-spring);
+  background: var(--neon-cyan);
+  transition: width 0.25s var(--ease-elastic);
 }
-.hud-menu a:hover:after { width: 100%; }
+.hud-nav-links a:hover:after { width: 100%; }
 
-.hud-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.theme-switch-btn {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  border: 1px solid var(--border-line);
-  background: var(--bg-pill);
-  color: var(--text-main);
-  cursor: pointer;
-  display: grid;
-  place-items: center;
-  font-size: 15px;
-  transition: all 0.2s;
-}
-.theme-switch-btn:hover {
-  background: var(--bg-pill-hover);
-  transform: scale(1.05);
-}
-.btn-nav-cta {
+.btn-hud-action {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  height: 38px;
-  padding: 0 18px;
-  border-radius: var(--radius-full);
-  background: var(--text-main);
-  color: var(--bg-page);
-  font-size: 13.5px;
+  height: 40px;
+  padding: 0 22px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(139, 92, 246, 0.15));
+  border: 1px solid var(--border-glow);
+  color: var(--neon-cyan);
   font-weight: 700;
+  font-size: 13.5px;
   text-decoration: none;
-  transition: all 0.2s;
+  transition: all 0.25s;
 }
-.btn-nav-cta:hover {
-  background: var(--accent-primary);
-  color: #FFFFFF;
+.btn-hud-action:hover {
+  background: var(--neon-cyan);
+  color: #030407;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.6);
   transform: translateY(-1px);
 }
 
-/* BUTTONS */
-.btn-fire {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  height: 56px;
-  padding: 0 32px;
-  border-radius: var(--radius-md);
-  background: var(--accent-gradient);
-  color: #FFFFFF;
-  font-weight: 800;
-  font-size: 16px;
-  letter-spacing: -0.01em;
-  text-decoration: none;
-  border: 0;
-  cursor: pointer;
-  box-shadow: var(--shadow-cta);
-  transition: transform 0.25s var(--ease-spring), box-shadow 0.25s var(--ease-spring);
-  white-space: nowrap;
-}
-.btn-fire:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 18px 40px -4px rgba(255, 85, 0, 0.6);
-}
-.btn-fire:active { transform: scale(0.98); }
-
-.btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  height: 56px;
-  padding: 0 28px;
-  border-radius: var(--radius-md);
-  background: var(--bg-pill);
-  border: 1px solid var(--border-line);
-  color: var(--text-main);
-  font-weight: 700;
-  font-size: 15px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
-.btn-ghost:hover {
-  background: var(--bg-pill-hover);
-  border-color: rgba(255, 85, 0, 0.4);
-  transform: translateY(-2px);
-}
-
-/* SECTION 1: HERO CANVAS */
-.hero-canvas {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 28px;
-  align-items: stretch;
-  padding-top: 14px;
-}
-
-.hero-content {
+/* HERO SECTION: MONUMENTAL CINEMATIC EXPERIENCE */
+.hero-stage {
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 48px;
-  border-radius: var(--radius-lg);
-  background: var(--bg-card);
-  backdrop-filter: blur(16px);
-  border: 1px solid var(--border-line);
-  box-shadow: var(--shadow-card);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 0 20px;
+  position: relative;
 }
 
-.hero-meta-strip {
+.hero-pill-badge {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 6px 14px;
-  border-radius: var(--radius-full);
-  background: var(--bg-pill);
-  border: 1px solid var(--border-line);
-  color: var(--text-muted);
+  padding: 8px 18px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  color: var(--neon-cyan);
+  font-family: var(--font-mono);
   font-size: 13px;
-  font-weight: 600;
-  width: fit-content;
-  margin-bottom: 24px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
 }
-.hero-meta-strip b { color: var(--accent-primary); }
 
-.hero-main-title {
-  font-family: var(--font-heading);
-  font-size: clamp(34px, 4.4vw, 56px);
-  line-height: 1.08;
-  letter-spacing: -0.04em;
+.hero-headline-super {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 6.2vw, 84px);
   font-weight: 900;
-  color: var(--text-main);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
   text-wrap: balance;
+  max-width: 1080px;
+  color: #FFFFFF;
 }
-.hero-main-title span.accent-text {
-  background: var(--accent-gradient);
+
+.hero-headline-super .gradient-text {
+  background: linear-gradient(135deg, #FFFFFF 10%, var(--neon-cyan) 60%, var(--neon-violet) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
 
-.hero-lede {
+.hero-subparagraph {
+  font-size: clamp(17px, 2vw, 22px);
   color: var(--text-muted);
-  font-size: 18px;
+  max-width: 740px;
+  margin: 28px auto 0;
   line-height: 1.6;
-  margin-top: 22px;
-  max-width: 540px;
 }
 
-.hero-cta-cluster {
+.hero-action-dock {
   display: flex;
-  gap: 14px;
-  margin-top: 36px;
+  align-items: center;
+  gap: 18px;
+  margin-top: 44px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-.hero-perks-row {
-  display: flex;
-  gap: 24px;
-  margin-top: 36px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border-line);
-  flex-wrap: wrap;
-}
-.hero-perk-item {
-  display: flex;
+.btn-quantum {
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 13.5px;
-  font-weight: 600;
-  color: var(--text-muted);
-}
-.hero-perk-item svg {
-  color: var(--accent-emerald);
-  width: 18px;
-  height: 18px;
-  flex: none;
-}
-
-/* HERO RIGHT: INTERACTIVE DEMO ATELIER */
-.hero-interactive-window {
-  border-radius: var(--radius-lg);
-  background: var(--bg-surface);
-  border: 1px solid var(--border-line);
-  box-shadow: var(--shadow-card);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.window-chrome {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--border-line);
-}
-.window-dots {
-  display: flex;
-  gap: 6px;
-}
-.window-dots span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--border-line);
-}
-.window-address {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--text-muted);
-  background: var(--bg-pill);
-  padding: 4px 12px;
-  border-radius: var(--radius-xs);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.window-viewport {
-  position: relative;
-  height: 380px;
-  margin: 16px 0;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  background: #000000;
-  border: 1px solid var(--border-line);
-}
-.viewport-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-  transition: opacity 0.3s;
-}
-.viewport-mobile-frame {
-  display: none;
-  width: 180px;
-  height: 360px;
-  margin: 10px auto;
-  border-radius: 28px;
-  border: 8px solid #1E222D;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
-}
-.viewport-mobile-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.hero-interactive-window.mode-mobile .viewport-img { display: none; }
-.hero-interactive-window.mode-mobile .viewport-mobile-frame { display: block; }
-
-.window-controls-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 12px;
-}
-.device-toggle-group {
-  display: flex;
-  background: var(--bg-pill);
-  padding: 3px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border-line);
-}
-.device-btn {
-  padding: 6px 14px;
-  border-radius: 10px;
+  height: 60px;
+  padding: 0 38px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--neon-cyan), #0099FF);
+  color: #030407;
+  font-weight: 900;
+  font-size: 16.5px;
+  letter-spacing: -0.01em;
+  text-decoration: none;
   border: 0;
-  background: transparent;
-  color: var(--text-muted);
-  font-size: 13px;
-  font-weight: 700;
   cursor: pointer;
-  transition: all 0.2s;
+  box-shadow: 0 16px 40px -8px rgba(0, 240, 255, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  transition: transform 0.25s var(--ease-elastic), box-shadow 0.25s;
 }
-.device-btn.active {
-  background: var(--accent-gradient);
-  color: #FFFFFF;
+.btn-quantum:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 20px 50px -6px rgba(0, 240, 255, 0.7);
+}
+.btn-quantum:active { transform: scale(0.98); }
+
+.btn-hologram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 60px;
+  padding: 0 32px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-pure);
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  transition: all 0.25s;
+}
+.btn-hologram:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
 }
 
-/* SECTION 2: LIVE INTERACTIVE SITE CONFIGURATOR */
-.section-wrapper {
-  padding: 48px;
-  border-radius: var(--radius-lg);
-  background: var(--bg-card);
+/* KINETIC MARQUEE BANNER */
+.kinetic-marquee-wrap {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+  padding: 22px 0;
+  background: rgba(10, 14, 22, 0.6);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
   backdrop-filter: blur(16px);
-  border: 1px solid var(--border-line);
-  box-shadow: var(--shadow-card);
+  user-select: none;
 }
-.section-tagline {
+.kinetic-track {
+  display: flex;
+  gap: 48px;
+  width: max-content;
+  animation: marquee-scroll 28s linear infinite;
+}
+.marquee-item {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.marquee-item .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--neon-cyan);
+  box-shadow: 0 0 10px var(--neon-cyan);
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* INTERACTIVE BENCHMARKS BENTO GRID */
+.bento-grid-station {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+.bento-tile {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 32px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s var(--ease-elastic), border-color 0.35s, box-shadow 0.35s;
+}
+.bento-tile:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.85);
+}
+
+.col-8 { grid-column: span 8; }
+.col-4 { grid-column: span 4; }
+.col-6 { grid-column: span 6; }
+.col-12 { grid-column: span 12; }
+
+.tile-kicker {
   font-family: var(--font-mono);
   font-size: 12.5px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--accent-primary);
-  margin-bottom: 8px;
-}
-.section-heading-big {
-  font-family: var(--font-heading);
-  font-size: clamp(26px, 3.2vw, 40px);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  color: var(--text-main);
-  line-height: 1.15;
-}
-.section-subtext {
-  color: var(--text-muted);
-  font-size: 17px;
-  margin-top: 10px;
-  max-width: 640px;
-}
-
-.builder-interface {
-  display: grid;
-  grid-template-columns: 1.3fr 0.9fr;
-  gap: 32px;
-  margin-top: 36px;
-}
-
-.builder-steps-col {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-.builder-step-label {
-  font-size: 14px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--text-main);
+  color: var(--neon-cyan);
   margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
-.step-num {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: var(--accent-primary);
+.tile-title-main {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.8vw, 36px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
   color: #FFFFFF;
-  display: inline-grid;
-  place-items: center;
-  font-size: 11px;
 }
 
-.niche-segmented-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.niche-seg-btn {
-  padding: 10px 18px;
-  border-radius: var(--radius-sm);
-  background: var(--bg-pill);
-  border: 1px solid var(--border-line);
-  color: var(--text-muted);
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.niche-seg-btn:hover {
-  background: var(--bg-pill-hover);
-  color: var(--text-main);
-}
-.niche-seg-btn.active {
-  background: var(--text-main);
-  color: var(--bg-page);
-  border-color: var(--text-main);
-}
-
-.modules-checklist {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-.module-check-card {
+/* Interactive Speed Gauge Card */
+.speed-radar-box {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 14px 16px;
-  border-radius: var(--radius-sm);
-  background: var(--bg-pill);
-  border: 1px solid var(--border-line);
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.2s;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 32px;
 }
-.module-check-card:hover {
-  border-color: var(--border-glow);
+.gauge-visual {
+  width: 140px;
+  height: 140px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: none;
 }
-.module-check-card input {
-  accent-color: var(--accent-primary);
-  width: 17px;
-  height: 17px;
+.gauge-circle {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
 }
-.module-name {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-main);
+.gauge-circle circle {
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+.circle-bg { stroke: rgba(255, 255, 255, 0.08); }
+.circle-prog {
+  stroke: var(--neon-cyan);
+  stroke-dasharray: 380;
+  stroke-dashoffset: 40;
+  filter: drop-shadow(0 0 8px var(--neon-cyan));
+}
+.gauge-value-center {
+  position: absolute;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--neon-cyan);
+}
+.gauge-value-center span {
+  display: block;
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
 }
 
-/* Builder Live Summary Card */
-.builder-summary-card {
-  padding: 32px;
-  border-radius: var(--radius-md);
-  background: var(--bg-surface);
-  border: 1px solid var(--border-line);
+.speed-comparison-list {
   display: flex;
   flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+.comp-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.comp-meta {
+  display: flex;
   justify-content: space-between;
-}
-.summary-kicker {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--accent-primary);
-  text-transform: uppercase;
-}
-.summary-price-tag {
-  font-family: var(--font-heading);
-  font-size: 44px;
-  font-weight: 900;
-  color: var(--text-main);
-  line-height: 1;
-  margin: 12px 0 6px;
-}
-.summary-subtext {
   font-size: 13.5px;
   color: var(--text-muted);
 }
-.summary-breakdown-list {
+.comp-meta b { color: var(--text-pure); font-family: var(--font-mono); }
+.comp-bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.comp-fill {
+  height: 100%;
+  border-radius: 99px;
+}
+.fill-kirill {
+  width: 95%;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-emerald));
+  box-shadow: 0 0 12px var(--neon-cyan);
+}
+.fill-tilda {
+  width: 32%;
+  background: #EF4444;
+}
+
+/* INTERACTIVE ARCHETYPE STUDIO (Live Design Switcher) */
+.archetype-section {
+  padding: 48px;
+  border-radius: 36px;
+  background: var(--bg-card);
+  backdrop-filter: blur(24px);
+  border: 1px solid var(--border-subtle);
+}
+
+.archetype-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+.archetype-switch-tabs {
+  display: flex;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 4px;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  gap: 4px;
+}
+.arch-tab-btn {
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.arch-tab-btn.active {
+  background: var(--neon-cyan);
+  color: #030407;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+}
+
+.archetype-live-sandbox {
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #080B12;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  min-height: 480px;
+}
+
+.sandbox-preview-screen {
+  padding: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: background 0.4s ease;
+}
+.preview-theme-cyber {
+  background: radial-gradient(circle at 100% 0%, rgba(0, 240, 255, 0.15), transparent 70%), #0A0D18;
+}
+.preview-theme-luxury {
+  background: radial-gradient(circle at 100% 0%, rgba(245, 158, 11, 0.12), transparent 70%), #100E0A;
+}
+.preview-theme-editorial {
+  background: radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.15), transparent 70%), #0E0A18;
+}
+
+.sandbox-tag {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--neon-cyan);
+}
+.sandbox-hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.2vw, 42px);
+  font-weight: 900;
+  line-height: 1.1;
+  color: #FFFFFF;
+  margin: 16px 0;
+}
+.sandbox-hero-desc {
+  color: var(--text-muted);
+  font-size: 15.5px;
+  line-height: 1.6;
+  max-width: 480px;
+}
+.sandbox-components-mockup {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+.sandbox-mock-chip {
+  padding: 8px 16px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sandbox-specs-col {
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  border-left: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.specs-checklist {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin: 24px 0;
-  border-top: 1px solid var(--border-line);
-  border-bottom: 1px solid var(--border-line);
-  padding: 18px 0;
-}
-.summary-breakdown-item {
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-  color: var(--text-muted);
-}
-.summary-breakdown-item b {
-  color: var(--text-main);
-}
-
-/* SECTION 3: CASE STUDY SHOWCASE */
-.case-spotlight-box {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 36px;
-  align-items: center;
-}
-.case-media-frame {
-  position: relative;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  background: #000;
-  border: 1px solid var(--border-line);
-  aspect-ratio: 16/10;
-}
-.case-media-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.case-tag-badge {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #FFFFFF;
-  padding: 6px 14px;
-  border-radius: var(--radius-full);
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.case-metrics-cluster {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  margin: 24px 0;
+  margin: 20px 0;
 }
-.case-metric-box {
-  padding: 16px;
-  border-radius: var(--radius-sm);
-  background: var(--bg-pill);
-  border: 1px solid var(--border-line);
-}
-.case-metric-box b {
-  font-family: var(--font-heading);
-  font-size: 26px;
-  color: var(--accent-primary);
-  display: block;
-  line-height: 1;
-}
-.case-metric-box span {
-  font-size: 12.5px;
-  color: var(--text-muted);
-  margin-top: 4px;
-  display: block;
-}
-
-/* SECTION 4: 3-DAY PROTOCOL TIMELINE */
-.protocol-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 36px;
-}
-.protocol-card {
-  padding: 32px;
-  border-radius: var(--radius-md);
-  background: var(--bg-surface);
-  border: 1px solid var(--border-line);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.protocol-day-marker {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--accent-primary);
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-.protocol-title {
-  font-family: var(--font-heading);
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: var(--text-main);
-  margin-bottom: 12px;
-}
-.protocol-text {
-  font-size: 14.5px;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-
-/* SECTION 5: HONEST COMPARISON MATRIX */
-.matrix-table-wrap {
-  margin-top: 32px;
-  overflow-x: auto;
-}
-.matrix-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-}
-.matrix-table th, .matrix-table td {
-  padding: 18px 20px;
-  border-bottom: 1px solid var(--border-line);
-  font-size: 14.5px;
-}
-.matrix-table th {
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--text-muted);
-}
-.matrix-table td.col-me {
-  background: var(--bg-pill-hover);
-  color: var(--text-main);
-  font-weight: 700;
-  border-left: 2px solid var(--accent-primary);
-  border-right: 1px solid var(--border-line);
-}
-.matrix-table th.col-me {
-  color: var(--accent-primary);
-  border-left: 2px solid var(--accent-primary);
-  border-right: 1px solid var(--border-line);
-}
-
-/* SECTION 6: STREAMLINED LEAD FORM (#req) */
-.form-grid-layout {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 36px;
-}
-.form-guarantee-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 24px;
-}
-.guarantee-row {
+.specs-item {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  font-size: 15px;
-  color: var(--text-muted);
+  font-size: 14.5px;
+  color: var(--text-pure);
 }
-.guarantee-row svg {
-  color: var(--accent-emerald);
-  width: 20px;
-  height: 20px;
+.specs-item svg {
+  color: var(--neon-cyan);
+  width: 18px;
+  height: 18px;
   flex: none;
   margin-top: 2px;
 }
 
-.actual-form {
+/* INTERACTIVE VALUE PROTOCOL (3 Days) */
+.protocol-stage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.protocol-glass-card {
+  padding: 38px;
+  border-radius: 30px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  justify-content: space-between;
+  min-height: 320px;
+  transition: all 0.3s var(--ease-elastic);
 }
-.form-input-field {
-  height: 54px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border-line);
-  background: var(--bg-surface);
-  color: var(--text-main);
-  padding: 0 18px;
-  font: 500 15px var(--font-body);
-  outline: 0;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  width: 100%;
+.protocol-glass-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-glow);
+  box-shadow: 0 20px 50px rgba(0, 240, 255, 0.15);
 }
-.form-input-field:focus {
-  border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px rgba(255, 85, 0, 0.2);
+.protocol-day-badge {
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--neon-cyan);
+  opacity: 0.4;
+  margin-bottom: 16px;
+}
+.protocol-card-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+.protocol-card-body {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.6;
 }
 
-.contact-pill-selector {
+/* FAIR FIXED PRICING STATION */
+.pricing-hero-station {
+  padding: 56px;
+  border-radius: 36px;
+  background: 
+    radial-gradient(ellipse at 100% 0%, rgba(0, 240, 255, 0.15), transparent 60%),
+    radial-gradient(ellipse at 0% 100%, rgba(139, 92, 246, 0.1), transparent 60%),
+    var(--bg-card);
+  border: 1px solid var(--border-glow);
+  box-shadow: 0 30px 80px -10px rgba(0, 240, 255, 0.2);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: center;
+}
+.price-monument {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 6vw, 76px);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  color: var(--neon-cyan);
+  line-height: 1;
+  text-shadow: 0 0 30px rgba(0, 240, 255, 0.4);
+}
+.included-grid-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 24px;
+  margin-top: 32px;
+  list-style: none;
+}
+.included-grid-2x2 li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--text-pure);
+}
+.included-grid-2x2 svg {
+  color: var(--neon-emerald);
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+/* HIGH-CONVERSION FAST TRACK FORM */
+.intake-terminal {
+  padding: 56px;
+  border-radius: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 48px;
+}
+.terminal-input {
+  height: 56px;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  background: rgba(5, 7, 12, 0.9);
+  color: var(--text-pure);
+  padding: 0 20px;
+  font: 500 15px var(--font-body);
+  outline: 0;
+  transition: all 0.25s;
+  width: 100%;
+}
+.terminal-input:focus {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 0 3px rgba(0, 240, 255, 0.2);
+}
+
+.contact-channel-tabs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
 }
-.contact-pill-btn {
+.channel-pill {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 44px;
-  border-radius: var(--radius-xs);
-  background: var(--bg-pill);
-  border: 1px solid var(--border-line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
   color: var(--text-muted);
   font-size: 13.5px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s;
 }
-.contact-pill-btn input { display: none; }
-.contact-pill-btn.active {
-  background: var(--text-main);
-  color: var(--bg-page);
-  border-color: var(--text-main);
+.channel-pill input { display: none; }
+.channel-pill.active {
+  background: var(--neon-cyan);
+  color: #030407;
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.35);
 }
 
-/* SECTION 7: FAQ */
-.faq-accordion-list {
+/* FAQ ACCORDION */
+.faq-stream {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 28px;
+  gap: 14px;
 }
-.faq-tile {
-  border-radius: var(--radius-sm);
-  background: var(--bg-surface);
-  border: 1px solid var(--border-line);
+.faq-node {
+  border-radius: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
   overflow: hidden;
-  transition: border-color 0.2s;
+  transition: border-color 0.25s;
 }
-.faq-tile[open] {
-  border-color: var(--accent-primary);
-}
-.faq-tile summary {
+.faq-node[open] { border-color: var(--neon-cyan); }
+.faq-node summary {
   list-style: none;
-  padding: 20px 24px;
+  padding: 24px 28px;
+  font-family: var(--font-display);
   font-weight: 800;
   font-size: 17px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  color: var(--text-main);
+  color: var(--text-pure);
 }
-.faq-tile summary::-webkit-details-marker { display: none; }
-.faq-plus {
+.faq-node summary::-webkit-details-marker { display: none; }
+.faq-chevron {
   font-size: 22px;
-  color: var(--accent-primary);
-  transition: transform 0.25s var(--ease-spring);
+  color: var(--neon-cyan);
+  transition: transform 0.25s var(--ease-elastic);
 }
-.faq-tile[open] .faq-plus {
-  transform: rotate(45deg);
-}
-.faq-body-content {
-  padding: 0 24px 20px;
+.faq-node[open] .faq-chevron { transform: rotate(45deg); }
+.faq-answer {
+  padding: 0 28px 24px;
   color: var(--text-muted);
-  font-size: 15px;
+  font-size: 15.5px;
   line-height: 1.6;
 }
 
-/* SECTION 8: FINAL CTA BANNER */
-.closing-banner {
-  text-align: center;
-  padding: 64px 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.closing-banner h2 {
-  font-family: var(--font-heading);
-  font-size: clamp(28px, 4vw, 48px);
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  color: var(--text-main);
-  max-width: 760px;
-  line-height: 1.15;
-}
-.closing-banner p {
-  color: var(--text-muted);
-  font-size: 18px;
-  margin: 16px 0 32px;
-  max-width: 540px;
-}
-
 /* FOOTER */
-.site-footer {
+.cinematic-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 10px;
+  padding: 32px 0 12px;
+  border-top: 1px solid var(--border-subtle);
   font-size: 13.5px;
   color: var(--text-dim);
-  border-top: 1px solid var(--border-line);
 }
-.site-footer a { color: inherit; text-decoration: none; }
-.site-footer a:hover { color: var(--text-main); }
+.cinematic-footer a { color: inherit; text-decoration: none; }
+.cinematic-footer a:hover { color: var(--neon-cyan); }
 
-/* MOBILE FLOATING CONVERSION DOCK */
-.mobile-bottom-dock {
-  display: none;
-}
-@media (max-width: 768px) {
-  body { padding-bottom: 96px; }
-  .hud-menu { display: none; }
-  .hero-canvas { grid-template-columns: 1fr; }
-  .hero-content { padding: 28px 20px; }
-  .hero-interactive-window { padding: 18px; }
-  .section-wrapper { padding: 28px 20px; }
-  .builder-interface { grid-template-columns: 1fr; }
-  .modules-checklist { grid-template-columns: 1fr; }
-  .case-spotlight-box { grid-template-columns: 1fr; }
-  .protocol-grid { grid-template-columns: 1fr; }
-  .form-grid-layout { grid-template-columns: 1fr; }
-  .contact-pill-selector { grid-template-columns: 1fr 1fr; }
-
-  /* Sticky Action Dock */
-  .mobile-bottom-dock {
-    display: flex;
-    position: fixed;
-    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-    left: 14px;
-    right: 14px;
-    z-index: 100;
-    gap: 10px;
-    pointer-events: none;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.3s var(--ease-spring);
-  }
-  .mobile-bottom-dock.active {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-  .dock-btn-main {
-    flex: 1;
-    height: 52px;
-    border-radius: var(--radius-sm);
-    background: var(--accent-gradient);
-    color: #FFFFFF;
-    font-weight: 800;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    text-decoration: none;
-    box-shadow: 0 12px 30px rgba(255, 85, 0, 0.5);
-  }
-  .dock-btn-tg {
-    width: 52px;
-    height: 52px;
-    border-radius: var(--radius-sm);
-    background: var(--bg-surface);
-    border: 1px solid var(--border-line);
-    color: var(--text-main);
-    display: grid;
-    place-items: center;
-    text-decoration: none;
-    font-size: 20px;
-  }
-}
-/* LIGHTWEIGHT SCROLL-REVEAL SYSTEM FOR CASES AND PROCESS */
-.scroll-reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-.scroll-reveal.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.scroll-reveal-zoom {
-  opacity: 0;
-  transform: scale(0.96) translateY(20px);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-.scroll-reveal-zoom.revealed {
-  opacity: 1;
-  transform: scale(1) translateY(0);
-}
-
-.stagger-1 { transition-delay: 0.08s; }
-.stagger-2 { transition-delay: 0.16s; }
-.stagger-3 { transition-delay: 0.24s; }
-.stagger-4 { transition-delay: 0.32s; }
-
-@media (prefers-reduced-motion: reduce) {
-  .scroll-reveal, .scroll-reveal-zoom {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
+/* MOBILE RESPONSIVE TUNING */
+@media (max-width: 900px) {
+  .hud-nav-links { display: none; }
+  .col-8, .col-4, .col-6, .col-12 { grid-column: span 12; }
+  .archetype-live-sandbox { grid-template-columns: 1fr; }
+  .specs-col { border-left: 0; border-top: 1px solid var(--border-subtle); }
+  .protocol-stage { grid-template-columns: 1fr; }
+  .pricing-hero-station { grid-template-columns: 1fr; padding: 32px 24px; }
+  .intake-terminal { grid-template-columns: 1fr; padding: 32px 24px; }
+  .included-grid-2x2 { grid-template-columns: 1fr; }
+  .contact-channel-tabs { grid-template-columns: 1fr 1fr; }
+  .page-container { gap: 40px; padding: 0 16px 80px; }
+  .archetype-section { padding: 28px 20px; }
+  .bento-tile { padding: 28px 20px; }
 }
 </style>
 </head>
 
 <body>
-<div class="bg-grid-overlay"></div>
-<div class="ambient-glow-top"></div>
+<canvas id="interactiveCanvas"></canvas>
+<div class="texture-overlay"></div>
+<div class="glow-spot-1"></div>
+<div class="glow-spot-2"></div>
 
-<div class="site-wrapper">
+<div class="page-container">
 
-  <!-- HUD NAVIGATION -->
-  <header class="hud-nav" role="banner">
-    <a class="hud-brand" href="#">
-      <div class="brand-mark">K</div>
-      <div class="brand-titles">
-        <span class="brand-name">Кирилл <span class="live-pulse" title="Принимаю заказы"></span></span>
-        <span class="brand-role">Веб-студия одного разработчика</span>
+  <!-- FLOATING HUD NAVIGATION -->
+  <header class="floating-hud" role="banner">
+    <a class="brand-combo" href="#">
+      <div class="brand-glyph">K</div>
+      <div class="brand-meta">
+        <span class="brand-title">KIRILL SOFRIN <span class="radar-dot" title="Онлайн · Свободен"></span></span>
+        <span class="brand-subtitle">CREATIVE WEB ATELIER</span>
       </div>
     </a>
 
-    <nav class="hud-menu" aria-label="Меню">
-      <a href="#configurator">Калькулятор</a>
-      <a href="#showcase">Кейс</a>
+    <nav class="hud-nav-links" aria-label="Разделы">
+      <a href="#benchmarks">Стандарты</a>
+      <a href="#sandbox">Архитектура</a>
       <a href="#protocol">Процесс</a>
-      <a href="#matrix">Сравнение</a>
+      <a href="#pricing">Стоимость</a>
       <a href="#faq">FAQ</a>
     </nav>
 
-    <div class="hud-actions">
-      <button class="theme-switch-btn" id="themeToggleBtn" type="button" aria-label="Сменить тему" title="Сменить тему">
-        <span id="themeIcon">☀️</span>
-      </button>
-      <a class="btn-nav-cta" href="#req">
-        <span>Заказать</span>
-        <span aria-hidden="true">→</span>
-      </a>
-    </div>
+    <a class="btn-hud-action" href="#terminal">
+      <span>Заказать сайт</span>
+      <span aria-hidden="true">→</span>
+    </a>
   </header>
 
-  <!-- SECTION 1: HERO CANVAS -->
-  <section class="hero-canvas">
-    <div class="hero-content">
-      <div>
-        <div class="hero-meta-strip">
-          <span>● Брянск · Открыт <b>1 слот</b> на эту неделю</span>
-        </div>
-
-        <h1 class="hero-main-title">
-          Сайты, которые делают кассу местному бизнесу
-          <span class="accent-text">за 3 дня</span>
-        </h1>
-
-        <p class="hero-lede">
-          Разрабатываю лаконичные, быстрые сайты без агентских наценок и бесконечных созвонов. 14 990 ₽ под ключ — домен на 1 год включён. Вы платите только после согласования первого экрана.
-        </p>
-      </div>
-
-      <div>
-        <div class="hero-cta-cluster">
-          <a class="btn-fire" href="#req">
-            <span>Рассчитать сайт и получить концепт</span>
-            <span aria-hidden="true">→</span>
-          </a>
-          <a class="btn-ghost" href="#showcase">
-            <span>Живой кейс (5.0 ★)</span>
-            <span aria-hidden="true">↘</span>
-          </a>
-        </div>
-
-        <div class="hero-perks-row">
-          <div class="hero-perk-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-            <span>Оплата после макета</span>
-          </div>
-          <div class="hero-perk-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-            <span>Домен .ru на год включён</span>
-          </div>
-          <div class="hero-perk-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-            <span>10 правок бесплатно</span>
-          </div>
-        </div>
-      </div>
+  <!-- HERO: MONUMENTAL EXPERIENCE -->
+  <section class="hero-stage">
+    <div class="hero-pill-badge">
+      <span>✦ Запуск за 72 часа · Без агентских наценок</span>
     </div>
 
-    <!-- Hero Right: Interactive Atelier Window -->
-    <div class="hero-interactive-window" id="heroInteractiveWindow">
-      <div class="window-chrome">
-        <div class="window-dots">
-          <span></span><span></span><span></span>
-        </div>
-        <div class="window-address">
-          <span>https://knyaz32.ru</span>
-        </div>
-      </div>
+    <h1 class="hero-headline-super">
+      Сайты, которые вызывают <span class="gradient-text">уважение и конвертируют</span> клиентов
+    </h1>
 
-      <div class="window-viewport">
-        <img class="viewport-img" src="knyaz.webp" alt="Интерфейс сайта" width="800" height="500">
-        <div class="viewport-mobile-frame">
-          <img src="knyaz-m.webp" alt="Мобильная версия" width="360" height="720">
-        </div>
-      </div>
+    <p class="hero-subparagraph">
+      Создаю бескомпромиссные веб-решения для бизнеса. Никаких шаблонных конструкторов, тормозящих плагинов и ежемесячных подписок. 14 990 ₽ под ключ с официальным доменом на ваше имя.
+    </p>
 
-      <div class="window-controls-bar">
-        <div style="font-size: 13px; color: var(--text-muted); font-weight: 600;">
-          Живой запущенный сайт
-        </div>
-        <div class="device-toggle-group">
-          <button class="device-btn active" id="btnDeskView" type="button">Ноутбук</button>
-          <button class="device-btn" id="btnMobView" type="button">Смартфон</button>
-        </div>
-      </div>
+    <div class="hero-action-dock">
+      <a class="btn-quantum" href="#terminal">
+        <span>Обсудить проект под ключ</span>
+        <span aria-hidden="true">→</span>
+      </a>
+      <a class="btn-hologram" href="#sandbox">
+        <span>Интерактивный демо-стенд</span>
+        <span aria-hidden="true">↓</span>
+      </a>
     </div>
   </section>
 
-  <!-- SECTION 2: LIVE INTERACTIVE SITE CONFIGURATOR -->
-  <section class="section-wrapper" id="configurator">
-    <div class="section-tagline">Интерактивный конфигуратор</div>
-    <h2 class="section-heading-big">Соберите сайт под ваши задачи</h2>
-    <p class="section-subtext">Отметьте сферу бизнеса и нужные модули — калькулятор покажет точные условия и подготовит бриф.</p>
+  <!-- KINETIC RUNNING MARQUEE -->
+  <div class="kinetic-marquee-wrap" aria-hidden="true">
+    <div class="kinetic-track">
+      <div class="marquee-item">LIGHTHOUSE 100/100 <span class="dot"></span></div>
+      <div class="marquee-item">ЗАПУСК ЗА 72 ЧАСА <span class="dot"></span></div>
+      <div class="marquee-item">ДОМЕН .RU ВКЛЮЧЁН <span class="dot"></span></div>
+      <div class="marquee-item">БЕЗ ЕЖЕМЕСЯЧНЫХ ПОДПИСОК <span class="dot"></span></div>
+      <div class="marquee-item">ПРЯМАЯ СВЯЗЬ С РАЗРАБОТЧИКОМ <span class="dot"></span></div>
+      <div class="marquee-item">ОПЛАТА ПОСЛЕ МАКЕТА <span class="dot"></span></div>
+      <!-- Duplicate for seamless scroll -->
+      <div class="marquee-item">LIGHTHOUSE 100/100 <span class="dot"></span></div>
+      <div class="marquee-item">ЗАПУСК ЗА 72 ЧАСА <span class="dot"></span></div>
+      <div class="marquee-item">ДОМЕН .RU ВКЛЮЧЁН <span class="dot"></span></div>
+      <div class="marquee-item">БЕЗ ЕЖЕМЕСЯЧНЫХ ПОДПИСОК <span class="dot"></span></div>
+      <div class="marquee-item">ПРЯМАЯ СВЯЗЬ С РАЗРАБОТЧИКОМ <span class="dot"></span></div>
+      <div class="marquee-item">ОПЛАТА ПОСЛЕ МАКЕТА <span class="dot"></span></div>
+    </div>
+  </div>
 
-    <div class="builder-interface">
-      <div class="builder-steps-col">
-        <div>
-          <div class="builder-step-label"><span class="step-num">1</span> Выберите сферу вашего бизнеса</div>
-          <div class="niche-segmented-bar" id="nicheBar">
-            <button class="niche-seg-btn active" data-niche="barber" type="button">Барбершоп / Салон</button>
-            <button class="niche-seg-btn" data-niche="auto" type="button">Автосервис / Детейлинг</button>
-            <button class="niche-seg-btn" data-niche="cafe" type="button">Кафе / Кофейня</button>
-            <button class="niche-seg-btn" data-niche="pro" type="button">Частный эксперт</button>
-            <button class="niche-seg-btn" data-niche="b2b" type="button">Услуги / Производство</button>
+  <!-- SECTION 1: BENCHMARKS BENTO GRID -->
+  <section class="bento-grid-station" id="benchmarks">
+    <div class="bento-tile col-8">
+      <div class="tile-kicker">Инженерный эталон</div>
+      <h2 class="tile-title-main">Скорость, которая опережает 95% конкурентов</h2>
+      <p style="color: var(--text-muted); font-size: 16px; margin-top: 10px; max-width: 580px;">
+        Каждая секунда ожидания сайта убивает конверсию. Я пишу чистый семантический код без перегруженных библиотек, поэтому страницы открываются мгновенно даже на слабом 3G.
+      </p>
+
+      <div class="speed-radar-box">
+        <div class="gauge-visual">
+          <svg class="gauge-circle" viewBox="0 0 140 140">
+            <circle class="circle-bg" cx="70" cy="70" r="60"/>
+            <circle class="circle-prog" cx="70" cy="70" r="60"/>
+          </svg>
+          <div class="gauge-value-center">
+            0.4с
+            <span>FIRST PAINT</span>
           </div>
         </div>
 
+        <div class="speed-comparison-list">
+          <div class="comp-row">
+            <div class="comp-meta"><span>Мой стек (Чистый код & Оптимизация)</span><b>0.4 сек</b></div>
+            <div class="comp-bar"><div class="comp-fill fill-kirill"></div></div>
+          </div>
+          <div class="comp-row">
+            <div class="comp-meta"><span>Типичный конструктор (Tilda / Wix)</span><b>3.8 сек</b></div>
+            <div class="comp-bar"><div class="comp-fill fill-tilda"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bento-tile col-4">
+      <div class="tile-kicker">Честная модель</div>
+      <h3 style="font-family: var(--font-display); font-size: 26px; font-weight: 800; color: #fff;">0 ₽ подписок</h3>
+      <p style="color: var(--text-muted); font-size: 14.5px; margin-top: 10px;">
+        Конструкторы требуют 1 000 – 2 500 ₽ каждый месяц всю жизнь. Мой сайт вы покупаете один раз и навсегда. Он полностью принадлежит вам.
+      </p>
+      <div style="margin-top: 24px; padding: 14px; border-radius: 16px; background: rgba(0, 240, 255, 0.05); border: 1px solid rgba(0, 240, 255, 0.2);">
+        <div style="font-size: 12px; font-family: var(--font-mono); color: var(--neon-cyan);">ЭКОНОМИЯ ЗА 2 ГОДА</div>
+        <div style="font-family: var(--font-display); font-size: 22px; font-weight: 800; color: #fff; margin-top: 2px;">+30 000 ₽</div>
+      </div>
+    </div>
+
+    <div class="bento-tile col-6">
+      <div class="tile-kicker">Мобильный приоритет</div>
+      <h3 style="font-family: var(--font-display); font-size: 24px; font-weight: 800; color: #fff;">
+        9 из 10 клиентов заходят со смартфона
+      </h3>
+      <p style="color: var(--text-muted); font-size: 15px; margin-top: 10px;">
+        Интерфейс спроектирован под управление одним пальцем: удобные кнопки звонка, моментальный переход в WhatsApp / Telegram, маршрут в Яндекс Навигаторе в один клик.
+      </p>
+    </div>
+
+    <div class="bento-tile col-6">
+      <div class="tile-kicker">Безопасность и Домен</div>
+      <h3 style="font-family: var(--font-display); font-size: 24px; font-weight: 800; color: #fff;">
+        Официальный домен .ru включён на 1 год
+      </h3>
+      <p style="color: var(--text-muted); font-size: 15px; margin-top: 10px;">
+        Регистрируется строго на ваши паспортные данные или организацию. Вы полноправный владелец. SSL-сертификат безопасности (https://) подключается автоматически.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 2: INTERACTIVE LIVE DESIGN SANDBOX -->
+  <section class="archetype-section" id="sandbox">
+    <div class="archetype-header-row">
+      <div>
+        <div class="tile-kicker">Интерактивный стенд</div>
+        <h2 style="font-family: var(--font-display); font-size: clamp(26px, 3.2vw, 40px); font-weight: 900; line-height: 1.15;">
+          Выберите характер будущего сайта
+        </h2>
+        <p style="color: var(--text-muted); font-size: 16px; margin-top: 8px;">
+          Переключайте стили и смотрите, как может выглядеть концепция под вашу нишу.
+        </p>
+      </div>
+
+      <div class="archetype-switch-tabs" role="tablist">
+        <button class="arch-tab-btn active" data-style="cyber" type="button">Технологичный Нео</button>
+        <button class="arch-tab-btn" data-style="luxury" type="button">Премиум Монохром</button>
+        <button class="arch-tab-btn" data-style="editorial" type="button">Швейцарский Журнал</button>
+      </div>
+    </div>
+
+    <div class="archetype-live-sandbox">
+      <div class="sandbox-preview-screen preview-theme-cyber" id="sandboxStage">
         <div>
-          <div class="builder-step-label"><span class="step-num">2</span> Выберите продающие модули</div>
-          <div class="modules-checklist">
-            <label class="module-check-card">
-              <input type="checkbox" checked disabled>
-              <span class="module-name">Мобильная адаптивность</span>
-            </label>
-            <label class="module-check-card">
-              <input type="checkbox" id="modBooking" checked>
-              <span class="module-name">Онлайн-запись / DIKIDI / YClients</span>
-            </label>
-            <label class="module-check-card">
-              <input type="checkbox" id="modPrice" checked>
-              <span class="module-name">Каталог услуг с ценами</span>
-            </label>
-            <label class="module-check-card">
-              <input type="checkbox" id="modMaps" checked>
-              <span class="module-name">Яндекс Карты и маршрут</span>
-            </label>
-            <label class="module-check-card">
-              <input type="checkbox" id="modTg" checked>
-              <span class="module-name">Кнопки WhatsApp / Telegram</span>
-            </label>
-            <label class="module-check-card">
-              <input type="checkbox" id="modDomain" checked disabled>
-              <span class="module-name">Домен .ru на 1 год включён</span>
-            </label>
+          <span class="sandbox-tag" id="sandboxKicker">АРХИТЕКТУРА / СЕРВИС</span>
+          <h3 class="sandbox-hero-headline" id="sandboxHeadline">
+            Сервис премиального детейлинга и защиты авто
+          </h3>
+          <p class="sandbox-hero-desc" id="sandboxDesc">
+            Калькулятор стоимости работ, интерактивная галерея до/после, быстрая запись на удобный день через Telegram.
+          </p>
+        </div>
+
+        <div>
+          <div class="sandbox-components-mockup" id="sandboxChips">
+            <span class="sandbox-mock-chip">⚡ Онлайн-запись</span>
+            <span class="sandbox-mock-chip">📍 Яндекс Карты</span>
+            <span class="sandbox-mock-chip">💬 Прямой чат в TG</span>
           </div>
         </div>
       </div>
 
-      <!-- Summary Card -->
-      <div class="builder-summary-card">
+      <div class="sandbox-specs-col">
         <div>
-          <div class="summary-kicker">Стоимость конфигурации</div>
-          <div class="summary-price-tag">14 990 ₽</div>
-          <div class="summary-subtext">Фиксированная разовая цена. Никаких платежей за подписку.</div>
+          <div style="font-family: var(--font-mono); font-size: 12px; color: var(--neon-cyan); letter-spacing: 0.1em; text-transform: uppercase;">
+            Что включено под ключ
+          </div>
+          <div style="font-family: var(--font-display); font-size: 32px; font-weight: 900; color: #fff; margin: 10px 0 6px;">
+            14 990 ₽
+          </div>
+          <div style="font-size: 13.5px; color: var(--text-muted);">
+            Фиксированная стоимость. Никаких доплат за домен или хостинг на старте.
+          </div>
 
-          <ul class="summary-breakdown-list">
-            <li class="summary-breakdown-item"><span>Срок запуска:</span><b>3 рабочих дня</b></li>
-            <li class="summary-breakdown-item"><span>Оплата:</span><b>После согласования макета</b></li>
-            <li class="summary-breakdown-item"><span>Домен:</span><b>1 год в подарок</b></li>
-            <li class="summary-breakdown-item"><span>Правки:</span><b>До 10 бесплатно</b></li>
+          <ul class="specs-checklist">
+            <li class="specs-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Домен .ru на 1 полный год</span></li>
+            <li class="specs-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Продающие тексты под ваш бизнес</span></li>
+            <li class="specs-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>До 10 бесплатных правок макета</span></li>
+            <li class="specs-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Запуск ровно за 3 дня</span></li>
           </ul>
         </div>
 
-        <button class="btn-fire" id="btnApplyConfig" type="button" style="width: 100%;">
-          Заказать этот комплект →
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 3: CASE STUDY SPOTLIGHT -->
-  <section class="section-wrapper scroll-reveal" id="showcase">
-    <div class="case-spotlight-box">
-      <div class="case-media-frame scroll-reveal-zoom">
-        <span class="case-tag-badge">Реальный запуск · Брянск</span>
-        <img src="knyaz.webp" alt="Барбершоп Князь" width="800" height="500">
-      </div>
-
-      <div class="scroll-reveal stagger-1">
-        <div class="section-tagline">Флагманский кейс</div>
-        <h2 style="font-family: var(--font-heading); font-size: 32px; font-weight: 800; line-height: 1.15;">
-          Барбершоп «Князь»
-        </h2>
-        <p style="color: var(--text-muted); font-size: 15.5px; margin-top: 10px;">
-          Перевели поток гостей из Яндекс Карт в мгновенную онлайн-запись без звонков администратору.
-        </p>
-
-        <div class="case-metrics-cluster">
-          <div class="case-metric-box scroll-reveal stagger-1">
-            <b>5.0 ★</b>
-            <span>Рейтинг на Яндекс Картах</span>
-          </div>
-          <div class="case-metric-box scroll-reveal stagger-2">
-            <b>47</b>
-            <span>Живых отзывов</span>
-          </div>
-          <div class="case-metric-box scroll-reveal stagger-3">
-            <b>0.8с</b>
-            <span>Скорость загрузки</span>
-          </div>
-        </div>
-
-        <blockquote class="scroll-reveal stagger-2" style="font-style: italic; color: var(--text-main); font-size: 15px; border-left: 3px solid var(--accent-primary); padding-left: 16px; margin: 16px 0;">
-          «Сайт окупился в первую же неделю. Клиентам удобно смотреть стрижки и цены прямо с телефона, а нам не нужно переписываться по полдня.»
-        </blockquote>
-
-        <a class="btn-ghost scroll-reveal stagger-3" href="https://knyaz32.ru/" target="_blank" rel="noopener" style="margin-top: 8px;">
-          <span>Перейти на живой сайт knyaz32.ru ↗</span>
+        <a class="btn-quantum" href="#terminal" style="width: 100%;">
+          <span>Заказать этот стиль</span>
+          <span aria-hidden="true">→</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 4: 3-DAY PROTOCOL TIMELINE -->
-  <section class="section-wrapper scroll-reveal" id="protocol">
-    <div class="section-tagline">Понятный регламент</div>
-    <h2 class="section-heading-big">3 дня до первых клиентов</h2>
-    <p class="section-subtext">Вы точно знаете, что происходит на каждом этапе разработки.</p>
+  <!-- SECTION 3: 3-DAY PROTOCOL -->
+  <section id="protocol">
+    <div style="text-align: center; max-width: 680px; margin: 0 auto 40px;">
+      <div class="tile-kicker">Прозрачный регламент</div>
+      <h2 style="font-family: var(--font-display); font-size: clamp(28px, 3.6vw, 44px); font-weight: 900; line-height: 1.15;">
+        3 дня от первого сообщения до живого сайта
+      </h2>
+      <p style="color: var(--text-muted); font-size: 16px; margin-top: 10px;">
+        Без раздутых ТЗ на 50 страниц. Вы общаетесь напрямую со мной в Telegram.
+      </p>
+    </div>
 
-    <div class="protocol-grid">
-      <div class="protocol-card scroll-reveal stagger-1">
+    <div class="protocol-stage">
+      <div class="protocol-glass-card">
         <div>
-          <div class="protocol-day-marker">День 01 · Старт</div>
-          <h3 class="protocol-title">Бриф и концепт</h3>
-          <p class="protocol-text">
-            Вы рассказываете о своём бизнесе. Я пишу продающие тексты и готовлю интерактивный макет первого экрана. Вы смотрите его до внесения оплаты.
+          <div class="protocol-day-badge">01</div>
+          <h3 class="protocol-card-title">Концепт и первый экран</h3>
+          <p class="protocol-card-body">
+            Вы рассказываете о бизнесе. Я пишу офферы, формулирую ценность и создаю дизайн первого экрана. Вы смотрите его до внесения оплаты.
           </p>
+        </div>
+        <div style="font-size: 13px; font-family: var(--font-mono); color: var(--neon-cyan); margin-top: 20px;">
+          ✓ Бесплатный макет до оплаты
         </div>
       </div>
 
-      <div class="protocol-card scroll-reveal stagger-2">
+      <div class="protocol-glass-card">
         <div>
-          <div class="protocol-day-marker">День 02 · Сборка</div>
-          <h3 class="protocol-title">Чистый код</h3>
-          <p class="protocol-text">
-            Верстаю адаптивный сайт под экраны смартфонов. Настраиваю кликабельные кнопки вызова, WhatsApp, Telegram, карту проезда и онлайн-запись.
+          <div class="protocol-day-badge">02</div>
+          <h3 class="protocol-card-title">Вёрстка и интеграции</h3>
+          <p class="protocol-card-body">
+            Собираю сайт на чистом быстром коде. Настраиваю идеальное отображение на смартфонах, кнопки Telegram, WhatsApp, прямые звонки и геолокацию.
           </p>
+        </div>
+        <div style="font-size: 13px; font-family: var(--font-mono); color: var(--neon-cyan); margin-top: 20px;">
+          ✓ 100% мобильная скорость
         </div>
       </div>
 
-      <div class="protocol-card scroll-reveal stagger-3">
+      <div class="protocol-glass-card">
         <div>
-          <div class="protocol-day-marker">День 03 · Финиш</div>
-          <h3 class="protocol-title">Домен и релиз</h3>
-          <p class="protocol-text">
-            Регистрирую домен .ru на ваше имя, выпускаю SSL-сертификат безопасности (https://), тестирую скорость и передаю готовый сайт в работу.
+          <div class="protocol-day-badge">03</div>
+          <h3 class="protocol-card-title">Домен и боевой релиз</h3>
+          <p class="protocol-card-body">
+            Регистрирую домен на ваше имя, подключаю SSL-сертификат безопасности (https://), провожу тестирование и передаю готовый сайт в работу.
           </p>
+        </div>
+        <div style="font-size: 13px; font-family: var(--font-mono); color: var(--neon-cyan); margin-top: 20px;">
+          ✓ Официальный домен включён
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 5: HONEST COMPARISON MATRIX -->
-  <section class="section-wrapper" id="matrix">
-    <div class="section-tagline">Сравнение форматов</div>
-    <h2 class="section-heading-big">Почему именно этот формат</h2>
+  <!-- SECTION 4: FAIR FIXED PRICING -->
+  <section class="pricing-hero-station" id="pricing">
+    <div>
+      <div class="tile-kicker">Тариф «Всё включено»</div>
+      <div class="price-monument">14 990 ₽</div>
+      <p style="color: var(--text-muted); font-size: 16px; margin-top: 10px; max-width: 520px;">
+        Разовая инвестиция. Никаких скрытых платежей, звездочек и неожиданных комиссий.
+      </p>
 
-    <div class="matrix-table-wrap">
-      <table class="matrix-table">
-        <thead>
-          <tr>
-            <th>Параметр</th>
-            <th class="col-me">Кирилл (Веб-разработчик)</th>
-            <th>Веб-агентства</th>
-            <th>Самостоятельно на Tilda</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Стоимость</td>
-            <td class="col-me">14 990 ₽ фиксированно</td>
-            <td>от 70 000 до 150 000 ₽</td>
-            <td>от 1 000 ₽ / месяц всю жизнь</td>
-          </tr>
-          <tr>
-            <td>Сроки</td>
-            <td class="col-me">3 рабочих дня</td>
-            <td>1–2 месяца</td>
-            <td>от 3 недель личного времени</td>
-          </tr>
-          <tr>
-            <td>Оплата</td>
-            <td class="col-me">После утверждения макета</td>
-            <td>Предоплата 100%</td>
-            <td>Ежемесячно по тарифу</td>
-          </tr>
-          <tr>
-            <td>Связь</td>
-            <td class="col-me">Лично со мной в Telegram</td>
-            <td>Через менеджера</td>
-            <td>Форумы и техподдержка</td>
-          </tr>
-          <tr>
-            <td>Домен</td>
-            <td class="col-me">Включён на 1 год бесплатно</td>
-            <td>Оплачивается отдельно</td>
-            <td>Оплачивается отдельно</td>
-          </tr>
-        </tbody>
-      </table>
+      <ul class="included-grid-2x2">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Домен .ru на 1 год включён</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Адаптивность под iPhone & Android</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Продающие тексты и офферы</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Кнопки Telegram / WhatsApp / Звонка</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>До 10 правок без доплат</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>SSL-сертификат (https://)</span></li>
+      </ul>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="padding: 24px; border-radius: 20px; background: rgba(0, 0, 0, 0.4); border: 1px solid var(--border-subtle);">
+        <div style="font-size: 13px; font-weight: 700; color: var(--neon-emerald); display: flex; align-items: center; gap: 6px;">
+          <span>● Гарантия результата</span>
+        </div>
+        <div style="font-size: 14px; color: var(--text-muted); margin-top: 6px; line-height: 1.5;">
+          Вы не платите ни рубля, пока не утвердите концепт первого экрана. Риски для вас равны нулю.
+        </div>
+      </div>
+
+      <a class="btn-quantum" href="#terminal" style="width: 100%;">
+        <span>Забронировать сайт за 14 990 ₽</span>
+        <span aria-hidden="true">→</span>
+      </a>
     </div>
   </section>
 
-  <!-- SECTION 6: LEAD FORM (#req) -->
-  <section class="section-wrapper" id="req">
-    <div class="form-grid-layout">
+  <!-- SECTION 5: INTAKE TERMINAL (Lead Capture) -->
+  <section class="intake-terminal" id="terminal">
+    <div>
+      <div class="tile-kicker">Экспресс-старт</div>
+      <h2 style="font-family: var(--font-display); font-size: clamp(28px, 3.4vw, 42px); font-weight: 900; line-height: 1.15;">
+        Забронируйте запуск на этой неделе
+      </h2>
+      <p style="color: var(--text-muted); font-size: 16px; margin-top: 14px; line-height: 1.6;">
+        Заполните 3 строчки. Я изучу ваш бизнес и пришлю персональное предложение со структурой в Telegram или WhatsApp в течение 30 минут.
+      </p>
+
+      <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 14px;">
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-muted);">
+          <span style="color: var(--neon-cyan);">✦</span> Без спама и навязчивых звонков
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-muted);">
+          <span style="color: var(--neon-cyan);">✦</span> Прямой контакт лично с Кириллом
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-muted);">
+          <span style="color: var(--neon-cyan);">✦</span> Можно сразу написать в Telegram: <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color: var(--neon-cyan); font-weight: 700;">@K_Sofrin</a>
+        </div>
+      </div>
+    </div>
+
+    <form id="expressLeadForm" autocomplete="off" style="display: flex; flex-direction: column; gap: 18px;">
       <div>
-        <div class="section-tagline">Оставить заявку</div>
-        <h2 style="font-family: var(--font-heading); font-size: 34px; font-weight: 800; line-height: 1.15;">
-          Забронируйте сайт за 14 990 ₽
-        </h2>
-        <p style="color: var(--text-muted); font-size: 16px; margin-top: 12px;">
-          Заполните 3 поля. Я свяжусь с вами сегодня в мессенджере с готовым планом первого экрана.
-        </p>
+        <label style="font-size: 13px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Сфера бизнеса</label>
+        <input class="terminal-input" id="leadBiz" name="biz" placeholder="Например: детейлинг, автосервис, салон или клиника" required value="Детейлинг">
+      </div>
 
-        <div class="form-guarantee-list">
-          <div class="guarantee-row">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-            <span>Никаких звонков спамеров — пишу только по делу в мессенджер</span>
-          </div>
-          <div class="guarantee-row">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-            <span>Оплата только после того, как вам понравится макет</span>
-          </div>
-          <div class="guarantee-row">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-            <span>Домен .ru на 1 год включён в итоговую стоимость</span>
-          </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+        <div>
+          <label style="font-size: 13px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Город</label>
+          <input class="terminal-input" id="leadCity" name="city" placeholder="Брянск" value="Брянск">
         </div>
-
-        <div style="margin-top: 24px; font-size: 14px; color: var(--text-muted);">
-          Нужно детально описать проект? Заполните наш <a href="/brief" style="color: var(--accent-primary); text-decoration: underline;">полный бриф →</a>
+        <div>
+          <label style="font-size: 13px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Ваше имя</label>
+          <input class="terminal-input" id="leadName" name="name" placeholder="Как к вам обращаться">
         </div>
       </div>
 
-      <form class="actual-form" id="mainLeadForm" autocomplete="off">
-        <div>
-          <label style="font-size: 13px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Чем занимается бизнес</label>
-          <input class="form-input-field" id="formBiz" name="biz" placeholder="Например: барбершоп, детейлинг или кофейня" required value="Барбершоп">
+      <div>
+        <label style="font-size: 13px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Удобный канал связи</label>
+        <div class="contact-channel-tabs" id="channelGroup">
+          <label class="channel-pill active"><input type="radio" name="contact_method" value="telegram" checked><span>Telegram</span></label>
+          <label class="channel-pill"><input type="radio" name="contact_method" value="whatsapp"><span>WhatsApp</span></label>
+          <label class="channel-pill"><input type="radio" name="contact_method" value="phone"><span>Телефон</span></label>
+          <label class="channel-pill"><input type="radio" name="contact_method" value="other"><span>Другое</span></label>
         </div>
+      </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-          <div>
-            <label style="font-size: 13px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Город</label>
-            <input class="form-input-field" id="formCity" name="city" placeholder="Брянск" value="Брянск">
-          </div>
-          <div>
-            <label style="font-size: 13px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Ваше имя</label>
-            <input class="form-input-field" id="formName" name="name" placeholder="Как к вам обращаться">
-          </div>
-        </div>
+      <div>
+        <label style="font-size: 13px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Контактные данные</label>
+        <input class="terminal-input" id="leadContact" name="contact_value" placeholder="@username в Telegram" required>
+      </div>
 
-        <div>
-          <label style="font-size: 13px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Где удобнее ответить</label>
-          <div class="contact-pill-selector" id="contactMethods">
-            <label class="contact-pill-btn active"><input type="radio" name="contact_method" value="telegram" checked><span>Telegram</span></label>
-            <label class="contact-pill-btn"><input type="radio" name="contact_method" value="whatsapp"><span>WhatsApp</span></label>
-            <label class="contact-pill-btn"><input type="radio" name="contact_method" value="phone"><span>Телефон</span></label>
-            <label class="contact-pill-btn"><input type="radio" name="contact_method" value="other"><span>Другое</span></label>
-          </div>
-        </div>
+      <button class="btn-quantum" id="btnSubmitTerminal" type="submit" style="width: 100%; margin-top: 6px;">
+        <span>Отправить заявку на сайт</span>
+        <span aria-hidden="true">→</span>
+      </button>
 
-        <div>
-          <label style="font-size: 13px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Контакт для связи</label>
-          <input class="form-input-field" id="formContact" name="contact_value" placeholder="@username в Telegram" required>
-        </div>
-
-        <button class="btn-fire" id="btnSubmitLead" type="submit" style="width: 100%; margin-top: 6px;">
-          Забронировать сайт за 14 990 ₽ →
-        </button>
-
-        <p id="leadStatusMsg" style="font-size: 13.5px; text-align: center; color: var(--text-muted); min-height: 20px;">
-          Отвечаю в течение 30 минут. Можно также <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color: var(--accent-primary); font-weight: 700;">написать в Telegram</a>.
-        </p>
-      </form>
-    </div>
+      <p id="leadTerminalFeedback" style="font-size: 13.5px; text-align: center; color: var(--text-muted); min-height: 20px;">
+        Отвечу лично в течение 30 минут.
+      </p>
+    </form>
   </section>
 
-  <!-- SECTION 7: FAQ -->
-  <section class="section-wrapper" id="faq">
-    <div class="section-tagline">Частые вопросы</div>
-    <h2 class="section-heading-big">Ответы без мелкого шрифта</h2>
-
-    <div class="faq-accordion-list">
-      <details class="faq-tile">
-        <summary>
-          <span>Что если мне не понравится макет?</span>
-          <span class="faq-plus">+</span>
-        </summary>
-        <div class="faq-body-content">
-          Мы согласуем первый экран до того, как вы внесёте какую-либо оплату. В стоимость включено до 10 правок — мы докручиваем концепт до тех пор, пока вы не останетесь полностью довольны.
-        </div>
-      </details>
-
-      <details class="faq-tile">
-        <summary>
-          <span>Почему цена всего 14 990 ₽?</span>
-          <span class="faq-plus">+</span>
-        </summary>
-        <div class="faq-body-content">
-          Я работаю один, без секретарей, проектных менеджеров и аренды офиса. Нет посредников — нет наценок.
-        </div>
-      </details>
-
-      <details class="faq-tile">
-        <summary>
-          <span>Домен действительно оформляется на меня?</span>
-          <span class="faq-plus">+</span>
-        </summary>
-        <div class="faq-body-content">
-          Да, домен регистрируется официально на ваши данные через аккредитованного регистратора. Со 2-го года вы продлеваете его самостоятельно напрямую по себестоимости (~350–500 ₽/год).
-        </div>
-      </details>
-
-      <details class="faq-tile">
-        <summary>
-          <span>Кто пишет тексты для сайта?</span>
-          <span class="faq-plus">+</span>
-        </summary>
-        <div class="faq-body-content">
-          Тексты пишу я сам на основе ваших ответов. Вам не нужно быть копирайтером — просто расскажите своими словами об услугах и ценах.
-        </div>
-      </details>
+  <!-- SECTION 6: FAQ -->
+  <section class="faq-stream" id="faq">
+    <div style="margin-bottom: 24px;">
+      <div class="tile-kicker">Частые вопросы</div>
+      <h2 style="font-family: var(--font-display); font-size: clamp(26px, 3.2vw, 38px); font-weight: 900;">
+        Всё, что нужно знать перед стартом
+      </h2>
     </div>
-  </section>
 
-  <!-- SECTION 8: CLOSING BANNER -->
-  <section class="section-wrapper closing-banner">
-    <h2>Запустим сайт для вашего бизнеса на этой неделе?</h2>
-    <p>Напишите мне в Telegram — за 15 минут обсудим идею и зафиксируем условия.</p>
-    <a class="btn-fire" href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="height: 60px; font-size: 17px; padding: 0 40px;">
-      Написать в Telegram @K_Sofrin ↗
-    </a>
+    <details class="faq-node">
+      <summary>
+        <span>Что если мне не понравится предложенный концепт?</span>
+        <span class="faq-chevron">+</span>
+      </summary>
+      <div class="faq-answer">
+        Вы ничем не рискуете. Я делаю прототип первого экрана до того, как вы вносите оплату. В тариф уже входит до 10 правок, поэтому мы гарантированно доведём макет до нужного вам результата.
+      </div>
+    </details>
+
+    <details class="faq-node">
+      <summary>
+        <span>Домен действительно регистрируется на меня?</span>
+        <span class="faq-chevron">+</span>
+      </summary>
+      <div class="faq-answer">
+        Да! Домен регистрируется официально через аккредитованного регистратора на ваши паспортные данные или организацию. Вы являетесь его единственным владельцем. 1 год обслуживания уже включён в 14 990 ₽.
+      </div>
+    </details>
+
+    <details class="faq-node">
+      <summary>
+        <span>Нужно ли будет платить за конструктор каждый месяц?</span>
+        <span class="faq-chevron">+</span>
+      </summary>
+      <div class="faq-answer">
+        Нет! Это сайт на чистом коде без конструкторов (Tilda, Wix и др.), поэтому вам не нужно отдавать 1 000 – 2 000 ₽ каждый месяц. Разовая оплата — и сайт работает на вас бессрочно.
+      </div>
+    </details>
+
+    <details class="faq-node">
+      <summary>
+        <span>Кто пишет тексты для сайта?</span>
+        <span class="faq-chevron">+</span>
+      </summary>
+      <div class="faq-answer">
+        Тексты пишу я сам на основе ваших тезисов и анализа конкурентов. Вам достаточно просто рассказать в голосовом сообщении или тексте о своих ключевых услугах и ценах.
+      </div>
+    </details>
   </section>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
-    <div>© 2026 Кирилл · Создание сайтов для бизнеса в Брянске</div>
-    <div style="display: flex; gap: 20px;">
-      <a href="/brief">Бриф</a>
-      <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener">Telegram</a>
-      <a href="#req">Заказать ↑</a>
+  <footer class="cinematic-footer">
+    <div>© 2026 KIRILL SOFRIN · Индивидуальная веб-разработка</div>
+    <div style="display: flex; gap: 24px;">
+      <a href="/brief">Полный бриф</a>
+      <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener">Telegram @K_Sofrin</a>
+      <a href="#terminal">Заказать ↑</a>
     </div>
   </footer>
 
 </div>
 
-<!-- MOBILE BOTTOM DOCK -->
-<div class="mobile-bottom-dock" id="mobileDock">
-  <a class="dock-btn-main" href="#req">
-    <span>Заказать за 14 990 ₽</span>
-    <span aria-hidden="true">→</span>
-  </a>
-  <a class="dock-btn-tg" href="https://t.me/K_Sofrin" target="_blank" rel="noopener" aria-label="Написать в Telegram">
-    ✈
-  </a>
-</div>
-
 <script>
 (function() {
-  // 1. Dual Theme Engine (Dark / Light)
-  var htmlEl = document.documentElement;
-  var themeBtn = document.getElementById('themeToggleBtn');
-  var themeIcon = document.getElementById('themeIcon');
+  // 1. Interactive Ambient Particle Canvas (Tracks Mouse & Touch)
+  var canvas = document.getElementById('interactiveCanvas');
+  if (canvas) {
+    var ctx = canvas.getContext('2d');
+    var width = canvas.width = window.innerWidth;
+    var height = canvas.height = window.innerHeight;
+    var mouse = { x: width / 2, y: height / 2, active: false };
 
-  function updateThemeUI(theme) {
-    if (themeIcon) {
-      themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+    var particles = [];
+    var count = Math.min(65, Math.floor((width * height) / 18000));
+    for (var i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.6,
+        vy: (Math.random() - 0.5) * 0.6,
+        radius: Math.random() * 1.8 + 0.8,
+        baseAlpha: Math.random() * 0.35 + 0.15
+      });
     }
-  }
 
-  if (themeBtn) {
-    themeBtn.addEventListener('click', function() {
-      var current = htmlEl.getAttribute('data-theme') || 'dark';
-      var next = current === 'dark' ? 'light' : 'dark';
-      htmlEl.setAttribute('data-theme', next);
-      localStorage.setItem('site_theme', next);
-      updateThemeUI(next);
+    window.addEventListener('resize', function() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
     });
-  }
 
-  // Restore saved theme if any
-  try {
-    var savedTheme = localStorage.getItem('site_theme');
-    if (savedTheme) {
-      htmlEl.setAttribute('data-theme', savedTheme);
-      updateThemeUI(savedTheme);
+    window.addEventListener('mousemove', function(e) {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      mouse.active = true;
+    });
+
+    window.addEventListener('touchmove', function(e) {
+      if (e.touches.length > 0) {
+        mouse.x = e.touches[0].clientX;
+        mouse.y = e.touches[0].clientY;
+        mouse.active = true;
+      }
+    }, { passive: true });
+
+    function renderCanvas() {
+      ctx.clearRect(0, 0, width, height);
+
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0) p.x = width;
+        if (p.x > width) p.x = 0;
+        if (p.y < 0) p.y = height;
+        if (p.y > height) p.y = 0;
+
+        // Draw particle
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(0, 240, 255, ' + p.baseAlpha + ')';
+        ctx.fill();
+
+        // Connect nearby particles
+        for (var j = i + 1; j < particles.length; j++) {
+          var p2 = particles[j];
+          var dx = p.x - p2.x;
+          var dy = p.y - p2.y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 110) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = 'rgba(0, 240, 255, ' + (0.12 * (1 - dist / 110)) + ')';
+            ctx.lineWidth = 0.7;
+            ctx.stroke();
+          }
+        }
+
+        // Mouse interaction glow connection
+        if (mouse.active) {
+          var mdx = p.x - mouse.x;
+          var mdy = p.y - mouse.y;
+          var mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+          if (mdist < 160) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.strokeStyle = 'rgba(0, 240, 255, ' + (0.22 * (1 - mdist / 160)) + ')';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(renderCanvas);
     }
-  } catch(_) {}
-
-  // 2. Interactive Atelier Device Switcher
-  var btnDesk = document.getElementById('btnDeskView');
-  var btnMob = document.getElementById('btnMobView');
-  var windowEl = document.getElementById('heroInteractiveWindow');
-
-  if (btnDesk && btnMob && windowEl) {
-    btnDesk.addEventListener('click', function() {
-      btnDesk.classList.add('active');
-      btnMob.classList.remove('active');
-      windowEl.classList.remove('mode-mobile');
-    });
-    btnMob.addEventListener('click', function() {
-      btnMob.classList.add('active');
-      btnDesk.classList.remove('active');
-      windowEl.classList.add('mode-mobile');
-    });
+    renderCanvas();
   }
 
-  // 3. Interactive Configurator Niche Selector
-  var nicheBtns = document.querySelectorAll('.niche-seg-btn');
-  var formBizInput = document.getElementById('formBiz');
-  var btnApplyConfig = document.getElementById('btnApplyConfig');
+  // 2. Interactive Archetype Sandbox Switcher
+  var archTabs = document.querySelectorAll('.arch-tab-btn');
+  var stage = document.getElementById('sandboxStage');
+  var kicker = document.getElementById('sandboxKicker');
+  var headline = document.getElementById('sandboxHeadline');
+  var desc = document.getElementById('sandboxDesc');
+  var chips = document.getElementById('sandboxChips');
 
-  var nicheLabels = {
-    barber: 'Барбершоп',
-    auto: 'Автосервис',
-    cafe: 'Кафе',
-    pro: 'Частные услуги',
-    b2b: 'Производство'
+  var stylePresets = {
+    cyber: {
+      themeClass: 'preview-theme-cyber',
+      kicker: 'АРХИТЕКТУРА / ТЕХНОЛОГИИ',
+      headline: 'Премиальный сервис детейлинга и защиты авто',
+      desc: 'Калькулятор стоимости работ, интерактивная галерея до/после, быстрая запись на удобный день через Telegram.',
+      chips: ['⚡ Онлайн-запись', '📍 Яндекс Карты', '💬 Прямой чат в TG']
+    },
+    luxury: {
+      themeClass: 'preview-theme-luxury',
+      kicker: 'LIFESTYLE / МОНОХРОМ',
+      headline: 'Авторская кофейня и ресторан европейской кухни',
+      desc: 'Интерактивное сезонное меню, онлайн-бронирование столиков за 1 минуту, интеграция сервисов доставки.',
+      chips: ['🍷 Меню и бар', '📅 Бронь стола', '🛵 Доставка']
+    },
+    editorial: {
+      themeClass: 'preview-theme-editorial',
+      kicker: 'ЭКСПЕРТ / ПРАКТИКА',
+      headline: 'Частная стоматологическая клиника и ортодонтия',
+      desc: 'Прайс-лист услуг с подробными кейсами, дипломы врачей, конфиденциальная запись на первичный приём.',
+      chips: ['🦷 Каталог услуг', '👨‍⚕️ Врачи', '📝 Запись на осмотр']
+    }
   };
 
-  nicheBtns.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      nicheBtns.forEach(function(b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      var val = btn.getAttribute('data-niche');
-      if (formBizInput && nicheLabels[val]) {
-        formBizInput.value = nicheLabels[val];
-      }
-    });
-  });
-
-  if (btnApplyConfig) {
-    btnApplyConfig.addEventListener('click', function() {
-      var reqTarget = document.getElementById('req');
-      if (reqTarget) {
-        reqTarget.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(function() {
-          if (formBizInput) formBizInput.focus();
-        }, 400);
-      }
-    });
-  }
-
-  // 4. Contact Methods Radios
-  var contactButtons = document.querySelectorAll('#contactMethods .contact-pill-btn');
-  var formContactInput = document.getElementById('formContact');
-  var placeholders = {
-    telegram: '@username в Telegram',
-    whatsapp: 'Номер для WhatsApp',
-    phone: 'Номер телефона',
-    other: 'Электронная почта'
-  };
-
-  contactButtons.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      contactButtons.forEach(function(b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      var input = btn.querySelector('input');
-      if (input) {
-        input.checked = true;
-        if (formContactInput) {
-          formContactInput.placeholder = placeholders[input.value] || 'Контакт';
+  archTabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      archTabs.forEach(function(t) { t.classList.remove('active'); });
+      tab.classList.add('active');
+      var key = tab.getAttribute('data-style');
+      var preset = stylePresets[key];
+      if (preset && stage) {
+        stage.className = 'sandbox-preview-screen ' + preset.themeClass;
+        if (kicker) kicker.textContent = preset.kicker;
+        if (headline) headline.textContent = preset.headline;
+        if (desc) desc.textContent = preset.desc;
+        if (chips) {
+          chips.innerHTML = preset.chips.map(function(c) {
+            return '<span class="sandbox-mock-chip">' + c + '</span>';
+          }).join('');
         }
       }
     });
   });
 
-  // 5. Form Submission
-  var leadForm = document.getElementById('mainLeadForm');
-  var btnSubmit = document.getElementById('btnSubmitLead');
-  var statusMsg = document.getElementById('leadStatusMsg');
+  // 3. Contact Method Radios & Placeholders
+  var channelPills = document.querySelectorAll('#channelGroup .channel-pill');
+  var contactInput = document.getElementById('leadContact');
+  var placeholders = {
+    telegram: '@username в Telegram',
+    whatsapp: 'Номер для WhatsApp (+7...)',
+    phone: 'Номер телефона (+7...)',
+    other: 'Электронная почта'
+  };
 
-  if (leadForm) {
-    leadForm.addEventListener('submit', function(e) {
+  channelPills.forEach(function(pill) {
+    pill.addEventListener('click', function() {
+      channelPills.forEach(function(p) { p.classList.remove('active'); });
+      pill.classList.add('active');
+      var radio = pill.querySelector('input');
+      if (radio) {
+        radio.checked = true;
+        if (contactInput) {
+          contactInput.placeholder = placeholders[radio.value] || 'Контакт для связи';
+        }
+      }
+    });
+  });
+
+  // 4. Lead Form Submission
+  var form = document.getElementById('expressLeadForm');
+  var btnSub = document.getElementById('btnSubmitTerminal');
+  var feedback = document.getElementById('leadTerminalFeedback');
+
+  if (form) {
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
-      var fd = new FormData(leadForm);
-      var biz = fd.get('biz') || '';
-      var city = fd.get('city') || '';
-      var name = fd.get('name') || '';
-      var cm = fd.get('contact_method') || 'telegram';
-      var cv = fd.get('contact_value') || '';
+      var fd = new FormData(form);
 
-      if (btnSubmit) {
-        btnSubmit.disabled = true;
-        btnSubmit.style.opacity = '0.7';
-        btnSubmit.textContent = 'Отправка заявки…';
+      if (btnSub) {
+        btnSub.disabled = true;
+        btnSub.style.opacity = '0.7';
+        btnSub.textContent = 'Отправка заявки…';
       }
 
       fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          biz: biz,
-          city: city,
-          name: name,
-          contact_method: cm,
-          contact_value: cv,
-          source: 'atelier_form'
+          biz: fd.get('biz') || '',
+          city: fd.get('city') || '',
+          name: fd.get('name') || '',
+          contact_method: fd.get('contact_method') || 'telegram',
+          contact_value: fd.get('contact_value') || '',
+          source: 'quantum_terminal'
         })
       })
       .then(function(res) {
@@ -1702,82 +1513,26 @@ body {
         return res.json();
       })
       .then(function() {
-        if (btnSubmit) {
-          btnSubmit.textContent = 'Заявка принята ✓';
-          btnSubmit.style.background = '#00E676';
-          btnSubmit.style.color = '#000000';
+        if (btnSub) {
+          btnSub.textContent = 'Заявка принята ✓';
+          btnSub.style.background = '#10B981';
+          btnSub.style.color = '#FFFFFF';
         }
-        if (statusMsg) {
-          statusMsg.innerHTML = 'Спасибо! Я свяжусь с вами сегодня. Для мгновенного ответа — <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--accent-primary);font-weight:700;">напишите в Telegram</a>.';
+        if (feedback) {
+          feedback.innerHTML = 'Заявка получена! Я свяжусь с вами сегодня. Для мгновенного ответа: <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--neon-cyan);font-weight:700;">написать в Telegram →</a>';
         }
-        leadForm.reset();
+        form.reset();
       })
       .catch(function() {
-        if (btnSubmit) {
-          btnSubmit.disabled = false;
-          btnSubmit.style.opacity = '1';
-          btnSubmit.textContent = 'Забронировать сайт за 14 990 ₽ →';
+        if (btnSub) {
+          btnSub.disabled = false;
+          btnSub.style.opacity = '1';
+          btnSub.textContent = 'Отправить заявку на сайт →';
         }
-        if (statusMsg) {
-          statusMsg.textContent = 'Не удалось отправить. Попробуйте еще раз или напишите напрямую в Telegram.';
-        }
-      });
-    });
-  }
-
-  // 6. Mobile Bottom Dock
-  var dock = document.getElementById('mobileDock');
-  var formSec = document.getElementById('req');
-
-  if (dock && formSec) {
-    var inView = false, pastTop = false;
-    function checkDock() {
-      if (pastTop && !inView) {
-        dock.classList.add('active');
-      } else {
-        dock.classList.remove('active');
-      }
-    }
-
-    if ('IntersectionObserver' in window) {
-      var obs = new IntersectionObserver(function(entries) {
-        inView = entries[0].isIntersecting;
-        checkDock();
-      }, { threshold: 0.1 });
-      obs.observe(formSec);
-    }
-
-    window.addEventListener('scroll', function() {
-      pastTop = window.scrollY > 240;
-      if (!('IntersectionObserver' in window)) {
-        var r = formSec.getBoundingClientRect();
-        inView = r.top < window.innerHeight && r.bottom > 0;
-      }
-      checkDock();
-    }, { passive: true });
-  }
-
-  // 7. Lightweight Scroll-Reveal via IntersectionObserver for Process & Cases
-  var revealTargets = document.querySelectorAll('.scroll-reveal, .scroll-reveal-zoom');
-  if ('IntersectionObserver' in window) {
-    var revealObserver = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          revealObserver.unobserve(entry.target);
+        if (feedback) {
+          feedback.textContent = 'Ошибка отправки. Пожалуйста, напишите напрямую в Telegram @K_Sofrin.';
         }
       });
-    }, {
-      rootMargin: '0px 0px -50px 0px',
-      threshold: 0.12
-    });
-
-    revealTargets.forEach(function(el) {
-      revealObserver.observe(el);
-    });
-  } else {
-    revealTargets.forEach(function(el) {
-      el.classList.add('revealed');
     });
   }
 })();
