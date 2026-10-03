@@ -3,842 +3,743 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Кирилл Софрин · Студия веб-решений · 14 990 ₽</title>
-<meta name="description" content="Разработка сайтов для бизнеса под ключ за 14 990 ₽. Домен на 1 год и онлайн-оплата включены. Оплата после макета.">
+<title>Кирилл Софрин · Сайты для бизнеса · 14 990 ₽</title>
+<meta name="description" content="Разработка продающих сайтов для бизнеса под ключ за 14 990 ₽. Домен на 1 год и онлайн-оплата включены. Оплата после макета.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Кирилл Софрин · Студия веб-решений · 14 990 ₽">
-<meta property="og:description" content="Сайт для бизнеса под ключ за 14 990 ₽. Домен на 1 год и эквайринг включены. Оплата после макета.">
+<meta property="og:title" content="Кирилл Софрин · Сайты для бизнеса · 14 990 ₽">
+<meta property="og:description" content="Разработка сайтов для бизнеса за 14 990 ₽ под ключ. Домен и онлайн-оплата включены.">
 <meta property="og:image" content="https://karif.up.railway.app/og.png">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://karif.up.railway.app/">
-<meta name="theme-color" content="#0A0C12">
+<meta name="theme-color" content="#060709">
 <link rel="canonical" href="https://karif.up.railway.app/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232F68FE'/%3E%3Cpath d='M9 7h5v7l7-7h6l-8 8 8.5 10H21L14 17v7H9z' fill='%23FFFFFF'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23FFFFFF'/%3E%3Cpath d='M10 8h4v6l6-6h5l-7 7 7.5 9H19.5L14 16v8h-4z' fill='%23060709'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg-main: #0A0C12;
-  --bg-sidebar: #0F121A;
-  --bg-card: #151824;
-  --bg-card-hover: #1C2130;
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.16);
-  --border-accent: #2F68FE;
-  --text-main: #FFFFFF;
-  --text-muted: #8E98A8;
-  --text-dim: #555E6E;
-  --accent-blue: #2F68FE;
-  --accent-cyan: #00E5FF;
-  --accent-mint: #00E599;
-  --font-sans: 'Golos Text', system-ui, -apple-system, sans-serif;
-  --font-mono: 'Space Grotesk', monospace;
+  --bg-deep: #060709;
+  --bg-elevated: #0E1015;
+  --border-line: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.22);
+  --text-pure: #FFFFFF;
+  --text-muted: #8E96A4;
+  --text-dim: #4B5260;
+  --accent-glow: #2F68FE;
+  --font-family: 'Golos Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  --max-w: 860px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-html { background: var(--bg-main); color-scheme: dark; }
+html { background: var(--bg-deep); color-scheme: dark; scroll-behavior: smooth; }
 
 body {
-  background-color: var(--bg-main);
-  color: var(--text-main);
-  font: 400 15px/1.55 var(--font-sans);
-  min-height: 100vh;
+  background-color: var(--bg-deep);
+  color: var(--text-pure);
+  font: 400 16px/1.65 var(--font-family);
+  overflow-x: hidden;
+  position: relative;
   -webkit-font-smoothing: antialiased;
 }
 
-/* WORKSPACE SPLIT LAYOUT (NOT A CLASSIC VERTICAL SCROLL LANDING!) */
-.workspace-container {
-  display: grid;
-  grid-template-columns: 460px 1fr;
-  min-height: 100vh;
-}
-
-/* LEFT COLUMN: FIXED COMMAND HUB */
-.command-hub {
-  background: var(--bg-sidebar);
-  border-right: 1px solid var(--border-subtle);
-  padding: 36px 32px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 32px;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow-y: auto;
-}
-
-.hub-top-cluster {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.hub-brand-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.hub-logo-mark {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.logo-badge-sq {
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
-  background: var(--accent-blue);
-  color: #FFFFFF;
-  display: grid;
-  place-items: center;
-  font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: 15px;
-}
-.author-info-tag {
-  display: flex;
-  flex-direction: column;
-}
-.author-name-text {
-  font-weight: 700;
-  font-size: 14.5px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.live-status-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--accent-mint);
-  box-shadow: 0 0 8px var(--accent-mint);
-}
-.author-role-sub {
-  font-size: 12px;
-  color: var(--text-muted);
-}
-
-.hub-title-huge {
-  font-size: 28px;
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.025em;
-  color: #FFFFFF;
-}
-.hub-title-huge span {
-  color: var(--accent-cyan);
-}
-
-/* PRICE MONOLITH CARD */
-.hub-price-monolith {
-  padding: 22px;
-  border-radius: 16px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-strong);
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.price-row-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-.price-tag-big {
-  font-family: var(--font-mono);
-  font-size: 38px;
-  font-weight: 700;
-  color: #FFFFFF;
-  line-height: 1;
-}
-.price-term-tag {
-  font-size: 12.5px;
-  color: var(--accent-mint);
-  font-weight: 600;
-}
-
-.price-checkmarks-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-size: 13.5px;
-  color: var(--text-muted);
-  list-style: none;
-}
-.price-checkmarks-list li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.price-checkmarks-list svg {
-  width: 15px;
-  height: 15px;
-  color: var(--accent-blue);
-  flex: none;
-}
-.price-checkmarks-list b {
-  color: #FFFFFF;
-}
-
-/* FAST DISPATCH FORM IN HUB */
-.hub-quick-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.hub-input-field {
-  height: 46px;
-  border-radius: 10px;
-  border: 1px solid var(--border-subtle);
-  background: var(--bg-card);
-  color: #FFFFFF;
-  padding: 0 14px;
-  font: 500 14px var(--font-sans);
-  outline: 0;
-  transition: all 0.2s;
-  width: 100%;
-}
-.hub-input-field:focus {
-  border-color: var(--accent-blue);
-  box-shadow: 0 0 0 2px rgba(47, 104, 254, 0.25);
-}
-
-.hub-method-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-}
-.hub-method-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 36px;
-  border-radius: 8px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-muted);
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.hub-method-btn input { display: none; }
-.hub-method-btn.active {
-  background: var(--accent-blue);
-  color: #FFFFFF;
-  border-color: var(--accent-blue);
-}
-
-.btn-hub-submit {
-  height: 48px;
-  border-radius: 10px;
-  background: var(--accent-blue);
-  color: #FFFFFF;
-  font-weight: 700;
-  font-size: 14.5px;
-  border: 0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  box-shadow: 0 8px 20px rgba(47, 104, 254, 0.35);
-  transition: transform 0.2s var(--ease), box-shadow 0.2s;
-}
-.btn-hub-submit:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 12px 28px rgba(47, 104, 254, 0.5);
-}
-
-.hub-direct-tg-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 10px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-muted);
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 600;
-  transition: all 0.2s;
-}
-.hub-direct-tg-link:hover {
-  color: #FFFFFF;
-  background: rgba(255, 255, 255, 0.07);
-}
-
-/* RIGHT COLUMN: LIVE INTERACTIVE WORKSPACE & PROTOTYPE */
-.interactive-stage {
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  overflow-y: auto;
-  position: relative;
-}
-
-/* Parallax Depth Engine */
-[data-parallax] {
-  will-change: transform;
-  transition: transform 0.08s cubic-bezier(0.2, 0, 0.2, 1);
-}
-@media (prefers-reduced-motion: reduce) {
-  [data-parallax] {
-    transform: none !important;
-    transition: none !important;
-  }
-}
-
-.stage-ambient-depth-orb {
-  position: absolute;
-  top: 140px;
-  right: 40px;
-  width: 480px;
-  height: 480px;
-  background: radial-gradient(circle, rgba(47, 104, 254, 0.12) 0%, rgba(0, 229, 255, 0.03) 50%, transparent 70%);
-  filter: blur(80px);
+/* Atmospheric Subtle Vignette */
+.ambient-lighting {
+  position: fixed;
+  top: -300px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1100px, 100vw);
+  height: 700px;
+  background: radial-gradient(ellipse at center, rgba(47, 104, 254, 0.12) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 70%);
+  filter: blur(100px);
   pointer-events: none;
   z-index: 0;
 }
 
-.stage-floating-badge {
+/* Main Minimalist Canvas */
+.canvas-wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 56px 24px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 88px;
+}
+
+/* 1. TOP STATURE HEADER */
+.top-stature-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.author-monogram {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-pure);
+}
+.author-sign {
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+.author-sign span {
+  color: var(--text-dim);
+  font-weight: 500;
+  margin-left: 6px;
+}
+
+.telegram-pill-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 16px;
+  padding: 8px 18px;
   border-radius: 9999px;
-  background: rgba(22, 27, 40, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--border-strong);
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  font-weight: 700;
-  color: var(--accent-mint);
-  width: fit-content;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
-  position: relative;
-  z-index: 2;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-line);
+  color: var(--text-pure);
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s var(--ease);
+}
+.telegram-pill-btn:hover {
+  background: #FFFFFF;
+  color: #060709;
+  border-color: #FFFFFF;
+  transform: translateY(-1px);
 }
 
-.stage-top-controls {
+/* 2. HERO MONUMENT */
+.hero-monument {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 28px;
+  padding-top: 16px;
+}
+
+.hero-lead-label {
+  display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.pulse-emerald {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00E599;
+  box-shadow: 0 0 10px #00E599;
+}
+
+.hero-grand-title {
+  font-size: clamp(38px, 6.2vw, 68px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+  text-wrap: balance;
+}
+.hero-grand-title span.price-accent {
+  display: inline-block;
+  color: #FFFFFF;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+  padding-bottom: 2px;
+}
+
+.hero-description-prose {
+  font-size: clamp(17px, 2.2vw, 20px);
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 680px;
+}
+.hero-description-prose b {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* Centered Kinetic Vector Artwork */
+.hero-vector-sculpture {
+  width: 100%;
+  height: 220px;
+  margin: 12px 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.sculpture-svg {
+  width: 100%;
+  max-width: 520px;
+  height: 100%;
+  overflow: visible;
+}
+
+.hero-buttons-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   flex-wrap: wrap;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--border-subtle);
 }
-.stage-headline-group h2 {
-  font-size: 22px;
+.btn-monument-main {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 56px;
+  padding: 0 36px;
+  border-radius: 14px;
+  background: #FFFFFF;
+  color: #060709;
   font-weight: 800;
+  font-size: 16px;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s;
 }
-.stage-headline-group p {
+.btn-monument-main:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(255, 255, 255, 0.25);
+}
+.btn-monument-chat {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 56px;
+  padding: 0 26px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-line);
+  color: var(--text-pure);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-monument-chat:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--border-hover);
+}
+
+/* 3. ARCHITECTURAL PILLARS (Clean, elegant, no cluttered mockups) */
+.pillars-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.pillars-section-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.pillar-row-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 24px;
+  padding: 28px;
+  border-radius: 18px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-line);
+  transition: border-color 0.25s, transform 0.25s var(--ease);
+}
+.pillar-row-item:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.pillar-icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-line);
+  display: grid;
+  place-items: center;
+  color: #FFFFFF;
+  flex: none;
+}
+.pillar-icon-box svg {
+  width: 24px;
+  height: 24px;
+}
+
+.pillar-content-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: center;
+}
+.pillar-heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+.pillar-description {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* Telegram bots note */
+.custom-addons-banner {
+  padding: 22px 28px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.custom-addons-banner b {
+  color: #FFFFFF;
+}
+.custom-addons-banner a {
+  color: #FFFFFF;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 2px;
+  transition: border-color 0.2s;
+}
+.custom-addons-banner a:hover {
+  border-color: #FFFFFF;
+}
+
+/* 4. WORKFLOW: 3 STEPS */
+.process-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.process-grid-trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.process-step-node {
+  padding: 26px;
+  border-radius: 16px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-line);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.step-index-badge {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+}
+.step-title-text {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+.step-prose-text {
   font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* 5. DIRECT DISPATCH STATION (#contact) */
+.contact-section-core {
+  padding: 44px;
+  border-radius: 22px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-line);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.contact-headline-cluster {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-headline-cluster h2 {
+  font-size: clamp(26px, 3.4vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.contact-headline-cluster p {
+  font-size: 15.5px;
   color: var(--text-muted);
 }
 
-.niche-segmented-bar {
+.minimal-intake-form {
   display: flex;
-  gap: 6px;
-  background: var(--bg-card);
-  padding: 4px;
-  border-radius: 10px;
-  border: 1px solid var(--border-subtle);
+  flex-direction: column;
+  gap: 16px;
 }
-.niche-seg-btn {
-  padding: 8px 16px;
-  border-radius: 7px;
-  background: transparent;
-  border: 0;
+.pure-input {
+  height: 52px;
+  border-radius: 12px;
+  border: 1px solid var(--border-line);
+  background: rgba(255, 255, 255, 0.03);
+  color: #FFFFFF;
+  padding: 0 16px;
+  font: 500 15px var(--font-family);
+  outline: 0;
+  transition: all 0.2s;
+  width: 100%;
+}
+.pure-input:focus {
+  border-color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.form-inputs-twin {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.minimal-channel-chips {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.channel-chip-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-line);
   color: var(--text-muted);
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
 }
-.niche-seg-btn:hover { color: #FFFFFF; }
-.niche-seg-btn.active {
-  background: var(--bg-sidebar);
-  color: #FFFFFF;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+.channel-chip-label input { display: none; }
+.channel-chip-label.active {
+  background: #FFFFFF;
+  color: #060709;
+  border-color: #FFFFFF;
+  font-weight: 700;
 }
 
-/* REAL LIVE BROWSER STAGE MOCKUP */
-.browser-stage-window {
-  border-radius: 16px;
-  background: #0E1119;
-  border: 1px solid var(--border-strong);
-  overflow: hidden;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
-  display: flex;
-  flex-direction: column;
-}
-
-.browser-titlebar {
-  height: 44px;
-  background: #141824;
-  border-bottom: 1px solid var(--border-subtle);
+.direct-tg-quick-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16px;
-  gap: 16px;
-}
-.browser-dots {
-  display: flex;
-  gap: 6px;
-}
-.browser-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-}
-.browser-url-pill {
-  flex: 1;
-  max-width: 320px;
-  height: 26px;
-  border-radius: 6px;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--border-subtle);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--accent-cyan);
-}
-.browser-actions-icons {
-  display: flex;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-line);
+  font-size: 14px;
+  color: var(--text-muted);
+  flex-wrap: wrap;
   gap: 12px;
+}
+.direct-tg-quick-bar a {
+  color: #FFFFFF;
+  font-weight: 700;
+  text-decoration: none;
+}
+.direct-tg-quick-bar a:hover {
+  text-decoration: underline;
+}
+
+/* 6. MINIMAL COLOPHON */
+.minimal-colophon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-line);
+  font-size: 13.5px;
   color: var(--text-dim);
 }
-
-/* THE WORKING DEMO PAGE INSIDE BROWSER */
-.demo-viewport-content {
-  padding: 36px;
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-
-.demo-hero-banner {
-  padding: 32px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, rgba(47, 104, 254, 0.12), rgba(0, 229, 255, 0.05)), #121622;
-  border: 1px solid var(--border-subtle);
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.demo-niche-kicker {
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  font-weight: 700;
-  color: var(--accent-cyan);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-.demo-headline-text {
-  font-size: clamp(24px, 2.8vw, 34px);
-  font-weight: 800;
-  line-height: 1.15;
-  color: #FFFFFF;
-}
-.demo-subhead-text {
-  font-size: 15px;
-  color: var(--text-muted);
-  line-height: 1.55;
-  max-width: 580px;
-}
-
-.demo-action-row {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 6px;
-}
-.demo-btn-prime {
-  height: 44px;
-  padding: 0 22px;
-  border-radius: 8px;
-  background: var(--accent-blue);
-  color: #FFFFFF;
-  font-weight: 700;
-  font-size: 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  border: 0;
-  cursor: pointer;
-}
-.demo-btn-sec {
-  height: 44px;
-  padding: 0 18px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-subtle);
-  color: #FFFFFF;
-  font-weight: 600;
-  font-size: 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.demo-features-trio {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-.demo-feat-card {
-  padding: 18px;
-  border-radius: 12px;
-  background: #141824;
-  border: 1px solid var(--border-subtle);
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.demo-feat-title {
-  font-weight: 700;
-  font-size: 14.5px;
-  color: #FFFFFF;
-}
-.demo-feat-desc {
-  font-size: 12.5px;
-  color: var(--text-muted);
-  line-height: 1.45;
-}
-
-/* SPEC TILES IN WORKSPACE */
-.stage-spec-tiles {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-.stage-spec-box {
-  padding: 20px;
-  border-radius: 12px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.spec-box-num {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--accent-blue);
-  font-weight: 700;
-}
-.spec-box-h {
-  font-weight: 700;
-  font-size: 15px;
-  color: #FFFFFF;
-}
-.spec-box-p {
-  font-size: 13px;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
+.minimal-colophon a { color: inherit; text-decoration: none; }
+.minimal-colophon a:hover { color: #FFFFFF; }
 
 /* RESPONSIVE */
-@media (max-width: 1040px) {
-  .workspace-container { grid-template-columns: 1fr; }
-  .command-hub { position: relative; height: auto; border-right: 0; border-bottom: 1px solid var(--border-subtle); }
-  .demo-features-trio { grid-template-columns: 1fr; }
-  .stage-spec-tiles { grid-template-columns: 1fr; }
-  .interactive-stage { padding: 24px 16px; }
+@media (max-width: 760px) {
+  .canvas-wrapper { gap: 64px; padding: 36px 18px 72px; }
+  .pillar-row-item { grid-template-columns: 1fr; gap: 16px; padding: 22px; }
+  .process-grid-trio { grid-template-columns: 1fr; }
+  .form-inputs-twin { grid-template-columns: 1fr; }
+  .contact-section-core { padding: 28px 20px; }
+  .minimal-channel-chips { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 
 <body>
-<div class="workspace-container">
+<div class="ambient-lighting"></div>
 
-  <!-- LEFT: STICKY COMMAND HUB (PRICE, SPECS, DISPATCH) -->
-  <aside class="command-hub">
-    <div class="hub-top-cluster">
-      <div class="hub-brand-row">
-        <div class="hub-logo-mark">
-          <div class="logo-badge-sq">К</div>
-          <div class="author-info-tag">
-            <span class="author-name-text">Кирилл Софрин <span class="live-status-dot" title="Свободен для заказов"></span></span>
-            <span class="author-role-sub">Веб-разработчик</span>
-          </div>
-        </div>
+<div class="canvas-wrapper">
 
-        <a class="hub-direct-tg-link" href="https://t.me/K_Sofrin" target="_blank" rel="noopener">
-          <span>Telegram</span>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-        </a>
-      </div>
+  <!-- 1. TOP STATURE HEADER -->
+  <header class="top-stature-bar" role="banner">
+    <a class="author-monogram" href="/">
+      <span class="author-sign">КИРИЛЛ СОФРИН <span>/ ВЕБ-РАЗРАБОТКА</span></span>
+    </a>
 
-      <h1 class="hub-title-huge">
-        Сайт для бизнеса <span>за 14 990 ₽</span> под ключ
-      </h1>
+    <a class="telegram-pill-btn" href="https://t.me/K_Sofrin" target="_blank" rel="noopener">
+      <span>Написать в Telegram</span>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+    </a>
+  </header>
 
-      <!-- The Price Monolith -->
-      <div class="hub-price-monolith">
-        <div class="price-row-flex">
-          <div class="price-tag-big">14 990 ₽</div>
-          <span class="price-term-tag">Срок 3–5 дней</span>
-        </div>
+  <!-- 2. HERO MONUMENT -->
+  <section class="hero-monument">
+    <div class="hero-lead-label">
+      <span class="pulse-emerald"></span>
+      <span>Свободен для новых проектов · Релиз за 3–5 дней</span>
+    </div>
 
-        <ul class="price-checkmarks-list">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-            <span><b>Домен .ru на 1 год включён</b> (на ваши данные)</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-            <span><b>Приём онлайн-оплаты входит</b> (Т-Банк, Сбер, ЮKassa)</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-            <span><b>100% мобильный фокус</b> (чистый код без Tilda)</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-            <span><b>Оплата после утверждения макета</b></span>
-          </li>
-        </ul>
-      </div>
+    <h1 class="hero-grand-title">
+      Сайт для вашего дела <br>
+      под ключ <span class="price-accent">за 14 990 ₽</span>
+    </h1>
 
-      <!-- Quick Dispatch Form -->
-      <form class="hub-quick-form" id="hubForm" autocomplete="off">
-        <input class="hub-input-field" id="hubBizInp" name="biz" placeholder="Ваша ниша (барбершоп, автосервис...)" required value="Барбершоп">
+    <p class="hero-description-prose">
+      Никаких ежемесячных оплат конструкторам. <b>Официальный домен .ru на 1 год и онлайн-оплата уже входят в стоимость.</b> Оплата строго после того, как вы посмотрите и согласуете готовый макет первого экрана.
+    </p>
+
+    <!-- Kinetic Pure SVG Sculpture (Visual artwork, zero fake mockups) -->
+    <div class="hero-vector-sculpture">
+      <svg class="sculpture-svg" viewBox="0 0 500 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Interactive Geometric Precision Grid -->
+        <circle cx="250" cy="90" r="70" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3 3"/>
+        <circle cx="250" cy="90" r="42" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
         
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-          <input class="hub-input-field" name="city" placeholder="Город" value="Брянск">
-          <input class="hub-input-field" name="name" placeholder="Ваше имя">
+        <!-- Core Crystalline Lattice -->
+        <polygon id="sculpturePoly" points="250,30 315,62 315,118 250,150 185,118 185,62" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="rgba(255,255,255,0.01)"/>
+        
+        <!-- Coordinate Axes & Filaments -->
+        <line x1="80" y1="90" x2="420" y2="90" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+        <line x1="250" y1="10" x2="250" y2="170" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+        
+        <!-- Crosshairs & Nodes -->
+        <circle cx="185" cy="62" r="3" fill="#FFFFFF"/>
+        <circle cx="315" cy="62" r="3" fill="#FFFFFF"/>
+        <circle cx="315" cy="118" r="3" fill="#FFFFFF"/>
+        <circle cx="185" cy="118" r="3" fill="#FFFFFF"/>
+        <circle cx="250" cy="30" r="3.5" fill="#2F68FE"/>
+        <circle cx="250" cy="150" r="3.5" fill="#2F68FE"/>
+        <circle cx="250" cy="90" r="4" fill="#00E599"/>
+
+        <!-- Text Annotations in pure typography -->
+        <text x="90" y="82" fill="rgba(255,255,255,0.3)" font-size="10" font-family="'Golos Text', sans-serif" letter-spacing="1.5">DOMAIN .RU / 12 MO</text>
+        <text x="330" y="82" fill="rgba(255,255,255,0.3)" font-size="10" font-family="'Golos Text', sans-serif" letter-spacing="1.5">PAYMENT GATEWAY</text>
+        <text x="200" y="172" fill="rgba(255,255,255,0.3)" font-size="10" font-family="'Golos Text', sans-serif" letter-spacing="1.5">100% RESPONSIVE ENGINE</text>
+      </svg>
+    </div>
+
+    <div class="hero-buttons-row">
+      <a class="btn-monument-main" href="#contact">
+        <span>Обсудить сайт</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a class="btn-monument-chat" href="https://t.me/K_Sofrin" target="_blank" rel="noopener">
+        <span>Написать напрямую в Telegram</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 3. ARCHITECTURAL PILLARS (Everything Included in 14 990 ₽) -->
+  <section class="pillars-section">
+    <div class="pillars-section-title">В стоимость 14 990 ₽ входит всё необходимое для старта</div>
+
+    <!-- 01 Domain -->
+    <div class="pillar-row-item">
+      <div class="pillar-icon-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <div class="pillar-content-box">
+        <h3 class="pillar-heading">Официальный домен .ru на 1 год</h3>
+        <p class="pillar-description">Регистрируется официально на ваши паспортные данные или организацию. Вы единственный юридический владелец доменного имени и сайта.</p>
+      </div>
+    </div>
+
+    <!-- 02 Payment -->
+    <div class="pillar-row-item">
+      <div class="pillar-icon-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/></svg>
+      </div>
+      <div class="pillar-content-box">
+        <h3 class="pillar-heading">Подключение приёма онлайн-оплаты</h3>
+        <p class="pillar-description">Настройка интернет-эквайринга (Т-Банк, Сбер или ЮKassa). Клиенты оплачивают услуги или товары картами и СБП — деньги поступают прямо на ваш расчётный счёт.</p>
+      </div>
+    </div>
+
+    <!-- 03 Mobile & Speed -->
+    <div class="pillar-row-item">
+      <div class="pillar-icon-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      </div>
+      <div class="pillar-content-box">
+        <h3 class="pillar-heading">Чистый код и 100% мобильная скорость</h3>
+        <p class="pillar-description">Сайт пишется на чистом быстром коде без громоздких конструкторов Tilda/Wix. Открывается мгновенно за 0.3 секунды даже при слабом мобильном интернете.</p>
+      </div>
+    </div>
+
+    <!-- 04 Guarantee -->
+    <div class="pillar-row-item">
+      <div class="pillar-icon-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      </div>
+      <div class="pillar-content-box">
+        <h3 class="pillar-heading">Оплата только после утверждения макета</h3>
+        <p class="pillar-description">Сначала я собираю рабочий макет первого экрана под вашу сферу и показываю вам. Вы оцениваете результат, и только если всё нравится — переходим к оплате и запуску.</p>
+      </div>
+    </div>
+
+    <!-- Telegram bots note -->
+    <div class="custom-addons-banner">
+      <div>
+        <b>Нужен Telegram-бот для заказов или многостраничный каталог?</b>
+        <div>Настройка ботов и сложных баз данных обсуждается отдельно под вашу задачу.</div>
+      </div>
+      <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener">Написать в Telegram →</a>
+    </div>
+  </section>
+
+  <!-- 4. WORKFLOW: 3 CLEAR STEPS -->
+  <section class="process-section">
+    <div class="pillars-section-title">Как строится работа</div>
+
+    <div class="process-grid-trio">
+      <div class="process-step-node">
+        <span class="step-index-badge">ШАГ 01 · 15 МИНУТ</span>
+        <h4 class="step-title-text">Обсуждение задачи</h4>
+        <p class="step-prose-text">Вы рассказываете о своём бизнесе в переписке Telegram. Я предлагаю точную структуру и продающие офферы.</p>
+      </div>
+
+      <div class="process-step-node">
+        <span class="step-index-badge">ШАГ 02 · 1–2 ДНЯ</span>
+        <h4 class="step-title-text">Бесплатный макет</h4>
+        <p class="step-prose-text">Я собираю интерактивный макет первого экрана. Вы смотрите его вживую на тестовой ссылке до оплаты.</p>
+      </div>
+
+      <div class="process-step-node">
+        <span class="step-index-badge">ШАГ 03 · ФИНИШ</span>
+        <h4 class="step-title-text">Запуск на домене</h4>
+        <p class="step-prose-text">Регистрирую домен, подключаю онлайн-оплату и отдаю вам полностью готовый работающий сайт.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. DIRECT DISPATCH STATION (#contact) -->
+  <section class="contact-section-core" id="contact">
+    <div class="contact-headline-cluster">
+      <h2>Обсудить запуск сайта</h2>
+      <p>Оставьте 2–3 строчки о вашем бизнесе. Я лично свяжусь с вами в течение 30 минут с вариантами структуры.</p>
+    </div>
+
+    <form class="minimal-intake-form" id="mainIntakeForm" autocomplete="off">
+      <input class="pure-input" id="fieldBiz" name="biz" placeholder="Ваша ниша или услуга (например: автосервис, барбершоп, стоматология...)" required>
+
+      <div class="form-inputs-twin">
+        <input class="pure-input" id="fieldCity" name="city" placeholder="Город (например: Брянск)" value="Брянск">
+        <input class="pure-input" id="fieldName" name="name" placeholder="Как к вам обращаться">
+      </div>
+
+      <div>
+        <label style="font-size:13px; font-weight:600; color:var(--text-muted); display:block; margin-bottom:8px;">Где удобнее получить ответ</label>
+        <div class="minimal-channel-chips" id="contactChannels">
+          <label class="channel-chip-label active"><input type="radio" name="contact_method" value="telegram" checked><span>Telegram</span></label>
+          <label class="channel-chip-label"><input type="radio" name="contact_method" value="whatsapp"><span>WhatsApp</span></label>
+          <label class="channel-chip-label"><input type="radio" name="contact_method" value="phone"><span>Телефон</span></label>
         </div>
-
-        <div class="hub-method-row" id="hubMethods">
-          <label class="hub-method-btn active"><input type="radio" name="contact_method" value="telegram" checked><span>Telegram</span></label>
-          <label class="hub-method-btn"><input type="radio" name="contact_method" value="whatsapp"><span>WhatsApp</span></label>
-          <label class="hub-method-btn"><input type="radio" name="contact_method" value="phone"><span>Телефон</span></label>
-        </div>
-
-        <input class="hub-input-field" id="hubContactInp" name="contact_value" placeholder="@username в Telegram" required>
-
-        <button class="btn-hub-submit" id="btnHubSubmit" type="submit">
-          <span>Запустить проект за 14 990 ₽</span>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
-
-        <p id="hubFeedback" style="font-size:12.5px; text-align:center; color:var(--text-muted); min-height:16px;">
-          Отвечу лично в течение 30 минут.
-        </p>
-      </form>
-    </div>
-
-    <div style="font-size:12px; color:var(--text-dim); display:flex; justify-content:space-between;">
-      <span>© 2026 Кирилл Софрин</span>
-      <a href="/brief" style="color:inherit; text-decoration:none;">Бриф</a>
-    </div>
-  </aside>
-
-  <!-- RIGHT: LIVE WORKING DEMO VIEWPORT -->
-  <main class="interactive-stage" role="main">
-    <div class="stage-ambient-depth-orb" data-parallax="-0.15"></div>
-
-    <div class="stage-top-controls" data-parallax="0.02">
-      <div class="stage-headline-group">
-        <h2>Интерактивный просмотр прототипа</h2>
-        <p>Выберите нишу, чтобы увидеть живой пример структуры и контента:</p>
       </div>
 
-      <div class="niche-segmented-bar" id="nicheSegs">
-        <button class="niche-seg-btn active" data-niche="barber" type="button">Барбершоп</button>
-        <button class="niche-seg-btn" data-niche="auto" type="button">Автосервис</button>
-        <button class="niche-seg-btn" data-niche="cafe" type="button">Кафе / Ресторан</button>
-        <button class="niche-seg-btn" data-niche="clinic" type="button">Клиника</button>
+      <input class="pure-input" id="fieldContactVal" name="contact_value" placeholder="@username в Telegram" required>
+
+      <button class="btn-monument-main" id="btnSubmitForm" type="submit" style="width:100%; margin-top:6px;">
+        <span>Отправить заявку</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+
+      <div class="direct-tg-quick-bar">
+        <span>Предпочитаете без форм?</span>
+        <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener">Написать напрямую Кириллу в Telegram: @K_Sofrin →</a>
       </div>
+
+      <p id="formFeedback" style="font-size:13px; text-align:center; color:var(--text-muted); min-height:16px;">
+        Отвечу лично в течение 30 минут.
+      </p>
+    </form>
+  </section>
+
+  <!-- 6. MINIMAL COLOPHON -->
+  <footer class="minimal-colophon">
+    <div>© 2026 Кирилл Софрин · Разработка сайтов для бизнеса</div>
+    <div style="display:flex; gap:20px;">
+      <a href="/brief">Бриф</a>
+      <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener">Telegram @K_Sofrin</a>
     </div>
-
-    <div class="stage-floating-badge" data-parallax="0.12">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-      <span>100% Mobile Ready · Загрузка 0.3s · Google PageSpeed 98/100</span>
-    </div>
-
-    <!-- Live Browser Window Simulation -->
-    <div class="browser-stage-window" data-parallax="0.05">
-      <div class="browser-titlebar">
-        <div class="browser-dots">
-          <span class="browser-dot"></span>
-          <span class="browser-dot"></span>
-          <span class="browser-dot"></span>
-        </div>
-        <div class="browser-url-pill" id="browserUrl">https://ваш-бизнес.ru</div>
-        <div class="browser-actions-icons">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-        </div>
-      </div>
-
-      <div class="demo-viewport-content">
-        <div class="demo-hero-banner">
-          <span class="demo-niche-kicker" id="demoKicker">СФЕРА УСЛУГ · БРЯНСК</span>
-          <h3 class="demo-headline-text" id="demoTitle">Мужские стрижки и моделирование бороды премиум-класса</h3>
-          <p class="demo-subhead-text" id="demoDesc">Онлайн-запись к топ-барберам за 30 секунд. Удобная локация в центре, бесплатный кофе и фирменный уход.</p>
-
-          <div class="demo-action-row">
-            <button class="demo-btn-prime" id="demoBtnAction" type="button">
-              <span>Записаться онлайн</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
-            <div class="demo-btn-sec" id="demoBtnSec">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-              <span>WhatsApp диалог</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="demo-features-trio" id="demoFeatures">
-          <div class="demo-feat-card" data-parallax="0.08">
-            <span class="demo-feat-title">Приём оплат онлайн</span>
-            <span class="demo-feat-desc">Подключение эквайринга Сбера, Т-Банка или ЮKassa сразу на ваш счёт.</span>
-          </div>
-          <div class="demo-feat-card" data-parallax="0.14">
-            <span class="demo-feat-title">Официальный домен .ru</span>
-            <span class="demo-feat-desc">Регистрируется на ваши паспортные данные на 12 месяцев.</span>
-          </div>
-          <div class="demo-feat-card" data-parallax="0.20">
-            <span class="demo-feat-title">Заявки в Telegram</span>
-            <span class="demo-feat-desc">Ни одно обращение не потеряется — уведомления приходят за секунду.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Specification Tiles (Clear, horizontal, with staggered parallax) -->
-    <div class="stage-spec-tiles">
-      <div class="stage-spec-box" data-parallax="0.06">
-        <span class="spec-box-num">ЭТАП 01</span>
-        <h4 class="spec-box-h">Бриф в Telegram</h4>
-        <p class="spec-box-p">15 минут переписки или голосовых сообщений. Обсуждаем ваши услуги, цены и стиль.</p>
-      </div>
-
-      <div class="stage-spec-box" data-parallax="0.12">
-        <span class="spec-box-num">ЭТАП 02</span>
-        <h4 class="spec-box-h">Бесплатный макет</h4>
-        <p class="spec-box-p">Собираю первый экран с вашим текстом. Вы смотрите результат до внесения оплаты.</p>
-      </div>
-
-      <div class="stage-spec-box" data-parallax="0.18">
-        <span class="spec-box-num">ЭТАП 03</span>
-        <h4 class="spec-box-h">Запуск под ключ</h4>
-        <p class="spec-box-p">Регистрация домена, настройка платежей и передача готового сайта за 3–5 дней.</p>
-      </div>
-    </div>
-
-    <!-- Note on bots -->
-    <div style="padding:16px 20px; border-radius:10px; background:var(--bg-card); border:1px solid var(--border-subtle); display:flex; justify-content:space-between; align-items:center; font-size:13.5px; color:var(--text-muted); flex-wrap:wrap; gap:12px;" data-parallax="0.04">
-      <div>Нужен Telegram-бот для заказов или сложный корпоративный каталог? Настройка ботов обсуждается индивидуально.</div>
-      <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--accent-cyan); font-weight:700; text-decoration:none;">Обсудить в Telegram →</a>
-    </div>
-  </main>
+  </footer>
 
 </div>
 
 <script>
 (function() {
-  // Niche live switcher
-  var nicheData = {
-    barber: {
-      url: 'https://barber-bryansk.ru',
-      kicker: 'МУЖСКИЕ СТРИЖКИ · БРЯНСК',
-      title: 'Мужские стрижки и моделирование бороды премиум-класса',
-      desc: 'Онлайн-запись к топ-барберам за 30 секунд. Удобная локация в центре, бесплатный кофе и фирменный уход.',
-      btn: 'Записаться онлайн',
-      bizVal: 'Барбершоп'
-    },
-    auto: {
-      url: 'https://auto-service-pro.ru',
-      kicker: 'АВТОСЕРВИС И ДЕТЕЙЛИНГ · БРЯНСК',
-      title: 'Кузовной ремонт, диагностика и покраска с гарантией 1 год',
-      desc: 'Рассчитайте стоимость ремонта по фото за 5 минут. Собственный склад запчастей и эвакуатор.',
-      btn: 'Рассчитать ремонт по фото',
-      bizVal: 'Автосервис'
-    },
-    cafe: {
-      url: 'https://bistro-cafe.ru',
-      kicker: 'КАФЕ И РЕСТОРАН · БРЯНСК',
-      title: 'Авторские блюда и бесплатная доставка за 40 минут',
-      desc: 'Электронное меню с фотографиями и мгновенной онлайн-оплатой через СБП.',
-      btn: 'Открыть меню и заказать',
-      bizVal: 'Кафе / Ресторан'
-    },
-    clinic: {
-      url: 'https://clinic-denta.ru',
-      kicker: 'СТОМАТОЛОГИЯ И МЕДИЦИНА',
-      title: 'Бережное лечение зубов и имплантация без боли',
-      desc: 'Запись на первичную консультацию и компьютерную томографию со скидкой 20%.',
-      btn: 'Записаться на приём',
-      bizVal: 'Клиника'
-    }
-  };
-
-  var btns = document.querySelectorAll('#nicheSegs .niche-seg-btn');
-  var bUrl = document.getElementById('browserUrl');
-  var dKicker = document.getElementById('demoKicker');
-  var dTitle = document.getElementById('demoTitle');
-  var dDesc = document.getElementById('demoDesc');
-  var dBtn = document.getElementById('demoBtnAction');
-  var hubBiz = document.getElementById('hubBizInp');
-
-  btns.forEach(function(b) {
-    b.addEventListener('click', function() {
-      btns.forEach(function(btn) { btn.classList.remove('active'); });
-      b.classList.add('active');
-      var key = b.getAttribute('data-niche');
-      var item = nicheData[key];
-      if (!item) return;
-
-      if (bUrl) bUrl.textContent = item.url;
-      if (dKicker) dKicker.textContent = item.kicker;
-      if (dTitle) dTitle.textContent = item.title;
-      if (dDesc) dDesc.textContent = item.desc;
-      if (dBtn) dBtn.querySelector('span').textContent = item.btn;
-      if (hubBiz) hubBiz.value = item.bizVal;
-    });
-  });
-
-  // Method radios
-  var pills = document.querySelectorAll('#hubMethods .hub-method-btn');
-  var contactInp = document.getElementById('hubContactInp');
+  // Dynamic contact placeholder based on channel
+  var chips = document.querySelectorAll('#contactChannels .channel-chip-label');
+  var contactInput = document.getElementById('fieldContactVal');
   var phs = {
     telegram: '@username в Telegram',
     whatsapp: 'Номер для WhatsApp (+7...)',
     phone: 'Номер телефона (+7...)'
   };
 
-  pills.forEach(function(pill) {
-    pill.addEventListener('click', function() {
-      pills.forEach(function(p) { p.classList.remove('active'); });
-      pill.classList.add('active');
-      var r = pill.querySelector('input');
+  chips.forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      chips.forEach(function(c) { c.classList.remove('active'); });
+      chip.classList.add('active');
+      var r = chip.querySelector('input');
       if (r) {
         r.checked = true;
-        if (contactInp) contactInp.placeholder = phs[r.value] || 'Контакт для связи';
+        if (contactInput) contactInput.placeholder = phs[r.value] || 'Контакт для связи';
       }
     });
   });
 
-  // Hub Form Submit
-  var form = document.getElementById('hubForm');
-  var btnSub = document.getElementById('btnHubSubmit');
-  var fb = document.getElementById('hubFeedback');
+  // Kinetic SVG interaction
+  var sculpture = document.getElementById('sculpturePoly');
+  if (sculpture) {
+    window.addEventListener('mousemove', function(e) {
+      var xNorm = (e.clientX / window.innerWidth) - 0.5;
+      var yNorm = (e.clientY / window.innerHeight) - 0.5;
+      var rot = xNorm * 8;
+      var transY = yNorm * 6;
+      sculpture.style.transform = 'translate(' + (xNorm * 10) + 'px, ' + transY + 'px) rotate(' + rot + 'deg)';
+      sculpture.style.transformOrigin = '250px 90px';
+      sculpture.style.transition = 'transform 0.15s ease-out';
+    }, { passive: true });
+  }
+
+  // Form submission to /api/leads
+  var form = document.getElementById('mainIntakeForm');
+  var btnSub = document.getElementById('btnSubmitForm');
+  var fb = document.getElementById('formFeedback');
 
   if (form) {
     form.addEventListener('submit', function(e) {
@@ -848,7 +749,7 @@ body {
       if (btnSub) {
         btnSub.disabled = true;
         btnSub.style.opacity = '0.7';
-        btnSub.textContent = 'Отправка заявки…';
+        btnSub.textContent = 'Отправка…';
       }
 
       fetch('/api/leads', {
@@ -860,7 +761,7 @@ body {
           name: fd.get('name') || '',
           contact_method: fd.get('contact_method') || 'telegram',
           contact_value: fd.get('contact_value') || '',
-          source: 'workspace_split_14990'
+          source: 'pure_monument_14990'
         })
       })
       .then(function(res) {
@@ -871,10 +772,10 @@ body {
         if (btnSub) {
           btnSub.textContent = 'Заявка принята ✓';
           btnSub.style.background = '#00E599';
-          btnSub.style.color = '#0A0C12';
+          btnSub.style.color = '#060709';
         }
         if (fb) {
-          fb.innerHTML = 'Принято! Отвечу в течение 30 минут. <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--accent-cyan);font-weight:700;">Написать в Telegram →</a>';
+          fb.innerHTML = 'Заявка принята! Я свяжусь с вами в течение 30 минут. <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:#FFFFFF;font-weight:700;">Написать в Telegram →</a>';
         }
         form.reset();
       })
@@ -882,44 +783,14 @@ body {
         if (btnSub) {
           btnSub.disabled = false;
           btnSub.style.opacity = '1';
-          btnSub.textContent = 'Запустить проект за 14 990 ₽';
+          btnSub.textContent = 'Отправить заявку';
         }
         if (fb) {
-          fb.textContent = 'Ошибка. Пожалуйста, напишите напрямую в Telegram @K_Sofrin.';
+          fb.textContent = 'Ошибка отправки. Пожалуйста, напишите напрямую в Telegram @K_Sofrin.';
         }
       });
     });
   }
-
-  // Parallax Engine for .interactive-stage
-  var stageEl = document.querySelector('.interactive-stage');
-  var parallaxItems = document.querySelectorAll('.interactive-stage [data-parallax]');
-  var ticking = false;
-
-  function updateParallax() {
-    var scrollTop = (stageEl ? stageEl.scrollTop : 0) || window.scrollY || 0;
-    for (var i = 0; i < parallaxItems.length; i++) {
-      var item = parallaxItems[i];
-      var speed = parseFloat(item.getAttribute('data-parallax')) || 0;
-      var offset = Math.round(scrollTop * speed);
-      item.style.transform = 'translate3d(0, ' + (-offset) + 'px, 0)';
-    }
-    ticking = false;
-  }
-
-  function requestParallaxTick() {
-    if (!ticking) {
-      window.requestAnimationFrame(updateParallax);
-      ticking = true;
-    }
-  }
-
-  if (stageEl) {
-    stageEl.addEventListener('scroll', requestParallaxTick, { passive: true });
-  }
-  window.addEventListener('scroll', requestParallaxTick, { passive: true });
-  window.addEventListener('resize', requestParallaxTick, { passive: true });
-  requestParallaxTick();
 })();
 </script>
 </body>
