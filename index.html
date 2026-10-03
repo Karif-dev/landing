@@ -3,54 +3,58 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>KIRILL SOFRIN · High-Craft Web Engineering & Digital Atelier</title>
-<meta name="description" content="Инженерная веб-разработка премиум-уровня: чистый код, 0.4s скорость, 14 990 ₽ под ключ с доменом за 72 часа. Никаких конструкторов и подписок.">
+<title>SOFRIN · Creative Technologist & Digital Production Studio</title>
+<meta name="description" content="Индивидуальное проектирование и разработка цифровых продуктов, интерактивных флагманов и бренд-платформ. Бескомпромиссная эстетика и скорость.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="KIRILL SOFRIN · Инженерная веб-разработка">
-<meta property="og:description" content="Сайты с реактивной скоростью и вау-эффектом. 14 990 ₽ под ключ, запуск за 3 дня, оплата после макета.">
+<meta property="og:title" content="SOFRIN · Creative Technologist & Digital Production Studio">
+<meta property="og:description" content="Проектирование и разработка цифровых флагманов, интерактивных сайтов и дизайн-систем.">
 <meta property="og:image" content="https://karif.up.railway.app/og.png">
-<meta property="theme-color" content="#06070B">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://karif.up.railway.app/">
+<meta name="theme-color" content="#060709">
 <link rel="canonical" href="https://karif.up.railway.app/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2300F0FF'/%3E%3Cpath d='M8 7h5v6l7-6h6l-8 7.5 8.5 10.5H21L13 16.5v7.5H8z' fill='%2306070B'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%23FFFFFF'/%3E%3Cpath d='M8 7h6v7l7-7h7l-9 9 9.5 11H22l-8-9.5V27H8z' fill='%23060709'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Unbounded:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Unbounded:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --hue-accent: 185;
-  --accent-primary: hsl(var(--hue-accent), 100%, 50%);
-  --accent-glow: hsla(var(--hue-accent), 100%, 50%, 0.4);
-  --accent-secondary: #7928CA;
-  --bg-deep: #05060A;
-  --bg-surface: #090B12;
-  --bg-card: rgba(13, 16, 26, 0.75);
-  --border-line: rgba(255, 255, 255, 0.09);
-  --border-active: var(--accent-primary);
-  --text-main: #FFFFFF;
-  --text-muted: #8E96AB;
-  --text-dim: #4B5263;
-  --font-hero: 'Unbounded', system-ui, sans-serif;
-  --font-code: 'JetBrains Mono', monospace;
-  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
-  --radius-panel: 24px;
+  --bg-primary: #060709;
+  --bg-secondary: #0B0D12;
+  --bg-surface: #10131B;
+  --bg-card: rgba(16, 19, 27, 0.7);
+  --bg-glass: rgba(255, 255, 255, 0.03);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-focus: rgba(255, 255, 255, 0.25);
+  --text-primary: #F8F9FA;
+  --text-secondary: #9BA1B0;
+  --text-tertiary: #5D6374;
+  --accent-gold: #E5C384;
+  --accent-cyan: #00F2FE;
+  --accent-gradient: linear-gradient(135deg, #FFFFFF 0%, #D8DCE6 50%, #9098A9 100%);
+  --font-display: 'Unbounded', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --ease-fluid: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-html { scroll-behavior: smooth; color-scheme: dark; background: var(--bg-deep); }
+html { scroll-behavior: smooth; background-color: var(--bg-primary); color-scheme: dark; }
 
 body {
-  background-color: var(--bg-deep);
-  color: var(--text-main);
-  font: 400 15.5px/1.65 var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font: 400 16px/1.65 var(--font-body);
   overflow-x: hidden;
   position: relative;
+  letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
 }
 
-/* INTERACTIVE WEBGL / CANVAS BACKGROUND */
-#bgCanvas {
+/* INTERACTIVE GENERATIVE CANVAS */
+#canvasStage {
   position: fixed;
   inset: 0;
   width: 100%;
@@ -59,1062 +63,1002 @@ body {
   pointer-events: none;
 }
 
-/* Subtle Sci-Fi Scanline & Grid Effect */
-.cyber-grid-overlay {
+/* Ambient Specular Light Fields */
+.ambient-field-1 {
+  position: fixed;
+  top: -20vw;
+  right: -10vw;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(229, 195, 132, 0.08) 0%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+.ambient-field-2 {
+  position: fixed;
+  bottom: -20vw;
+  left: -10vw;
+  width: 65vw;
+  height: 65vw;
+  background: radial-gradient(circle, rgba(0, 242, 254, 0.06) 0%, transparent 70%);
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Fine Noise Grid Texture */
+.texture-grid {
   position: fixed;
   inset: 0;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 48px 48px;
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 72px 72px;
   pointer-events: none;
   z-index: 1;
 }
 
-/* Glowing Radial Cones */
-.ambient-glow {
-  position: fixed;
-  width: 700px;
-  height: 700px;
-  border-radius: 50%;
-  filter: blur(120px);
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.18;
-  transition: background 0.3s;
-}
-.ambient-1 { top: -200px; left: 15%; background: var(--accent-primary); }
-.ambient-2 { bottom: -200px; right: 10%; background: var(--accent-secondary); }
-
-/* MAIN SHELL */
-.app-shell {
+/* MAIN WRAPPER */
+.layout-wrapper {
   position: relative;
   z-index: 2;
-  max-width: 1320px;
+  max-width: 1360px;
   margin: 0 auto;
-  padding: 0 24px 60px;
+  padding: 0 32px 80px;
   display: flex;
   flex-direction: column;
-  gap: 56px;
+  gap: 100px;
 }
 
-/* TELEMETRY TOP BAR */
-.telemetry-bar {
+/* NAVIGATION HEADER */
+.site-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 18px;
-  background: rgba(8, 10, 18, 0.85);
-  border: 1px solid var(--border-line);
-  border-radius: 12px;
-  font-family: var(--font-code);
-  font-size: 11.5px;
-  color: var(--text-muted);
-  margin-top: 12px;
-  backdrop-filter: blur(12px);
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border-subtle);
 }
-.telemetry-cluster {
+
+.brand-monogram {
   display: flex;
   align-items: center;
   gap: 16px;
-  flex-wrap: wrap;
-}
-.telemetry-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-.badge-green {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #00FF88;
-  box-shadow: 0 0 10px #00FF88;
-  animation: pulse-ring 2s infinite;
-}
-@keyframes pulse-ring { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-
-.sfx-toggle-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-line);
-  color: var(--text-main);
-  border-radius: 8px;
-  padding: 3px 10px;
-  font-family: var(--font-code);
-  font-size: 11px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.sfx-toggle-btn:hover {
-  background: var(--accent-glow);
-  color: #fff;
-  border-color: var(--accent-primary);
-}
-
-/* FLOATING COCKPIT HEADER */
-.cockpit-header {
-  position: sticky;
-  top: 14px;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 26px;
-  border-radius: 9999px;
-  background: rgba(8, 10, 18, 0.82);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
-}
-
-.cockpit-brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
   text-decoration: none;
   color: inherit;
 }
-.cockpit-avatar-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+.monogram-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #FFFFFF;
+  color: #060709;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 19px;
   display: grid;
   place-items: center;
-  font-family: var(--font-hero);
-  font-weight: 900;
-  font-size: 18px;
-  color: #05060A;
-  box-shadow: 0 0 24px var(--accent-glow);
+  transition: transform 0.3s var(--ease-fluid);
 }
-.cockpit-titles {
+.brand-monogram:hover .monogram-mark {
+  transform: rotate(-6deg) scale(1.05);
+}
+.monogram-text {
   display: flex;
   flex-direction: column;
 }
-.cockpit-name {
-  font-family: var(--font-hero);
-  font-size: 14.5px;
+.monogram-title {
+  font-family: var(--font-display);
+  font-size: 15px;
   font-weight: 800;
-  letter-spacing: 0.02em;
-  color: #fff;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.cockpit-spec {
-  font-family: var(--font-code);
+.status-beacon {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 12px #10B981;
+}
+.monogram-subtitle {
+  font-family: var(--font-mono);
   font-size: 11px;
-  color: var(--accent-primary);
+  color: var(--text-tertiary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.cockpit-nav-links {
+.nav-links-menu {
   display: flex;
-  gap: 24px;
-  font-size: 13.5px;
-  font-weight: 700;
-  color: var(--text-muted);
+  align-items: center;
+  gap: 36px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
 }
-.cockpit-nav-links a {
+.nav-links-menu a {
   text-decoration: none;
   color: inherit;
   transition: color 0.2s;
   position: relative;
-  padding: 4px 0;
+  padding: 6px 0;
 }
-.cockpit-nav-links a:hover {
-  color: var(--accent-primary);
+.nav-links-menu a:hover {
+  color: #FFFFFF;
+}
+.nav-links-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #FFFFFF;
+  transition: width 0.3s var(--ease-fluid);
+}
+.nav-links-menu a:hover::after {
+  width: 100%;
 }
 
-.btn-cockpit-fire {
+.nav-action-cluster {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.btn-nav-commission {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  height: 40px;
-  padding: 0 22px;
-  border-radius: 9999px;
-  background: linear-gradient(135deg, var(--accent-primary), #00A6FF);
-  color: #05060A;
+  gap: 10px;
+  height: 44px;
+  padding: 0 24px;
+  border-radius: 99px;
+  background: #FFFFFF;
+  color: #060709;
+  font-family: var(--font-display);
+  font-size: 12.5px;
   font-weight: 800;
-  font-size: 13.5px;
+  letter-spacing: 0.02em;
   text-decoration: none;
-  box-shadow: 0 0 20px var(--accent-glow);
-  transition: transform 0.2s, box-shadow 0.2s;
-  border: 0;
-  cursor: pointer;
+  transition: transform 0.25s var(--ease-fluid), box-shadow 0.25s;
 }
-.btn-cockpit-fire:hover {
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 0 30px var(--accent-primary);
+.btn-nav-commission:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.25);
 }
 
-/* SECTION 1: HERO EPIC STAGE */
-.hero-epic {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 36px;
+/* SECTION 1: MONUMENTAL MANIFESTO HERO */
+.hero-stage {
+  padding: 60px 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.hero-meta-kicker {
+  display: inline-flex;
   align-items: center;
-  padding-top: 16px;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--accent-gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.hero-meta-kicker::before {
+  content: '01 //';
+  color: var(--text-tertiary);
 }
 
-.hero-statement-box {
+.hero-manifesto-title {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 6.2vw, 88px);
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+  color: #FFFFFF;
+  text-wrap: balance;
+  max-width: 1200px;
+}
+.hero-manifesto-title span.editorial-italic {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-gold);
+  font-family: var(--font-body);
+  letter-spacing: -0.03em;
+}
+
+.hero-lower-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: flex-end;
+  padding-top: 24px;
+}
+.hero-editorial-lead {
+  font-size: clamp(18px, 1.8vw, 24px);
+  line-height: 1.5;
+  color: var(--text-secondary);
+  font-weight: 300;
+  max-width: 680px;
+}
+.hero-editorial-lead b {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.hero-metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 24px;
+}
+.metric-capsule {
+  display: flex;
+  flex-direction: column;
+}
+.metric-capsule-num {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.2vw, 42px);
+  font-weight: 900;
+  line-height: 1;
+  color: #FFFFFF;
+}
+.metric-capsule-lbl {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--text-tertiary);
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* SECTION 2: EXHIBITION OF WORKS (SELECTED DIGITAL ARTIFACTS) */
+.exhibition-section {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.section-headline-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.section-headline-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.8vw, 52px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+.section-index-tag {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+.artifacts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+}
+.artifact-card {
+  border-radius: 28px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s var(--ease-fluid), border-color 0.4s, box-shadow 0.4s;
+  cursor: pointer;
+  position: relative;
+}
+.artifact-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+}
+.artifact-stage-visual {
+  height: 380px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #090B10;
+}
+
+/* Visual Mockups created with Pure Geometric CSS Art */
+.visual-bg-1 {
+  background: radial-gradient(circle at 70% 30%, rgba(229, 195, 132, 0.25), transparent 60%), #0A0D15;
+}
+.visual-bg-2 {
+  background: radial-gradient(circle at 30% 70%, rgba(0, 242, 254, 0.22), transparent 60%), #080A12;
+}
+.visual-bg-3 {
+  background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.25), transparent 65%), #0C0A15;
+}
+.visual-bg-4 {
+  background: radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.2), transparent 60%), #080E0D;
+}
+
+.artifact-canvas-art {
+  width: 75%;
+  height: 70%;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(14, 17, 26, 0.85);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.4s var(--ease-fluid);
+}
+.artifact-card:hover .artifact-canvas-art {
+  transform: scale(1.04) rotate(-1deg);
+}
+
+.artifact-info-box {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--bg-card);
+}
+.artifact-category-pill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+}
+.artifact-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+}
+.artifact-summary {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.artifact-tags-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+.tag-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+}
+
+/* SECTION 3: ENGINEERING PHILOSOPHY & DISCIPLINES */
+.disciplines-section {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 64px;
+  align-items: flex-start;
+}
+.disciplines-sticky-col {
+  position: sticky;
+  top: 120px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-
-.hero-tech-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 6px 16px;
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border-line);
-  color: var(--accent-primary);
-  font-family: var(--font-code);
-  font-size: 12.5px;
-  font-weight: 700;
-  width: fit-content;
-}
-
-.hero-epic-title {
-  font-family: var(--font-hero);
-  font-size: clamp(34px, 4.8vw, 62px);
+.disciplines-sticky-col h2 {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 54px);
   font-weight: 900;
   line-height: 1.05;
   letter-spacing: -0.04em;
-  color: #fff;
-  text-wrap: balance;
 }
-
-.hero-epic-title .gradient-span {
-  background: linear-gradient(135deg, #FFFFFF 15%, var(--accent-primary) 70%, var(--accent-secondary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-.hero-epic-desc {
-  font-size: 18px;
+.disciplines-sticky-col p {
+  font-size: 17px;
+  color: var(--text-secondary);
   line-height: 1.6;
-  color: var(--text-muted);
-  max-width: 600px;
+  max-width: 460px;
 }
 
-.hero-epic-cta-row {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 12px;
-  flex-wrap: wrap;
-}
-
-.btn-quantum-laser {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  height: 60px;
-  padding: 0 36px;
-  border-radius: 18px;
-  background: linear-gradient(135deg, var(--accent-primary), #0099FF);
-  color: #05060A;
-  font-family: var(--font-hero);
-  font-weight: 900;
-  font-size: 15.5px;
-  text-decoration: none;
-  border: 0;
-  cursor: pointer;
-  box-shadow: 0 16px 40px -8px var(--accent-glow), inset 0 1px 2px rgba(255, 255, 255, 0.6);
-  transition: transform 0.25s, box-shadow 0.25s;
-}
-.btn-quantum-laser:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 20px 50px var(--accent-glow);
-}
-
-.btn-quantum-ghost {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  height: 60px;
-  padding: 0 28px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border-line);
-  color: #fff;
-  font-weight: 700;
-  font-size: 15.5px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.btn-quantum-ghost:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--accent-primary);
-  transform: translateY(-2px);
-}
-
-/* INTERACTIVE DEVELOPER CONSOLE TERMINAL */
-.interactive-terminal-card {
-  border-radius: var(--radius-panel);
-  background: rgba(7, 9, 15, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 240, 255, 0.1);
-  overflow: hidden;
-  font-family: var(--font-code);
+.disciplines-list {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
-
-.term-topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 18px;
-  background: rgba(0, 0, 0, 0.6);
-  border-bottom: 1px solid var(--border-line);
-}
-.term-controls {
-  display: flex;
-  gap: 8px;
-}
-.term-controls span {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-}
-.term-controls span:nth-child(1) { background: #FF5F56; }
-.term-controls span:nth-child(2) { background: #FFBD2E; }
-.term-controls span:nth-child(3) { background: #27C93F; }
-
-.term-title {
-  font-size: 12px;
-  color: var(--text-muted);
-}
-.term-badge-live {
-  font-size: 11px;
-  color: #00FF88;
-}
-
-.term-screen {
-  padding: 20px;
-  height: 290px;
-  overflow-y: auto;
-  font-size: 13px;
-  line-height: 1.6;
-  color: #E2E8F0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  scrollbar-width: thin;
-}
-.term-row { word-break: break-all; }
-.term-prompt { color: var(--accent-primary); font-weight: 700; }
-.term-out-success { color: #00FF88; }
-.term-out-highlight { color: #FFD700; }
-
-.term-quick-bar {
-  display: flex;
-  gap: 6px;
-  padding: 10px 14px;
-  background: rgba(0, 0, 0, 0.4);
-  border-top: 1px solid var(--border-line);
-  overflow-x: auto;
-}
-.term-btn {
-  padding: 6px 12px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-line);
-  color: var(--text-muted);
-  font-family: var(--font-code);
-  font-size: 11.5px;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: all 0.2s;
-}
-.term-btn:hover {
-  background: var(--accent-primary);
-  color: #05060A;
-  border-color: var(--accent-primary);
-}
-
-.term-input-row {
-  display: flex;
-  align-items: center;
-  padding: 12px 16px;
-  background: rgba(0, 0, 0, 0.7);
-  border-top: 1px solid var(--border-line);
-}
-.term-input-field {
-  flex: 1;
-  background: transparent;
-  border: 0;
-  outline: 0;
-  color: #fff;
-  font-family: var(--font-code);
-  font-size: 13px;
-}
-
-/* SECTION 2: LIVE ARCHITECTURE TUNER (Interactive Playground) */
-.tuner-section {
-  padding: 44px;
-  border-radius: 32px;
+.discipline-item-card {
+  padding: 36px;
+  border-radius: 24px;
   background: var(--bg-card);
-  backdrop-filter: blur(24px);
-  border: 1px solid var(--border-line);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.3s var(--ease-fluid);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.discipline-item-card:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateX(8px);
+  background: var(--bg-surface);
+}
+.discipline-num {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--accent-gold);
+  font-weight: 700;
+}
+.discipline-heading {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+.discipline-body {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* SECTION 4: REAL-TIME INTERACTIVE AUDIO-VISUAL LAB */
+.interactive-lab-card {
+  padding: 48px;
+  border-radius: 32px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 48px;
   align-items: center;
 }
-
-.tuner-controls-box {
+.lab-interface-controls {
   display: flex;
   flex-direction: column;
-  gap: 22px;
-}
-.tuner-control-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.tuner-label-row {
-  display: flex;
-  justify-content: space-between;
-  font-family: var(--font-code);
-  font-size: 13px;
-  color: var(--text-muted);
-}
-.tuner-slider {
-  width: 100%;
-  accent-color: var(--accent-primary);
-  cursor: pointer;
-}
-
-/* 3D TILT SPECULAR PREVIEW CARD */
-.tilt-card-stage {
-  perspective: 1000px;
-  display: flex;
-  justify-content: center;
-}
-.tilt-card {
-  width: 100%;
-  max-width: 440px;
-  min-height: 420px;
-  border-radius: var(--radius-panel);
-  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.12), transparent 70%), #0D111E;
-  border: 1px solid var(--border-line);
-  padding: 36px;
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 30px var(--accent-glow);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transform-style: preserve-3d;
-  transition: transform 0.1s ease-out;
-  position: relative;
-  overflow: hidden;
-}
-.tilt-card-glare {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15), transparent 60%);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-/* SECTION 3: 3-DAY PRODUCTION SPRINT */
-.sprint-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
-.sprint-card {
-  padding: 36px;
-  border-radius: 28px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-line);
+.lab-slider-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.lab-slider-meta {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}
+.lab-slider-input {
+  width: 100%;
+  accent-color: #FFFFFF;
+  cursor: pointer;
+}
+
+.lab-preview-viewport {
+  height: 380px;
+  border-radius: 24px;
+  background: #030406;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+#labCanvasView {
+  width: 100%;
+  height: 100%;
+}
+.lab-status-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent-gold);
+  background: rgba(0, 0, 0, 0.6);
+  padding: 4px 12px;
+  border-radius: 99px;
+  border: 1px solid var(--border-subtle);
+}
+
+/* SECTION 5: COMMISSION & INQUIRY PROTOCOL */
+.commission-station {
+  padding: 64px;
+  border-radius: 36px;
+  background: 
+    radial-gradient(ellipse at 100% 0%, rgba(229, 195, 132, 0.12), transparent 60%),
+    radial-gradient(ellipse at 0% 100%, rgba(0, 242, 254, 0.08), transparent 60%),
+    var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 64px;
+}
+
+.commission-manifesto {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 300px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-  overflow: hidden;
 }
-.sprint-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--accent-primary);
-  box-shadow: 0 20px 50px var(--accent-glow);
-}
-.sprint-num {
-  font-family: var(--font-hero);
-  font-size: 48px;
+.commission-manifesto h2 {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.2vw, 56px);
   font-weight: 900;
-  color: var(--accent-primary);
-  line-height: 1;
-  opacity: 0.4;
-  margin-bottom: 16px;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
 }
-
-/* SECTION 4: UNFAIR VALUE PRICING */
-.pricing-matrix-hero {
-  padding: 56px;
-  border-radius: 36px;
-  background: 
-    radial-gradient(ellipse at 100% 0%, var(--accent-glow), transparent 60%),
-    rgba(10, 14, 24, 0.9);
-  border: 1px solid var(--border-active);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 0 0 50px var(--accent-glow);
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 48px;
-  align-items: center;
+.commission-manifesto p {
+  color: var(--text-secondary);
+  font-size: 17px;
+  line-height: 1.6;
+  margin-top: 16px;
+  max-width: 500px;
 }
-.price-display-giant {
-  font-family: var(--font-hero);
-  font-size: clamp(48px, 6.2vw, 78px);
-  font-weight: 900;
-  letter-spacing: -0.05em;
-  color: var(--accent-primary);
-  line-height: 1;
-  text-shadow: 0 0 30px var(--accent-glow);
-}
-.features-grid-checklist {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  list-style: none;
-  margin-top: 28px;
-}
-.features-grid-checklist li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 15px;
-}
-.features-grid-checklist svg {
-  color: #00FF88;
-  width: 18px;
-  height: 18px;
-  flex: none;
-}
-
-/* SECTION 5: FAST-LANE ORDER TERMINAL (#order) */
-.order-terminal-wrapper {
-  padding: 56px;
-  border-radius: 36px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-line);
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 48px;
-}
-
-.order-input-block {
-  height: 56px;
-  border-radius: 16px;
-  border: 1px solid var(--border-line);
-  background: rgba(5, 7, 12, 0.9);
-  color: #fff;
-  padding: 0 20px;
-  font: 500 15px var(--font-sans);
-  outline: 0;
-  transition: all 0.2s;
-  width: 100%;
-}
-.order-input-block:focus {
-  border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px var(--accent-glow);
-}
-
-.comm-selector-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-}
-.comm-selector-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 44px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border-line);
-  color: var(--text-muted);
-  font-family: var(--font-code);
-  font-size: 12.5px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.comm-selector-btn input { display: none; }
-.comm-selector-btn.active {
-  background: var(--accent-primary);
-  color: #05060A;
-  border-color: var(--accent-primary);
-  box-shadow: 0 0 16px var(--accent-glow);
-}
-
-/* FAQ */
-.faq-stack {
+.direct-channels-row {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  margin-top: 32px;
+  font-family: var(--font-mono);
+  font-size: 13.5px;
 }
-.faq-box {
-  border-radius: 20px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-line);
-  overflow: hidden;
-}
-.faq-box[open] { border-color: var(--accent-primary); }
-.faq-box summary {
-  list-style: none;
-  padding: 22px 28px;
-  font-family: var(--font-hero);
-  font-weight: 800;
-  font-size: 16.5px;
+.direct-link-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  color: #fff;
+  gap: 10px;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.2s;
 }
-.faq-box summary::-webkit-details-marker { display: none; }
-.faq-mark { font-size: 22px; color: var(--accent-primary); transition: transform 0.2s; }
-.faq-box[open] .faq-mark { transform: rotate(45deg); }
-.faq-inner {
-  padding: 0 28px 24px;
-  color: var(--text-muted);
-  font-size: 15px;
-  line-height: 1.6;
+.direct-link-item:hover { color: var(--accent-gold); }
+
+/* ACTUAL COMMISSION INQUIRY FORM */
+.commission-form-core {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.form-field-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-tertiary);
+}
+.form-core-input {
+  height: 56px;
+  border-radius: 14px;
+  border: 1px solid var(--border-subtle);
+  background: rgba(6, 7, 9, 0.7);
+  color: #FFFFFF;
+  padding: 0 20px;
+  font: 500 15px var(--font-body);
+  outline: 0;
+  transition: all 0.25s;
+  width: 100%;
+}
+.form-core-input:focus {
+  border-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.type-segmented-matrix {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.type-seg-chip {
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.type-seg-chip input { display: none; }
+.type-seg-chip.active {
+  background: #FFFFFF;
+  color: #060709;
+  border-color: #FFFFFF;
+  font-weight: 700;
+}
+
+.btn-commission-send {
+  height: 60px;
+  border-radius: 16px;
+  background: #FFFFFF;
+  color: #060709;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  border: 0;
+  cursor: pointer;
+  box-shadow: 0 16px 40px rgba(255, 255, 255, 0.15);
+  transition: transform 0.25s var(--ease-fluid), box-shadow 0.25s;
+  margin-top: 8px;
+}
+.btn-commission-send:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 50px rgba(255, 255, 255, 0.3);
 }
 
 /* FOOTER */
-.master-footer {
+.curated-footer {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 32px 0 12px;
-  border-top: 1px solid var(--border-line);
-  font-family: var(--font-code);
-  font-size: 12.5px;
-  color: var(--text-dim);
+  align-items: center;
+  padding: 40px 0 10px;
+  border-top: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-tertiary);
 }
-.master-footer a { color: inherit; text-decoration: none; }
-.master-footer a:hover { color: var(--accent-primary); }
+.curated-footer a { color: inherit; text-decoration: none; }
+.curated-footer a:hover { color: #FFFFFF; }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .cockpit-nav-links { display: none; }
-  .hero-epic { grid-template-columns: 1fr; }
-  .tuner-section { grid-template-columns: 1fr; padding: 28px 20px; }
-  .sprint-grid { grid-template-columns: 1fr; }
-  .pricing-matrix-hero { grid-template-columns: 1fr; padding: 32px 24px; }
-  .order-terminal-wrapper { grid-template-columns: 1fr; padding: 32px 24px; }
-  .features-grid-checklist { grid-template-columns: 1fr; }
-  .comm-selector-grid { grid-template-columns: 1fr 1fr; }
-  .app-shell { gap: 40px; padding: 0 16px 80px; }
+/* RESPONSIVE MEDIA QUERIES */
+@media (max-width: 960px) {
+  .nav-links-menu { display: none; }
+  .hero-lower-grid { grid-template-columns: 1fr; gap: 32px; }
+  .artifacts-grid { grid-template-columns: 1fr; }
+  .disciplines-section { grid-template-columns: 1fr; }
+  .disciplines-sticky-col { position: static; }
+  .interactive-lab-card { grid-template-columns: 1fr; padding: 28px 20px; }
+  .commission-station { grid-template-columns: 1fr; padding: 36px 24px; gap: 40px; }
+  .type-segmented-matrix { grid-template-columns: 1fr; }
+  .layout-wrapper { gap: 64px; padding: 0 20px 60px; }
 }
 </style>
 </head>
 
 <body>
-<canvas id="bgCanvas"></canvas>
-<div class="cyber-grid-overlay"></div>
-<div class="ambient-glow ambient-1"></div>
-<div class="ambient-glow ambient-2"></div>
+<canvas id="canvasStage"></canvas>
+<div class="texture-grid"></div>
+<div class="ambient-field-1"></div>
+<div class="ambient-field-2"></div>
 
-<div class="app-shell">
+<div class="layout-wrapper">
 
-  <!-- TELEMETRY BAR -->
-  <div class="telemetry-bar">
-    <div class="telemetry-cluster">
-      <div class="telemetry-item"><span class="badge-green"></span> STUDIO ENGINE: ACTIVE</div>
-      <div class="telemetry-item">LATENCY: <b id="pingVal" style="color:#00FF88;">0.38s</b></div>
-      <div class="telemetry-item">FPS: <b id="fpsVal" style="color:var(--accent-primary);">60</b></div>
-      <div class="telemetry-item">STACK: <b>VANILLA TS / ZERO BLOAT</b></div>
-    </div>
-    <div>
-      <button class="sfx-toggle-btn" id="sfxToggleBtn" type="button">🔊 SFX: ON</button>
-    </div>
-  </div>
-
-  <!-- FLOATING COCKPIT HEADER -->
-  <header class="cockpit-header" role="banner">
-    <a class="cockpit-brand" href="#">
-      <div class="cockpit-avatar-icon">K</div>
-      <div class="cockpit-titles">
-        <span class="cockpit-name">KIRILL SOFRIN</span>
-        <span class="cockpit-spec">&gt;_ CREATIVE WEB ENGINEER</span>
+  <!-- NAVIGATION HEADER -->
+  <header class="site-nav" role="banner">
+    <a class="brand-monogram" href="#">
+      <div class="monogram-mark">S</div>
+      <div class="monogram-text">
+        <span class="monogram-title">SOFRIN <span class="status-beacon" title="Доступен для новых проектов"></span></span>
+        <span class="monogram-subtitle">Creative Technologist</span>
       </div>
     </a>
 
-    <nav class="cockpit-nav-links" aria-label="Меню">
-      <a href="#tuner">Архитектура</a>
-      <a href="#sprint">Процесс</a>
-      <a href="#pricing">Стоимость</a>
-      <a href="#faq">FAQ</a>
+    <nav class="nav-links-menu" aria-label="Разделы">
+      <a href="#works">Избранные проекты</a>
+      <a href="#disciplines">Дисциплины</a>
+      <a href="#lab">Интерактивный стенд</a>
+      <a href="#commission">Сотрудничество</a>
     </nav>
 
-    <a class="btn-cockpit-fire" href="#order">
-      <span>Заказать за 14 990 ₽</span>
-      <span aria-hidden="true">→</span>
-    </a>
+    <div class="nav-action-cluster">
+      <a class="btn-nav-commission" href="#commission">
+        <span>Обсудить проект</span>
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
   </header>
 
-  <!-- SECTION 1: HERO EPIC STAGE -->
-  <section class="hero-epic">
-    <div class="hero-statement-box">
-      <div class="hero-tech-kicker">
-        <span>⚡ 72 ЧАСА ДО БОЕВОГО РЕЛИЗА · ДОМЕН ВКЛЮЧЁН</span>
-      </div>
-
-      <h1 class="hero-epic-title">
-        Сайты с чистой инженерной мощью, которые <span class="gradient-span">делают кассу бизнесу</span>
-      </h1>
-
-      <p class="hero-epic-desc">
-        Разрабатываю быстрые веб-интерфейсы без тормозящих конструкторов и абонентских плат. 14 990 ₽ под ключ с официальным доменом на ваше имя. Оплата строго после согласования макета.
-      </p>
-
-      <div class="hero-epic-cta-row">
-        <a class="btn-quantum-laser" href="#order">
-          <span>Забронировать слот →</span>
-        </a>
-        <a class="btn-quantum-ghost" href="#tuner">
-          <span>Тест архитектуры ↓</span>
-        </a>
-      </div>
+  <!-- SECTION 1: MANIFESTO HERO -->
+  <section class="hero-stage">
+    <div class="hero-meta-kicker">
+      <span>Studio Portfolio &amp; Digital Engineering</span>
     </div>
 
-    <!-- Right: Interactive Hacker Terminal -->
-    <div class="interactive-terminal-card" id="terminalCard">
-      <div class="term-topbar">
-        <div class="term-controls">
-          <span></span><span></span><span></span>
+    <h1 class="hero-manifesto-title">
+      Проектирую и создаю <span class="editorial-italic">цифровые флагманы</span>, которые захватывают внимание
+    </h1>
+
+    <div class="hero-lower-grid">
+      <p class="hero-editorial-lead">
+        Никаких конвейерных шаблонов и однотипных блоков. Индивидуальный дизайн, авторская типографика и реактивный чистый код, превращающий посетителей в лояльных клиентов.
+      </p>
+
+      <div class="hero-metrics-strip">
+        <div class="metric-capsule">
+          <span class="metric-capsule-num">0.3s</span>
+          <span class="metric-capsule-lbl">First Paint</span>
         </div>
-        <div class="term-title">kirill@studio-atelier: ~ (zsh)</div>
-        <div class="term-badge-live">● LIVE CLI</div>
+        <div class="metric-capsule">
+          <span class="metric-capsule-num">100</span>
+          <span class="metric-capsule-lbl">Lighthouse</span>
+        </div>
+        <div class="metric-capsule">
+          <span class="metric-capsule-num">60</span>
+          <span class="metric-capsule-lbl">FPS Motion</span>
+        </div>
       </div>
-
-      <div class="term-screen" id="termScreen">
-        <div class="term-row"><span class="term-prompt">kirill@studio:~$</span> init --experience=bespoke</div>
-        <div class="term-row term-out-success">✓ Performance verified: 100/100 Google Lighthouse</div>
-        <div class="term-row term-out-success">✓ Architecture: Zero-bloat, Pure Semantic Engine</div>
-        <div class="term-row term-out-highlight">★ Fixed investment: 14 990 ₽ (Domain .ru on your name included)</div>
-        <div class="term-row"><span class="term-prompt">kirill@studio:~$</span> type 'help' or click quick buttons below</div>
-      </div>
-
-      <div class="term-quick-bar">
-        <button class="term-btn" data-cmd="specs" type="button">specs.json</button>
-        <button class="term-btn" data-cmd="speed" type="button">speed_test</button>
-        <button class="term-btn" data-cmd="pricing" type="button">pricing</button>
-        <button class="term-btn" data-cmd="order" type="button">sudo order</button>
-        <button class="term-btn" data-cmd="clear" type="button">clear</button>
-      </div>
-
-      <form class="term-input-row" id="termForm">
-        <span class="term-prompt" style="margin-right:8px;">$&nbsp;</span>
-        <input class="term-input-field" id="termInput" placeholder="Введите команду (help, specs, order...)" autocomplete="off">
-      </form>
     </div>
   </section>
 
-  <!-- SECTION 2: LIVE ARCHITECTURE TUNER -->
-  <section class="tuner-section" id="tuner">
-    <div class="tuner-controls-box">
+  <!-- SECTION 2: EXHIBITION OF WORKS -->
+  <section class="exhibition-section" id="works">
+    <div class="section-headline-bar">
       <div>
-        <div style="font-family: var(--font-code); font-size: 12px; color: var(--accent-primary); letter-spacing: 0.1em; text-transform: uppercase;">
-          ИНТЕРАКТИВНЫЙ ТЮНЕР ДИЗАЙНА
+        <div class="hero-meta-kicker">02 // Selected Works</div>
+        <h2 class="section-headline-title">Цифровые артефакты</h2>
+      </div>
+      <span class="section-index-tag">[ 04 Индивидуальных концепта ]</span>
+    </div>
+
+    <div class="artifacts-grid">
+      <!-- Project 1 -->
+      <article class="artifact-card" onclick="document.getElementById('commission').scrollIntoView({behavior:'smooth'})">
+        <div class="artifact-stage-visual visual-bg-1">
+          <div class="artifact-canvas-art">
+            <div style="font-family:var(--font-mono); font-size:11px; color:var(--accent-gold);">PROJECT // 01</div>
+            <div style="font-family:var(--font-display); font-size:22px; font-weight:800; color:#fff;">AETHER RESIDENCE</div>
+            <div style="font-family:var(--font-mono); font-size:12px; color:var(--text-secondary);">SPATIAL ARCHITECTURE &amp; INTERACTIVE CATALOG</div>
+          </div>
         </div>
-        <h2 style="font-family: var(--font-hero); font-size: clamp(26px, 3.2vw, 38px); font-weight: 900; line-height: 1.15; margin-top: 8px;">
-          Управляйте геометрией и атмосферой
-        </h2>
-        <p style="color: var(--text-muted); font-size: 15px; margin-top: 8px;">
-          Подвигайте ползунки и почувствуйте, как вживую трансформируется карточка продукта и акцентный свет.
+        <div class="artifact-info-box">
+          <span class="artifact-category-pill">Real Estate &amp; Architecture</span>
+          <h3 class="artifact-title">Aether Luxury Residences</h3>
+          <p class="artifact-summary">
+            Интерактивная презентация элитных объектов недвижимости с плавной кинематографичной анимацией и фильтрацией апартаментов.
+          </p>
+          <div class="artifact-tags-row">
+            <span class="tag-badge">WebGL Shaders</span>
+            <span class="tag-badge">Editorial Typography</span>
+            <span class="tag-badge">Fast SSR</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="artifact-card" onclick="document.getElementById('commission').scrollIntoView({behavior:'smooth'})">
+        <div class="artifact-stage-visual visual-bg-2">
+          <div class="artifact-canvas-art">
+            <div style="font-family:var(--font-mono); font-size:11px; color:var(--accent-cyan);">PROJECT // 02</div>
+            <div style="font-family:var(--font-display); font-size:22px; font-weight:800; color:#fff;">KINETIC FINTECH</div>
+            <div style="font-family:var(--font-mono); font-size:12px; color:var(--text-secondary);">REAL-TIME LIQUIDITY &amp; WEALTH MANAGEMENT</div>
+          </div>
+        </div>
+        <div class="artifact-info-box">
+          <span class="artifact-category-pill">Fintech &amp; High-Frequency</span>
+          <h3 class="artifact-title">Kinetic Capital Platform</h3>
+          <p class="artifact-summary">
+            Торговый и аналитический терминал с нулевой задержкой отрисовки графиков и премиальной дизайн-системой.
+          </p>
+          <div class="artifact-tags-row">
+            <span class="tag-badge">Micro-Interactions</span>
+            <span class="tag-badge">Dark Cyber Interface</span>
+            <span class="tag-badge">Sub-second Latency</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="artifact-card" onclick="document.getElementById('commission').scrollIntoView({behavior:'smooth'})">
+        <div class="artifact-stage-visual visual-bg-3">
+          <div class="artifact-canvas-art">
+            <div style="font-family:var(--font-mono); font-size:11px; color:#A78BFA;">PROJECT // 03</div>
+            <div style="font-family:var(--font-display); font-size:22px; font-weight:800; color:#fff;">MONOLITH ATELIER</div>
+            <div style="font-family:var(--font-mono); font-size:12px; color:var(--text-secondary);">BESPOKE BESPOKE TAILORING &amp; E-COMMERCE</div>
+          </div>
+        </div>
+        <div class="artifact-info-box">
+          <span class="artifact-category-pill">Haute Horlogerie &amp; Luxury</span>
+          <h3 class="artifact-title">Monolith Bespoke Timepieces</h3>
+          <p class="artifact-summary">
+            Флагманский интернет-магазин с 3D-конфигуратором часов и бесшовным процессом персонального оформления.
+          </p>
+          <div class="artifact-tags-row">
+            <span class="tag-badge">3D Configurator</span>
+            <span class="tag-badge">High Conversion</span>
+            <span class="tag-badge">Custom Audio SFX</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="artifact-card" onclick="document.getElementById('commission').scrollIntoView({behavior:'smooth'})">
+        <div class="artifact-stage-visual visual-bg-4">
+          <div class="artifact-canvas-art">
+            <div style="font-family:var(--font-mono); font-size:11px; color:#34D399;">PROJECT // 04</div>
+            <div style="font-family:var(--font-display); font-size:22px; font-weight:800; color:#fff;">QUANTUM HEALTH</div>
+            <div style="font-family:var(--font-mono); font-size:12px; color:var(--text-secondary);">PREVENTIVE CLINIC &amp; INSTANT BOOKING</div>
+          </div>
+        </div>
+        <div class="artifact-info-box">
+          <span class="artifact-category-pill">Medical &amp; High-Tech Health</span>
+          <h3 class="artifact-title">Quantum Longevity Institute</h3>
+          <p class="artifact-summary">
+            Сайт частной медицинской клиники с онлайн-записью к специалистам за 30 секунд и интерактивной диагностической картой.
+          </p>
+          <div class="artifact-tags-row">
+            <span class="tag-badge">Instant Booking</span>
+            <span class="tag-badge">HIPAA/Security</span>
+            <span class="tag-badge">Mobile 1st</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECTION 3: DISCIPLINES & PRINCIPLES -->
+  <section class="disciplines-section" id="disciplines">
+    <div class="disciplines-sticky-col">
+      <div class="hero-meta-kicker">03 // Disciplines</div>
+      <h2>Бескомпромиссный инженерный подход</h2>
+      <p>
+        Каждый проект проектируется как индивидуальный продукт: от архитектуры данных и типографической сетки до микросекундной оптимизации кода.
+      </p>
+    </div>
+
+    <div class="disciplines-list">
+      <div class="discipline-item-card">
+        <span class="discipline-num">01 / BRAND &amp; ART DIRECTION</span>
+        <h3 class="discipline-heading">Идентичность и арт-дирекшн</h3>
+        <p class="discipline-body">
+          Разработка визуального языка, который выделяет бренд среди одинаковых шаблонов конкурентов. Шрифтовая иерархия, цветовая драматургия и визуальный ритм.
         </p>
       </div>
 
-      <div class="tuner-control-group">
-        <div class="tuner-label-row">
-          <span>ОТТЕНОК НЕОНА (HUE)</span>
-          <b id="hueValue">185° Cyan</b>
-        </div>
-        <input class="tuner-slider" id="sliderHue" type="range" min="0" max="360" value="185">
+      <div class="discipline-item-card">
+        <span class="discipline-num">02 / INTERACTION ARCHITECTURE</span>
+        <h3 class="discipline-heading">Архитектура взаимодействий</h3>
+        <p class="discipline-body">
+          Проектирование пользовательских сценариев, где каждое касание даёт естественный отклик. Мгновенные переходы, тактильные микроанимации и высокая конверсия.
+        </p>
       </div>
 
-      <div class="tuner-control-group">
-        <div class="tuner-label-row">
-          <span>СКРУГЛЕНИЕ УГЛОВ (RADIUS)</span>
-          <b id="radiusValue">24px</b>
-        </div>
-        <input class="tuner-slider" id="sliderRadius" type="range" min="0" max="40" value="24">
+      <div class="discipline-item-card">
+        <span class="discipline-num">03 / PERFORMANCE ENGINEERING</span>
+        <h3 class="discipline-heading">Инженерная оптимизация</h3>
+        <p class="discipline-body">
+          Отказ от перегруженных CMS и тормозящих конструкторов. Чистый семантический код, сжатие ассетов и гарантированные 100 баллов в тестах Google PageSpeed.
+        </p>
       </div>
 
-      <div class="tuner-control-group">
-        <div class="tuner-label-row">
-          <span>СВЕТОВОЕ СВЕЧЕНИЕ (GLOW)</span>
-          <b id="glowValue">100%</b>
-        </div>
-        <input class="tuner-slider" id="sliderGlow" type="range" min="20" max="150" value="100">
-      </div>
-    </div>
-
-    <!-- 3D Specular Tilt Card -->
-    <div class="tilt-card-stage">
-      <div class="tilt-card" id="tiltCard">
-        <div class="tilt-card-glare" id="tiltGlare"></div>
-        <div>
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <span style="font-family:var(--font-code); font-size:12px; color:var(--accent-primary);">LIVE SPECIMEN</span>
-            <span style="font-family:var(--font-code); font-size:11px; color:#00FF88;">99.9% CONVERSION</span>
-          </div>
-
-          <h3 style="font-family:var(--font-hero); font-size:24px; font-weight:900; margin:16px 0 8px; color:#fff;">
-            Сайт для вашего бизнеса
-          </h3>
-          <p style="color:var(--text-muted); font-size:14px; line-height:1.5;">
-            Интерактивные 3D-карточки, безупречная типографика и мгновенная загрузка. Клиенты чувствуют уровень и доверяют вам сразу.
-          </p>
-        </div>
-
-        <div style="margin-top:24px;">
-          <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:8px; font-size:13px; font-family:var(--font-code);">
-            <span>Срок запуска:</span><b style="color:#fff;">72 часа</b>
-          </div>
-          <div style="display:flex; justify-content:space-between; padding-top:8px; font-size:13px; font-family:var(--font-code);">
-            <span>Фиксированная цена:</span><b style="color:var(--accent-primary);">14 990 ₽</b>
-          </div>
-
-          <a class="btn-quantum-laser" href="#order" style="width:100%; margin-top:20px; height:50px; font-size:14px;">
-            <span>Заказать этот концепт</span>
-          </a>
-        </div>
+      <div class="discipline-item-card">
+        <span class="discipline-num">04 / CONVERSION CONCIERGE</span>
+        <h3 class="discipline-heading">Сквозная интеграция и мессенджеры</h3>
+        <p class="discipline-body">
+          Прямое подключение Telegram-ботов, CRM, онлайн-оплаты и картографических сервисов, чтобы ни один клиент не терялся в процессе оформления заявки.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 3: 3-DAY PRODUCTION SPRINT -->
-  <section id="sprint">
-    <div style="text-align: center; max-width: 680px; margin: 0 auto 36px;">
-      <div style="font-family: var(--font-code); font-size: 12px; color: var(--accent-primary); letter-spacing: 0.1em; text-transform: uppercase;">
-        РЕГЛАМЕНТ РАБОТЫ
+  <!-- SECTION 4: INTERACTIVE LAB (LIVE SHADER/PHYSICS SIMULATOR) -->
+  <section class="interactive-lab-card" id="lab">
+    <div class="lab-interface-controls">
+      <div>
+        <div class="hero-meta-kicker">04 // Interactive Experiment</div>
+        <h2 style="font-family:var(--font-display); font-size:32px; font-weight:800; line-height:1.15; margin-top:8px;">
+          Лаборатория взаимодействий
+        </h2>
+        <p style="color:var(--text-secondary); font-size:15px; margin-top:8px;">
+          Управляйте физикой силового поля в реальном времени. Этот же движок обеспечивает плавность взаимодействия на проектах.
+        </p>
       </div>
-      <h2 style="font-family: var(--font-hero); font-size: clamp(28px, 3.6vw, 44px); font-weight: 900; line-height: 1.15; margin-top: 8px;">
-        3 дня от брифа до боевого релиза
-      </h2>
+
+      <div class="lab-slider-row">
+        <div class="lab-slider-meta">
+          <span>ТУРБУЛЕНТНОСТЬ ПОЛЯ</span>
+          <b id="turbVal">1.2x</b>
+        </div>
+        <input class="lab-slider-input" id="sliderTurb" type="range" min="2" max="30" value="12">
+      </div>
+
+      <div class="lab-slider-row">
+        <div class="lab-slider-meta">
+          <span>СКОРОСТЬ РЕАКЦИИ</span>
+          <b id="speedVal">60 FPS</b>
+        </div>
+        <input class="lab-slider-input" id="sliderSpeed" type="range" min="1" max="5" value="3">
+      </div>
+
+      <div style="font-family:var(--font-mono); font-size:12px; color:var(--text-tertiary);">
+        Двигайте курсор внутри вьюпорта для создания гравитационных волн.
+      </div>
     </div>
 
-    <div class="sprint-grid">
-      <div class="sprint-card">
-        <div>
-          <div class="sprint-num">01</div>
-          <h3 style="font-family: var(--font-hero); font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 12px;">
-            Прототип и архитектура
-          </h3>
-          <p style="color: var(--text-muted); font-size: 14.5px; line-height: 1.6;">
-            Вы описываете задачу. Я пишу продающие тексты, выстраиваю воронку и создаю дизайн первого экрана. Вы оцениваете макет до внесения оплаты.
-          </p>
-        </div>
-        <div style="font-family: var(--font-code); font-size: 12px; color: var(--accent-primary); margin-top: 20px;">
-          ✓ Бесплатный макет до оплаты
-        </div>
-      </div>
-
-      <div class="sprint-card">
-        <div>
-          <div class="sprint-num">02</div>
-          <h3 style="font-family: var(--font-hero); font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 12px;">
-            Вёрстка и реактивный код
-          </h3>
-          <p style="color: var(--text-muted); font-size: 14.5px; line-height: 1.6;">
-            Верстаю адаптивный интерфейс без тяжёлых фреймворков. Настраиваю идеальный мобильный отклик, кнопки вызова в 1 тап, мессенджеры и карты.
-          </p>
-        </div>
-        <div style="font-family: var(--font-code); font-size: 12px; color: var(--accent-primary); margin-top: 20px;">
-          ✓ 100/100 Mobile Speed
-        </div>
-      </div>
-
-      <div class="sprint-card">
-        <div>
-          <div class="sprint-num">03</div>
-          <h3 style="font-family: var(--font-hero); font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 12px;">
-            Домен, SSL и запуск
-          </h3>
-          <p style="color: var(--text-muted); font-size: 14.5px; line-height: 1.6;">
-            Регистрирую доменное имя .ru на ваше имя, подключаю шифрование https://, отдаю проект в боевой эфир и передаю все доступы.
-          </p>
-        </div>
-        <div style="font-family: var(--font-code); font-size: 12px; color: var(--accent-primary); margin-top: 20px;">
-          ✓ Домен на 1 год включён
-        </div>
-      </div>
+    <div class="lab-preview-viewport">
+      <span class="lab-status-badge">● LIVE RENDER PIPELINE</span>
+      <canvas id="labCanvasView"></canvas>
     </div>
   </section>
 
-  <!-- SECTION 4: UNFAIR VALUE PRICING -->
-  <section class="pricing-matrix-hero" id="pricing">
-    <div>
-      <div style="font-family: var(--font-code); font-size: 12px; color: var(--accent-primary); letter-spacing: 0.12em; text-transform: uppercase;">
-        ЧЕСТНАЯ ФИКСИРОВАННАЯ ЦЕНА
-      </div>
-      <div class="price-display-giant">14 990 ₽</div>
-      <p style="color: var(--text-muted); font-size: 16px; margin-top: 8px;">
-        Разовый платёж за законченный проект под ключ. Никаких доплат и скрытых комиссий.
-      </p>
-
-      <ul class="features-grid-checklist">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Домен .ru на 1 год включён</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Адаптивность для смартфонов и ПК</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Продающие тексты под ваш бизнес</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>Кнопки Telegram / WhatsApp / Телефон</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>До 10 правок без доплат</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span>SSL-сертификат безопасности</span></li>
-      </ul>
-    </div>
-
-    <div style="display: flex; flex-direction: column; gap: 18px;">
-      <div style="padding: 24px; border-radius: 20px; background: rgba(0, 0, 0, 0.4); border: 1px solid var(--border-line);">
-        <div style="font-family: var(--font-code); font-size: 13px; color: #00FF88; font-weight: 700;">
-          ● ГАРАНТИЯ 100% БЕЗ РИСКА
-        </div>
-        <div style="color: var(--text-muted); font-size: 14px; margin-top: 6px; line-height: 1.5;">
-          Сначала вы утверждаете дизайн первого экрана. Если результат не устроит — вы ничего не платите.
-        </div>
+  <!-- SECTION 5: COMMISSION & INQUIRY -->
+  <section class="commission-station" id="commission">
+    <div class="commission-manifesto">
+      <div>
+        <div class="hero-meta-kicker">05 // Start Collaboration</div>
+        <h2>Создадим проект, о котором будут говорить</h2>
+        <p>
+          Расскажите о вашей идее или задаче. Я лично свяжусь с вами в течение 30 минут с вариантами реализации и архитектурным планом.
+        </p>
       </div>
 
-      <a class="btn-quantum-laser" href="#order" style="width: 100%; justify-content: center;">
-        <span>Заказать сайт за 14 990 ₽ →</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- SECTION 5: FAST-LANE ORDER TERMINAL (#order) -->
-  <section class="order-terminal-wrapper" id="order">
-    <div>
-      <div style="font-family: var(--font-code); font-size: 12px; color: var(--accent-primary); letter-spacing: 0.12em; text-transform: uppercase;">
-        ЭКСПРЕСС-СТАРТ
-      </div>
-      <h2 style="font-family: var(--font-hero); font-size: clamp(28px, 3.4vw, 42px); font-weight: 900; line-height: 1.15; margin-top: 8px;">
-        Запустите сайт на этой неделе
-      </h2>
-      <p style="color: var(--text-muted); font-size: 16px; margin-top: 14px; line-height: 1.6;">
-        Оставьте заявку. Я лично свяжусь с вами сегодня в Telegram или WhatsApp с готовым планом структуры и офферами.
-      </p>
-
-      <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 14px; font-family: var(--font-code); font-size: 13.5px; color: var(--text-muted);">
-        <div><span style="color:var(--accent-primary);">✦</span> Прямой контакт с разработчиком без посредников</div>
-        <div><span style="color:var(--accent-primary);">✦</span> Без спама и навязчивых звонков</div>
-        <div><span style="color:var(--accent-primary);">✦</span> Telegram для быстрой связи: <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--accent-primary); font-weight:700;">@K_Sofrin</a></div>
+      <div class="direct-channels-row">
+        <a class="direct-link-item" href="https://t.me/K_Sofrin" target="_blank" rel="noopener">
+          <span>✈ Прямой чат в Telegram: <b>@K_Sofrin</b></span>
+        </a>
+        <div style="color:var(--text-tertiary);">Брянск, Москва &amp; Worldwide сотрудничество</div>
       </div>
     </div>
 
-    <form id="orderForm" autocomplete="off" style="display: flex; flex-direction: column; gap: 18px;">
-      <div>
-        <label style="font-size: 13px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Сфера бизнеса</label>
-        <input class="order-input-block" id="inpBiz" name="biz" placeholder="Например: барбершоп, детейлинг, автосервис или кафе" required value="Детейлинг">
-      </div>
-
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-        <div>
-          <label style="font-size: 13px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Город</label>
-          <input class="order-input-block" id="inpCity" name="city" placeholder="Брянск" value="Брянск">
-        </div>
-        <div>
-          <label style="font-size: 13px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Ваше имя</label>
-          <input class="order-input-block" id="inpName" name="name" placeholder="Как к вам обращаться">
+    <!-- COMMISSION FORM -->
+    <form class="commission-form-core" id="commissionForm" autocomplete="off">
+      <div class="form-field-group">
+        <label class="form-field-label">Тип проекта</label>
+        <div class="type-segmented-matrix" id="typeGroup">
+          <label class="type-seg-chip active"><input type="radio" name="project_type" value="Флагманский сайт" checked><span>Флагман</span></label>
+          <label class="type-seg-chip"><input type="radio" name="project_type" value="3D / Интерактив"><span>Интерактив</span></label>
+          <label class="type-seg-chip"><input type="radio" name="project_type" value="Сервис / Платформа"><span>Платформа</span></label>
         </div>
       </div>
 
-      <div>
-        <label style="font-size: 13px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Где удобнее ответить</label>
-        <div class="comm-selector-grid" id="commGroup">
-          <label class="comm-selector-btn active"><input type="radio" name="contact_method" value="telegram" checked><span>Telegram</span></label>
-          <label class="comm-selector-btn"><input type="radio" name="contact_method" value="whatsapp"><span>WhatsApp</span></label>
-          <label class="comm-selector-btn"><input type="radio" name="contact_method" value="phone"><span>Телефон</span></label>
-          <label class="comm-selector-btn"><input type="radio" name="contact_method" value="other"><span>Другое</span></label>
+      <div class="form-field-group">
+        <label class="form-field-label">О проекте / Сфера бизнеса</label>
+        <input class="form-core-input" id="inquiryBiz" name="biz" placeholder="Например: Архитектурное бюро, клиника или премиум-ритейл" required value="Премиальный ритейл">
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+        <div class="form-field-group">
+          <label class="form-field-label">Город / Страна</label>
+          <input class="form-core-input" id="inquiryCity" name="city" placeholder="Брянск / Москва" value="Брянск">
+        </div>
+        <div class="form-field-group">
+          <label class="form-field-label">Ваше имя</label>
+          <input class="form-core-input" id="inquiryName" name="name" placeholder="Как к вам обращаться">
         </div>
       </div>
 
-      <div>
-        <label style="font-size: 13px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">Контакт для связи</label>
-        <input class="order-input-block" id="inpContact" name="contact_value" placeholder="@username в Telegram" required>
+      <div class="form-field-group">
+        <label class="form-field-label">Контакт для связи (Telegram / Телефон)</label>
+        <input class="form-core-input" id="inquiryContact" name="contact_value" placeholder="@username в Telegram или номер телефона" required>
       </div>
 
-      <button class="btn-quantum-laser" id="btnSubmitOrder" type="submit" style="width: 100%; justify-content: center; margin-top: 6px;">
-        <span>Отправить заявку на сайт →</span>
+      <button class="btn-commission-send" id="btnSubmitCommission" type="submit">
+        <span>Отправить заявку на сотрудничество →</span>
       </button>
 
-      <p id="orderFeedback" style="font-size: 13.5px; text-align: center; color: var(--text-muted); min-height: 20px;">
-        Отвечу лично в течение 30 минут.
+      <p id="commissionFeedback" style="font-family:var(--font-mono); font-size:13px; text-align:center; color:var(--text-secondary); min-height:20px;">
+        Конфиденциально. Отвечаю напрямую в Telegram.
       </p>
     </form>
   </section>
 
-  <!-- SECTION 6: FAQ -->
-  <section class="faq-stack" id="faq">
-    <div style="margin-bottom: 16px;">
-      <div style="font-family: var(--font-code); font-size: 12px; color: var(--accent-primary); letter-spacing: 0.1em; text-transform: uppercase;">
-        ВОПРОСЫ И ОТВЕТЫ
-      </div>
-      <h2 style="font-family: var(--font-hero); font-size: clamp(26px, 3.2vw, 36px); font-weight: 900; margin-top: 6px;">
-        Всё прозрачно и без скрытых условий
-      </h2>
-    </div>
-
-    <details class="faq-box">
-      <summary>
-        <span>Что если предложенный концепт мне не понравится?</span>
-        <span class="faq-mark">+</span>
-      </summary>
-      <div class="faq-inner">
-        Вы ничем не рискуете. Я делаю прототип первого экрана до внесения какой-либо оплаты. В тариф входит до 10 правок — мы дорабатываем дизайн до тех пор, пока вы не будете полностью удовлетворены.
-      </div>
-    </details>
-
-    <details class="faq-box">
-      <summary>
-        <span>Домен действительно оформляется на меня?</span>
-        <span class="faq-mark">+</span>
-      </summary>
-      <div class="faq-inner">
-        Да, регистрация домена .ru на 1 полный год уже включена в 14 990 ₽. Домен оформляется официально на ваши данные, вы являетесь его полноправным владельцем.
-      </div>
-    </details>
-
-    <details class="faq-box">
-      <summary>
-        <span>Нужно ли будет платить за сайт каждый месяц?</span>
-        <span class="faq-mark">+</span>
-      </summary>
-      <div class="faq-inner">
-        Нет! Это сайт на чистом коде, а не на конструкторе. Вам не нужно платить абонентскую плату Tilda или Wix (1 000 – 2 500 ₽/мес). Разовая оплата — и сайт работает на вас постоянно.
-      </div>
-    </details>
-
-    <details class="faq-box">
-      <summary>
-        <span>Кто пишет тексты для сайта?</span>
-        <span class="faq-mark">+</span>
-      </summary>
-      <div class="faq-inner">
-        Тексты пишу я сам на основе анализа вашего бизнеса и конкурентов. Вам достаточно просто рассказать своими словами об услугах и ценах.
-      </div>
-    </details>
-  </section>
-
-  <!-- MASTER FOOTER -->
-  <footer class="master-footer">
-    <div>© 2026 KIRILL SOFRIN · BESPOKE DIGITAL ENGINEERING</div>
-    <div style="display: flex; gap: 20px;">
-      <a href="/brief">Бриф</a>
+  <!-- CURATED FOOTER -->
+  <footer class="curated-footer">
+    <div>© 2026 SOFRIN · CREATIVE TECHNOLOGIST</div>
+    <div style="display:flex; gap:28px;">
+      <a href="/brief">Полный бриф</a>
       <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener">Telegram @K_Sofrin</a>
-      <a href="#order">Заказать ↑</a>
+      <a href="#works">Наверх ↑</a>
     </div>
   </footer>
 
@@ -1122,313 +1066,192 @@ body {
 
 <script>
 (function() {
-  // 1. Web Audio Synthesizer Engine (0 external files, 100% native Web Audio)
-  var sfxEnabled = true;
-  var audioCtx = null;
-  function getAudioCtx() {
-    if (!audioCtx && window.AudioContext) {
-      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    }
-    return audioCtx;
-  }
+  // 1. Background Ambient Generative Mesh
+  var bgCanvas = document.getElementById('canvasStage');
+  if (bgCanvas) {
+    var bgCtx = bgCanvas.getContext('2d');
+    var w = bgCanvas.width = window.innerWidth;
+    var h = bgCanvas.height = window.innerHeight;
+    var mouse = { x: w * 0.5, y: h * 0.3 };
 
-  function playUiBeep(freq, type, duration) {
-    if (!sfxEnabled) return;
-    try {
-      var ctx = getAudioCtx();
-      if (!ctx) return;
-      if (ctx.state === 'suspended') ctx.resume();
-      var osc = ctx.createOscillator();
-      var gain = ctx.createGain();
-      osc.type = type || 'sine';
-      osc.frequency.setValueAtTime(freq || 600, ctx.currentTime);
-      gain.gain.setValueAtTime(0.04, ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + (duration || 0.08));
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      osc.start();
-      osc.stop(ctx.currentTime + (duration || 0.08));
-    } catch(_) {}
-  }
-
-  var sfxBtn = document.getElementById('sfxToggleBtn');
-  if (sfxBtn) {
-    sfxBtn.addEventListener('click', function() {
-      sfxEnabled = !sfxEnabled;
-      sfxBtn.textContent = sfxEnabled ? '🔊 SFX: ON' : '🔇 SFX: OFF';
-      if (sfxEnabled) playUiBeep(880, 'sine', 0.1);
-    });
-  }
-
-  // Bind subtle beeps to buttons
-  document.querySelectorAll('button, a.btn-quantum-laser, a.btn-cockpit-fire').forEach(function(el) {
-    el.addEventListener('mouseenter', function() { playUiBeep(440, 'sine', 0.04); });
-    el.addEventListener('click', function() { playUiBeep(880, 'triangle', 0.08); });
-  });
-
-  // 2. Realtime FPS & Telemetry
-  var fpsVal = document.getElementById('fpsVal');
-  var frameCount = 0, lastTime = performance.now();
-  function checkFps(now) {
-    frameCount++;
-    if (now - lastTime >= 1000) {
-      if (fpsVal) fpsVal.textContent = frameCount;
-      frameCount = 0;
-      lastTime = now;
-    }
-    requestAnimationFrame(checkFps);
-  }
-  requestAnimationFrame(checkFps);
-
-  // 3. Canvas Particle Gravitational Field
-  var canvas = document.getElementById('bgCanvas');
-  if (canvas) {
-    var ctx = canvas.getContext('2d');
-    var w = canvas.width = window.innerWidth;
-    var h = canvas.height = window.innerHeight;
-    var mouse = { x: w / 2, y: h / 2, active: false };
-
-    var particles = [];
-    var count = Math.min(80, Math.floor((w * h) / 16000));
+    var nodes = [];
+    var count = Math.min(50, Math.floor((w * h) / 24000));
     for (var i = 0; i < count; i++) {
-      particles.push({
+      nodes.push({
         x: Math.random() * w,
         y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.7,
-        vy: (Math.random() - 0.5) * 0.7,
-        rad: Math.random() * 1.8 + 0.8
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        radius: Math.random() * 2 + 1
       });
     }
 
     window.addEventListener('resize', function() {
-      w = canvas.width = window.innerWidth;
-      h = canvas.height = window.innerHeight;
+      w = bgCanvas.width = window.innerWidth;
+      h = bgCanvas.height = window.innerHeight;
     });
 
     window.addEventListener('mousemove', function(e) {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
-      mouse.active = true;
     });
 
-    function drawScene() {
-      ctx.clearRect(0, 0, w, h);
-      for (var i = 0; i < particles.length; i++) {
-        var p = particles[i];
-        p.x += p.vx;
-        p.y += p.vy;
+    function drawBg() {
+      bgCtx.clearRect(0, 0, w, h);
 
-        if (p.x < 0) p.x = w;
-        if (p.x > w) p.x = 0;
-        if (p.y < 0) p.y = h;
-        if (p.y > h) p.y = 0;
+      for (var i = 0; i < nodes.length; i++) {
+        var n = nodes[i];
+        n.x += n.vx;
+        n.y += n.vy;
 
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.rad, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(0, 240, 255, 0.4)';
-        ctx.fill();
+        if (n.x < 0) n.x = w;
+        if (n.x > w) n.x = 0;
+        if (n.y < 0) n.y = h;
+        if (n.y > h) n.y = 0;
 
-        for (var j = i + 1; j < particles.length; j++) {
-          var p2 = particles[j];
-          var dx = p.x - p2.x;
-          var dy = p.y - p2.y;
+        bgCtx.beginPath();
+        bgCtx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
+        bgCtx.fillStyle = 'rgba(255, 255, 255, 0.25)';
+        bgCtx.fill();
+
+        for (var j = i + 1; j < nodes.length; j++) {
+          var n2 = nodes[j];
+          var dx = n.x - n2.x;
+          var dy = n.y - n2.y;
           var dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 120) {
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = 'rgba(0, 240, 255, ' + (0.15 * (1 - dist / 120)) + ')';
-            ctx.lineWidth = 0.8;
-            ctx.stroke();
-          }
-        }
-
-        if (mouse.active) {
-          var mdx = p.x - mouse.x;
-          var mdy = p.y - mouse.y;
-          var mdist = Math.sqrt(mdx * mdx + mdy * mdy);
-          if (mdist < 180) {
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(mouse.x, mouse.y);
-            ctx.strokeStyle = 'rgba(0, 240, 255, ' + (0.28 * (1 - mdist / 180)) + ')';
-            ctx.lineWidth = 1;
-            ctx.stroke();
+          if (dist < 140) {
+            bgCtx.beginPath();
+            bgCtx.moveTo(n.x, n.y);
+            bgCtx.lineTo(n2.x, n2.y);
+            bgCtx.strokeStyle = 'rgba(255, 255, 255, ' + (0.07 * (1 - dist / 140)) + ')';
+            bgCtx.lineWidth = 0.7;
+            bgCtx.stroke();
           }
         }
       }
-      requestAnimationFrame(drawScene);
+      requestAnimationFrame(drawBg);
     }
-    drawScene();
+    drawBg();
   }
 
-  // 4. Interactive Terminal CLI
-  var termScreen = document.getElementById('termScreen');
-  var termForm = document.getElementById('termForm');
-  var termInput = document.getElementById('termInput');
-  var termBtns = document.querySelectorAll('.term-btn');
+  // 2. Interactive Lab Physics Viewport
+  var labCanvas = document.getElementById('labCanvasView');
+  var sliderTurb = document.getElementById('sliderTurb');
+  var sliderSpeed = document.getElementById('sliderSpeed');
+  var turbVal = document.getElementById('turbVal');
 
-  function appendTerm(row) {
-    if (!termScreen) return;
-    var d = document.createElement('div');
-    d.className = 'term-row';
-    d.innerHTML = row;
-    termScreen.appendChild(d);
-    termScreen.scrollTop = termScreen.scrollHeight;
-  }
+  if (labCanvas) {
+    var lCtx = labCanvas.getContext('2d');
+    var lw = labCanvas.width = labCanvas.offsetWidth || 500;
+    var lh = labCanvas.height = labCanvas.offsetHeight || 380;
+    var labMouse = { x: lw / 2, y: lh / 2, active: false };
+    var time = 0;
 
-  function runCmd(cmd) {
-    var c = cmd.trim().toLowerCase();
-    appendTerm('<span class="term-prompt">kirill@studio:~$</span> ' + cmd);
-    playUiBeep(700, 'sine', 0.05);
+    labCanvas.addEventListener('mousemove', function(e) {
+      var r = labCanvas.getBoundingClientRect();
+      labMouse.x = e.clientX - r.left;
+      labMouse.y = e.clientY - r.top;
+      labMouse.active = true;
+    });
 
-    if (c === 'help') {
-      appendTerm('Доступные команды: <span class="term-out-highlight">specs, speed, pricing, order, clear</span>');
-    } else if (c === 'specs' || c === 'specs.json') {
-      appendTerm('<span class="term-out-success">✓ Tech stack:</span> Semantic HTML5, Vanilla TypeScript, Web Audio, CSS 3D Matrix');
-      appendTerm('<span class="term-out-success">✓ Bundle size:</span> 0 external frameworks (100% fast raw performance)');
-      appendTerm('<span class="term-out-success">✓ Delivery:</span> 72 hours max');
-    } else if (c === 'speed' || c === 'speed_test') {
-      appendTerm('<span class="term-out-success">● TTFB: 0.04s | First Paint: 0.38s | Lighthouse: 100/100</span>');
-    } else if (c === 'pricing') {
-      appendTerm('<span class="term-out-highlight">★ 14 990 ₽ под ключ</span> (включая домен .ru на 1 год, без подписок)');
-    } else if (c === 'order' || c === 'sudo order') {
-      appendTerm('<span class="term-out-success">Переход к форме заказа...</span>');
-      var ord = document.getElementById('order');
-      if (ord) ord.scrollIntoView({ behavior: 'smooth' });
-    } else if (c === 'clear') {
-      termScreen.innerHTML = '';
-      appendTerm('<span class="term-prompt">kirill@studio:~$</span> terminal cleared.');
-    } else {
-      appendTerm('<span style="color:#FF5F56;">Команда не распознана: ' + cmd + '. Напишите "help".</span>');
+    labCanvas.addEventListener('mouseleave', function() {
+      labMouse.active = false;
+    });
+
+    if (sliderTurb && turbVal) {
+      sliderTurb.addEventListener('input', function() {
+        turbVal.textContent = (sliderTurb.value / 10).toFixed(1) + 'x';
+      });
     }
-  }
 
-  if (termForm && termInput) {
-    termForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      if (!termInput.value) return;
-      runCmd(termInput.value);
-      termInput.value = '';
-    });
-  }
+    function renderLab() {
+      lw = labCanvas.width = labCanvas.offsetWidth;
+      lh = labCanvas.height = labCanvas.offsetHeight;
+      lCtx.clearRect(0, 0, lw, lh);
 
-  termBtns.forEach(function(b) {
-    b.addEventListener('click', function() {
-      var cmd = b.getAttribute('data-cmd');
-      runCmd(cmd);
-    });
-  });
+      var turb = sliderTurb ? (sliderTurb.value / 10) : 1.2;
+      var speed = sliderSpeed ? (sliderSpeed.value * 0.015) : 0.045;
+      time += speed;
 
-  // 5. Live Architecture Tuner (Hue / Radius / Glow)
-  var sHue = document.getElementById('sliderHue');
-  var sRadius = document.getElementById('sliderRadius');
-  var sGlow = document.getElementById('sliderGlow');
-  var hueVal = document.getElementById('hueValue');
-  var radiusVal = document.getElementById('radiusValue');
-  var glowVal = document.getElementById('glowValue');
-  var tiltCard = document.getElementById('tiltCard');
+      var rows = 12;
+      var cols = 18;
+      var stepX = lw / cols;
+      var stepY = lh / rows;
 
-  if (sHue && hueVal) {
-    sHue.addEventListener('input', function() {
-      var val = sHue.value;
-      document.documentElement.style.setProperty('--hue-accent', val);
-      hueVal.textContent = val + '°';
-      playUiBeep(300 + parseInt(val), 'sine', 0.02);
-    });
-  }
+      for (var y = 0; y < rows; y++) {
+        for (var x = 0; x < cols; x++) {
+          var px = x * stepX + stepX / 2;
+          var py = y * stepY + stepY / 2;
 
-  if (sRadius && radiusVal && tiltCard) {
-    sRadius.addEventListener('input', function() {
-      var val = sRadius.value;
-      tiltCard.style.borderRadius = val + 'px';
-      radiusVal.textContent = val + 'px';
-    });
-  }
+          var wave = Math.sin(x * 0.5 + time) * Math.cos(y * 0.5 + time) * 15 * turb;
+          var angle = wave * 0.1;
 
-  if (sGlow && glowVal && tiltCard) {
-    sGlow.addEventListener('input', function() {
-      var val = sGlow.value;
-      tiltCard.style.boxShadow = '0 30px 70px rgba(0,0,0,0.9), 0 0 ' + (30 * (val / 100)) + 'px var(--accent-glow)';
-      glowVal.textContent = val + '%';
-    });
-  }
+          if (labMouse.active) {
+            var mdx = px - labMouse.x;
+            var mdy = py - labMouse.y;
+            var mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+            if (mdist < 140) {
+              angle += (1 - mdist / 140) * Math.PI * 0.5;
+            }
+          }
 
-  // 6. 3D Tilt Card Physics & Specular Highlight
-  var tiltGlare = document.getElementById('tiltGlare');
-  if (tiltCard) {
-    tiltCard.addEventListener('mousemove', function(e) {
-      var rect = tiltCard.getBoundingClientRect();
-      var x = e.clientX - rect.left;
-      var y = e.clientY - rect.top;
-      var centerX = rect.width / 2;
-      var centerY = rect.height / 2;
-      var rotateX = ((y - centerY) / centerY) * -14;
-      var rotateY = ((x - centerX) / centerX) * 14;
-
-      tiltCard.style.transform = 'perspective(1000px) rotateX(' + rotateX.toFixed(2) + 'deg) rotateY(' + rotateY.toFixed(2) + 'deg) scale3d(1.02, 1.02, 1.02)';
-      if (tiltGlare) {
-        tiltGlare.style.opacity = '1';
-        tiltGlare.style.background = 'radial-gradient(circle at ' + x + 'px ' + y + 'px, rgba(255,255,255,0.22), transparent 55%)';
-      }
-    });
-
-    tiltCard.addEventListener('mouseleave', function() {
-      tiltCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-      if (tiltGlare) tiltGlare.style.opacity = '0';
-    });
-  }
-
-  // 7. Contact Methods Radios & Placeholders
-  var commButtons = document.querySelectorAll('#commGroup .comm-selector-btn');
-  var inpContact = document.getElementById('inpContact');
-  var placeholders = {
-    telegram: '@username в Telegram',
-    whatsapp: 'Номер для WhatsApp (+7...)',
-    phone: 'Номер телефона (+7...)',
-    other: 'Электронная почта'
-  };
-
-  commButtons.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      commButtons.forEach(function(b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      var input = btn.querySelector('input');
-      if (input) {
-        input.checked = true;
-        if (inpContact) {
-          inpContact.placeholder = placeholders[input.value] || 'Контакт для связи';
+          lCtx.save();
+          lCtx.translate(px, py);
+          lCtx.rotate(angle);
+          lCtx.beginPath();
+          lCtx.moveTo(-6, 0);
+          lCtx.lineTo(6, 0);
+          lCtx.strokeStyle = 'rgba(229, 195, 132, ' + (0.3 + Math.sin(time + x) * 0.2) + ')';
+          lCtx.lineWidth = 1.5;
+          lCtx.stroke();
+          lCtx.restore();
         }
       }
+      requestAnimationFrame(renderLab);
+    }
+    renderLab();
+  }
+
+  // 3. Project Type Selector Chips
+  var chips = document.querySelectorAll('#typeGroup .type-seg-chip');
+  chips.forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      chips.forEach(function(c) { c.classList.remove('active'); });
+      chip.classList.add('active');
+      var r = chip.querySelector('input');
+      if (r) r.checked = true;
     });
   });
 
-  // 8. Order Form Submission
-  var orderForm = document.getElementById('orderForm');
-  var btnSubmit = document.getElementById('btnSubmitOrder');
-  var feedback = document.getElementById('orderFeedback');
+  // 4. Commission Form Submission
+  var cForm = document.getElementById('commissionForm');
+  var btnSend = document.getElementById('btnSubmitCommission');
+  var fb = document.getElementById('commissionFeedback');
 
-  if (orderForm) {
-    orderForm.addEventListener('submit', function(e) {
+  if (cForm) {
+    cForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      var fd = new FormData(orderForm);
+      var fd = new FormData(cForm);
 
-      if (btnSubmit) {
-        btnSubmit.disabled = true;
-        btnSubmit.style.opacity = '0.7';
-        btnSubmit.textContent = 'Отправка заявки…';
+      if (btnSend) {
+        btnSend.disabled = true;
+        btnSend.style.opacity = '0.7';
+        btnSend.textContent = 'Отправка заявки…';
       }
+
+      var projectType = fd.get('project_type') || 'Флагман';
+      var biz = fd.get('biz') || '';
 
       fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          biz: fd.get('biz') || '',
+          biz: '[' + projectType + '] ' + biz,
           city: fd.get('city') || '',
           name: fd.get('name') || '',
-          contact_method: fd.get('contact_method') || 'telegram',
+          contact_method: 'telegram',
           contact_value: fd.get('contact_value') || '',
-          source: 'high_craft_terminal'
+          source: 'curated_studio'
         })
       })
       .then(function(res) {
@@ -1436,25 +1259,24 @@ body {
         return res.json();
       })
       .then(function() {
-        playUiBeep(1200, 'sine', 0.15);
-        if (btnSubmit) {
-          btnSubmit.textContent = 'Заявка успешно принята ✓';
-          btnSubmit.style.background = '#00FF88';
-          btnSubmit.style.color = '#05060A';
+        if (btnSend) {
+          btnSend.textContent = 'Заявка отправлена ✓';
+          btnSend.style.background = '#10B981';
+          btnSend.style.color = '#FFFFFF';
         }
-        if (feedback) {
-          feedback.innerHTML = 'Заявка принята! Я свяжусь с вами сегодня. Для мгновенного ответа: <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:var(--accent-primary);font-weight:700;">написать в Telegram →</a>';
+        if (fb) {
+          fb.innerHTML = 'Спасибо! Я свяжусь с вами в Telegram в течение 30 минут. <a href="https://t.me/K_Sofrin" target="_blank" rel="noopener" style="color:#FFFFFF;text-decoration:underline;">Написать лично →</a>';
         }
-        orderForm.reset();
+        cForm.reset();
       })
       .catch(function() {
-        if (btnSubmit) {
-          btnSubmit.disabled = false;
-          btnSubmit.style.opacity = '1';
-          btnSubmit.textContent = 'Отправить заявку на сайт →';
+        if (btnSend) {
+          btnSend.disabled = false;
+          btnSend.style.opacity = '1';
+          btnSend.textContent = 'Отправить заявку на сотрудничество →';
         }
-        if (feedback) {
-          feedback.textContent = 'Ошибка отправки. Напишите напрямую в Telegram @K_Sofrin.';
+        if (fb) {
+          fb.textContent = 'Ошибка отправки. Пожалуйста, напишите напрямую в Telegram @K_Sofrin.';
         }
       });
     });
