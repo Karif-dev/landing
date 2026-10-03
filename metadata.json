@@ -1,0 +1,8 @@
+{
+  "name": "Сайт для бизнеса в Брянске",
+  "description": "Сайт для бизнеса в Брянске за 3 дня — 14 990 ₽ с доменом. Лендинг для услуг и малого бизнеса.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
